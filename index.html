@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<title>Port Visit — St. John’s, NL</title>
+<meta name="description" content="Mobile-first port visit info page (read-only).">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="shipline">
+      <picture>
+        <source type="image/webp" srcset="assets/IMG_2434-480.webp 480w, assets/IMG_2434-800.webp 800w, assets/IMG_2434-1200.webp 1200w" sizes="68px">
+        <img id="ship-crest" class="crest" alt="Ship crest" src="IMG_2434.PNG" loading="lazy" width="68" height="68" />
+      </picture>
+      <div>
+        <div id="ship-name" class="ship-name">HMCS Frédérick Rolette</div>
+        <div class="muted small" id="ship-sub">Port Visit Info</div>
+      </div>
+    </div>
+
+    <h1 id="port-title">Port Visit — St. John’s, NL</h1>
+
+    <div class="meta" aria-label="Visit details">
+      <div class="pill">📍 <span id="port-area">Downtown / Port Area</span></div>
+      <div class="pill">📅 <span>Visit:</span> <strong id="visit-range">Feb 11–14, 2026</strong></div>
+      <div class="pill">🕒 <span>Local (<span id="tz-abbr">—</span>):</span> <strong id="local-time">—:—</strong></div>
+      <div class="pill">🕒 <span>Halifax (<span id="hx-abbr">—</span>):</span> <strong id="hx-time">—:—</strong></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- HOME -->
+  <section id="view-home" class="view active" aria-labelledby="home-title">
+    <h2 id="home-title" style="position:absolute;left:-9999px">Landing</h2>
+    <div class="grid">
+      <a class="tile tile-green" href="#/schedule">
+        <div class="tile-emoji" aria-hidden="true">🕒</div>
+        <div><h2>Schedule &amp; Leave</h2><p class="muted small">Daily plan, leave expiry, weather</p></div>
+      </a>
+      <a class="tile tile-blue" href="#/contacts">
+        <div class="tile-emoji" aria-hidden="true">📞</div>
+        <div><h2>Duty Contacts</h2><p class="muted small">Quarterdeck • Duty Medical • Check-in</p></div>
+      </a>
+      <a class="tile tile-red" href="#/medical">
+        <div class="tile-emoji" aria-hidden="true">🚑</div>
+        <div><h2>Medical &amp; Emergency</h2><p class="muted small">Sick parade • hospitals • 911</p></div>
+      </a>
+      <a class="tile tile-purple" href="#/maps">
+        <div class="tile-emoji" aria-hidden="true">🗺️</div>
+        <div><h2>Maps &amp; Local Info</h2><p class="muted small">Food • groceries • transit • ATMs • events</p></div>
+      </a>
+      <a class="tile tile-teal" href="#/safety">
+        <div class="tile-emoji" aria-hidden="true">ℹ️</div>
+        <div><h2>Local Info &amp; Safety</h2><p class="muted small">Quick tips, weather, areas to avoid</p></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section id="view-schedule" class="view" aria-labelledby="schedule-title">
+    <a class="back" href="#/">← Back</a>
+    <div class="section">
+      <header id="schedule-title">Schedule &amp; Leave — St. John’s, NL</header>
+      <div class="list">
+        <div class="card">
+          <strong>Port Schedule</strong>
+          <div id="schedule-days" class="list" style="padding:0;gap:10px"></div>
+          <p class="muted small">Leave expiry defaults are placeholders; adjust before publish if briefed differently.</p>
+        </div>
+        <div class="card">
+          <strong>Check-In</strong>
+          <div class="kv">
+            <div class="muted">Window</div><div id="checkin-window">TBD</div>
+            <div class="muted">Email</div><div><a id="checkin-email" href="#" class="btn" style="padding:8px 12px;min-height:auto" aria-disabled="true">TBD</a></div>
+            <div class="muted">Phone</div><div><a id="checkin-phone" href="#" class="btn" style="padding:8px 12px;min-height:auto" aria-disabled="true">TBD</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section id="view-contacts" class="view" aria-labelledby="contacts-title">
+    <a class="back" href="#/">← Back</a>
+    <div class="section">
+      <header id="contacts-title">Duty Contacts — St. John’s, NL</header>
+      <div class="list" id="contacts-list"></div>
+      <div class="list" style="padding-top:0">
+        <div class="card">
+          <strong>Note</strong>
+          <p class="muted small" style="margin:0">Numbers can change per port (local phones). This page is read-only; updates happen by republishing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEDICAL -->
+  <section id="view-medical" class="view" aria-labelledby="medical-title">
+    <a class="back" href="#/">← Back</a>
+    <div class="section">
+      <header id="medical-title">Medical &amp; Emergency — St. John’s, NL</header>
+      <div class="list">
+        <div class="card">
+          <strong>Sick Parade Hours</strong>
+          <div class="kv"><div class="muted">Hours</div><div id="sick-hours">0800–0900 (typical)</div></div>
+        </div>
+        <div class="card">
+          <strong>Duty Medical (on-call)</strong>
+          <div class="actions">
+            <a class="btn" id="med-call" href="#" aria-disabled="true">Call (TBD)</a>
+            <a class="btn" id="med-sms" href="#" aria-disabled="true">Text (TBD)</a>
+          </div>
+          <p class="muted small" style="margin:0">Role per day (example): PA / Paramedic — set before publish.</p>
+          <div id="med-roster" class="small muted">Roster: TBD</div>
+        </div>
+        <div class="card">
+          <strong>Nearest Hospitals (links)</strong>
+          <p class="muted small" style="margin:0">Opens maps. Confirm best destination on arrival.</p>
+          <div class="list" id="hospitals-list" style="padding:0"></div>
+        </div>
+        <div class="card">
+          <strong>Local Emergency</strong>
+          <div class="kv"><div class="muted">Emergency</div><div><a class="btn" style="padding:8px 12px;min-height:auto" href="tel:911">911 (Canada)</a></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAPS MAIN -->
+  <section id="view-maps" class="view" aria-labelledby="maps-title">
+    <a class="back" href="#/">← Back</a>
+    <div class="section">
+      <header id="maps-title">Maps &amp; Local Info — St. John’s, NL</header>
+      <div class="list">
+        <div class="card">
+          <strong>Port Area (public)</strong>
+          <div class="actions">
+            <a class="btn" id="port-gmap" href="#" target="_blank" rel="noopener">Google Maps</a>
+            <a class="btn" id="port-amap" href="#" target="_blank" rel="noopener">Apple Maps</a>
+          </div>
+          <p class="muted small" style="margin:0">No berth numbers or ship location.</p>
+        </div>
+
+        <div class="card">
+          <strong>Categories</strong>
+          <div class="cat-grid" aria-label="Local categories">
+            <a class="cat" href="#/maps/restaurants"><div class="ico" aria-hidden="true">🍽️</div><div class="ttl">Restaurants</div><p class="sub">Curated picks + map search</p></a>
+            <a class="cat" href="#/maps/bars"><div class="ico" aria-hidden="true">🍻</div><div class="ttl">Bars &amp; Breweries</div><p class="sub">Downtown nightlife</p></a>
+            <a class="cat" href="#/maps/groceries"><div class="ico" aria-hidden="true">🛒</div><div class="ttl">Groceries &amp; Convenience</div><p class="sub">Basics near the port</p></a>
+            <a class="cat" href="#/maps/atms"><div class="ico" aria-hidden="true">🏦</div><div class="ttl">ATMs &amp; Banks</div><p class="sub">Cash + branches</p></a>
+            <a class="cat" href="#/maps/transit"><div class="ico" aria-hidden="true">🚌</div><div class="ttl">Transit</div><p class="sub">Metrobus info</p></div></a>
+            <a class="cat" href="#/maps/attractions"><div class="ico" aria-hidden="true">🏛️</div><div class="ttl">Museums &amp; Attractions</div><p class="sub">Top sights</p></a>
+            <a class="cat" href="#/maps/parks"><div class="ico" aria-hidden="true">🌲</div><div class="ttl">Parks &amp; Viewpoints</div><p class="sub">Walks + lookouts</p></a>
+            <a class="cat" href="#/maps/events"><div class="ico" aria-hidden="true">🎟️</div><div class="ttl">Events &amp; Festivals</div><p class="sub">What’s on during the visit</p></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MAPS SUBPAGES -->
+  <section id="view-maps-restaurants" class="view" aria-labelledby="maps-restaurants-title">
+    <a class="back" href="#/maps">← Back to Maps</a>
+    <div class="section">
+      <header id="maps-restaurants-title">Restaurants — St. John’s, NL</header>
+      <div class="list" id="restaurants-list"></div>
+    </div>
+  </section>
+
+  <section id="view-maps-bars" class="view" aria-labelledby="maps-bars-title">
+    <a class="back" href="#/maps">← Back to Maps</a>
+    <div class="section">
+      <header id="maps-bars-title">Bars &amp; Breweries — St. John’s, NL</header>
+      <div class="list" id="bars-list"></div>
+    </div>
+  </section>
+
+  <section id="view-maps-groceries" class="view" aria-labelledby="maps-groceries-title">
+    <a class="back" href="#/maps">← Back to Maps</a>
+    <div class="section">
+      <header id="maps-groceries-title">Groceries &amp; Convenience — St. John’s, NL</header>
+      <div class="list" id="groceries-list"></div>
+    </div>
+  </section>
+
+  <section id="view-maps-atms" class="view" aria-labelledby="maps-atms-title">
+    <a class="back" href="#/maps">← Back to Maps</a>
+    <div class="section">
+      <header id="maps-atms-title">ATMs &amp; Banks — St. John’s, NL</header>
+      <div class="list" id="atms-list"></div>
+    </div>
+  </section>
+
+  <section id="view-maps-transit" class="view" aria-labelledby="maps-transit-title">
+    <a class="back" href="#/maps">← Back to Maps</a>
+    <div class="section">
+      <header id="maps-transit-title">Transit — St. John’s, NL</header>
+      <div class="list" id="transit-list"></div>
+    </div>
+  </section>
+
+  <section id="view-maps-attractions" class="view" aria-labelledby="maps-attractions-title">
+    <a class="back" href="#/maps">← Back to Maps</a>
+    <div class="section">
+      <header id="maps-attractions-title">Museums &amp; Attractions — St. John’s, NL</header>
+      <div class="list" id="attractions-list"></div>
+    </div>
+  </section>
+
+  <section id="view-maps-parks" class="view" aria-labelledby="maps-parks-title">
+    <a class="back" href="#/maps">← Back to Maps</a>
+    <div class="section">
+      <header id="maps-parks-title">Parks &amp; Viewpoints — St. John’s, NL</header>
+      <div class="list" id="parks-list"></div>
+    </div>
+  </section>
+
+  <section id="view-maps-events" class="view" aria-labelledby="maps-events-title">
+    <a class="back" href="#/maps">← Back to Maps</a>
+    <div class="section">
+      <header id="maps-events-title">Events &amp; Festivals — Feb 11–14, 2026</header>
+      <div class="list" id="events-list"></div>
+    </div>
+  </section>
+
+  <!-- SAFETY / LOCAL INFO -->
+  <section id="view-safety" class="view" aria-labelledby="safety-title">
+    <a class="back" href="#/">← Back</a>
+    <div class="section">
+      <header id="safety-title">Local Info &amp; Safety — St. John’s, NL</header>
+      <div class="list">
+        <div class="card">
+          <strong>Quick Tips</strong>
+          <ul class="small" style="margin:0 0 0 1rem">
+            <li>Downtown is walkable but hilly; winter conditions can be icy—use footwear with traction.</li>
+            <li>Wind and fog can change quickly near the waterfront; bring a waterproof outer layer.</li>
+            <li>Use standard buddy-system habits at night; keep valuables secured.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>Weather</strong>
+          <p class="muted small" style="margin:0">Brief forecast appears in <em>Schedule &amp; Leave</em>. For full details:</p>
+          <div class="actions">
+            <a class="btn" id="wx-ec" href="#" target="_blank" rel="noopener">Environment Canada</a>
+            <a class="btn" id="wx-twn" href="#" target="_blank" rel="noopener">The Weather Network</a>
+          </div>
+        </div>
+        <div class="card">
+          <strong>Areas to Avoid (general)</strong>
+          <p class="muted small" style="margin:0">No specific restrictions listed. Use normal caution late-night in entertainment districts and stay with the group.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap muted small">
+    <p style="margin:0">For awareness only. Do not publish future movements or ship location details.</p>
+  </div>
+</footer>
+
+<script>
+  const CONFIG = {
+    ship: { name: "HMCS Frédérick Rolette", crestUrl: "IMG_2434.PNG" },
+
+    port: {
+      city: "St. John’s, NL",
+      areaLabel: "Downtown / Port Area",
+      tz: "America/St_Johns",
+      halifaxTz: "America/Halifax",
+      portQuery: "St. John's Cruise Terminal Newfoundland",
+      wx: {
+        envCanadaUrl: "https://weather.gc.ca/en/location/index.html?coords=47.558%2C-52.717",
+        weatherNetworkUrl: "https://www.theweathernetwork.com/en/city/ca/newfoundland-and-labrador/st-johns/7-days"
+      }
+    },
+
+    visit: {
+      start: "2026-02-11",
+      end: "2026-02-14",
+      labels: {
+        "2026-02-11": "Arrive",
+        "2026-02-12": "Sunday routine",
+        "2026-02-13": "Sunday routine",
+        "2026-02-14": "Depart"
+      }
+    },
+
+    schedule: {
+      checkinWindow: "TBD",
+      checkinEmail: "frchecking@forces.gc.ca",
+      checkinPhone: "TBD",
+      // Leave rules: default 0700 next day; night before depart 2359.
+      // If briefed differently, override per-day below.
+      leaveOverrides: {
+        "2026-02-14": "N/A (Depart)"
+      },
+      // Optional brief per-day weather (placeholders by default)
+      weatherByDay: {
+        "2026-02-11": "TBD",
+        "2026-02-12": "TBD",
+        "2026-02-13": "TBD",
+        "2026-02-14": "TBD"
+      }
+    },
+
+    contacts: [
+      { role: "Quarterdeck / Brow", phone: "TBD" },
+      { role: "Duty Medical", phone: "TBD" },
+      { role: "Check-In", phone: "TBD", email: "frchecking@forces.gc.ca" }
+    ],
+
+    medical: {
+      sickParadeHours: "0800–0900 (typical)",
+      dutyPhone: "TBD",
+      medRoster: [],
+      hospitals: [
+        {
+          name: "Health Sciences Centre (ED)",
+          note: "Eastern Health",
+          phone: "(709) 777-6300",
+          gmap: "https://www.google.com/maps/search/Health%20Sciences%20Centre%20St.%20John's%20Emergency",
+          amap: "https://maps.apple.com/?q=Health%20Sciences%20Centre%20St.%20John's"
+        },
+        {
+          name: "St. Clare’s Mercy Hospital (ED)",
+          note: "Eastern Health",
+          phone: "(709) 777-5000",
+          gmap: "https://www.google.com/maps/search/St.%20Clare's%20Mercy%20Hospital%20St.%20John's%20Emergency",
+          amap: "https://maps.apple.com/?q=St.%20Clare's%20Mercy%20Hospital%20St.%20John's"
+        }
+      ]
+    },
+
+    maps: {
+      restaurants: [
+        { name: "The Duke of Duckworth", note: "Classic fish & chips (downtown)", website: "https://dukeofduckworth.com/", gmap: "https://www.google.com/maps/search/Duke%20of%20Duckworth%20St%20J[...]" },
+        { name: "YellowBelly Brewery & Public House", note: "Brewpub + food", website: "https://yellowbellybrewery.com/", gmap: "https://www.google.com/maps/search/YellowBelly%20Brewery%20St%20Jo[...]" },
+        { name: "The Merchant Tavern", note: "Popular downtown spot", website: "https://www.facebook.com/themerchanttavern/", gmap: "https://www.google.com/maps/search/The%20Merchant%20Tavern%20S[...]" },
+        { name: "More restaurants (map search)", note: "Search near the port area", website: "", gmap: "", amap: "" , searchQuery: "restaurants near St. John's Cruise Terminal"}
+      ],
+      bars: [
+        { name: "George Street (bar strip)", note: "Nightlife district", website: "", gmap: "https://www.google.com/maps/search/George%20Street%20St%20John's%20NL", amap: "https://maps.apple.com/[...]" },
+        { name: "Quidi Vidi Brewery", note: "Taproom + tours", website: "https://quidividibrewery.ca/", gmap: "https://www.google.com/maps/search/Quidi%20Vidi%20Brewery", amap: "https://maps.appl[...]" },
+        { name: "More bars (map search)", note: "Search near the port area", website: "", gmap: "", amap: "" , searchQuery: "bars near St. John's Cruise Terminal"}
+      ],
+      groceries: [
+        { name: "Groceries near the port (map search)", note: "Grocery + convenience stores", website: "", gmap: "", amap: "", searchQuery: "grocery store OR convenience store near St. John's Cru[...]" },
+        { name: "ATMs at major grocery chains (map search)", note: "Sometimes easiest cash access", website: "", gmap: "", amap: "", searchQuery: "Dominion Sobeys Colemans St. John's NL" }
+      ],
+      atms: [
+        { name: "Nearest ATM (map search)", note: "Search near the port area", website: "", gmap: "", amap: "", searchQuery: "ATM near St. John's Cruise Terminal" },
+        { name: "Bank branches (map search)", note: "RBC • TD • Scotiabank • BMO • CIBC", website: "", gmap: "", amap: "", searchQuery: "RBC TD Scotiabank BMO CIBC downtown St. John's NL"}
+      ],
+      transit: [
+        { name: "Metrobus (official)", note: "Routes, schedules, service bulletins", website: "https://metrobus.com/home/", gmap: "", amap: "" },
+        { name: "Metrobus Mobile (tracker)", note: "Real-time style view", website: "https://www.metrobusmobile.com/", gmap: "", amap: "" },
+        { name: "City page: Metrobus overview", note: "Accessibility + GoBus info", website: "https://www.stjohns.ca/en/streets-parking/metrobus.aspx", gmap: "", amap: "" }
+      ],
+      attractions: [
+        { name: "The Rooms", note: "Museum + gallery", website: "https://www.therooms.ca/", gmap: "https://www.google.com/maps/search/The%20Rooms%20St%20John's", amap: "https://maps.apple.com/?q=[...]" },
+        { name: "Signal Hill National Historic Site", note: "Iconic lookout + trails", website: "https://parks.canada.ca/lhn-nhs/nl/signalhill", gmap: "https://www.google.com/maps/search/Signal%2[...]", amap: "https://maps.apple.com/?q=Signal%20Hill"},
+        { name: "Johnson Geo Centre", note: "Science centre (Signal Hill)", website: "https://www.mun.ca/signalhill/johnson-geo-centre/", gmap: "https://www.google.com/maps/search/Johnson%20Geo%2[...]", amap: "" }
+      ],
+      parks: [
+        { name: "Bannerman Park", note: "Central park", website: "", gmap: "https://www.google.com/maps/search/Bannerman%20Park%20St%20John's", amap: "https://maps.apple.com/?q=Bannerman%20Park%2[...]" },
+        { name: "Quidi Vidi Lake", note: "Loop walk (weather permitting)", website: "", gmap: "https://www.google.com/maps/search/Quidi%20Vidi%20Lake", amap: "https://maps.apple.com/?q=Quidi%20Vi[...]" },
+        { name: "Cape Spear (National Historic Site)", note: "Most easterly point in Canada", website: "https://www.newfoundlandlabrador.com/plan-and-book/attractions/210583", gmap: "https://www.[...]", amap: "" }
+      ],
+      events: [
+        { name: "Chillfest (City of St. John’s)", note: "Feb 12–16 (winter celebration)", website: "https://www.stjohns.ca/en/recreation-culture/events-and-festivals.aspx", gmap: "", amap: "" },
+        { name: "Mary Brown’s Centre — events & tickets", note: "Sports + concerts (check Feb 11–14 listings)", website: "https://mbcentre.ca/events-and-tickets/", gmap: "https://www.google[...]")
