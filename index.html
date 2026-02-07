@@ -376,6 +376,43 @@ background-size: 24px 24px;
 height: 4px; border-radius: 4px; margin-bottom: 16px;
 background: linear-gradient(90deg, var(--coral), var(--gold), var(--green), var(--ocean), var(--plum));
 }
+
+/* ===== CROW'S NEST GALLERY ===== */
+.gallery-card {
+background: var(--white);
+border-radius: var(--radius);
+box-shadow: var(--shadow-sm);
+padding: 16px;
+margin-bottom: 16px;
+}
+.gallery-title {
+font-weight: 800;
+font-size: 1rem;
+margin-bottom: 10px;
+}
+.gallery-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+gap: 12px;
+}
+.gallery-item {
+background: var(--bg);
+border-radius: 14px;
+overflow: hidden;
+box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+}
+.gallery-item img {
+width: 100%;
+height: 150px;
+object-fit: cover;
+display: block;
+}
+.gallery-caption {
+padding: 8px 10px 10px;
+font-size: 0.75rem;
+font-weight: 700;
+color: var(--text-mid);
+}
 </style>
 
 </head>
@@ -925,6 +962,32 @@ background: linear-gradient(90deg, var(--coral), var(--gold), var(--green), var(
   <div class="page-title">The Crow's Nest</div>
   <div class="page-subtitle">National Historic Site · Est. 1942</div>
   <div class="color-bar"></div>
+
+  <div class="gallery-card">
+    <div class="gallery-title">Crow's Nest Views</div>
+    <div class="gallery-grid">
+      <figure class="gallery-item">
+        <img src="IMG_0524.jpeg" alt="Crow's Nest interior with memorabilia on the walls.">
+        <figcaption class="gallery-caption">Historic wall art</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="IMG_0525.jpeg" alt="Crow's Nest space with heritage artifacts and seating.">
+        <figcaption class="gallery-caption">Heritage lounge</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="IMG_0526.jpeg" alt="Crow's Nest details showing artifacts and memorabilia.">
+        <figcaption class="gallery-caption">Artifacts &amp; memorabilia</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="IMG_0527.jpeg" alt="Crow's Nest upper deck view overlooking the room.">
+        <figcaption class="gallery-caption">Upper deck view</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="IMG_0528.jpeg" alt="Crow's Nest interior showing wartime displays and seating.">
+        <figcaption class="gallery-caption">Wartime displays</figcaption>
+      </figure>
+    </div>
+  </div>
 
   <div class="card" style="margin-bottom:16px;">
     <div class="card-name" style="font-size:1.05rem; margin-bottom:6px;">A Living Museum of the Battle of the Atlantic</div>
