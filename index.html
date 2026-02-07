@@ -1,382 +1,1203 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="format-detection" content="telephone=no">
-<title>Port Visit — St. John’s, NL</title>
-<meta name="description" content="Mobile-first port visit info page (read-only).">
-<link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#ffffff">
+<title>St. John's Port Brief — Feb 13–16</title>
+<style>
+:root {
+  --bg: #f5f0eb;
+  --white: #ffffff;
+  --text: #1a1a2e;
+  --text-mid: #4a4a6a;
+  --text-light: #8888a4;
+  --border: #e8e2da;
+  --shadow-sm: 0 2px 8px rgba(30,30,60,0.06);
+  --shadow-md: 0 4px 20px rgba(30,30,60,0.08);
+  --shadow-lg: 0 8px 30px rgba(30,30,60,0.12);
+  --shadow-btn: 0 4px 14px rgba(30,30,60,0.15);
+  --radius: 18px;
+  --radius-sm: 12px;
+  --radius-xs: 8px;
+  /* Jellybean Row palette */
+  --coral: #FF6B6B;
+  --coral-soft: #fff0f0;
+  --teal: #20B2AA;
+  --teal-soft: #e6f7f6;
+  --gold: #F4A623;
+  --gold-soft: #fff6e6;
+  --plum: #9B59B6;
+  --plum-soft: #f5eef8;
+  --ocean: #3498DB;
+  --ocean-soft: #eaf3fb;
+  --green: #2ECC71;
+  --green-soft: #eafaf1;
+  --rose: #E91E63;
+  --rose-soft: #fce4ec;
+  --slate: #546E7A;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100dvh;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ===== HEADER ===== */
+.header {
+position: sticky; top: 0; z-index: 100;
+background: rgba(255,255,255,0.88);
+backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+border-bottom: 1px solid rgba(0,0,0,0.06);
+display: flex; align-items: center; justify-content: space-between;
+padding: 10px 16px;
+}
+.header-left { display: flex; align-items: center; gap: 10px; }
+.header-flag {
+width: 38px; height: 38px; border-radius: 12px;
+background: linear-gradient(135deg, var(--coral), var(--gold));
+display: flex; align-items: center; justify-content: center;
+font-size: 1.2rem; box-shadow: 0 2px 8px rgba(255,107,107,0.3);
+}
+.header-text {}
+.header-title {
+font-size: 1rem; font-weight: 800; letter-spacing: -0.03em;
+background: linear-gradient(135deg, var(--coral), var(--plum));
+-webkit-background-clip: text; -webkit-text-fill-color: transparent;
+background-clip: text;
+}
+.header-sub { font-size: 0.7rem; color: var(--text-light); font-weight: 600; letter-spacing: 0.02em; }
+.header-home {
+background: var(--white); border: 1.5px solid var(--border);
+color: var(--text); font-size: 0.8rem; font-weight: 700;
+padding: 8px 16px; border-radius: 20px; cursor: pointer;
+transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+box-shadow: var(--shadow-sm);
+}
+.header-home:active { transform: scale(0.92); box-shadow: none; }
+
+/* ===== PAGES ===== */
+.page { display: none; padding: 16px 16px 100px; }
+.page.active { display: block; animation: pageIn 0.35s cubic-bezier(0.34, 1.3, 0.64, 1); }
+@keyframes pageIn {
+from { opacity: 0; transform: translateY(12px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== BACK BUTTON ===== */
+.back-btn {
+display: inline-flex; align-items: center; gap: 6px;
+background: var(--white); border: 1.5px solid var(--border);
+color: var(--text-mid); font-size: 0.82rem; font-weight: 700;
+padding: 8px 16px; border-radius: 20px; cursor: pointer;
+margin-bottom: 16px; box-shadow: var(--shadow-sm);
+transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.back-btn::before { content: "‹"; font-size: 1.2rem; font-weight: 800; line-height: 1; margin-top: -1px; }
+.back-btn:active { transform: scale(0.92); }
+
+/* ===== PAGE TITLE ===== */
+.page-title {
+font-size: 1.6rem; font-weight: 900; letter-spacing: -0.04em;
+margin-bottom: 6px; line-height: 1.15;
+}
+.page-subtitle { font-size: 0.88rem; color: var(--text-light); font-weight: 500; margin-bottom: 20px; }
+
+/* ===== LANDING HERO ===== */
+.landing-hero { text-align: center; padding: 24px 0 8px; }
+.landing-emoji { font-size: 3rem; margin-bottom: 6px; display: block; animation: float 3s ease-in-out infinite; }
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+.landing-title {
+font-size: 1.8rem; font-weight: 900; letter-spacing: -0.04em;
+background: linear-gradient(135deg, var(--coral), var(--plum), var(--ocean));
+-webkit-background-clip: text; -webkit-text-fill-color: transparent;
+background-clip: text; line-height: 1.15; margin-bottom: 4px;
+}
+.landing-dates { font-size: 0.92rem; color: var(--text-light); font-weight: 600; margin-bottom: 28px; }
+
+/* ===== LANDING BUTTONS ===== */
+.landing-grid { display: flex; flex-direction: column; gap: 10px; }
+.landing-btn {
+display: flex; align-items: center; gap: 14px;
+width: 100%; padding: 16px 18px;
+background: var(--white);
+border: none; border-radius: var(--radius);
+color: var(--text); font-size: 1rem; font-weight: 700;
+cursor: pointer; text-align: left;
+box-shadow: var(--shadow-md);
+transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+position: relative; overflow: hidden;
+letter-spacing: -0.01em;
+}
+.landing-btn:active { transform: scale(0.96); box-shadow: var(--shadow-sm); }
+.landing-btn .icon-wrap {
+width: 44px; height: 44px; border-radius: 14px;
+display: flex; align-items: center; justify-content: center;
+font-size: 1.3rem; flex-shrink: 0;
+transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.landing-btn:active .icon-wrap { transform: scale(1.15) rotate(-4deg); }
+.landing-btn .btn-arrow {
+margin-left: auto; font-size: 1.1rem; color: var(--text-light);
+transition: transform 0.2s;
+}
+.landing-btn:active .btn-arrow { transform: translateX(3px); }
+/* Color coding per button */
+.lb-routine .icon-wrap { background: var(--ocean-soft); color: var(--ocean); }
+.lb-map .icon-wrap { background: var(--green-soft); color: var(--green); }
+.lb-todo .icon-wrap { background: var(--gold-soft); color: var(--gold); }
+.lb-food .icon-wrap { background: var(--coral-soft); color: var(--coral); }
+.lb-hotels .icon-wrap { background: var(--plum-soft); color: var(--plum); }
+.lb-safety .icon-wrap { background: var(--teal-soft); color: var(--teal); }
+.lb-contacts .icon-wrap { background: var(--ocean-soft); color: var(--ocean); }
+.lb-crow .icon-wrap { background: var(--rose-soft); color: var(--rose); }
+.lb-weather .icon-wrap { background: var(--ocean-soft); color: var(--ocean); }
+.lb-explore .icon-wrap { background: var(--green-soft); color: var(--green); }
+
+/* Staggered entrance */
+.landing-btn { opacity: 0; animation: staggerIn 0.4s cubic-bezier(0.34, 1.3, 0.64, 1) forwards; }
+.landing-btn:nth-child(1) { animation-delay: 0.04s; }
+.landing-btn:nth-child(2) { animation-delay: 0.08s; }
+.landing-btn:nth-child(3) { animation-delay: 0.12s; }
+.landing-btn:nth-child(4) { animation-delay: 0.16s; }
+.landing-btn:nth-child(5) { animation-delay: 0.2s; }
+.landing-btn:nth-child(6) { animation-delay: 0.24s; }
+.landing-btn:nth-child(7) { animation-delay: 0.28s; }
+.landing-btn:nth-child(8) { animation-delay: 0.32s; }
+@keyframes staggerIn {
+from { opacity: 0; transform: translateY(16px) scale(0.97); }
+to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ===== ACCORDION ===== */
+.accordion-item {
+background: var(--white); border-radius: var(--radius);
+margin-bottom: 8px; overflow: hidden;
+box-shadow: var(--shadow-sm);
+transition: box-shadow 0.2s;
+}
+.accordion-item.open { box-shadow: var(--shadow-md); }
+.accordion-trigger {
+width: 100%; padding: 16px 18px; background: transparent;
+border: none; color: var(--text); font-size: 0.95rem; font-weight: 700;
+text-align: left; cursor: pointer;
+display: flex; justify-content: space-between; align-items: center;
+transition: background 0.15s;
+letter-spacing: -0.01em;
+}
+.accordion-trigger:active { background: rgba(0,0,0,0.02); }
+.accordion-icon {
+width: 28px; height: 28px; border-radius: 50%;
+display: flex; align-items: center; justify-content: center;
+font-size: 1.1rem; font-weight: 700; color: var(--text-light);
+background: var(--bg);
+transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.accordion-item.open .accordion-icon {
+background: var(--coral); color: #fff;
+transform: rotate(45deg);
+}
+.accordion-body {
+padding: 0 18px; max-height: 0; overflow: hidden;
+transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.accordion-item.open .accordion-body { max-height: 1200px; padding: 0 18px 18px; }
+.accordion-body p, .accordion-body li { font-size: 0.9rem; color: var(--text-mid); line-height: 1.65; }
+.accordion-body ul { padding-left: 18px; }
+.accordion-body li { margin-bottom: 6px; }
+
+/* ===== MAP LOCATION BUTTONS ===== */
+.map-btns { display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px; }
+.map-btn {
+display: flex; align-items: center; gap: 12px;
+padding: 14px 16px; background: var(--white);
+border-radius: var(--radius); color: var(--text);
+font-weight: 700; font-size: 0.95rem; cursor: pointer;
+text-decoration: none; box-shadow: var(--shadow-sm);
+transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.map-btn:active { transform: scale(0.97); box-shadow: var(--shadow-lg); }
+.map-pin {
+width: 38px; height: 38px; border-radius: 12px;
+background: linear-gradient(135deg, var(--green), var(--teal));
+display: flex; align-items: center; justify-content: center;
+font-size: 1rem; color: #fff; flex-shrink: 0;
+box-shadow: 0 3px 10px rgba(46,204,113,0.3);
+}
+.map-btn .chevron { margin-left: auto; color: var(--text-light); font-size: 1.1rem; }
+
+/* ===== FILTER CHIPS ===== */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.chip {
+padding: 8px 16px; border-radius: 20px;
+background: var(--white); border: 1.5px solid var(--border);
+color: var(--text-mid); font-size: 0.8rem; font-weight: 700;
+cursor: pointer;
+transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+user-select: none; box-shadow: var(--shadow-sm);
+}
+.chip:active { transform: scale(0.93); }
+.chip.active {
+background: linear-gradient(135deg, var(--coral), var(--gold));
+color: #fff; border-color: transparent;
+box-shadow: 0 3px 12px rgba(255,107,107,0.3);
+}
+
+/* ===== CARDS ===== */
+.card {
+background: var(--white); border-radius: var(--radius);
+padding: 16px 18px; margin-bottom: 10px;
+box-shadow: var(--shadow-sm);
+transition: all 0.2s;
+}
+.card-name { font-weight: 800; font-size: 1rem; margin-bottom: 2px; letter-spacing: -0.02em; }
+.card-note { font-size: 0.84rem; color: var(--text-light); margin-bottom: 10px; line-height: 1.45; }
+.price-badge {
+display: inline-block; font-size: 0.72rem; font-weight: 800; color: var(--green);
+background: var(--green-soft); padding: 2px 8px; border-radius: 6px; letter-spacing: 0.02em;
+white-space: nowrap; flex-shrink: 0;
+}
+.card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+.card-tag {
+font-size: 0.7rem; font-weight: 700; padding: 3px 10px;
+border-radius: 10px; background: var(--bg); color: var(--text-light);
+letter-spacing: 0.01em;
+}
+
+/* ===== ACTION BUTTONS ===== */
+.card-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn-sm {
+display: inline-flex; align-items: center; gap: 5px;
+padding: 9px 16px; border-radius: 12px;
+font-size: 0.8rem; font-weight: 700; cursor: pointer;
+border: none; text-decoration: none;
+transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+box-shadow: var(--shadow-sm);
+}
+.btn-sm:active { transform: scale(0.93); }
+.btn-map { background: var(--green-soft); color: #1a9660; }
+.btn-map:active { box-shadow: 0 3px 12px rgba(46,204,113,0.25); }
+.btn-web { background: var(--ocean-soft); color: #2074a8; }
+.btn-web:active { box-shadow: 0 3px 12px rgba(52,152,219,0.25); }
+.btn-call {
+background: linear-gradient(135deg, var(--coral), #ff8a80);
+color: #fff;
+box-shadow: 0 3px 12px rgba(255,107,107,0.3);
+}
+.btn-call:active { box-shadow: 0 2px 6px rgba(255,107,107,0.2); }
+.btn-text { background: var(--gold-soft); color: #c07b00; }
+
+/* ===== TABS ===== */
+.tabs {
+display: flex; gap: 4px; margin-bottom: 16px;
+background: var(--white); padding: 4px; border-radius: 16px;
+box-shadow: var(--shadow-sm);
+}
+.tab {
+flex: 1; padding: 10px 6px; text-align: center;
+background: transparent; border: none; border-radius: 12px;
+color: var(--text-light); font-size: 0.82rem; font-weight: 700;
+cursor: pointer; transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.tab.active {
+background: linear-gradient(135deg, var(--coral), var(--gold));
+color: #fff;
+box-shadow: 0 2px 10px rgba(255,107,107,0.25);
+}
+.tab:active { transform: scale(0.95); }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ===== SEARCH ===== */
+.search-input {
+width: 100%; padding: 13px 16px; border-radius: 14px;
+background: var(--white); border: 1.5px solid var(--border);
+color: var(--text); font-size: 0.92rem; font-weight: 500;
+margin-bottom: 14px; outline: none;
+box-shadow: var(--shadow-sm);
+transition: border-color 0.2s, box-shadow 0.2s;
+}
+.search-input::placeholder { color: var(--text-light); }
+.search-input:focus { border-color: var(--coral); box-shadow: 0 0 0 3px rgba(255,107,107,0.12); }
+
+/* ===== EMERGENCY ===== */
+.emergency-box {
+display: flex; align-items: center; justify-content: center; gap: 10px;
+background: linear-gradient(135deg, var(--coral), #ff4757);
+color: #fff; font-weight: 800; font-size: 1.1rem;
+padding: 18px; border-radius: var(--radius);
+margin-bottom: 16px; text-decoration: none;
+box-shadow: 0 4px 16px rgba(255,71,87,0.3);
+transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.emergency-box:active { transform: scale(0.97); }
+
+/* ===== CONTACT CARD ===== */
+.contact-card {
+background: var(--white); border-radius: var(--radius);
+padding: 18px; margin-bottom: 10px;
+box-shadow: var(--shadow-sm);
+}
+.contact-label { font-weight: 800; font-size: 1rem; margin-bottom: 4px; letter-spacing: -0.02em; }
+.contact-sub { font-size: 0.82rem; color: var(--text-light); margin-bottom: 12px; }
+.contact-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* ===== SECTION HEADER ===== */
+.section-header {
+font-size: 0.75rem; font-weight: 800; color: var(--text-light);
+text-transform: uppercase; letter-spacing: 0.1em;
+margin: 22px 0 10px; padding-left: 2px;
+}
+
+/* ===== PLACEHOLDER BLOCKS ===== */
+.placeholder-text { color: var(--text-light); font-style: italic; font-size: 0.9rem; line-height: 1.6; }
+.placeholder-block {
+background: var(--white); border: 2px dashed var(--border);
+border-radius: var(--radius); padding: 16px 18px; margin-bottom: 10px;
+}
+
+/* ===== DECORATIVE DOT PATTERN ===== */
+.dot-pattern {
+position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+pointer-events: none; z-index: -1; opacity: 0.35;
+background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
+background-size: 24px 24px;
+}
+
+/* ===== COLOR BAR on pages ===== */
+.color-bar {
+height: 4px; border-radius: 4px; margin-bottom: 16px;
+background: linear-gradient(90deg, var(--coral), var(--gold), var(--green), var(--ocean), var(--plum));
+}
+</style>
+
 </head>
 <body>
 
-<header class="site-header">
-  <div class="wrap">
-    <div class="shipline">
-      <picture>
-        <source type="image/webp" srcset="assets/IMG_2434-480.webp 480w, assets/IMG_2434-800.webp 800w, assets/IMG_2434-1200.webp 1200w" sizes="68px">
-        <img id="ship-crest" class="crest" alt="Ship crest" src="IMG_2434.PNG" loading="lazy" width="68" height="68" />
-      </picture>
-      <div>
-        <div id="ship-name" class="ship-name">HMCS Frédérick Rolette</div>
-        <div class="muted small" id="ship-sub">Port Visit Info</div>
-      </div>
-    </div>
+<div class="dot-pattern"></div>
 
-    <h1 id="port-title">Port Visit — St. John’s, NL</h1>
+<!-- HEADER -->
 
-    <div class="meta" aria-label="Visit details">
-      <div class="pill">📍 <span id="port-area">Downtown / Port Area</span></div>
-      <div class="pill">📅 <span>Visit:</span> <strong id="visit-range">Feb 11–14, 2026</strong></div>
-      <div class="pill">🕒 <span>Local (<span id="tz-abbr">—</span>):</span> <strong id="local-time">—:—</strong></div>
-      <div class="pill">🕒 <span>Halifax (<span id="hx-abbr">—</span>):</span> <strong id="hx-time">—:—</strong></div>
+<div class="header">
+  <div class="header-left">
+    <div class="header-flag">⚓</div>
+    <div class="header-text">
+      <div class="header-title">St. John's Port Brief</div>
+      <div class="header-sub">Feb 13 – 16 · Newfoundland</div>
     </div>
   </div>
-</header>
+  <button class="header-home" onclick="nav('landing')">🏠 Home</button>
+</div>
 
-<main class="wrap">
+<!-- ===== LANDING ===== -->
 
-  <!-- HOME -->
-  <section id="view-home" class="view active" aria-labelledby="home-title">
-    <h2 id="home-title" style="position:absolute;left:-9999px">Landing</h2>
-    <div class="grid">
-      <a class="tile tile-green" href="#/schedule">
-        <div class="tile-emoji" aria-hidden="true">🕒</div>
-        <div><h2>Schedule &amp; Leave</h2><p class="muted small">Daily plan, leave expiry, weather</p></div>
-      </a>
-      <a class="tile tile-blue" href="#/contacts">
-        <div class="tile-emoji" aria-hidden="true">📞</div>
-        <div><h2>Duty Contacts</h2><p class="muted small">Quarterdeck • Duty Medical • Check-in</p></div>
-      </a>
-      <a class="tile tile-red" href="#/medical">
-        <div class="tile-emoji" aria-hidden="true">🚑</div>
-        <div><h2>Medical &amp; Emergency</h2><p class="muted small">Sick parade • hospitals • 911</p></div>
-      </a>
-      <a class="tile tile-purple" href="#/maps">
-        <div class="tile-emoji" aria-hidden="true">🗺️</div>
-        <div><h2>Maps &amp; Local Info</h2><p class="muted small">Food • groceries • transit • ATMs • events</p></div>
-      </a>
-      <a class="tile tile-teal" href="#/safety">
-        <div class="tile-emoji" aria-hidden="true">ℹ️</div>
-        <div><h2>Local Info &amp; Safety</h2><p class="muted small">Quick tips, weather, areas to avoid</p></div>
-      </a>
-    </div>
-  </section>
-
-  <!-- SCHEDULE -->
-  <section id="view-schedule" class="view" aria-labelledby="schedule-title">
-    <a class="back" href="#/">← Back</a>
-    <div class="section">
-      <header id="schedule-title">Schedule &amp; Leave — St. John’s, NL</header>
-      <div class="list">
-        <div class="card">
-          <strong>Port Schedule</strong>
-          <div id="schedule-days" class="list" style="padding:0;gap:10px"></div>
-          <p class="muted small">Leave expiry defaults are placeholders; adjust before publish if briefed differently.</p>
-        </div>
-        <div class="card">
-          <strong>Check-In</strong>
-          <div class="kv">
-            <div class="muted">Window</div><div id="checkin-window">TBD</div>
-            <div class="muted">Email</div><div><a id="checkin-email" href="#" class="btn" style="padding:8px 12px;min-height:auto" aria-disabled="true">TBD</a></div>
-            <div class="muted">Phone</div><div><a id="checkin-phone" href="#" class="btn" style="padding:8px 12px;min-height:auto" aria-disabled="true">TBD</a></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACTS -->
-  <section id="view-contacts" class="view" aria-labelledby="contacts-title">
-    <a class="back" href="#/">← Back</a>
-    <div class="section">
-      <header id="contacts-title">Duty Contacts — St. John’s, NL</header>
-      <div class="list" id="contacts-list"></div>
-      <div class="list" style="padding-top:0">
-        <div class="card">
-          <strong>Note</strong>
-          <p class="muted small" style="margin:0">Numbers can change per port (local phones). This page is read-only; updates happen by republishing.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MEDICAL -->
-  <section id="view-medical" class="view" aria-labelledby="medical-title">
-    <a class="back" href="#/">← Back</a>
-    <div class="section">
-      <header id="medical-title">Medical &amp; Emergency — St. John’s, NL</header>
-      <div class="list">
-        <div class="card">
-          <strong>Sick Parade Hours</strong>
-          <div class="kv"><div class="muted">Hours</div><div id="sick-hours">0800–0900 (typical)</div></div>
-        </div>
-        <div class="card">
-          <strong>Duty Medical (on-call)</strong>
-          <div class="actions">
-            <a class="btn" id="med-call" href="#" aria-disabled="true">Call (TBD)</a>
-            <a class="btn" id="med-sms" href="#" aria-disabled="true">Text (TBD)</a>
-          </div>
-          <p class="muted small" style="margin:0">Role per day (example): PA / Paramedic — set before publish.</p>
-          <div id="med-roster" class="small muted">Roster: TBD</div>
-        </div>
-        <div class="card">
-          <strong>Nearest Hospitals (links)</strong>
-          <p class="muted small" style="margin:0">Opens maps. Confirm best destination on arrival.</p>
-          <div class="list" id="hospitals-list" style="padding:0"></div>
-        </div>
-        <div class="card">
-          <strong>Local Emergency</strong>
-          <div class="kv"><div class="muted">Emergency</div><div><a class="btn" style="padding:8px 12px;min-height:auto" href="tel:911">911 (Canada)</a></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MAPS MAIN -->
-  <section id="view-maps" class="view" aria-labelledby="maps-title">
-    <a class="back" href="#/">← Back</a>
-    <div class="section">
-      <header id="maps-title">Maps &amp; Local Info — St. John’s, NL</header>
-      <div class="list">
-        <div class="card">
-          <strong>Port Area (public)</strong>
-          <div class="actions">
-            <a class="btn" id="port-gmap" href="#" target="_blank" rel="noopener">Google Maps</a>
-            <a class="btn" id="port-amap" href="#" target="_blank" rel="noopener">Apple Maps</a>
-          </div>
-          <p class="muted small" style="margin:0">No berth numbers or ship location.</p>
-        </div>
-
-        <div class="card">
-          <strong>Categories</strong>
-          <div class="cat-grid" aria-label="Local categories">
-            <a class="cat" href="#/maps/restaurants"><div class="ico" aria-hidden="true">🍽️</div><div class="ttl">Restaurants</div><p class="sub">Curated picks + map search</p></a>
-            <a class="cat" href="#/maps/bars"><div class="ico" aria-hidden="true">🍻</div><div class="ttl">Bars &amp; Breweries</div><p class="sub">Downtown nightlife</p></a>
-            <a class="cat" href="#/maps/groceries"><div class="ico" aria-hidden="true">🛒</div><div class="ttl">Groceries &amp; Convenience</div><p class="sub">Basics near the port</p></a>
-            <a class="cat" href="#/maps/atms"><div class="ico" aria-hidden="true">🏦</div><div class="ttl">ATMs &amp; Banks</div><p class="sub">Cash + branches</p></a>
-            <a class="cat" href="#/maps/transit"><div class="ico" aria-hidden="true">🚌</div><div class="ttl">Transit</div><p class="sub">Metrobus info</p></div></a>
-            <a class="cat" href="#/maps/attractions"><div class="ico" aria-hidden="true">🏛️</div><div class="ttl">Museums &amp; Attractions</div><p class="sub">Top sights</p></a>
-            <a class="cat" href="#/maps/parks"><div class="ico" aria-hidden="true">🌲</div><div class="ttl">Parks &amp; Viewpoints</div><p class="sub">Walks + lookouts</p></a>
-            <a class="cat" href="#/maps/events"><div class="ico" aria-hidden="true">🎟️</div><div class="ttl">Events &amp; Festivals</div><p class="sub">What’s on during the visit</p></a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- MAPS SUBPAGES -->
-  <section id="view-maps-restaurants" class="view" aria-labelledby="maps-restaurants-title">
-    <a class="back" href="#/maps">← Back to Maps</a>
-    <div class="section">
-      <header id="maps-restaurants-title">Restaurants — St. John’s, NL</header>
-      <div class="list" id="restaurants-list"></div>
-    </div>
-  </section>
-
-  <section id="view-maps-bars" class="view" aria-labelledby="maps-bars-title">
-    <a class="back" href="#/maps">← Back to Maps</a>
-    <div class="section">
-      <header id="maps-bars-title">Bars &amp; Breweries — St. John’s, NL</header>
-      <div class="list" id="bars-list"></div>
-    </div>
-  </section>
-
-  <section id="view-maps-groceries" class="view" aria-labelledby="maps-groceries-title">
-    <a class="back" href="#/maps">← Back to Maps</a>
-    <div class="section">
-      <header id="maps-groceries-title">Groceries &amp; Convenience — St. John’s, NL</header>
-      <div class="list" id="groceries-list"></div>
-    </div>
-  </section>
-
-  <section id="view-maps-atms" class="view" aria-labelledby="maps-atms-title">
-    <a class="back" href="#/maps">← Back to Maps</a>
-    <div class="section">
-      <header id="maps-atms-title">ATMs &amp; Banks — St. John’s, NL</header>
-      <div class="list" id="atms-list"></div>
-    </div>
-  </section>
-
-  <section id="view-maps-transit" class="view" aria-labelledby="maps-transit-title">
-    <a class="back" href="#/maps">← Back to Maps</a>
-    <div class="section">
-      <header id="maps-transit-title">Transit — St. John’s, NL</header>
-      <div class="list" id="transit-list"></div>
-    </div>
-  </section>
-
-  <section id="view-maps-attractions" class="view" aria-labelledby="maps-attractions-title">
-    <a class="back" href="#/maps">← Back to Maps</a>
-    <div class="section">
-      <header id="maps-attractions-title">Museums &amp; Attractions — St. John’s, NL</header>
-      <div class="list" id="attractions-list"></div>
-    </div>
-  </section>
-
-  <section id="view-maps-parks" class="view" aria-labelledby="maps-parks-title">
-    <a class="back" href="#/maps">← Back to Maps</a>
-    <div class="section">
-      <header id="maps-parks-title">Parks &amp; Viewpoints — St. John’s, NL</header>
-      <div class="list" id="parks-list"></div>
-    </div>
-  </section>
-
-  <section id="view-maps-events" class="view" aria-labelledby="maps-events-title">
-    <a class="back" href="#/maps">← Back to Maps</a>
-    <div class="section">
-      <header id="maps-events-title">Events &amp; Festivals — Feb 11–14, 2026</header>
-      <div class="list" id="events-list"></div>
-    </div>
-  </section>
-
-  <!-- SAFETY / LOCAL INFO -->
-  <section id="view-safety" class="view" aria-labelledby="safety-title">
-    <a class="back" href="#/">← Back</a>
-    <div class="section">
-      <header id="safety-title">Local Info &amp; Safety — St. John’s, NL</header>
-      <div class="list">
-        <div class="card">
-          <strong>Quick Tips</strong>
-          <ul class="small" style="margin:0 0 0 1rem">
-            <li>Downtown is walkable but hilly; winter conditions can be icy—use footwear with traction.</li>
-            <li>Wind and fog can change quickly near the waterfront; bring a waterproof outer layer.</li>
-            <li>Use standard buddy-system habits at night; keep valuables secured.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <strong>Weather</strong>
-          <p class="muted small" style="margin:0">Brief forecast appears in <em>Schedule &amp; Leave</em>. For full details:</p>
-          <div class="actions">
-            <a class="btn" id="wx-ec" href="#" target="_blank" rel="noopener">Environment Canada</a>
-            <a class="btn" id="wx-twn" href="#" target="_blank" rel="noopener">The Weather Network</a>
-          </div>
-        </div>
-        <div class="card">
-          <strong>Areas to Avoid (general)</strong>
-          <p class="muted small" style="margin:0">No specific restrictions listed. Use normal caution late-night in entertainment districts and stay with the group.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="wrap muted small">
-    <p style="margin:0">For awareness only. Do not publish future movements or ship location details.</p>
+<div id="landing" class="page active">
+  <div class="landing-hero">
+    <span class="landing-emoji">🏔️</span>
+    <div class="landing-title">Welcome to<br>St. John's</div>
+    <div class="landing-dates">Feb 13 – 16 &nbsp;·&nbsp; Newfoundland &amp; Labrador</div>
   </div>
-</footer>
+  <div class="landing-grid">
+    <button class="landing-btn lb-routine" onclick="nav('routine')">
+      <span class="icon-wrap">⚓</span>
+      <span>Ship Routine &amp; Leave</span>
+      <span class="btn-arrow">›</span>
+    </button>
+    <button class="landing-btn lb-map" onclick="nav('explore')">
+      <span class="icon-wrap">🧭</span>
+      <span>Explore St. John's</span>
+      <span class="btn-arrow">›</span>
+    </button>
+    <button class="landing-btn lb-hotels" onclick="nav('hotels')">
+      <span class="icon-wrap">🏨</span>
+      <span>Hotels</span>
+      <span class="btn-arrow">›</span>
+    </button>
+    <button class="landing-btn lb-todo" onclick="nav('weather')">
+      <span class="icon-wrap">🌨️</span>
+      <span>Weather</span>
+      <span class="btn-arrow">›</span>
+    </button>
+    <button class="landing-btn lb-safety" onclick="nav('safety')">
+      <span class="icon-wrap">🛡️</span>
+      <span>Safety</span>
+      <span class="btn-arrow">›</span>
+    </button>
+    <button class="landing-btn lb-contacts" onclick="nav('contacts')">
+      <span class="icon-wrap">📞</span>
+      <span>Contacts</span>
+      <span class="btn-arrow">›</span>
+    </button>
+    <button class="landing-btn lb-crow" onclick="nav('crowsnest')">
+      <span class="icon-wrap">🪶</span>
+      <span>Crow's Nest</span>
+      <span class="btn-arrow">›</span>
+    </button>
+  </div>
+</div>
+
+<!-- ===== PAGE 1: SHIP ROUTINE & LEAVE ===== -->
+
+<div id="routine" class="page">
+  <button class="back-btn" onclick="nav('landing')">Home</button>
+  <div class="page-title">Ship Routine &amp; Leave</div>
+  <div class="page-subtitle">Port of St. John's · Feb 13–16</div>
+  <div class="color-bar"></div>
+
+  <div class="accordion-item" data-group="routine">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">Port Window <span class="accordion-icon">+</span></button>
+    <div class="accordion-body"><p>Feb 13–16 (St. John's, NL)</p></div>
+  </div>
+  <div class="accordion-item" data-group="routine">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">Daily Routine <span class="accordion-icon">+</span></button>
+    <div class="accordion-body"><p>Per Routine Orders.</p></div>
+  </div>
+  <div class="accordion-item" data-group="routine">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">Leave <span class="accordion-icon">+</span></button>
+    <div class="accordion-body"><p>Per Routine Orders.</p></div>
+  </div>
+  <div class="accordion-item" data-group="routine">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">Overnight Leave <span class="accordion-icon">+</span></button>
+    <div class="accordion-body">
+      <ul>
+        <li>Have your hotel name, address, and phone number ready before requesting leave.</li>
+        <li>Provide a contact number where you can be reached at all times.</li>
+        <li>Know your leave expiry time and plan return travel accordingly.</li>
+        <li>If your plans change, inform the ship per routine as soon as possible.</li>
+        <li>Keep your military ID and leave pass on your person.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== EXPLORE HUB ===== -->
+
+<div id="explore" class="page">
+  <button class="back-btn" onclick="nav('landing')">Home</button>
+  <div class="page-title">Explore St. John's</div>
+  <div class="page-subtitle">Get around, get out, get fed</div>
+  <div class="color-bar"></div>
+  <div class="landing-grid">
+    <button class="landing-btn lb-map" onclick="nav('map')">
+      <span class="icon-wrap">🗺️</span>
+      <span>Map &amp; Getting Around</span>
+      <span class="btn-arrow">›</span>
+    </button>
+    <button class="landing-btn lb-todo" onclick="nav('todo')">
+      <span class="icon-wrap">🎯</span>
+      <span>Things To Do</span>
+      <span class="btn-arrow">›</span>
+    </button>
+    <button class="landing-btn lb-food" onclick="nav('food')">
+      <span class="icon-wrap">🍽️</span>
+      <span>Food, Coffee &amp; Bars</span>
+      <span class="btn-arrow">›</span>
+    </button>
+  </div>
+</div>
+
+<!-- ===== WEATHER ===== -->
+
+<div id="weather" class="page">
+  <button class="back-btn" onclick="nav('landing')">Home</button>
+  <div class="page-title">Weather</div>
+  <div class="page-subtitle">St. John's · Feb 13–16</div>
+  <div class="color-bar"></div>
+
+  <div class="card" style="margin-bottom:10px; padding:14px 16px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+      <span style="font-size:1.6rem;">⚠️</span>
+      <div style="font-size:0.82rem;color:var(--text-mid);line-height:1.5;">
+        <strong>Snapshot forecast only.</strong> St. John's weather changes fast — always check a live source before heading out.
+      </div>
+    </div>
+  </div>
+
+  <div class="section-header">4-Day Forecast (as of Feb 7)</div>
+
+  <div class="card" style="margin-bottom:8px;">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span style="font-size:1.8rem;">🌨️</span>
+      <div style="flex:1;">
+        <div class="card-name">Fri, Feb 13</div>
+        <div class="card-note" style="margin-bottom:0;">Light snow late · Overcast</div>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-size:1.2rem;font-weight:800;color:var(--ocean);">1°</div>
+        <div style="font-size:0.78rem;color:var(--text-light);">-3° low</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:16px;margin-top:8px;font-size:0.78rem;color:var(--text-light);">
+      <span>💨 24 km/h</span><span>💧 88%</span><span>❄️ 22% chance</span><span>🌅 7:09 AM</span><span>🌇 5:21 PM</span>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:8px;">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span style="font-size:1.8rem;">🌨️</span>
+      <div style="flex:1;">
+        <div class="card-name">Sat, Feb 14</div>
+        <div class="card-note" style="margin-bottom:0;">Light snow late · Overcast</div>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-size:1.2rem;font-weight:800;color:var(--ocean);">-2°</div>
+        <div style="font-size:0.78rem;color:var(--text-light);">-4° low</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:16px;margin-top:8px;font-size:0.78rem;color:var(--text-light);">
+      <span>💨 21 km/h</span><span>💧 88%</span><span>❄️ 51% chance</span><span>🌅 7:07 AM</span><span>🌇 5:22 PM</span>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:8px;">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span style="font-size:1.8rem;">⛅</span>
+      <div style="flex:1;">
+        <div class="card-name">Sun, Feb 15</div>
+        <div class="card-note" style="margin-bottom:0;">Partly cloudy</div>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-size:1.2rem;font-weight:800;color:var(--ocean);">-2°</div>
+        <div style="font-size:0.78rem;color:var(--text-light);">-5° low</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:16px;margin-top:8px;font-size:0.78rem;color:var(--text-light);">
+      <span>💨 19 km/h</span><span>💧 83%</span><span>❄️ 47% chance</span><span>🌅 7:06 AM</span><span>🌇 5:24 PM</span>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:8px;">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span style="font-size:1.8rem;">🌤️</span>
+      <div style="flex:1;">
+        <div class="card-name">Mon, Feb 16</div>
+        <div class="card-note" style="margin-bottom:0;">Broken clouds</div>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-size:1.2rem;font-weight:800;color:var(--ocean);">-1°</div>
+        <div style="font-size:0.78rem;color:var(--text-light);">-7° low</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:16px;margin-top:8px;font-size:0.78rem;color:var(--text-light);">
+      <span>💨 13 km/h</span><span>💧 91%</span><span>❄️ 6% chance</span><span>🌅 7:04 AM</span><span>🌇 5:25 PM</span>
+    </div>
+  </div>
+
+  <div class="section-header">What to Expect</div>
+  <div class="card" style="margin-bottom:16px;">
+    <div class="card-note" style="color:var(--text-mid);line-height:1.7;margin-bottom:0;">
+      Expect temperatures around <strong>-1° to 1°C</strong> during the day, dropping to <strong>-4° to -7°C</strong> at night. Wind chill will make it feel significantly colder. Dress in warm, windproof layers. Sidewalks may be icy — wear boots with good traction. St. John's averages about 33 cm of snow in February, with roughly 18 snow days through the month. Weather can change rapidly — always check a live forecast.
+    </div>
+  </div>
+
+  <div class="section-header">Live Forecast Links</div>
+  <div class="map-btns">
+    <a class="map-btn" href="https://weather.gc.ca/en/location/index.html?coords=47.558,-52.717" target="_blank" rel="noopener">
+      <span class="map-pin" style="background:linear-gradient(135deg,var(--coral),var(--gold));">🍁</span> Environment Canada <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://www.accuweather.com/en/ca/st-johns/a1b/weather-forecast/49427" target="_blank" rel="noopener">
+      <span class="map-pin" style="background:linear-gradient(135deg,var(--ocean),var(--teal));">🌡️</span> AccuWeather <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://www.timeanddate.com/weather/canada/st-johns/ext" target="_blank" rel="noopener">
+      <span class="map-pin" style="background:linear-gradient(135deg,var(--plum),var(--ocean));">📅</span> 14-Day Forecast <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://weather.gc.ca/radar/index_e.html?id=WTP" target="_blank" rel="noopener">
+      <span class="map-pin" style="background:linear-gradient(135deg,var(--green),var(--teal));">📡</span> Weather Radar (NL) <span class="chevron">›</span>
+    </a>
+  </div>
+</div>
+
+<!-- ===== PAGE 2: MAP & GETTING AROUND ===== -->
+
+<div id="map" class="page">
+  <button class="back-btn" onclick="nav('explore')">Explore</button>
+  <div class="page-title">Map &amp; Getting Around</div>
+  <div class="page-subtitle">Tap to open in Google Maps</div>
+  <div class="color-bar"></div>
+
+  <div class="map-btns">
+    <a class="map-btn" href="https://www.google.com/maps/search/Downtown+St.+John's+NL" target="_blank" rel="noopener">
+      <span class="map-pin">📍</span> Downtown St. John's <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://www.google.com/maps/search/George+Street+St.+John's+NL" target="_blank" rel="noopener">
+      <span class="map-pin">🎶</span> George Street <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://www.google.com/maps/search/Signal+Hill+St.+John's+NL" target="_blank" rel="noopener">
+      <span class="map-pin">⛰️</span> Signal Hill <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://www.google.com/maps/search/The+Rooms+St.+John's+NL" target="_blank" rel="noopener">
+      <span class="map-pin">🏛️</span> The Rooms <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://www.google.com/maps/search/Cape+Spear+Newfoundland" target="_blank" rel="noopener">
+      <span class="map-pin">🌊</span> Cape Spear <span class="chevron">›</span>
+    </a>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">Transportation <span class="accordion-icon">+</span></button>
+    <div class="accordion-body">
+      <ul>
+        <li><strong>Rideshare:</strong> Uber is available in St. John's.</li>
+        <li><strong>Bus:</strong> Metrobus serves the St. John's metro area. Routes and schedules at metrobus.com.</li>
+        <li><strong>Walking / Tours:</strong> Downtown is compact and walkable. Walking tours of downtown and Signal Hill are popular.</li>
+      </ul>
+      <div style="margin-top:14px; font-weight:700; font-size:0.85rem; color:var(--text-mid); margin-bottom:8px;">🚕 Taxi Companies</div>
+      <div class="contact-card" style="margin-bottom:8px;">
+        <div class="contact-label">City Wide Taxi</div>
+        <div class="contact-sub">24/7 — Airport taxi provider</div>
+        <div class="contact-actions">
+          <a href="tel:+17097227777" class="btn-sm btn-call">📞 (709) 722-7777</a>
+        </div>
+      </div>
+      <div class="contact-card" style="margin-bottom:8px;">
+        <div class="contact-label">Jiffy Cabs</div>
+        <div class="contact-sub">24/7 — Largest fleet in St. John's</div>
+        <div class="contact-actions">
+          <a href="tel:+17097222222" class="btn-sm btn-call">📞 (709) 722-2222</a>
+        </div>
+      </div>
+      <div class="contact-card" style="margin-bottom:8px;">
+        <div class="contact-label">Bugden's Taxi</div>
+        <div class="contact-sub">24/7 — Also offers tours</div>
+        <div class="contact-actions">
+          <a href="tel:+17097224400" class="btn-sm btn-call">📞 (709) 722-4400</a>
+        </div>
+      </div>
+      <div class="contact-card" style="margin-bottom:8px;">
+        <div class="contact-label">Red &amp; Yellow Cabs</div>
+        <div class="contact-sub">24/7 — App available</div>
+        <div class="contact-actions">
+          <a href="tel:+17097266666" class="btn-sm btn-call">📞 (709) 726-6666</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PAGE 3: THINGS TO DO ===== -->
+
+<div id="todo" class="page">
+  <button class="back-btn" onclick="nav('explore')">Explore</button>
+  <div class="page-title">Things To Do</div>
+  <div class="page-subtitle">Filter by what you're feeling</div>
+  <div class="color-bar"></div>
+
+  <div class="chips" id="todo-chips"></div>
+  <div id="todo-list"></div>
+</div>
+
+<!-- ===== PAGE 4: FOOD, COFFEE & BARS ===== -->
+
+<div id="food" class="page">
+  <button class="back-btn" onclick="nav('explore')">Explore</button>
+  <div class="page-title">Food, Coffee &amp; Bars</div>
+  <div class="page-subtitle">Verified local picks</div>
+  <div class="color-bar"></div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('food','tab-food',this)">🍴 Food</button>
+    <button class="tab" onclick="switchTab('food','tab-coffee',this)">☕ Coffee</button>
+    <button class="tab" onclick="switchTab('food','tab-bars',this)">🍺 Bars</button>
+    <button class="tab" onclick="switchTab('food','tab-brew',this)">🍻 Brew</button>
+  </div>
+
+  <div id="tab-food" class="tab-panel active">
+    <input type="text" class="search-input" placeholder="Search restaurants…" oninput="filterVenues('tab-food',this.value)">
+    <div class="venue-list"></div>
+  </div>
+  <div id="tab-coffee" class="tab-panel">
+    <input type="text" class="search-input" placeholder="Search coffee shops…" oninput="filterVenues('tab-coffee',this.value)">
+    <div class="venue-list"></div>
+  </div>
+  <div id="tab-bars" class="tab-panel">
+    <input type="text" class="search-input" placeholder="Search bars…" oninput="filterVenues('tab-bars',this.value)">
+    <div class="venue-list"></div>
+  </div>
+  <div id="tab-brew" class="tab-panel">
+    <input type="text" class="search-input" placeholder="Search breweries…" oninput="filterVenues('tab-brew',this.value)">
+    <div class="venue-list"></div>
+  </div>
+</div>
+
+<!-- ===== PAGE 5: HOTELS ===== -->
+
+<div id="hotels" class="page">
+  <button class="back-btn" onclick="nav('landing')">Home</button>
+  <div class="page-title">Hotels</div>
+  <div class="page-subtitle">Downtown St. John's area</div>
+  <div class="color-bar"></div>
+  <input type="text" class="search-input" placeholder="Search hotels…" oninput="filterHotels(this.value)">
+  <div id="hotel-list"></div>
+</div>
+
+<!-- ===== PAGE 6: SAFETY ===== -->
+
+<div id="safety" class="page">
+  <button class="back-btn" onclick="nav('landing')">Home</button>
+  <div class="page-title">Safety</div>
+  <div class="page-subtitle">Stay sharp, stay safe</div>
+  <div class="color-bar"></div>
+
+<a href="tel:911" class="emergency-box">🚨&nbsp; Emergency: 911  &rarr;</a>
+
+  <div class="accordion-item" data-group="safety">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">General <span class="accordion-icon">+</span></button>
+    <div class="accordion-body">
+      <ul>
+        <li>St. John's is generally safe — use common sense and stay aware.</li>
+        <li>Stick to well-lit, populated areas at night.</li>
+        <li>February weather changes fast: dress in warm layers and watch for ice.</li>
+        <li>Buddy system — especially at night.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="accordion-item" data-group="safety">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">Alcohol / Nights Out <span class="accordion-icon">+</span></button>
+    <div class="accordion-body">
+      <ul>
+        <li>George Street is the main strip — fun, but pace yourself.</li>
+        <li>Arrange your ride back before going out.</li>
+        <li>Look out for your shipmates.</li>
+        <li>Bars close at 3 AM on weekends.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="accordion-item" data-group="safety">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">ID / Valuables <span class="accordion-icon">+</span></button>
+    <div class="accordion-body">
+      <ul>
+        <li>Carry military ID and a second piece of government photo ID.</li>
+        <li>Don't carry more cash than you need.</li>
+        <li>Leave valuables secured aboard or in your hotel safe.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="accordion-item" data-group="safety">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">Emergencies <span class="accordion-icon">+</span></button>
+    <div class="accordion-body">
+      <ul>
+        <li>Call <strong>911</strong> for police, fire, or ambulance.</li>
+        <li>Nearest hospital: Health Sciences Centre, 300 Prince Philip Dr.</li>
+        <li>Non-emergency police: Royal Newfoundland Constabulary (RNC).</li>
+        <li>Inform the ship of any incidents as soon as practical.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PAGE 7: CONTACTS ===== -->
+
+<div id="contacts" class="page">
+  <button class="back-btn" onclick="nav('landing')">Home</button>
+  <div class="page-title">Contacts</div>
+  <div class="page-subtitle">Quick access</div>
+  <div class="color-bar"></div>
+  <div class="landing-grid">
+    <button class="landing-btn lb-routine" onclick="nav('contacts-ship')">
+      <span class="icon-wrap">⚓</span>
+      <span>Ship Contacts</span>
+      <span class="btn-arrow">›</span>
+    </button>
+    <button class="landing-btn lb-map" onclick="nav('contacts-local')">
+      <span class="icon-wrap">📍</span>
+      <span>Local Contacts</span>
+      <span class="btn-arrow">›</span>
+    </button>
+  </div>
+</div>
+
+<!-- SHIP CONTACTS -->
+
+<div id="contacts-ship" class="page">
+  <button class="back-btn" onclick="nav('contacts')">Contacts</button>
+  <div class="page-title">Ship Contacts</div>
+  <div class="page-subtitle">Placeholder numbers — update before sailing</div>
+  <div class="color-bar"></div>
+
+  <div class="contact-card">
+    <div class="contact-label">Brow</div>
+    <div class="contact-sub">+1-555-0100 (placeholder)</div>
+    <div class="contact-actions">
+      <a href="tel:+15550100" class="btn-sm btn-call">📞 Call</a>
+      <a href="sms:+15550100" class="btn-sm btn-text">💬 Text</a>
+    </div>
+  </div>
+  <div class="contact-card">
+    <div class="contact-label">Cox'n</div>
+    <div class="contact-sub">+1-555-0101 (placeholder)</div>
+    <div class="contact-actions">
+      <a href="tel:+15550101" class="btn-sm btn-call">📞 Call</a>
+      <a href="sms:+15550101" class="btn-sm btn-text">💬 Text</a>
+    </div>
+  </div>
+  <div class="contact-card">
+    <div class="contact-label">XO</div>
+    <div class="contact-sub">+1-555-0102 (placeholder)</div>
+    <div class="contact-actions">
+      <a href="tel:+15550102" class="btn-sm btn-call">📞 Call</a>
+      <a href="sms:+15550102" class="btn-sm btn-text">💬 Text</a>
+    </div>
+  </div>
+  <div class="contact-card">
+    <div class="contact-label">Duty Medical</div>
+    <div class="contact-sub">+1-555-0103 (placeholder)</div>
+    <div class="contact-actions">
+      <a href="tel:+15550103" class="btn-sm btn-call">📞 Call</a>
+      <a href="sms:+15550103" class="btn-sm btn-text">💬 Text</a>
+    </div>
+  </div>
+</div>
+
+<!-- LOCAL CONTACTS -->
+
+<div id="contacts-local" class="page">
+  <button class="back-btn" onclick="nav('contacts')">Contacts</button>
+  <div class="page-title">Local Contacts</div>
+  <div class="page-subtitle">St. John's, NL</div>
+  <div class="color-bar"></div>
+
+<a href="tel:911" class="emergency-box">🚨&nbsp; Emergency: 911  &rarr;</a>
+
+  <div class="contact-card">
+    <div class="contact-label">Health Sciences Centre</div>
+    <div class="contact-sub">300 Prince Philip Dr, St. John's, NL</div>
+    <div class="contact-actions">
+      <a href="tel:+17097776300" class="btn-sm btn-call">📞 Call</a>
+      <a href="https://www.google.com/maps/search/Health+Sciences+Centre+St.+John's+NL" target="_blank" rel="noopener" class="btn-sm btn-map">📍 Map</a>
+    </div>
+  </div>
+  <div class="contact-card">
+    <div class="contact-label">Police (Non-Emergency)</div>
+    <div class="contact-sub">Royal Newfoundland Constabulary</div>
+    <div class="contact-actions">
+      <a href="tel:+17097291212" class="btn-sm btn-call">📞 Call</a>
+      <a href="https://www.google.com/maps/search/Royal+Newfoundland+Constabulary+St.+John's" target="_blank" rel="noopener" class="btn-sm btn-map">📍 Map</a>
+    </div>
+  </div>
+  <div class="contact-card">
+    <div class="contact-label">Mental Health Crisis Line</div>
+    <div class="contact-sub">NL 24/7 Crisis Support</div>
+    <div class="contact-actions">
+      <a href="tel:+17097372583" class="btn-sm btn-call">📞 (709) 737-2583</a>
+    </div>
+  </div>
+  <div class="contact-card">
+    <div class="contact-label">Poison Control</div>
+    <div class="contact-sub">NL Poison Information Centre</div>
+    <div class="contact-actions">
+      <a href="tel:+17097224320" class="btn-sm btn-call">📞 (709) 722-4320</a>
+    </div>
+  </div>
+  <div class="contact-card">
+    <div class="contact-label">Canadian Coast Guard</div>
+    <div class="contact-sub">Marine emergencies</div>
+    <div class="contact-actions">
+      <a href="tel:+18002670780" class="btn-sm btn-call">📞 1-800-267-0780</a>
+    </div>
+  </div>
+  <div class="contact-card">
+    <div class="contact-label">City Wide Taxi</div>
+    <div class="contact-sub">24/7 cab service</div>
+    <div class="contact-actions">
+      <a href="tel:+17097227777" class="btn-sm btn-call">📞 (709) 722-7777</a>
+    </div>
+  </div>
+  <div class="contact-card">
+    <div class="contact-label">Jiffy Cabs</div>
+    <div class="contact-sub">24/7 cab service</div>
+    <div class="contact-actions">
+      <a href="tel:+17097222222" class="btn-sm btn-call">📞 (709) 722-2222</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PAGE 8: CROW'S NEST ===== -->
+
+<div id="crowsnest" class="page">
+  <button class="back-btn" onclick="nav('landing')">Home</button>
+  <div class="page-title">The Crow's Nest</div>
+  <div class="page-subtitle">National Historic Site · Est. 1942</div>
+  <div class="color-bar"></div>
+
+  <div class="card" style="margin-bottom:16px;">
+    <div class="card-name" style="font-size:1.05rem; margin-bottom:6px;">A Living Museum of the Battle of the Atlantic</div>
+    <div class="card-note" style="color:var(--text-mid); line-height:1.7; font-size:0.88rem;">
+      Perched on the third and fourth floors of a brick warehouse on Water Street — up a famous 59-step staircase — the Crow's Nest Officers' Club is one of the most remarkable military heritage sites in Canada. Designated a National Historic Site in 2011, it remains an active club and a living museum, virtually unchanged since the Second World War. Visitors, guests, and serving members are all welcome.
+    </div>
+  </div>
+
+  <div class="accordion-item" data-group="crow">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">Origins <span class="accordion-icon">+</span></button>
+    <div class="accordion-body">
+      <p>In 1942, at the height of the Battle of the Atlantic, St. John's was the home port of the Newfoundland Escort Force — the handover point for the critical supply convoys that kept Britain in the war. Thousands of Allied naval and merchant navy officers passed through the harbour, often exhausted after harrowing crossings under constant U-boat threat.</p>
+      <p style="margin-top:10px;">Captain Edward Rollo Mainguy, RCN, Captain (Destroyers) of the Newfoundland Escort Force, recognized that these officers needed somewhere ashore to decompress, build camaraderie, and develop the trust that would make them more effective at sea. On <strong>27 January 1942</strong>, he opened the <em>Seagoing Officers' Club</em> on the top floor of the Old Butler Building, a warehouse built after St. John's Great Fire of 1892.</p>
+      <p style="margin-top:10px;">The name "Crow's Nest" came naturally — climbing those 59 steep steps to the fourth floor, with its sweeping view of the harbour and the Narrows, felt exactly like ascending to a ship's crow's nest. Club lore also credits Lieutenant Colonel Pete Stevens, who reportedly took one look and declared it "a snug little crow's nest."
+      </p>
+    </div>
+  </div>
+
+  <div class="accordion-item" data-group="crow">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">The War Years (1942–1945) <span class="accordion-icon">+</span></button>
+    <div class="accordion-body">
+      <p>For the remainder of the war, the Crow's Nest served as a sanctuary for Allied officers from more than a dozen nations. Between convoy runs, they gathered around the fireplace, shared stories of victory and loss over a drink, and enjoyed a home-cooked meal — a rare comfort in wartime.</p>
+      <p style="margin-top:10px;">The walls themselves became a canvas. Sailors began leaving handwritten messages, drawings, and mementos wherever they could find space. Captain Mainguy eventually gave each ship's company four square feet of wall to decorate as they saw fit. Much of this original wartime art — including striking gunshield paintings — remains on the walls today, exactly where it was placed over eighty years ago.</p>
+      <p style="margin-top:10px;">These are not just decorations. For many of those young men, it was the last mark they left before heading out to sea, never knowing if they would return. The walls of the Crow's Nest are a quiet and powerful memorial to their courage.</p>
+    </div>
+  </div>
+
+  <div class="accordion-item" data-group="crow">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">The U-Boat Periscope <span class="accordion-icon">+</span></button>
+    <div class="accordion-body">
+      <p>The club's most striking artefact is a German U-boat periscope that rises through the ceiling of the main room and out through the roof. It is one of only eight known-to-exist U-boat periscopes in the world, and one of only two in North America.</p>
+      <p style="margin-top:10px;">The periscope belonged to <strong>U-190</strong>, a Type IXC/40 submarine. On 16 April 1945, U-190 torpedoed and sank HMCS <em>Esquimalt</em> in the approaches to Halifax harbour — the last RCN warship lost in the war. After Germany's surrender, U-190 was ordered to surface and sailed into Bay Bulls, Newfoundland, where she surrendered on 12 May 1945.</p>
+      <p style="margin-top:10px;">The periscope was salvaged and installed in the Crow's Nest, where it still provides a working view of St. John's Harbour and the Narrows — a fitting transformation from an instrument of war into a lookout over the peaceful harbour it once threatened.</p>
+    </div>
+  </div>
+
+  <div class="accordion-item" data-group="crow">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">After the War &amp; Today <span class="accordion-icon">+</span></button>
+    <div class="accordion-body">
+      <p>The Seagoing Officers' Club closed on 13 June 1945. But with thousands of Newfoundlanders returning from overseas, there was a strong desire to preserve the space. In June 1946, it reopened as the <strong>Crow's Nest Officers' Club</strong>, and has operated continuously ever since.</p>
+      <p style="margin-top:10px;">Over the decades, the club has evolved from an all-male, seagoing officers' club to a mixed-gender, tri-service, all-ranks club that also welcomes civilians. What has not changed is the atmosphere. Veterans who returned decades later said it looked exactly the same — the ultimate compliment.</p>
+      <p style="margin-top:10px;">The Crow's Nest Military Artifacts Association, a registered charity, conserves, preserves, and displays the hundreds of wartime artefacts. The club is recognized as a museum by the Museum Association of Newfoundland and Labrador and has received the Manning Award for Excellence in the Public Presentation of Historic Places.</p>
+      <p style="margin-top:10px;">It remains a place of pilgrimage. Visitors sometimes arrive because a father or grandfather served in Newfoundland during the war, and find something on the walls connected to their family story. These moments can be deeply moving.</p>
+    </div>
+  </div>
+
+  <div class="accordion-item" data-group="crow">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">Timeline <span class="accordion-icon">+</span></button>
+    <div class="accordion-body">
+      <ul>
+        <li><strong>1892</strong> — The Old Butler Building constructed after the Great Fire of St. John's.</li>
+        <li><strong>27 Jan 1942</strong> — Captain E.R. Mainguy, RCN, founds the Seagoing Officers' Club.</li>
+        <li><strong>1942–1945</strong> — Thousands of Allied officers from 12+ nations gather between convoy runs.</li>
+        <li><strong>16 Apr 1945</strong> — U-190 sinks HMCS <em>Esquimalt</em> — the last RCN ship lost in the war.</li>
+        <li><strong>12 May 1945</strong> — U-190 surrenders at Bay Bulls, NL. Her periscope is later installed in the club.</li>
+        <li><strong>13 Jun 1945</strong> — The wartime Seagoing Officers' Club closes.</li>
+        <li><strong>Jun 1946</strong> — Reopens as the Crow's Nest Officers' Club.</li>
+        <li><strong>Apr 1990</strong> — Designated a Registered Heritage Structure by the Heritage Foundation of NL.</li>
+        <li><strong>Jun 2010</strong> — Designated a National Historic Site of Canada.</li>
+        <li><strong>Today</strong> — A living museum, active club, and national treasure — open to all who wish to visit.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="accordion-item" data-group="crow">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">Visiting <span class="accordion-icon">+</span></button>
+    <div class="accordion-body">
+      <p><strong>Address:</strong> 88 Water Street, St. John's, NL (next to the National War Memorial — look for the 59 steps)</p>
+      <p style="margin-top:8px;"><strong>Hours (subject to change — call ahead):</strong></p>
+      <ul>
+        <li>Thursday: 4:30 – 7:00 PM</li>
+        <li>Friday: 12:00 – 7:00 PM (Lunch served 12:00 – 2:00 PM)</li>
+        <li>Saturday: 4:00 – 7:00 PM</li>
+        <li>Sunday: 1:30 – 5:00 PM (Tours at 2:00 PM)</li>
+      </ul>
+      <p style="margin-top:8px;">Casual dress. Guests and visitors are welcome. Free tours available — donations to this charitable organisation are greatly appreciated.</p>
+      <p style="margin-top:8px;">The upper deck bar holds 40 persons and the lower deck dining room holds 37. Food and beverages are inexpensive to moderate.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:16px;" class="card-actions">
+    <a class="btn-sm btn-map" href="https://www.google.com/maps/search/Crow's+Nest+Officers+Club+88+Water+Street+St.+John's+NL" target="_blank" rel="noopener">📍 Map</a>
+    <a class="btn-sm btn-web" href="https://crowsnestnl.ca/" target="_blank" rel="noopener">🌐 Website</a>
+    <a class="btn-sm btn-web" href="https://parks.canada.ca/culture/designation/lieu-site/crowsnest" target="_blank" rel="noopener">🏛️ Parks Canada</a>
+  </div>
+</div>
 
 <script>
-  const CONFIG = {
-    ship: { name: "HMCS Frédérick Rolette", crestUrl: "IMG_2434.PNG" },
+/* ===== NAVIGATION ===== */
+function nav(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const el = document.getElementById(pageId);
+  if (el) { el.classList.add('active'); window.scrollTo({top:0,behavior:'instant'}); }
+}
 
-    port: {
-      city: "St. John’s, NL",
-      areaLabel: "Downtown / Port Area",
-      tz: "America/St_Johns",
-      halifaxTz: "America/Halifax",
-      portQuery: "St. John's Cruise Terminal Newfoundland",
-      wx: {
-        envCanadaUrl: "https://weather.gc.ca/en/location/index.html?coords=47.558%2C-52.717",
-        weatherNetworkUrl: "https://www.theweathernetwork.com/en/city/ca/newfoundland-and-labrador/st-johns/7-days"
-      }
-    },
+/* ===== ACCORDION ===== */
+function toggleAccordion(trigger) {
+  const item = trigger.parentElement;
+  const group = item.dataset.group;
+  const isOpen = item.classList.contains('open');
+  if (group) {
+    document.querySelectorAll(`.accordion-item[data-group="${group}"]`).forEach(a => a.classList.remove('open'));
+  }
+  if (!isOpen) item.classList.add('open');
+}
 
-    visit: {
-      start: "2026-02-11",
-      end: "2026-02-14",
-      labels: {
-        "2026-02-11": "Arrive",
-        "2026-02-12": "Sunday routine",
-        "2026-02-13": "Sunday routine",
-        "2026-02-14": "Depart"
-      }
-    },
+/* ===== THINGS TO DO ===== */
+const activities = [
+  { name: "Signal Hill", desc: "Hike to Cabot Tower for panoramic harbour and ocean views.", tags: ["Iconic","Outdoors","Quick"], map: "Signal Hill St. John's NL", web: "https://parks.canada.ca/lhn-nhs/nl/signalhill" },
+  { name: "Cape Spear", desc: "The most easterly point in North America.", tags: ["Iconic","Outdoors","Half-day"], map: "Cape Spear Newfoundland", web: "https://parks.canada.ca/lhn-nhs/nl/capespear" },
+  { name: "The Rooms", desc: "Provincial museum, art gallery, and archives under one roof.", tags: ["Iconic","Indoors","Half-day"], map: "The Rooms St. John's NL", web: "https://www.therooms.ca/" },
+  { name: "George Street", desc: "Two blocks of pubs, live music, and nightlife. Legendary.", tags: ["Iconic","Food-Drink","Quick"], map: "George Street St. John's NL", web: "" },
+  { name: "Quidi Vidi Village", desc: "Picturesque fishing village with a craft brewery and trails.", tags: ["Iconic","Outdoors","Food-Drink","Half-day"], map: "Quidi Vidi Village St. John's NL", web: "" },
+  { name: "Johnson Geo Centre", desc: "Underground geology and Titanic exhibits inside Signal Hill.", tags: ["Indoors","Quick"], map: "Johnson Geo Centre St. John's NL", web: "https://www.geocentre.ca/" },
+  { name: "North Head Trail", desc: "Coastal cliffs trail above the Narrows — stunning views.", tags: ["Outdoors","Quick"], map: "North Head Trail St. John's NL", web: "" },
+  { name: "Jellybean Row", desc: "The colourful row houses — the St. John's icon.", tags: ["Iconic","Quick","Outdoors"], map: "Jellybean Row St. John's NL", web: "" },
+  { name: "Basilica Cathedral", desc: "Stunning 19th-century cathedral in the city centre.", tags: ["Iconic","Indoors","Quick"], map: "Basilica Cathedral of St. John the Baptist", web: "https://thebasilica.ca/" },
+  { name: "East Coast Trail", desc: "World-class coastal hiking starting near the city.", tags: ["Outdoors","Half-day"], map: "East Coast Trail St. John's NL", web: "https://www.eastcoasttrail.com/" },
+  { name: "Get Screeched In", desc: "Kiss the cod, do the shot, become an honorary Newfoundlander.", tags: ["Iconic","Food-Drink","Quick","Indoors"], map: "George Street St. John's NL", web: "" },
+  { name: "Bowring Park", desc: "Beautiful urban park with trails and the Peter Pan statue.", tags: ["Outdoors","Quick"], map: "Bowring Park St. John's NL", web: "" },
+  { name: "Escape Quest", desc: "Escape room experiences — great group activity.", tags: ["Indoors","Quick"], map: "Escape Quest St. John's NL", web: "https://www.escapequeststjohns.com/" },
+  { name: "Bannerman Park", desc: "Downtown heritage park — outdoor skating in winter.", tags: ["Outdoors","Quick"], map: "Bannerman Park St. John's NL", web: "" }
+];
 
-    schedule: {
-      checkinWindow: "TBD",
-      checkinEmail: "frchecking@forces.gc.ca",
-      checkinPhone: "TBD",
-      // Leave rules: default 0700 next day; night before depart 2359.
-      // If briefed differently, override per-day below.
-      leaveOverrides: {
-        "2026-02-14": "N/A (Depart)"
-      },
-      // Optional brief per-day weather (placeholders by default)
-      weatherByDay: {
-        "2026-02-11": "TBD",
-        "2026-02-12": "TBD",
-        "2026-02-13": "TBD",
-        "2026-02-14": "TBD"
-      }
-    },
+const todoChips = ["Iconic","Outdoors","Indoors","Food-Drink","Quick","Half-day"];
+let activeFilters = new Set();
 
-    contacts: [
-      { role: "Quarterdeck / Brow", phone: "TBD" },
-      { role: "Duty Medical", phone: "TBD" },
-      { role: "Check-In", phone: "TBD", email: "frchecking@forces.gc.ca" }
-    ],
+function renderTodoChips() {
+  document.getElementById('todo-chips').innerHTML = todoChips.map(c =>
+    `<span class="chip${activeFilters.has(c)?' active':''}" onclick="toggleChip('${c}')">${c}</span>`
+  ).join('');
+}
 
-    medical: {
-      sickParadeHours: "0800–0900 (typical)",
-      dutyPhone: "TBD",
-      medRoster: [],
-      hospitals: [
-        {
-          name: "Health Sciences Centre (ED)",
-          note: "Eastern Health",
-          phone: "(709) 777-6300",
-          gmap: "https://www.google.com/maps/search/Health%20Sciences%20Centre%20St.%20John's%20Emergency",
-          amap: "https://maps.apple.com/?q=Health%20Sciences%20Centre%20St.%20John's"
-        },
-        {
-          name: "St. Clare’s Mercy Hospital (ED)",
-          note: "Eastern Health",
-          phone: "(709) 777-5000",
-          gmap: "https://www.google.com/maps/search/St.%20Clare's%20Mercy%20Hospital%20St.%20John's%20Emergency",
-          amap: "https://maps.apple.com/?q=St.%20Clare's%20Mercy%20Hospital%20St.%20John's"
-        }
-      ]
-    },
+function toggleChip(tag) {
+  if (activeFilters.has(tag)) activeFilters.delete(tag); else activeFilters.add(tag);
+  renderTodoChips(); renderTodoList();
+}
 
-    maps: {
-      restaurants: [
-        { name: "The Duke of Duckworth", note: "Classic fish & chips (downtown)", website: "https://dukeofduckworth.com/", gmap: "https://www.google.com/maps/search/Duke%20of%20Duckworth%20St%20J[...]" },
-        { name: "YellowBelly Brewery & Public House", note: "Brewpub + food", website: "https://yellowbellybrewery.com/", gmap: "https://www.google.com/maps/search/YellowBelly%20Brewery%20St%20Jo[...]" },
-        { name: "The Merchant Tavern", note: "Popular downtown spot", website: "https://www.facebook.com/themerchanttavern/", gmap: "https://www.google.com/maps/search/The%20Merchant%20Tavern%20S[...]" },
-        { name: "More restaurants (map search)", note: "Search near the port area", website: "", gmap: "", amap: "" , searchQuery: "restaurants near St. John's Cruise Terminal"}
-      ],
-      bars: [
-        { name: "George Street (bar strip)", note: "Nightlife district", website: "", gmap: "https://www.google.com/maps/search/George%20Street%20St%20John's%20NL", amap: "https://maps.apple.com/[...]" },
-        { name: "Quidi Vidi Brewery", note: "Taproom + tours", website: "https://quidividibrewery.ca/", gmap: "https://www.google.com/maps/search/Quidi%20Vidi%20Brewery", amap: "https://maps.appl[...]" },
-        { name: "More bars (map search)", note: "Search near the port area", website: "", gmap: "", amap: "" , searchQuery: "bars near St. John's Cruise Terminal"}
-      ],
-      groceries: [
-        { name: "Groceries near the port (map search)", note: "Grocery + convenience stores", website: "", gmap: "", amap: "", searchQuery: "grocery store OR convenience store near St. John's Cru[...]" },
-        { name: "ATMs at major grocery chains (map search)", note: "Sometimes easiest cash access", website: "", gmap: "", amap: "", searchQuery: "Dominion Sobeys Colemans St. John's NL" }
-      ],
-      atms: [
-        { name: "Nearest ATM (map search)", note: "Search near the port area", website: "", gmap: "", amap: "", searchQuery: "ATM near St. John's Cruise Terminal" },
-        { name: "Bank branches (map search)", note: "RBC • TD • Scotiabank • BMO • CIBC", website: "", gmap: "", amap: "", searchQuery: "RBC TD Scotiabank BMO CIBC downtown St. John's NL"}
-      ],
-      transit: [
-        { name: "Metrobus (official)", note: "Routes, schedules, service bulletins", website: "https://metrobus.com/home/", gmap: "", amap: "" },
-        { name: "Metrobus Mobile (tracker)", note: "Real-time style view", website: "https://www.metrobusmobile.com/", gmap: "", amap: "" },
-        { name: "City page: Metrobus overview", note: "Accessibility + GoBus info", website: "https://www.stjohns.ca/en/streets-parking/metrobus.aspx", gmap: "", amap: "" }
-      ],
-      attractions: [
-        { name: "The Rooms", note: "Museum + gallery", website: "https://www.therooms.ca/", gmap: "https://www.google.com/maps/search/The%20Rooms%20St%20John's", amap: "https://maps.apple.com/?q=[...]" },
-        { name: "Signal Hill National Historic Site", note: "Iconic lookout + trails", website: "https://parks.canada.ca/lhn-nhs/nl/signalhill", gmap: "https://www.google.com/maps/search/Signal%2[...]", amap: "https://maps.apple.com/?q=Signal%20Hill"},
-        { name: "Johnson Geo Centre", note: "Science centre (Signal Hill)", website: "https://www.mun.ca/signalhill/johnson-geo-centre/", gmap: "https://www.google.com/maps/search/Johnson%20Geo%2[...]", amap: "" }
-      ],
-      parks: [
-        { name: "Bannerman Park", note: "Central park", website: "", gmap: "https://www.google.com/maps/search/Bannerman%20Park%20St%20John's", amap: "https://maps.apple.com/?q=Bannerman%20Park%2[...]" },
-        { name: "Quidi Vidi Lake", note: "Loop walk (weather permitting)", website: "", gmap: "https://www.google.com/maps/search/Quidi%20Vidi%20Lake", amap: "https://maps.apple.com/?q=Quidi%20Vi[...]" },
-        { name: "Cape Spear (National Historic Site)", note: "Most easterly point in Canada", website: "https://www.newfoundlandlabrador.com/plan-and-book/attractions/210583", gmap: "https://www.[...]", amap: "" }
-      ],
-      events: [
-        { name: "Chillfest (City of St. John’s)", note: "Feb 12–16 (winter celebration)", website: "https://www.stjohns.ca/en/recreation-culture/events-and-festivals.aspx", gmap: "", amap: "" },
-        { name: "Mary Brown’s Centre — events & tickets", note: "Sports + concerts (check Feb 11–14 listings)", website: "https://mbcentre.ca/events-and-tickets/", gmap: "https://www.google[...]")
+function renderTodoList() {
+  const filtered = activeFilters.size === 0 ? activities :
+    activities.filter(a => a.tags.some(t => activeFilters.has(t)));
+  document.getElementById('todo-list').innerHTML = filtered.map(a => `
+    <div class="card">
+      <div class="card-name">${a.name}</div>
+      <div class="card-note">${a.desc}</div>
+      <div class="card-tags">${a.tags.map(t => `<span class="card-tag">${t}</span>`).join('')}</div>
+      <div class="card-actions">
+        <a class="btn-sm btn-map" href="https://www.google.com/maps/search/${encodeURIComponent(a.map)}" target="_blank" rel="noopener">📍 Map</a>
+        ${a.web ? `<a class="btn-sm btn-web" href="${a.web}" target="_blank" rel="noopener">🌐 Website</a>` : ''}
+      </div>
+    </div>
+  `).join('');
+}
+renderTodoChips(); renderTodoList();
+
+/* ===== VENUE DATA ===== */
+const venueData = {
+  'tab-food': [
+    { name: "The Merchant Tavern", note: "Upscale NL cuisine in a gorgeous heritage bank building.", price: "$$$", map: "Merchant Tavern St. John's NL", web: "https://www.themerchanttavern.ca/" },
+    { name: "The Gypsy Tea Room", note: "Fine dining with a pub atmosphere — lamb, duck, salmon, soups & salads.", price: "$$", map: "Gypsy Tea Room St. John's NL", web: "https://www.gypsytearoom.ca/" },
+    { name: "YellowBelly Brewery", note: "Traditional Newfoundland food, wood-fired pizza oven. Since the 1800s.", price: "$$", map: "YellowBelly Brewery St. John's NL", web: "https://www.yellowbellybrewery.com/" },
+    { name: "Adelaide Oyster House", note: "Global dishes, east coast oysters — known for their tacos.", price: "$$", map: "Adelaide Oyster House St. John's NL", web: "https://www.adelaideoysterhouse.ca/" },
+    { name: "Portage", note: "Family-style sharing plates and eclectic wines on Water St.", price: "$$", map: "Portage Restaurant St. John's NL", web: "https://www.portagenl.ca/" },
+    { name: "St. John's Fish Exchange", note: "Seafood-forward menu in a historic Water Street building.", price: "$$", map: "St. John's Fish Exchange NL", web: "https://sjfx.ca/" },
+    { name: "Chinched Bistro", note: "Creative small plates with local NL ingredients.", price: "$$", map: "Chinched Bistro St. John's NL", web: "https://www.chinched.com/" },
+    { name: "Cojones Tacos & Tequila", note: "Authentic Mexican — moose taquitos, margaritas, Dia de Muertos vibe.", price: "$$", map: "Cojones St. John's NL", web: "https://cojones.ca/" },
+    { name: "Three Sisters", note: "Vietnamese cuisine — fresh, flavourful, and affordable.", price: "$", map: "Three Sisters Vietnamese St. John's NL", web: "" },
+    { name: "Duke of Duckworth", note: "Traditional Newfie pub — famous for their fish & chips.", price: "$", map: "Duke of Duckworth St. John's NL", web: "" }
+  ],
+  'tab-coffee': [
+    { name: "The Battery Café", note: "Cozy spot at the foot of Signal Hill — great flat whites.", price: "$", map: "The Battery Cafe St. John's NL", web: "https://www.instagram.com/thebatterycafe/" },
+    { name: "Rocket Bakery", note: "Downtown institution for specialty coffee and baked goods.", price: "$", map: "Rocket Bakery St. John's NL", web: "https://www.rfrocketfood.com/" },
+    { name: "Fixed Coffee & Baking", note: "Local favourite with pour-over by Harbourside Park.", price: "$", map: "Fixed Coffee St. John's NL", web: "https://www.instagram.com/fixedcoffee/" },
+    { name: "Coffee Matters", note: "Locally roasted beans, homemade soups, sandwiches.", price: "$", map: "Coffee Matters St. John's NL", web: "https://www.coffeematters.ca/" }
+  ],
+  'tab-bars': [
+    { name: "O'Reilly's Irish Pub", note: "Live trad music nightly — voted Canada's favourite bar.", map: "O'Reilly's Irish Pub George Street St. John's NL", web: "https://www.oreillyspub.com/" },
+    { name: "Bridie Molloy's", note: "Irish pub with live music & a 24/7 restaurant downstairs.", map: "Bridie Molloy's St. John's NL", web: "https://bridiemolloys.ca/" },
+    { name: "Shamrock City", note: "Multi-level entertainment venue on George Street.", map: "Shamrock City St. John's NL", web: "" },
+    { name: "Erin's Pub", note: "Intimate trad music venue on Water Street.", map: "Erin's Pub St. John's NL", web: "" },
+    { name: "Karaoke Kops", note: "Karaoke bar — great for a group night out.", map: "Karaoke Kops George Street St. John's NL", web: "" },
+    { name: "Konfusion", note: "High-energy party bar on George Street.", map: "Konfusion St. John's NL", web: "" },
+    { name: "Christian's", note: "Popular bar and nightlife spot on George Street.", map: "Christian's Bar George Street St. John's NL", web: "" },
+    { name: "Trapper John's", note: "Where you go to get Screeched In — a must-do experience.", map: "Trapper John's St. John's NL", web: "" },
+    { name: "Lottie's", note: "Cozy spot on George Street with great drinks.", map: "Lottie's Place George Street St. John's NL", web: "" }
+  ],
+  'tab-brew': [
+    { name: "YellowBelly Brewery", note: "Heritage brewpub — wood-fired pizza and craft beer.", map: "YellowBelly Brewery St. John's NL", web: "https://www.yellowbellybrewery.com/" },
+    { name: "Quidi Vidi Brewery", note: "NL's largest craft brewery in scenic Quidi Vidi Village.", map: "Quidi Vidi Brewery St. John's NL", web: "https://www.quidividibrewery.ca/" },
+    { name: "Bannerman Brewing", note: "Taproom in the historic East Fire Station, Duckworth St.", map: "Bannerman Brewing St. John's NL", web: "https://www.bannermanbrewing.com/" },
+    { name: "Landwash Brewery", note: "Flavour-forward craft beer, beer-hall style taproom.", map: "Landwash Brewery Mount Pearl NL", web: "https://www.landwashbrewery.com/" }
+  ]
+};
+
+function renderVenues(tabId) {
+  const panel = document.getElementById(tabId);
+  const list = panel.querySelector('.venue-list');
+  const data = venueData[tabId] || [];
+  list.innerHTML = data.map((v, i) => `
+    <div class="card venue-card" data-idx="${i}">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+        <div class="card-name">${v.name}</div>
+        ${v.price ? `<span class="price-badge">${v.price}</span>` : ''}
+      </div>
+      ${v.note ? `<div class="card-note">${v.note}</div>` : ''}
+      <div class="card-actions">
+        <a class="btn-sm btn-map" href="https://www.google.com/maps/search/${encodeURIComponent(v.map)}" target="_blank" rel="noopener">📍 Map</a>
+        ${v.web ? `<a class="btn-sm btn-web" href="${v.web}" target="_blank" rel="noopener">🌐 Website</a>` : ''}
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterVenues(tabId, query) {
+  const q = query.toLowerCase();
+  const panel = document.getElementById(tabId);
+  panel.querySelectorAll('.venue-card').forEach((card, i) => {
+    const v = venueData[tabId][i];
+    const match = v.name.toLowerCase().includes(q) || (v.note && v.note.toLowerCase().includes(q)) || (v.price && v.price.toLowerCase().includes(q));
+    card.style.display = match ? '' : 'none';
+  });
+}
+Object.keys(venueData).forEach(renderVenues);
+
+/* ===== TABS ===== */
+function switchTab(pageId, tabId, btn) {
+  const page = document.getElementById(pageId);
+  page.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  page.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(tabId).classList.add('active');
+}
+
+/* ===== HOTELS ===== */
+const hotelData = [
+  { name: "Sheraton Hotel Newfoundland", note: "Overlooking the harbour at the base of Signal Hill.", map: "Sheraton Hotel Newfoundland St. John's", web: "https://www.marriott.com/en-us/hotels/yytsi-sheraton-hotel-newfoundland/overview/" },
+  { name: "Delta Hotels Conference Centre", note: "Connected to convention centre, steps from George St.", map: "Delta Hotels St. John's Conference Centre", web: "https://www.marriott.com/en-us/hotels/yytdj-delta-hotels-st-johns-conference-centre/overview/" },
+  { name: "Alt Hotel St. John's", note: "Modern boutique on Water Street with harbour views.", map: "Alt Hotel St. John's NL", web: "https://www.germainhotels.com/en/alt-hotel/st-johns" },
+  { name: "Hilton Garden Inn", note: "Downtown, walking distance to George St and harbour.", map: "Hilton Garden Inn St. John's Newfoundland", web: "https://www.hilton.com/en/hotels/ysjfdgi-hilton-garden-inn-st-johns-newfoundland/" },
+  { name: "JAG Hotel", note: "Music-themed boutique hotel right on George Street.", map: "JAG Hotel St. John's NL", web: "https://jaghotel.com/" },
+  { name: "Murray Premises Hotel", note: "Heritage waterfront property in a restored 19th-century building.", map: "Murray Premises Hotel St. John's NL", web: "https://www.murraypremiseshotel.com/" }
+];
+
+function renderHotels() {
+  document.getElementById('hotel-list').innerHTML = hotelData.map((h, i) => `
+    <div class="card hotel-card" data-idx="${i}">
+      <div class="card-name">${h.name}</div>
+      ${h.note ? `<div class="card-note">${h.note}</div>` : ''}
+      <div class="card-actions">
+        <a class="btn-sm btn-map" href="https://www.google.com/maps/search/${encodeURIComponent(h.map)}" target="_blank" rel="noopener">📍 Map</a>
+        ${h.web ? `<a class="btn-sm btn-web" href="${h.web}" target="_blank" rel="noopener">🌐 Website</a>` : ''}
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterHotels(query) {
+  const q = query.toLowerCase();
+  document.querySelectorAll('.hotel-card').forEach((card, i) => {
+    const h = hotelData[i];
+    card.style.display = (h.name.toLowerCase().includes(q) || (h.note && h.note.toLowerCase().includes(q))) ? '' : 'none';
+  });
+}
+renderHotels();
+
+/* ===== HASH ROUTING ===== */
+function checkHash() {
+  const hash = location.hash.replace('#','');
+  if (hash && document.getElementById(hash)) nav(hash);
+}
+window.addEventListener('hashchange', checkHash);
+checkHash();
+</script>
+
+</body>
+</html>
