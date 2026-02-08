@@ -1,10 +1,3 @@
-const DEFAULT_COORDS = { lat: 47.5615, lon: -52.7126 };
-
-function parseCoord(value, fallback) {
-  const parsed = Number.parseFloat(value);
-  return Number.isFinite(parsed) ? parsed : fallback;
-}
-
 function pickDailyForecast(list) {
   const dayMap = new Map();
   list.forEach((item) => {
@@ -22,28 +15,30 @@ function pickDailyForecast(list) {
 }
 
 exports.handler = async (event) => {
-  const params = event.queryStringParameters || {};
-  const lat = parseCoord(params.lat, DEFAULT_COORDS.lat);
-  const lon = parseCoord(params.lon, DEFAULT_COORDS.lon);
-  const apiKey = process.env.OPENWEATHER_API_KEY || process.env.OPEN_WEATHER_API_KEY;
+  // Read API key from environment variable
+  const apiKey = process.env.OPENWEATHER_API_KEY;
 
   if (!apiKey) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Missing OpenWeather API key.' }),
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ error: 'Missing OpenWeather API key in environment variables.' }),
     };
   }
 
   try {
+    // Call OpenWeatherMap endpoints for St. John's, CA
+    // Using city name format as specified in requirements
     const [currentRes, forecastRes] = await Promise.all([
-      fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`),
-      fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`),
+      fetch(`https://api.openweathermap.org/data/2.5/weather?q=St.%20John%27s,CA&units=metric&appid=${apiKey}`),
+      fetch(`https://api.openweathermap.org/data/2.5/forecast?q=St.%20John%27s,CA&units=metric&appid=${apiKey}`),
     ]);
 
     if (!currentRes.ok || !forecastRes.ok) {
       return {
         statusCode: 502,
-        body: JSON.stringify({ error: 'Unable to fetch weather data.' }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ error: 'Unable to fetch weather data from OpenWeatherMap.' }),
       };
     }
 
@@ -53,6 +48,7 @@ exports.handler = async (event) => {
 
     return {
       statusCode: 200,
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         current,
         forecast,
@@ -62,7 +58,11 @@ exports.handler = async (event) => {
   } catch (error) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Weather service error.' }),
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        error: 'Weather service error.',
+        message: error.message
+      }),
     };
   }
 };
