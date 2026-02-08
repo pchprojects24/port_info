@@ -21,17 +21,23 @@
   --radius: 18px;
   --radius-sm: 12px;
   --radius-xs: 8px;
-  /* Jellybean Row palette */
+  /* HMCS Frederick Rolette color scheme: Royal Blue, White, Gold */
+  --royal-blue: #002F87;
+  --royal-blue-light: #1E56A0;
+  --royal-blue-soft: #e6ecf5;
+  --navy-gold: #C5A572;
+  --bright-gold: #FFD700;
+  --gold-soft: #fff8e6;
+  /* Secondary colors for variety */
   --coral: #FF6B6B;
   --coral-soft: #fff0f0;
   --teal: #20B2AA;
   --teal-soft: #e6f7f6;
-  --gold: #F4A623;
-  --gold-soft: #fff6e6;
+  --gold: #C5A572;
   --plum: #9B59B6;
   --plum-soft: #f5eef8;
-  --ocean: #3498DB;
-  --ocean-soft: #eaf3fb;
+  --ocean: #1E56A0;
+  --ocean-soft: #e6ecf5;
   --green: #2ECC71;
   --green-soft: #eafaf1;
   --rose: #E91E63;
@@ -45,7 +51,7 @@
 html { font-size: 16px; scroll-behavior: smooth; }
 body {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
-  background: linear-gradient(135deg, #1a2332 0%, #3d4e5c 50%, #546E7A 100%);
+  background: linear-gradient(135deg, #001a4d 0%, #002F87 40%, #1E56A0 100%);
   background-size: 400% 400%;
   animation: gradientShift 20s ease infinite;
   color: var(--text);
@@ -76,9 +82,9 @@ box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 .header-left { display: flex; align-items: center; gap: 10px; }
 .header-flag {
 width: 38px; height: 38px; border-radius: 12px;
-background: linear-gradient(135deg, var(--coral), var(--gold));
+background: linear-gradient(135deg, var(--royal-blue), var(--navy-gold));
 display: flex; align-items: center; justify-content: center;
-font-size: 1.2rem; box-shadow: 0 2px 8px rgba(255,107,107,0.3);
+font-size: 1.2rem; box-shadow: 0 2px 8px rgba(0,47,135,0.3);
 transition: transform 0.3s ease;
 }
 .header-flag:hover {
@@ -87,7 +93,7 @@ transform: rotate(10deg) scale(1.05);
 .header-text {}
 .header-title {
 font-size: 1rem; font-weight: 800; letter-spacing: -0.03em;
-background: linear-gradient(135deg, var(--coral), var(--plum));
+background: linear-gradient(135deg, var(--bright-gold), var(--royal-blue-light));
 -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 background-clip: text;
 }
@@ -102,7 +108,7 @@ box-shadow: var(--shadow-sm);
 .header-home:hover {
 transform: translateY(-2px);
 box-shadow: var(--shadow-md);
-border-color: var(--coral);
+border-color: var(--royal-blue);
 filter: brightness(1.1);
 }
 .header-home:active { transform: scale(0.97); box-shadow: var(--shadow-sm); }
@@ -165,7 +171,7 @@ background-clip: text;
 @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
 .landing-title {
 font-size: 1.8rem; font-weight: 900; letter-spacing: 0.08em;
-background: linear-gradient(135deg, var(--coral), var(--plum), var(--ocean));
+background: linear-gradient(135deg, var(--bright-gold), var(--white), var(--royal-blue-light));
 -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 background-clip: text; line-height: 1.15; margin-bottom: 4px;
 }
@@ -279,11 +285,11 @@ background: var(--bg);
 transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .accordion-trigger:hover .accordion-icon {
-background: rgba(255,107,107,0.1);
+background: rgba(0,47,135,0.1);
 transform: scale(1.1);
 }
 .accordion-item.open .accordion-icon {
-background: var(--coral); color: #fff;
+background: var(--royal-blue); color: #fff;
 transform: rotate(45deg) scale(1.05);
 }
 .accordion-body {
@@ -380,9 +386,9 @@ left: 100%;
 .chip:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
 .chip:active { transform: scale(0.95); }
 .chip.active {
-background: linear-gradient(135deg, var(--coral), var(--gold));
+background: linear-gradient(135deg, var(--royal-blue), var(--navy-gold));
 color: #fff; border-color: transparent;
-box-shadow: 0 3px 12px rgba(255,107,107,0.3);
+box-shadow: 0 3px 12px rgba(0,47,135,0.3);
 transform: translateY(-2px);
 }
 
@@ -461,11 +467,11 @@ box-shadow: var(--shadow-sm);
 .btn-web { background: var(--ocean-soft); color: #2074a8; }
 .btn-web:hover { box-shadow: 0 6px 20px rgba(52,152,219,0.4); }
 .btn-call {
-background: linear-gradient(135deg, var(--coral), #ff8a80);
+background: linear-gradient(135deg, var(--royal-blue), var(--royal-blue-light));
 color: #fff;
-box-shadow: 0 3px 12px rgba(255,107,107,0.3);
+box-shadow: 0 3px 12px rgba(0,47,135,0.3);
 }
-.btn-call:hover { box-shadow: 0 6px 20px rgba(255,107,107,0.5); }
+.btn-call:hover { box-shadow: 0 6px 20px rgba(0,47,135,0.5); }
 .btn-text { background: var(--gold-soft); color: #c07b00; }
 .btn-text:hover { box-shadow: 0 6px 20px rgba(244,166,35,0.4); }
 
@@ -501,9 +507,9 @@ transition: opacity 0.3s;
 opacity: 1;
 }
 .tab.active {
-background: linear-gradient(135deg, var(--coral), var(--gold));
+background: linear-gradient(135deg, var(--royal-blue), var(--navy-gold));
 color: #fff;
-box-shadow: 0 2px 10px rgba(255,107,107,0.25);
+box-shadow: 0 2px 10px rgba(0,47,135,0.25);
 }
 .tab.active::before {
 opacity: 0;
@@ -523,8 +529,8 @@ transition: all 0.3s ease;
 }
 .search-input::placeholder { color: var(--text-light); }
 .search-input:focus {
-border-color: var(--coral);
-box-shadow: 0 0 0 3px rgba(255,107,107,0.12), var(--shadow-md);
+border-color: var(--royal-blue);
+box-shadow: 0 0 0 3px rgba(0,47,135,0.12), var(--shadow-md);
 transform: translateY(-1px);
 }
 
@@ -597,7 +603,7 @@ animation: dotMove 20s linear infinite;
 /* ===== COLOR BAR on pages ===== */
 .color-bar {
 height: 4px; border-radius: 4px; margin-bottom: 16px;
-background: linear-gradient(90deg, var(--coral), var(--gold), var(--green), var(--ocean), var(--plum));
+background: linear-gradient(90deg, var(--royal-blue), var(--navy-gold), var(--bright-gold), var(--royal-blue-light), var(--white));
 background-size: 200% 100%;
 animation: colorShift 8s ease-in-out infinite;
 }
@@ -759,6 +765,17 @@ color: var(--text-mid);
     <div class="accordion-body"><p>Per Routine Orders.</p></div>
   </div>
   <div class="accordion-item" data-group="routine">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">Sick Parade <span class="accordion-icon">+</span></button>
+    <div class="accordion-body">
+      <p><strong>Sick Parade Schedule:</strong></p>
+      <ul>
+        <li>Saturday, Feb 14: 0800–0900</li>
+        <li>Sunday, Feb 15: 0800–0900</li>
+      </ul>
+      <p>For urgent medical cases while personnel are off ship, the Duty Medical person can be reached via the Duty Medical phone outside sick parade hours. For any emergency medical situations, call 911.</p>
+    </div>
+  </div>
+  <div class="accordion-item" data-group="routine">
     <button class="accordion-trigger" onclick="toggleAccordion(this)">Leave <span class="accordion-icon">+</span></button>
     <div class="accordion-body"><p>Per Routine Orders.</p></div>
   </div>
@@ -772,17 +789,6 @@ color: var(--text-mid);
         <li>If your plans change, inform the ship per routine as soon as possible.</li>
         <li>Keep your military ID and leave pass on your person.</li>
       </ul>
-    </div>
-  </div>
-  <div class="accordion-item" data-group="routine">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">Parade <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <p><strong>Sick Parade Schedule:</strong></p>
-      <ul>
-        <li>Saturday, Feb 14: 0800–0900</li>
-        <li>Sunday, Feb 15: 0800–0900</li>
-      </ul>
-      <p>For urgent medical cases while personnel are off ship, the Duty Medical person can be reached via the Duty Medical phone outside sick parade hours. For any emergency medical situations, call 911.</p>
     </div>
   </div>
 </div>
