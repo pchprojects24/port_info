@@ -152,19 +152,84 @@ animation: fadeSlideUp 0.6s ease-out forwards;
   margin: 8px 0 16px;
 }
 .weather-current {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  padding: 20px 18px;
+  line-height: 1.5;
 }
-.weather-current .current-main {
+.weather-current-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.weather-current-left {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
+  flex: 1;
 }
 .weather-current img {
   width: 52px;
   height: 52px;
+  flex-shrink: 0;
+  opacity: 1;
+  filter: none;
+}
+.weather-current-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.weather-now-label {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.weather-condition {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.95);
+  text-transform: capitalize;
+  line-height: 1.3;
+}
+.weather-current-temp {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-align: right;
+  flex-shrink: 0;
+}
+.weather-stats-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+.weather-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+.weather-stat-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.weather-stat-value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  white-space: nowrap;
 }
 .weather-grid {
   display: grid;
@@ -932,8 +997,8 @@ color: var(--text-mid);
   </div>
 
   <div class="section-header">Current Conditions</div>
-  <div class="card" style="margin-bottom:8px;">
-    <div id="weather-current" class="weather-current">
+  <div class="card weather-current">
+    <div id="weather-current">
       <div class="weather-empty">Loading current conditions…</div>
     </div>
   </div>
@@ -1618,19 +1683,28 @@ function renderCurrentWeather(data) {
   const iconUrl = icon ? `https://openweathermap.org/img/wn/${icon}@2x.png` : '';
 
   container.innerHTML = `
-    <div class="current-main">
-      ${iconUrl ? `<img src="${iconUrl}" alt="${description}" />` : ''}
-      <div>
-        <div class="card-name">Now</div>
-        <div class="card-note" style="margin-bottom:0;text-transform:capitalize;">${description}</div>
+    <div class="weather-current-top">
+      <div class="weather-current-left">
+        ${iconUrl ? `<img src="${iconUrl}" alt="${description}" />` : ''}
+        <div class="weather-current-info">
+          <div class="weather-now-label">Now</div>
+          <div class="weather-condition">${description}</div>
+        </div>
       </div>
+      <div class="weather-current-temp">${temp}</div>
     </div>
-    <div style="text-align:right;">
-      <div style="font-size:1.4rem;font-weight:800;color:var(--ocean);">${temp}</div>
-      <div style="font-size:0.78rem;color:var(--text-light);">Feels like ${feelsLike}</div>
-      <div class="weather-meta" style="justify-content:flex-end;">
-        <span>💨 ${wind}</span>
-        <span>💧 ${humidity}</span>
+    <div class="weather-stats-row">
+      <div class="weather-stat">
+        <div class="weather-stat-label">Feels</div>
+        <div class="weather-stat-value">${feelsLike}</div>
+      </div>
+      <div class="weather-stat">
+        <div class="weather-stat-label">Wind</div>
+        <div class="weather-stat-value">${wind}</div>
+      </div>
+      <div class="weather-stat">
+        <div class="weather-stat-label">Humidity</div>
+        <div class="weather-stat-value">${humidity}</div>
       </div>
     </div>
   `;
