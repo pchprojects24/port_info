@@ -1662,6 +1662,12 @@ function formatDay(dateString) {
   return date.toLocaleDateString('en-CA', { weekday: 'short', month: 'short', day: 'numeric' });
 }
 
+function getWindDirection(deg) {
+  const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
+  const index = Math.round(deg / 45) % 8;
+  return directions[index];
+}
+
 function renderCurrentWeather(data) {
   const container = document.getElementById('weather-current');
   if (!container) return;
@@ -1670,8 +1676,19 @@ function renderCurrentWeather(data) {
   const temp = formatTemp(data.main?.temp);
   const feelsLike = formatTemp(data.main?.feels_like);
   const wind = data.wind?.speed ? `${Math.round(data.wind.speed)} km/h` : '—';
+  const windGust = data.wind?.gust ? `${Math.round(data.wind.gust)} km/h` : null;
+  const windDir = data.wind?.deg !== undefined ? getWindDirection(data.wind.deg) : null;
   const humidity = data.main?.humidity ? `${Math.round(data.main.humidity)}%` : '—';
+  const rain = data.rain?.['1h'] ? `${data.rain['1h'].toFixed(1)} mm` : null;
+  const snow = data.snow?.['1h'] ? `${data.snow['1h'].toFixed(1)} mm` : null;
   const iconUrl = icon ? `https://openweathermap.org/img/wn/${icon}@2x.png` : '';
+
+  const windDisplay = windDir ? `${wind} ${windDir}` : wind;
+
+  const additionalStats = [];
+  if (windGust) additionalStats.push(`<div class="weather-stat"><div class="weather-stat-label">Gust</div><div class="weather-stat-value">${windGust}</div></div>`);
+  if (rain) additionalStats.push(`<div class="weather-stat"><div class="weather-stat-label">Rain</div><div class="weather-stat-value">${rain}</div></div>`);
+  if (snow) additionalStats.push(`<div class="weather-stat"><div class="weather-stat-label">Snow</div><div class="weather-stat-value">${snow}</div></div>`);
 
   container.innerHTML = `
     <div class="weather-current-top">
@@ -1691,12 +1708,13 @@ function renderCurrentWeather(data) {
       </div>
       <div class="weather-stat">
         <div class="weather-stat-label">Wind</div>
-        <div class="weather-stat-value">${wind}</div>
+        <div class="weather-stat-value">${windDisplay}</div>
       </div>
       <div class="weather-stat">
         <div class="weather-stat-label">Humidity</div>
         <div class="weather-stat-value">${humidity}</div>
       </div>
+      ${additionalStats.join('')}
     </div>
   `;
 }
@@ -1713,6 +1731,22 @@ function renderForecast(list) {
     const icon = item.weather?.[0]?.icon;
     const description = item.weather?.[0]?.description || '';
     const iconUrl = icon ? `https://openweathermap.org/img/wn/${icon}@2x.png` : '';
+
+    const windSpeed = item.wind?.speed ? `${Math.round(item.wind.speed)} km/h` : '—';
+    const windDir = item.wind?.deg !== undefined ? getWindDirection(item.wind.deg) : null;
+    const windDisplay = windDir ? `${windSpeed} ${windDir}` : windSpeed;
+    const windGust = item.wind?.gust ? `Gust ${Math.round(item.wind.gust)} km/h` : null;
+
+    const rain = item.rain?.['3h'] ? `${item.rain['3h'].toFixed(1)} mm` : null;
+    const snow = item.snow?.['3h'] ? `${item.snow['3h'].toFixed(1)} mm` : null;
+
+    const metaItems = [];
+    metaItems.push(`💨 ${windDisplay}`);
+    if (windGust) metaItems.push(windGust);
+    metaItems.push(`💧 ${item.main?.humidity ? `${Math.round(item.main.humidity)}%` : '—'}`);
+    if (rain) metaItems.push(`🌧️ ${rain}`);
+    if (snow) metaItems.push(`❄️ ${snow}`);
+
     return `
       <div class="card">
         <div style="display:flex;align-items:center;gap:12px;">
@@ -1727,8 +1761,7 @@ function renderForecast(list) {
           </div>
         </div>
         <div class="weather-meta" style="margin-top:8px;">
-          <span>💨 ${item.wind?.speed ? `${Math.round(item.wind.speed)} km/h` : '—'}</span>
-          <span>💧 ${item.main?.humidity ? `${Math.round(item.main.humidity)}%` : '—'}</span>
+          ${metaItems.map(item => `<span>${item}</span>`).join('')}
         </div>
       </div>
     `;
