@@ -1299,7 +1299,11 @@ function toggleAccordion(trigger) {
   if (group) {
     document.querySelectorAll(`.accordion-item[data-group="${group}"]`).forEach(a => a.classList.remove('open'));
   }
-  if (!isOpen) item.classList.add('open');
+  if (!isOpen) {
+    item.classList.add('open');
+  } else if (!group) {
+    item.classList.remove('open');
+  }
 }
 
 /* ===== THINGS TO DO ===== */
