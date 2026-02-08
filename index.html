@@ -145,6 +145,43 @@ animation: fadeSlideUp 0.6s ease-out forwards;
   }
 }
 
+/* ===== WEATHER ===== */
+.weather-status {
+  font-size: 0.82rem;
+  color: var(--text-mid);
+  margin: 8px 0 16px;
+}
+.weather-current {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.weather-current .current-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.weather-current img {
+  width: 52px;
+  height: 52px;
+}
+.weather-grid {
+  display: grid;
+  gap: 10px;
+}
+.weather-meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 0.78rem;
+  color: var(--text-light);
+}
+.weather-empty {
+  font-size: 0.82rem;
+  color: var(--text-light);
+}
+
 /* ===== BACK BUTTON ===== */
 .back-btn {
 display: inline-flex; align-items: center; gap: 6px;
@@ -882,7 +919,7 @@ color: var(--text-mid);
 <div id="weather" class="page">
   <button class="back-btn" onclick="nav('landing')">Home</button>
   <div class="page-title">Weather</div>
-  <div class="page-subtitle">St. John's · Feb 13–16</div>
+  <div class="page-subtitle">St. John's · Live updates</div>
   <div class="color-bar"></div>
 
   <div class="card" style="margin-bottom:10px; padding:14px 16px;">
@@ -894,74 +931,18 @@ color: var(--text-mid);
     </div>
   </div>
 
-  <div class="section-header">4-Day Forecast (as of Feb 7)</div>
-
+  <div class="section-header">Current Conditions</div>
   <div class="card" style="margin-bottom:8px;">
-    <div style="display:flex;align-items:center;gap:12px;">
-      <span style="font-size:1.8rem;">🌨️</span>
-      <div style="flex:1;">
-        <div class="card-name">Fri, Feb 13</div>
-        <div class="card-note" style="margin-bottom:0;">Light snow late · Overcast</div>
-      </div>
-      <div style="text-align:right;">
-        <div style="font-size:1.2rem;font-weight:800;color:var(--ocean);">1°</div>
-        <div style="font-size:0.78rem;color:var(--text-light);">-3° low</div>
-      </div>
-    </div>
-    <div style="display:flex;gap:16px;margin-top:8px;font-size:0.78rem;color:var(--text-light);">
-      <span>💨 24 km/h</span><span>💧 88%</span><span>❄️ 22% chance</span><span>🌅 7:09 AM</span><span>🌇 5:21 PM</span>
+    <div id="weather-current" class="weather-current">
+      <div class="weather-empty">Loading current conditions…</div>
     </div>
   </div>
 
-  <div class="card" style="margin-bottom:8px;">
-    <div style="display:flex;align-items:center;gap:12px;">
-      <span style="font-size:1.8rem;">🌨️</span>
-      <div style="flex:1;">
-        <div class="card-name">Sat, Feb 14</div>
-        <div class="card-note" style="margin-bottom:0;">Light snow late · Overcast</div>
-      </div>
-      <div style="text-align:right;">
-        <div style="font-size:1.2rem;font-weight:800;color:var(--ocean);">-2°</div>
-        <div style="font-size:0.78rem;color:var(--text-light);">-4° low</div>
-      </div>
-    </div>
-    <div style="display:flex;gap:16px;margin-top:8px;font-size:0.78rem;color:var(--text-light);">
-      <span>💨 21 km/h</span><span>💧 88%</span><span>❄️ 51% chance</span><span>🌅 7:07 AM</span><span>🌇 5:22 PM</span>
-    </div>
-  </div>
+  <div id="weather-status" class="weather-status" aria-live="polite"></div>
 
-  <div class="card" style="margin-bottom:8px;">
-    <div style="display:flex;align-items:center;gap:12px;">
-      <span style="font-size:1.8rem;">⛅</span>
-      <div style="flex:1;">
-        <div class="card-name">Sun, Feb 15</div>
-        <div class="card-note" style="margin-bottom:0;">Partly cloudy</div>
-      </div>
-      <div style="text-align:right;">
-        <div style="font-size:1.2rem;font-weight:800;color:var(--ocean);">-2°</div>
-        <div style="font-size:0.78rem;color:var(--text-light);">-5° low</div>
-      </div>
-    </div>
-    <div style="display:flex;gap:16px;margin-top:8px;font-size:0.78rem;color:var(--text-light);">
-      <span>💨 19 km/h</span><span>💧 83%</span><span>❄️ 47% chance</span><span>🌅 7:06 AM</span><span>🌇 5:24 PM</span>
-    </div>
-  </div>
-
-  <div class="card" style="margin-bottom:8px;">
-    <div style="display:flex;align-items:center;gap:12px;">
-      <span style="font-size:1.8rem;">🌤️</span>
-      <div style="flex:1;">
-        <div class="card-name">Mon, Feb 16</div>
-        <div class="card-note" style="margin-bottom:0;">Broken clouds</div>
-      </div>
-      <div style="text-align:right;">
-        <div style="font-size:1.2rem;font-weight:800;color:var(--ocean);">-1°</div>
-        <div style="font-size:0.78rem;color:var(--text-light);">-7° low</div>
-      </div>
-    </div>
-    <div style="display:flex;gap:16px;margin-top:8px;font-size:0.78rem;color:var(--text-light);">
-      <span>💨 13 km/h</span><span>💧 91%</span><span>❄️ 6% chance</span><span>🌅 7:04 AM</span><span>🌇 5:25 PM</span>
-    </div>
+  <div class="section-header">4-Day Forecast</div>
+  <div id="weather-forecast" class="weather-grid">
+    <div class="card weather-empty">Loading forecast…</div>
   </div>
 
   <div class="section-header">What to Expect</div>
@@ -1432,6 +1413,9 @@ function nav(pageId) {
     el.classList.add('active');
     window.scrollTo({top:0,behavior:'instant'});
     updateQuickHome(pageId);
+    if (pageId === 'weather') {
+      loadWeather();
+    }
   }
 }
 
@@ -1607,6 +1591,124 @@ function checkHash() {
 window.addEventListener('hashchange', checkHash);
 checkHash();
 updateQuickHome(document.querySelector('.page.active')?.id || 'landing');
+
+/* ===== WEATHER ===== */
+const WEATHER_COORDS = { lat: 47.5615, lon: -52.7126 };
+let weatherLoaded = false;
+
+function formatTemp(value) {
+  if (value === undefined || value === null || Number.isNaN(value)) return '--';
+  return `${Math.round(value)}°`;
+}
+
+function formatDay(dateString) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-CA', { weekday: 'short', month: 'short', day: 'numeric' });
+}
+
+function renderCurrentWeather(data) {
+  const container = document.getElementById('weather-current');
+  if (!container) return;
+  const icon = data.weather?.[0]?.icon;
+  const description = data.weather?.[0]?.description || '—';
+  const temp = formatTemp(data.main?.temp);
+  const feelsLike = formatTemp(data.main?.feels_like);
+  const wind = data.wind?.speed ? `${Math.round(data.wind.speed)} km/h` : '—';
+  const humidity = data.main?.humidity ? `${Math.round(data.main.humidity)}%` : '—';
+  const iconUrl = icon ? `https://openweathermap.org/img/wn/${icon}@2x.png` : '';
+
+  container.innerHTML = `
+    <div class="current-main">
+      ${iconUrl ? `<img src="${iconUrl}" alt="${description}" />` : ''}
+      <div>
+        <div class="card-name">Now</div>
+        <div class="card-note" style="margin-bottom:0;text-transform:capitalize;">${description}</div>
+      </div>
+    </div>
+    <div style="text-align:right;">
+      <div style="font-size:1.4rem;font-weight:800;color:var(--ocean);">${temp}</div>
+      <div style="font-size:0.78rem;color:var(--text-light);">Feels like ${feelsLike}</div>
+      <div class="weather-meta" style="justify-content:flex-end;">
+        <span>💨 ${wind}</span>
+        <span>💧 ${humidity}</span>
+      </div>
+    </div>
+  `;
+}
+
+function renderForecast(list) {
+  const container = document.getElementById('weather-forecast');
+  if (!container) return;
+  if (!Array.isArray(list) || list.length === 0) {
+    container.innerHTML = '<div class="card weather-empty">Forecast unavailable.</div>';
+    return;
+  }
+
+  container.innerHTML = list.map(item => {
+    const icon = item.weather?.[0]?.icon;
+    const description = item.weather?.[0]?.description || '';
+    const iconUrl = icon ? `https://openweathermap.org/img/wn/${icon}@2x.png` : '';
+    return `
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:12px;">
+          ${iconUrl ? `<img src="${iconUrl}" alt="${description}" style="width:44px;height:44px;" />` : ''}
+          <div style="flex:1;">
+            <div class="card-name">${formatDay(item.dt_txt)}</div>
+            <div class="card-note" style="margin-bottom:0;text-transform:capitalize;">${description}</div>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-size:1.2rem;font-weight:800;color:var(--ocean);">${formatTemp(item.main?.temp_max)}</div>
+            <div style="font-size:0.78rem;color:var(--text-light);">${formatTemp(item.main?.temp_min)} low</div>
+          </div>
+        </div>
+        <div class="weather-meta" style="margin-top:8px;">
+          <span>💨 ${item.wind?.speed ? `${Math.round(item.wind.speed)} km/h` : '—'}</span>
+          <span>💧 ${item.main?.humidity ? `${Math.round(item.main.humidity)}%` : '—'}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+async function loadWeather() {
+  if (weatherLoaded) return;
+  const statusEl = document.getElementById('weather-status');
+  if (statusEl) statusEl.textContent = 'Fetching live weather…';
+  try {
+    const response = await fetch(`/.netlify/functions/weather?lat=${WEATHER_COORDS.lat}&lon=${WEATHER_COORDS.lon}`);
+    if (!response.ok) {
+      throw new Error(`Weather error: ${response.status}`);
+    }
+    const payload = await response.json();
+    if (!payload?.current || !payload?.forecast?.length) {
+      throw new Error('Weather data incomplete.');
+    }
+    renderCurrentWeather(payload.current);
+    renderForecast(payload.forecast);
+    const updated = payload.updated ? new Date(payload.updated) : null;
+    weatherLoaded = true;
+    if (statusEl) {
+      statusEl.textContent = updated
+        ? `Updated ${updated.toLocaleString('en-CA', { dateStyle: 'medium', timeStyle: 'short' })}`
+        : 'Updated just now.';
+    }
+  } catch (error) {
+    if (statusEl) statusEl.textContent = 'Unable to load live weather right now.';
+    const forecastEl = document.getElementById('weather-forecast');
+    if (forecastEl) {
+      forecastEl.innerHTML = '<div class="card weather-empty">Live forecast unavailable. Check the links below.</div>';
+    }
+    const currentEl = document.getElementById('weather-current');
+    if (currentEl) {
+      currentEl.innerHTML = '<div class="weather-empty">Live conditions unavailable. Check the links below.</div>';
+    }
+    console.error(error);
+  }
+}
+
+if (document.querySelector('.page.active')?.id === 'weather') {
+  loadWeather();
+}
 </script>
 
 </body>
