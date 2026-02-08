@@ -22,9 +22,12 @@ exports.handler = async (event) => {
     return {
       statusCode: 500,
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ error: 'Missing OpenWeather API key in environment variables.' }),
+      body: JSON.stringify({ error: 'OPENWEATHER_API_KEY is not available to the Netlify function' }),
     };
   }
+
+  // Log API key length (server-side only, not the value)
+  console.log(`API key length: ${apiKey.length}`);
 
   try {
     // Call OpenWeatherMap endpoints for St. John's, CA
@@ -36,11 +39,13 @@ exports.handler = async (event) => {
     ]);
 
     if (!currentRes.ok || !forecastRes.ok) {
-      const errorText = !currentRes.ok ? await currentRes.text() : await forecastRes.text();
+      // Return OpenWeatherMap's full JSON response verbatim for diagnostics
+      const errorResponse = !currentRes.ok ? currentRes : forecastRes;
+      const errorJson = await errorResponse.json();
       return {
-        statusCode: 502,
+        statusCode: errorResponse.status,
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ error: 'Unable to fetch weather data from OpenWeatherMap.', details: errorText }),
+        body: JSON.stringify(errorJson),
       };
     }
 
