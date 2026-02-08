@@ -29,16 +29,18 @@ exports.handler = async (event) => {
   try {
     // Call OpenWeatherMap endpoints for St. John's, CA
     // Using city name format as specified in requirements
+    const city = "St. John's,CA";
     const [currentRes, forecastRes] = await Promise.all([
-      fetch(`https://api.openweathermap.org/data/2.5/weather?q=St.%20John%27s,CA&units=metric&appid=${apiKey}`),
-      fetch(`https://api.openweathermap.org/data/2.5/forecast?q=St.%20John%27s,CA&units=metric&appid=${apiKey}`),
+      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&units=metric&appid=${apiKey}`),
+      fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${encodeURIComponent(city)}&units=metric&appid=${apiKey}`),
     ]);
 
     if (!currentRes.ok || !forecastRes.ok) {
+      const errorText = !currentRes.ok ? await currentRes.text() : await forecastRes.text();
       return {
         statusCode: 502,
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ error: 'Unable to fetch weather data from OpenWeatherMap.' }),
+        body: JSON.stringify({ error: 'Unable to fetch weather data from OpenWeatherMap.', details: errorText }),
       };
     }
 
