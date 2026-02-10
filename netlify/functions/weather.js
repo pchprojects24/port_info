@@ -14,6 +14,19 @@ function pickDailyForecast(list) {
     .slice(0, 4);
 }
 
+const DEFAULT_COORDS = { lat: 47.5615, lon: -52.7126 };
+
+function isValidCoordinate(lat, lon) {
+  return (
+    Number.isFinite(lat) &&
+    Number.isFinite(lon) &&
+    lat >= -90 &&
+    lat <= 90 &&
+    lon >= -180 &&
+    lon <= 180
+  );
+}
+
 exports.handler = async (event) => {
   // Read API key from environment variable
   const apiKey = process.env.OPENWEATHER_API_KEY;
@@ -26,22 +39,27 @@ exports.handler = async (event) => {
     };
   }
 
-  // Log API key length (server-side only, not the value)
-  console.log(`API key length: ${apiKey.length}`);
-
   try {
-    // Call OpenWeatherMap endpoints for St. John's, CA
-    // Using city name format as specified in requirements
-    const city = "St. John's,CA";
+    const lat = Number.parseFloat(event?.queryStringParameters?.lat);
+    const lon = Number.parseFloat(event?.queryStringParameters?.lon);
+    const coords = isValidCoordinate(lat, lon) ? { lat, lon } : DEFAULT_COORDS;
+    const locationQuery = `lat=${coords.lat}&lon=${coords.lon}`;
+
+    // Call OpenWeatherMap endpoints using coordinates
     const [currentRes, forecastRes] = await Promise.all([
-      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&units=metric&appid=${apiKey}`),
-      fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${encodeURIComponent(city)}&units=metric&appid=${apiKey}`),
+      fetch(`https://api.openweathermap.org/data/2.5/weather?${locationQuery}&units=metric&appid=${apiKey}`),
+      fetch(`https://api.openweathermap.org/data/2.5/forecast?${locationQuery}&units=metric&appid=${apiKey}`),
     ]);
 
     if (!currentRes.ok || !forecastRes.ok) {
       // Return OpenWeatherMap's full JSON response verbatim for diagnostics
       const errorResponse = !currentRes.ok ? currentRes : forecastRes;
-      const errorJson = await errorResponse.json();
+      let errorJson;
+      try {
+        errorJson = await errorResponse.json();
+      } catch {
+        errorJson = { error: 'Upstream weather provider returned invalid JSON.' };
+      }
       return {
         statusCode: errorResponse.status,
         headers: { 'Content-Type': 'application/json' },

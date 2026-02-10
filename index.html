@@ -1462,16 +1462,23 @@ window.addEventListener('scroll', () => {
 });
 
 /* ===== NAVIGATION ===== */
+function syncHash(pageId) {
+  const nextHash = pageId === 'landing' ? '' : `#${pageId}`;
+  if (location.hash === nextHash) return;
+  const nextUrl = `${location.pathname}${location.search}${nextHash}`;
+  history.replaceState(null, '', nextUrl);
+}
+
 function nav(pageId) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const el = document.getElementById(pageId);
-  if (el) {
-    el.classList.add('active');
-    window.scrollTo({top:0,behavior:'instant'});
-    updateQuickHome(pageId);
-    if (pageId === 'weather') {
-      loadWeather();
-    }
+  if (!el || !el.classList.contains('page')) return;
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'auto' });
+  syncHash(pageId);
+  updateQuickHome(pageId);
+  if (pageId === 'weather') {
+    loadWeather();
   }
 }
 
@@ -1657,6 +1664,20 @@ function formatTemp(value) {
   return `${Math.round(value)}°`;
 }
 
+function hasNumericValue(value) {
+  return typeof value === 'number' && Number.isFinite(value);
+}
+
+function formatWindKmh(speedMps) {
+  if (!hasNumericValue(speedMps)) return '—';
+  return `${Math.round(speedMps * 3.6)} km/h`;
+}
+
+function formatPrecipMm(value) {
+  if (!hasNumericValue(value)) return null;
+  return `${value.toFixed(1)} mm`;
+}
+
 function formatDay(dateString) {
   const date = new Date(dateString);
   return date.toLocaleDateString('en-CA', { weekday: 'short', month: 'short', day: 'numeric' });
@@ -1675,12 +1696,12 @@ function renderCurrentWeather(data) {
   const description = data.weather?.[0]?.description || '—';
   const temp = formatTemp(data.main?.temp);
   const feelsLike = formatTemp(data.main?.feels_like);
-  const wind = data.wind?.speed ? `${Math.round(data.wind.speed)} km/h` : '—';
-  const windGust = data.wind?.gust ? `${Math.round(data.wind.gust)} km/h` : null;
+  const wind = formatWindKmh(data.wind?.speed);
+  const windGust = hasNumericValue(data.wind?.gust) ? `${Math.round(data.wind.gust * 3.6)} km/h` : null;
   const windDir = data.wind?.deg !== undefined ? getWindDirection(data.wind.deg) : null;
-  const humidity = data.main?.humidity ? `${Math.round(data.main.humidity)}%` : '—';
-  const rain = data.rain?.['1h'] ? `${data.rain['1h'].toFixed(1)} mm` : null;
-  const snow = data.snow?.['1h'] ? `${data.snow['1h'].toFixed(1)} mm` : null;
+  const humidity = hasNumericValue(data.main?.humidity) ? `${Math.round(data.main.humidity)}%` : '—';
+  const rain = formatPrecipMm(data.rain?.['1h']);
+  const snow = formatPrecipMm(data.snow?.['1h']);
   const iconUrl = icon ? `https://openweathermap.org/img/wn/${icon}@2x.png` : '';
 
   const windDisplay = windDir ? `${wind} ${windDir}` : wind;
@@ -1732,18 +1753,18 @@ function renderForecast(list) {
     const description = item.weather?.[0]?.description || '';
     const iconUrl = icon ? `https://openweathermap.org/img/wn/${icon}@2x.png` : '';
 
-    const windSpeed = item.wind?.speed ? `${Math.round(item.wind.speed)} km/h` : '—';
+    const windSpeed = formatWindKmh(item.wind?.speed);
     const windDir = item.wind?.deg !== undefined ? getWindDirection(item.wind.deg) : null;
     const windDisplay = windDir ? `${windSpeed} ${windDir}` : windSpeed;
-    const windGust = item.wind?.gust ? `Gust ${Math.round(item.wind.gust)} km/h` : null;
+    const windGust = hasNumericValue(item.wind?.gust) ? `Gust ${Math.round(item.wind.gust * 3.6)} km/h` : null;
 
-    const rain = item.rain?.['3h'] ? `${item.rain['3h'].toFixed(1)} mm` : null;
-    const snow = item.snow?.['3h'] ? `${item.snow['3h'].toFixed(1)} mm` : null;
+    const rain = formatPrecipMm(item.rain?.['3h']);
+    const snow = formatPrecipMm(item.snow?.['3h']);
 
     const metaItems = [];
     metaItems.push(`💨 ${windDisplay}`);
     if (windGust) metaItems.push(windGust);
-    metaItems.push(`💧 ${item.main?.humidity ? `${Math.round(item.main.humidity)}%` : '—'}`);
+    metaItems.push(`💧 ${hasNumericValue(item.main?.humidity) ? `${Math.round(item.main.humidity)}%` : '—'}`);
     if (rain) metaItems.push(`🌧️ ${rain}`);
     if (snow) metaItems.push(`❄️ ${snow}`);
 
