@@ -869,6 +869,20 @@ color: var(--text-mid);
     <div class="landing-title">Welcome to<br>St. John's</div>
     <div class="landing-dates">Feb 13 – 16 &nbsp;·&nbsp; Newfoundland &amp; Labrador</div>
   </div>
+
+  <!-- Quick Checklist -->
+  <div class="card" style="margin-bottom: 20px; border-left: 4px solid var(--coral);">
+    <div style="font-size: 1rem; font-weight: 800; color: var(--white); margin-bottom: 12px;">⚡ Quick Checklist</div>
+    <ul style="font-size: 0.88rem; line-height: 1.7; color: var(--text-mid); margin-left: 20px;">
+      <li><strong>Check-in Window:</strong> 0700–1100 daily (<a href="#routine" onclick="nav('routine')" style="text-decoration:underline;color:var(--bright-gold);">see Overnight Leave</a>)</li>
+      <li><strong>Leave Expiry:</strong> Varies daily — check <a href="#routine" onclick="nav('routine')" style="text-decoration:underline;color:var(--bright-gold);">Daily Routine</a></li>
+      <li><strong>Alcohol:</strong> 8 hrs before duty; no intoxication ashore (<a href="#safety" onclick="nav('safety')" style="text-decoration:underline;color:var(--bright-gold);">Safety</a>)</li>
+      <li><strong>Cannabis:</strong> 8 hrs before duty; 24 hrs before weapons/ops (<a href="#routine" onclick="nav('routine')" style="text-decoration:underline;color:var(--bright-gold);">see details</a>)</li>
+      <li><strong>⚠️ AWOL Risk:</strong> Check-in after 1100 = Tardy/AWOL</li>
+      <li><strong>Safety:</strong> Buddy system, stay on lit streets (<a href="#safety" onclick="nav('safety')" style="text-decoration:underline;color:var(--bright-gold);">Safety</a>)</li>
+    </ul>
+  </div>
+
   <div class="landing-grid">
     <button class="landing-btn lb-routine" onclick="nav('routine')">
       <span class="icon-wrap">⚓</span>
@@ -922,7 +936,45 @@ color: var(--text-mid);
   </div>
   <div class="accordion-item" data-group="routine">
     <button class="accordion-trigger" onclick="toggleAccordion(this)">Daily Routine <span class="accordion-icon">+</span></button>
-    <div class="accordion-body"><p>Per Routine Orders.</p></div>
+    <div class="accordion-body">
+      <table style="width:100%;border-collapse:collapse;font-size:0.88rem;line-height:1.6;color:var(--text-mid);">
+        <thead>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.2);">
+            <th style="text-align:left;padding:8px 4px;font-weight:700;color:var(--white);">Date</th>
+            <th style="text-align:left;padding:8px 4px;font-weight:700;color:var(--white);">Routine</th>
+            <th style="text-align:left;padding:8px 4px;font-weight:700;color:var(--white);">Leave Expires</th>
+            <th style="text-align:left;padding:8px 4px;font-weight:700;color:var(--white);">Overnight</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+            <td style="padding:8px 4px;"><strong>13 Feb</strong></td>
+            <td style="padding:8px 4px;">Arrive alongside / Daily Routine</td>
+            <td style="padding:8px 4px;">0730 (14 Feb)</td>
+            <td style="padding:8px 4px;">Yes</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+            <td style="padding:8px 4px;"><strong>14 Feb</strong></td>
+            <td style="padding:8px 4px;">Sunday Routine</td>
+            <td style="padding:8px 4px;">0730 (15 Feb)</td>
+            <td style="padding:8px 4px;">Yes</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+            <td style="padding:8px 4px;"><strong>15 Feb</strong></td>
+            <td style="padding:8px 4px;">Sunday Routine</td>
+            <td style="padding:8px 4px;">2359</td>
+            <td style="padding:8px 4px;">No</td>
+          </tr>
+          <tr>
+            <td style="padding:8px 4px;"><strong>16 Feb</strong></td>
+            <td style="padding:8px 4px;">Departure</td>
+            <td style="padding:8px 4px;">N/A</td>
+            <td style="padding:8px 4px;">N/A</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="margin-top:12px;font-size:0.84rem;color:var(--text-light);">See Routine Orders for detailed timings.</p>
+    </div>
   </div>
   <div class="accordion-item" data-group="routine">
     <button class="accordion-trigger" onclick="toggleAccordion(this)">Sick Parade <span class="accordion-icon">+</span></button>
@@ -942,12 +994,110 @@ color: var(--text-mid);
   <div class="accordion-item" data-group="routine">
     <button class="accordion-trigger" onclick="toggleAccordion(this)">Overnight Leave <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
+      <p style="margin-bottom:12px;"><strong>Overnight leave may be authorized during this port visit when approved.</strong></p>
+
+      <p style="margin-bottom:8px;font-weight:700;color:var(--white);">Location Requirements:</p>
+      <ul style="margin-bottom:12px;">
+        <li>Must be within a 4-hour return boundary (able to return within 4 hours if recalled)</li>
+      </ul>
+
+      <p style="margin-bottom:8px;font-weight:700;color:var(--white);">Leave Pass Requirements:</p>
+      <ul style="margin-bottom:12px;">
+        <li>Include: address, contact info, hotel/residence confirmation number</li>
+        <li>Submit to HOD/SHOD NLT 1800 on the night you want overnight leave</li>
+        <li>May cover multiple days</li>
+        <li>If HOD/SHOD absent, DPO/OOD can sign leave pass(es)</li>
+        <li>Copy #1: placed in Quarter Master Lobby binder</li>
+        <li>Copy #2: placed on top of your bunk (cabin/mess)</li>
+      </ul>
+
+      <div style="background:rgba(233,30,99,0.15);border-left:3px solid var(--rose);padding:12px;border-radius:8px;margin-bottom:12px;">
+        <p style="font-weight:800;color:var(--white);margin-bottom:6px;">⚠️ CHECK-IN REQUIRED</p>
+        <ul>
+          <li><strong>When:</strong> Following morning between 0700–1100</li>
+          <li><strong>How:</strong> Phone or email to <a href="mailto:FRRcheckin@forces.gc.ca" style="color:var(--bright-gold);text-decoration:underline;">FRRcheckin@forces.gc.ca</a></li>
+          <li><strong>Confirmation:</strong> You are NOT checked-in until told "You have been checked-in"</li>
+          <li><strong style="color:#ff4757;">CRITICAL:</strong> Check-in after 1100 = Tardy/AWOL</li>
+          <li>If unable to check-in by phone/email, physically report to the ship</li>
+        </ul>
+      </div>
+
+      <p style="margin-bottom:8px;font-weight:700;color:var(--white);">General Reminders:</p>
       <ul>
-        <li>Have your hotel name, address, and phone number ready before requesting leave.</li>
-        <li>Provide a contact number where you can be reached at all times.</li>
-        <li>Know your leave expiry time and plan return travel accordingly.</li>
-        <li>If your plans change, inform the ship per routine as soon as possible.</li>
-        <li>Keep your military ID and leave pass on your person.</li>
+        <li>Have hotel name, address, and phone number ready before requesting leave</li>
+        <li>Provide contact number where you can be reached at all times</li>
+        <li>Know your leave expiry time and plan return travel accordingly</li>
+        <li>If plans change, inform the ship per routine as soon as possible</li>
+        <li>Keep military ID and leave pass on your person</li>
+      </ul>
+    </div>
+  </div>
+  <div class="accordion-item" data-group="routine">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">Duty Watches <span class="accordion-icon">+</span></button>
+    <div class="accordion-body">
+      <p style="margin-bottom:8px;font-weight:700;color:var(--white);">Dress Code:</p>
+      <ul style="margin-bottom:12px;">
+        <li>While on duty/working onboard: NCD (Naval Combat Dress)</li>
+        <li>Dress for the weather</li>
+      </ul>
+
+      <p style="margin-bottom:8px;font-weight:700;color:var(--white);">Sunday Routine Cleaning:</p>
+      <ul style="margin-bottom:12px;">
+        <li>Oncoming and off-going duty watches conduct cleaning stations before off-going watch secured</li>
+        <li>Tasks: sweep flats, empty gash, clean scullery</li>
+      </ul>
+
+      <p style="margin-bottom:8px;font-weight:700;color:var(--white);">Watch Turnover:</p>
+      <ul style="margin-bottom:12px;">
+        <li>Daily at 0805 after off-going watch completes Colours</li>
+        <li><strong>Important:</strong> Duty watch of 15 Feb remains in place until ship closes up for departure on 16 Feb</li>
+      </ul>
+
+      <p style="margin-bottom:8px;font-weight:700;color:var(--white);">Contact Information:</p>
+      <ul>
+        <li>Paper cards listing ship phone numbers available at the Brow</li>
+        <li>Command Team can be contacted at any time — reach out if you need help</li>
+      </ul>
+    </div>
+  </div>
+  <div class="accordion-item" data-group="routine">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">Cannabis Policy <span class="accordion-icon">+</span></button>
+    <div class="accordion-body">
+      <div style="background:rgba(155,89,182,0.15);border-left:3px solid var(--plum);padding:12px;border-radius:8px;margin-bottom:12px;">
+        <p style="font-weight:800;color:var(--white);margin-bottom:6px;">Cannabis consumption is governed IAW DAOD 9004-1</p>
+        <p style="font-size:0.84rem;color:var(--text-mid);margin-bottom:0;">CAF policy applies regardless of Canadian or local laws</p>
+      </div>
+
+      <p style="margin-bottom:8px;"><strong>What counts as "authorized leave"?</strong></p>
+      <p style="margin-bottom:12px;font-size:0.88rem;color:var(--text-mid);">FRR considers Sunday Routine to mean "authorized leave," along with anyone holding an approved overnight leave pass. However, restrictions still apply.</p>
+
+      <p style="margin-bottom:8px;font-weight:700;color:var(--white);">Restrictions:</p>
+      <ul>
+        <li><strong>No cannabis 8 hrs before duty</strong></li>
+        <li><strong>No cannabis 24 hrs before operation of weapons/ammunition/explosives</strong></li>
+        <li><strong>No cannabis 24 hrs before scheduled emergency response</strong></li>
+        <li><strong>No cannabis 24 hrs before scheduled operational exercise or training</strong> (day prior to sailing)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="accordion-item" data-group="routine">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">Smoking <span class="accordion-icon">+</span></button>
+    <div class="accordion-body">
+      <ul>
+        <li>Smoking restricted to Quarter Deck only</li>
+        <li>Specific side (inboard/outboard) will be determined upon arrival</li>
+      </ul>
+    </div>
+  </div>
+  <div class="accordion-item" data-group="routine">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">Alcohol Overage (Returning to Halifax) <span class="accordion-icon">+</span></button>
+    <div class="accordion-body">
+      <p style="margin-bottom:12px;"><strong>Bringing alcohol back to Halifax:</strong></p>
+      <ul style="margin-bottom:12px;">
+        <li>All containers (bottles/cans/etc.) must remain sealed</li>
+        <li>Immediately upon return to ship, securely package containers</li>
+        <li>Deliver to Exchange Manager: Lt(N) Sexton</li>
+        <li>If Exchange Manager absent: deliver to Duty PO who will log purchases and secure them in Coxn's Office until delivery for safe stowage</li>
       </ul>
     </div>
   </div>
@@ -1168,21 +1318,35 @@ color: var(--text-mid);
     <button class="accordion-trigger" onclick="toggleAccordion(this)">General <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
       <ul>
-        <li>St. John's is generally safe — use common sense and stay aware.</li>
-        <li>Stick to well-lit, populated areas at night.</li>
-        <li>February weather changes fast: dress in warm layers and watch for ice.</li>
-        <li>Buddy system — especially at night.</li>
+        <li>St. John's is generally safe — use common sense and stay aware</li>
+        <li><strong>Travel in pairs/groups</strong> — buddy system in full effect</li>
+        <li>Stick to well-lit, populated areas at night — <strong>do not travel on unlit streets</strong></li>
+        <li>Stay on main roadways</li>
+        <li>Do not engage in political arguments with locals</li>
+        <li>February weather changes fast: dress in warm layers and watch for ice</li>
+        <li>Photograph/photocopy front and back of credit cards (helps with cancellation if lost/stolen)</li>
+        <li><strong>Do not take passport ashore</strong></li>
       </ul>
     </div>
   </div>
   <div class="accordion-item" data-group="safety">
     <button class="accordion-trigger" onclick="toggleAccordion(this)">Alcohol / Nights Out <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
+      <div style="background:rgba(255,107,107,0.15);border-left:3px solid var(--coral);padding:12px;border-radius:8px;margin-bottom:12px;">
+        <p style="font-weight:800;color:var(--white);margin-bottom:6px;">🍺 Alcohol Policy</p>
+        <ul>
+          <li><strong>Legal drinking age in St. John's: 19</strong></li>
+          <li><strong>No alcohol 8 hrs before duty/work</strong></li>
+          <li><strong>Do not be intoxicated ashore</strong> — QMs will police this at the Brow</li>
+          <li>Bar hours per Daily Routine; extensions will not be considered prior to working days in port</li>
+        </ul>
+      </div>
+      <p style="margin-bottom:8px;font-weight:700;color:var(--white);">Nights Out:</p>
       <ul>
-        <li>George Street is the main strip — fun, but pace yourself.</li>
-        <li>Arrange your ride back before going out.</li>
-        <li>Look out for your shipmates.</li>
-        <li>Bars close at 3 AM on weekends.</li>
+        <li>George Street is the main strip — fun, but pace yourself</li>
+        <li>Arrange your ride back before going out</li>
+        <li>Look out for your shipmates</li>
+        <li>Bars close at 3 AM on weekends</li>
       </ul>
     </div>
   </div>
@@ -1268,6 +1432,13 @@ color: var(--text-mid);
     <div class="contact-actions">
       <a href="tel:+15550103" class="btn-sm btn-call">📞 Call</a>
       <a href="sms:+15550103" class="btn-sm btn-text">💬 Text</a>
+    </div>
+  </div>
+  <div class="contact-card">
+    <div class="contact-label">Port Liaison Officer</div>
+    <div class="contact-sub">SLt Prosser</div>
+    <div class="contact-actions">
+      <span style="font-size:0.84rem;color:var(--text-mid);">Contact via Brow/Command Team</span>
     </div>
   </div>
 </div>
