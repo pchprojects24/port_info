@@ -1173,101 +1173,57 @@ color: var(--text-mid);
   </div>
 </div>
 
-<!-- ===== PAGE 2: MAP & GETTING AROUND ===== -->
+<!-- ===== PAGE 2: MAP & GETTING AROUND (LANDING) ===== -->
 
 <div id="map" class="page">
   <button class="back-btn" onclick="nav('explore')">Explore</button>
   <div class="page-title">Map &amp; Getting Around</div>
+  <div class="page-subtitle">Navigate the city with ease</div>
+  <div class="color-bar"></div>
+
+  <div class="landing-grid">
+    <button class="landing-btn lb-map" onclick="nav('map-directions')">
+      <span class="icon-wrap">🗺️</span>
+      <span>Map &amp; Directions</span>
+      <span class="btn-arrow">›</span>
+    </button>
+    <button class="landing-btn lb-todo" onclick="nav('map-transportation')">
+      <span class="icon-wrap">🚕</span>
+      <span>Transportation</span>
+      <span class="btn-arrow">›</span>
+    </button>
+  </div>
+</div>
+
+<!-- ===== PAGE 2A: MAP & DIRECTIONS ===== -->
+
+<div id="map-directions" class="page">
+  <button class="back-btn" onclick="nav('map')">Map &amp; Getting Around</button>
+  <div class="page-title">Map &amp; Directions</div>
   <div class="page-subtitle">Tap for walking directions from ship</div>
   <div class="color-bar"></div>
 
+  <div class="section-header">Popular Destinations</div>
   <div class="map-btns">
     <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Downtown+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
       <span class="map-pin">📍</span> Downtown St. John's <span class="chevron">›</span>
     </a>
     <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=George+Street+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">🎶</span> George Street <span class="chevron">›</span>
+      <span class="map-pin">🎶</span> George Street <span style="margin-left:auto;color:var(--text-light);font-size:0.9rem;">350m</span><span class="chevron">›</span>
     </a>
     <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Signal+Hill+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">⛰️</span> Signal Hill <span class="chevron">›</span>
+      <span class="map-pin">⛰️</span> Signal Hill <span style="margin-left:auto;color:var(--text-light);font-size:0.9rem;">3.0 km</span><span class="chevron">›</span>
     </a>
     <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=The+Rooms+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">🏛️</span> The Rooms <span class="chevron">›</span>
+      <span class="map-pin">🏛️</span> The Rooms <span style="margin-left:auto;color:var(--text-light);font-size:0.9rem;">850m</span><span class="chevron">›</span>
     </a>
     <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Cape+Spear+Newfoundland&travelmode=walking" target="_blank" rel="noopener">
       <span class="map-pin">🌊</span> Cape Spear <span class="chevron">›</span>
     </a>
   </div>
 
-  <div class="section-header">Map Legend (Downtown St. John's)</div>
+  <div class="section-header">Restaurants &amp; Bars</div>
   <div class="map-btns">
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Tommy+Ricketts+Memorial+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">1️⃣</span> Tommy Ricketts Memorial <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Railway+Coastal+Museum+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">2️⃣</span> Railway Coastal Museum <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Apothecary+Hall+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">3️⃣</span> Apothecary Hall <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Newman+Wine+Vaults+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">4️⃣</span> Newman Wine Vaults <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Mile+Zero+Marker+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">5️⃣</span> Mile Zero Marker <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Murray+Premises+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">6️⃣</span> Murray Premises <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Supreme+Court+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">7️⃣</span> Supreme Court <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Anglican+Cathedral+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">8️⃣</span> Anglican Cathedral <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Basilica+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">9️⃣</span> Basilica <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Presentation+Convent+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">🔟</span> Presentation Convent <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Craft+Council+of+NL+St.+John's&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">1️⃣1️⃣</span> Craft Council of NL <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=LSPU+Hall+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">1️⃣2️⃣</span> LSPU Hall <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=National+War+Memorial+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">1️⃣3️⃣</span> National War Memorial <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Colonial+Building+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">1️⃣4️⃣</span> Colonial Building <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Government+House+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">1️⃣5️⃣</span> Government House <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Commissariat+House+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">1️⃣6️⃣</span> Commissariat House <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Terry+Fox+Memorial+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">1️⃣7️⃣</span> Terry Fox Memorial <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Memorial+University+Signal+Hill+Campus+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">1️⃣8️⃣</span> Memorial University Signal Hill Campus <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Signal+Hill+Visitor+Interpretation+Centre+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">1️⃣9️⃣</span> Signal Hill Visitor Interpretation Centre <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Royal+St.+John's+Regatta+Boathouse+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">2️⃣0️⃣</span> Royal St. John's Regatta Boathouse <span class="chevron">›</span>
-    </a>
-  </div>
-
-  <div class="section-header">Distances From Frédérick Rolette</div>
-  <div class="map-btns">
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=George+Street+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">🎶</span> George Street <span style="margin-left:auto;color:var(--text-light);font-size:0.9rem;">350m</span><span class="chevron">›</span>
-    </a>
     <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Yellowbelly+Brewery+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
       <span class="map-pin">🍺</span> Yellowbelly <span style="margin-left:auto;color:var(--text-light);font-size:0.9rem;">210m</span><span class="chevron">›</span>
     </a>
@@ -1295,34 +1251,109 @@ color: var(--text-mid);
     <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Shamrock+City+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
       <span class="map-pin">🍀</span> Shamrock City <span style="margin-left:auto;color:var(--text-light);font-size:0.9rem;">350m</span><span class="chevron">›</span>
     </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=St.+Clare's+Mercy+Hospital+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">🏥</span> St. Clare's Mercy Hospital <span style="margin-left:auto;color:var(--text-light);font-size:0.9rem;">1.4 km</span><span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Signal+Hill+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">⛰️</span> Signal Hill <span style="margin-left:auto;color:var(--text-light);font-size:0.9rem;">3.0 km</span><span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=The+Rooms+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">🏛️</span> The Rooms <span style="margin-left:auto;color:var(--text-light);font-size:0.9rem;">850m</span><span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Escape+Quest+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">🔐</span> Escape Quest <span style="margin-left:auto;color:var(--text-light);font-size:0.9rem;">900m</span><span class="chevron">›</span>
+  </div>
+
+  <div class="section-header">Attractions &amp; Activities</div>
+  <div class="map-btns">
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Titanic+and+Iceberg+Museum+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">🚢</span> Titanic and Iceberg Museum <span style="margin-left:auto;color:var(--text-light);font-size:0.9rem;">220m</span><span class="chevron">›</span>
     </a>
     <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Jelly+Bean+Row+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
       <span class="map-pin">🏘️</span> Jelly Bean Row <span style="margin-left:auto;color:var(--text-light);font-size:0.9rem;">650m</span><span class="chevron">›</span>
     </a>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Escape+Quest+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">🔐</span> Escape Quest <span style="margin-left:auto;color:var(--text-light);font-size:0.9rem;">900m</span><span class="chevron">›</span>
+    </a>
     <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=The+Loop+Trail+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
       <span class="map-pin">🚶</span> The Loop <span style="margin-left:auto;color:var(--text-light);font-size:0.9rem;">1.4 km</span><span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Titanic+and+Iceberg+Museum+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">🚢</span> Titanic and Iceberg Museum <span style="margin-left:auto;color:var(--text-light);font-size:0.9rem;">220m</span><span class="chevron">›</span>
     </a>
     <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Avalon+Mall+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
       <span class="map-pin">🛍️</span> Avalon Mall <span style="margin-left:auto;color:var(--text-light);font-size:0.9rem;">4.1 km</span><span class="chevron">›</span>
     </a>
   </div>
 
+  <div class="section-header">Historic Sites &amp; Landmarks</div>
+  <div class="map-btns">
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Tommy+Ricketts+Memorial+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">🎖️</span> Tommy Ricketts Memorial <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Railway+Coastal+Museum+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">🚂</span> Railway Coastal Museum <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Apothecary+Hall+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">💊</span> Apothecary Hall <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Newman+Wine+Vaults+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">🍷</span> Newman Wine Vaults <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Mile+Zero+Marker+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">🛣️</span> Mile Zero Marker <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Murray+Premises+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">🏢</span> Murray Premises <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Supreme+Court+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">⚖️</span> Supreme Court <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Anglican+Cathedral+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">⛪</span> Anglican Cathedral <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Basilica+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">⛪</span> Basilica <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Presentation+Convent+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">🏛️</span> Presentation Convent <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Craft+Council+of+NL+St.+John's&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">🎨</span> Craft Council of NL <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=LSPU+Hall+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">🎭</span> LSPU Hall <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=National+War+Memorial+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">🕊️</span> National War Memorial <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Colonial+Building+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">🏛️</span> Colonial Building <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Government+House+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">🏰</span> Government House <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Commissariat+House+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">🏛️</span> Commissariat House <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Terry+Fox+Memorial+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">🏃</span> Terry Fox Memorial <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Memorial+University+Signal+Hill+Campus+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">🎓</span> Memorial University Signal Hill Campus <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Signal+Hill+Visitor+Interpretation+Centre+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">ℹ️</span> Signal Hill Visitor Interpretation Centre <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Royal+St.+John's+Regatta+Boathouse+NL&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">🚣</span> Royal St. John's Regatta Boathouse <span class="chevron">›</span>
+    </a>
+  </div>
+
+  <div class="section-header">Essential Services</div>
+  <div class="map-btns">
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=St.+Clare's+Mercy+Hospital+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">🏥</span> St. Clare's Mercy Hospital <span style="margin-left:auto;color:var(--text-light);font-size:0.9rem;">1.4 km</span><span class="chevron">›</span>
+    </a>
+  </div>
+</div>
+
+<!-- ===== PAGE 2B: TRANSPORTATION ===== -->
+
+<div id="map-transportation" class="page">
+  <button class="back-btn" onclick="nav('map')">Map &amp; Getting Around</button>
+  <div class="page-title">Transportation</div>
+  <div class="page-subtitle">Get around the city</div>
+  <div class="color-bar"></div>
+
   <div class="accordion-item">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">Transportation <span class="accordion-icon">+</span></button>
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">Transportation Options <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
       <ul>
         <li><strong>Rideshare:</strong> Uber is available in St. John's and is strongly recommended over taxis by both locals and tourists.</li>
