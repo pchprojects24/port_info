@@ -13,7 +13,10 @@ window.PORT_DATA = {
     { name: "Get Screeched In", desc: "Kiss the cod, do the shot, become an honorary Newfoundlander.", tags: ["Iconic","Food-Drink","Quick","Indoors"], map: "George Street St. John's NL", web: "" },
     { name: "Bowring Park", desc: "Beautiful urban park with trails and the Peter Pan statue.", tags: ["Outdoors","Quick"], map: "Bowring Park St. John's NL", web: "" },
     { name: "Escape Quest", desc: "Escape room experiences — great group activity.", tags: ["Indoors","Quick"], map: "Escape Quest St. John's NL", web: "https://www.escapequeststjohns.com/" },
-    { name: "Bannerman Park", desc: "Downtown heritage park — outdoor skating in winter.", tags: ["Outdoors","Quick"], map: "Bannerman Park St. John's NL", web: "" }
+    { name: "Bannerman Park", desc: "Downtown heritage park — outdoor skating in winter.", tags: ["Outdoors","Quick"], map: "Bannerman Park St. John's NL", web: "" },
+    { name: "The Loop", desc: "Popular 6.3 km walking trail around Signal Hill with panoramic views.", tags: ["Iconic","Outdoors","Half-day"], map: "Signal Hill Loop St. John's NL", web: "" },
+    { name: "Titanic & Iceberg Exhibit Museum", desc: "Immersive Titanic history with artifacts and interactive exhibits.", tags: ["Iconic","Indoors","Quick"], map: "291 Water Street St. John's NL", web: "https://titanicnewfoundland.ca/" },
+    { name: "Avalon Mall", desc: "Largest shopping center in Newfoundland with 140+ stores.", tags: ["Indoors","Quick"], map: "48 Kenmount Road St. John's NL", web: "https://shopavalonmall.com/" }
   ],
   todoChips: ["Iconic","Outdoors","Indoors","Food-Drink","Quick","Half-day"],
   venueData: {
