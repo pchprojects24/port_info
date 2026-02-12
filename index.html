@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#002F87">
 <title>St. John's Port Brief — Feb 13–16</title>
@@ -891,7 +891,7 @@ color: var(--text-mid);
       <span>Hotels</span>
       <span class="btn-arrow">›</span>
     </button>
-    <button class="landing-btn lb-todo" onclick="nav('weather')">
+    <button class="landing-btn lb-weather" onclick="nav('weather')">
       <span class="icon-wrap">🌨️</span>
       <span>Weather</span>
       <span class="btn-arrow">›</span>
@@ -1586,32 +1586,32 @@ color: var(--text-mid);
     <div class="contact-label">Brow</div>
     <div class="contact-sub">+1-555-0100 (placeholder)</div>
     <div class="contact-actions">
-      <a href="tel:+15550100" class="btn-sm btn-call">📞 Call</a>
-      <a href="sms:+15550100" class="btn-sm btn-text">💬 Text</a>
+      <span class="btn-sm btn-disabled" style="opacity:0.5;cursor:not-allowed;">📞 Call</span>
+      <span class="btn-sm btn-disabled" style="opacity:0.5;cursor:not-allowed;">💬 Text</span>
     </div>
   </div>
   <div class="contact-card">
     <div class="contact-label">Cox'n</div>
     <div class="contact-sub">+1-555-0101 (placeholder)</div>
     <div class="contact-actions">
-      <a href="tel:+15550101" class="btn-sm btn-call">📞 Call</a>
-      <a href="sms:+15550101" class="btn-sm btn-text">💬 Text</a>
+      <span class="btn-sm btn-disabled" style="opacity:0.5;cursor:not-allowed;">📞 Call</span>
+      <span class="btn-sm btn-disabled" style="opacity:0.5;cursor:not-allowed;">💬 Text</span>
     </div>
   </div>
   <div class="contact-card">
     <div class="contact-label">XO</div>
     <div class="contact-sub">+1-555-0102 (placeholder)</div>
     <div class="contact-actions">
-      <a href="tel:+15550102" class="btn-sm btn-call">📞 Call</a>
-      <a href="sms:+15550102" class="btn-sm btn-text">💬 Text</a>
+      <span class="btn-sm btn-disabled" style="opacity:0.5;cursor:not-allowed;">📞 Call</span>
+      <span class="btn-sm btn-disabled" style="opacity:0.5;cursor:not-allowed;">💬 Text</span>
     </div>
   </div>
   <div class="contact-card">
     <div class="contact-label">Duty Medical</div>
     <div class="contact-sub">+1-555-0103 (placeholder)</div>
     <div class="contact-actions">
-      <a href="tel:+15550103" class="btn-sm btn-call">📞 Call</a>
-      <a href="sms:+15550103" class="btn-sm btn-text">💬 Text</a>
+      <span class="btn-sm btn-disabled" style="opacity:0.5;cursor:not-allowed;">📞 Call</span>
+      <span class="btn-sm btn-disabled" style="opacity:0.5;cursor:not-allowed;">💬 Text</span>
     </div>
   </div>
   <div class="contact-card">
@@ -1857,15 +1857,29 @@ function toggleAccordion(trigger) {
 
 /* ===== THINGS TO DO ===== */
 const { activities = [], todoChips = [], venueData = {}, hotelData = [] } = window.PORT_DATA || {};
+
+// Validate that data.js loaded properly
+if (!window.PORT_DATA) {
+  console.error('PORT_DATA not loaded - data.js may have failed to load or has syntax errors');
+}
+
 let activeFilters = new Set();
 
 // Ship location in St. John's (47.5598°N, -52.7088°W)
 const SHIP_LOCATION = '47.5598,-52.7088';
 
+// HTML escaping function to prevent XSS
+function escapeHtml(str) {
+  if (!str) return '';
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
 function renderTodoChips() {
   if (!todoChips) return;
   document.getElementById('todo-chips').innerHTML = todoChips.map(c =>
-    `<span class="chip${activeFilters.has(c)?' active':''}" onclick="toggleChip('${c}')">${c}</span>`
+    `<span class="chip${activeFilters.has(c)?' active':''}" onclick="toggleChip('${escapeHtml(c)}')">${escapeHtml(c)}</span>`
   ).join('');
 }
 
@@ -1877,15 +1891,15 @@ function toggleChip(tag) {
 function renderTodoList() {
   if (!activities) return;
   const filtered = activeFilters.size === 0 ? activities :
-    activities.filter(a => a.tags.some(t => activeFilters.has(t)));
+    activities.filter(a => a.tags && a.tags.some(t => activeFilters.has(t)));
   document.getElementById('todo-list').innerHTML = filtered.map(a => `
     <div class="card">
-      <div class="card-name">${a.name}</div>
-      <div class="card-note">${a.desc}</div>
-      <div class="card-tags">${a.tags.map(t => `<span class="card-tag">${t}</span>`).join('')}</div>
+      <div class="card-name">${escapeHtml(a.name)}</div>
+      <div class="card-note">${escapeHtml(a.desc)}</div>
+      <div class="card-tags">${(a.tags || []).map(t => `<span class="card-tag">${escapeHtml(t)}</span>`).join('')}</div>
       <div class="card-actions">
         <a class="btn-sm btn-map" href="https://www.google.com/maps/dir/?api=1&origin=${SHIP_LOCATION}&destination=${encodeURIComponent(a.map)}&travelmode=walking" target="_blank" rel="noopener">🚶 Walk</a>
-        ${a.web ? `<a class="btn-sm btn-web" href="${a.web}" target="_blank" rel="noopener">🌐 Website</a>` : ''}
+        ${a.web ? `<a class="btn-sm btn-web" href="${escapeHtml(a.web)}" target="_blank" rel="noopener">🌐 Website</a>` : ''}
       </div>
     </div>
   `).join('');
@@ -1902,13 +1916,13 @@ function renderVenues(tabId) {
   list.innerHTML = data.map((v, i) => `
     <div class="card venue-card" data-idx="${i}">
       <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-        <div class="card-name">${v.name}</div>
-        ${v.price ? `<span class="price-badge">${v.price}</span>` : ''}
+        <div class="card-name">${escapeHtml(v.name)}</div>
+        ${v.price ? `<span class="price-badge">${escapeHtml(v.price)}</span>` : ''}
       </div>
-      ${v.note ? `<div class="card-note">${v.note}</div>` : ''}
+      ${v.note ? `<div class="card-note">${escapeHtml(v.note)}</div>` : ''}
       <div class="card-actions">
         <a class="btn-sm btn-map" href="https://www.google.com/maps/dir/?api=1&origin=${SHIP_LOCATION}&destination=${encodeURIComponent(v.map)}&travelmode=walking" target="_blank" rel="noopener">🚶 Walk</a>
-        ${v.web ? `<a class="btn-sm btn-web" href="${v.web}" target="_blank" rel="noopener">🌐 Website</a>` : ''}
+        ${v.web ? `<a class="btn-sm btn-web" href="${escapeHtml(v.web)}" target="_blank" rel="noopener">🌐 Website</a>` : ''}
       </div>
     </div>
   `).join('');
@@ -1951,11 +1965,11 @@ function switchTab(pageId, tabId, btn) {
 function renderHotels() {
   document.getElementById('hotel-list').innerHTML = hotelData.map((h, i) => `
     <div class="card hotel-card" data-idx="${i}">
-      <div class="card-name">${h.name}</div>
-      ${h.note ? `<div class="card-note">${h.note}</div>` : ''}
+      <div class="card-name">${escapeHtml(h.name)}</div>
+      ${h.note ? `<div class="card-note">${escapeHtml(h.note)}</div>` : ''}
       <div class="card-actions">
         <a class="btn-sm btn-map" href="https://www.google.com/maps/dir/?api=1&origin=${SHIP_LOCATION}&destination=${encodeURIComponent(h.map)}&travelmode=walking" target="_blank" rel="noopener">🚶 Walk</a>
-        ${h.web ? `<a class="btn-sm btn-web" href="${h.web}" target="_blank" rel="noopener">🌐 Website</a>` : ''}
+        ${h.web ? `<a class="btn-sm btn-web" href="${escapeHtml(h.web)}" target="_blank" rel="noopener">🌐 Website</a>` : ''}
       </div>
     </div>
   `).join('');
@@ -2068,7 +2082,7 @@ function renderCurrentWeather(data) {
   container.innerHTML = `
     <div class="weather-current-top">
       <div class="weather-current-left">
-        ${iconUrl ? `<img src="${iconUrl}" alt="${description}" />` : ''}
+        ${iconUrl ? `<img src="${iconUrl}" alt="${description || 'Weather icon'}" />` : ''}
         <div class="weather-current-info">
           <div class="weather-now-label">Now</div>
           <div class="weather-condition">${description}</div>
@@ -2125,7 +2139,7 @@ function renderForecast(list) {
     return `
       <div class="card">
         <div style="display:flex;align-items:center;gap:12px;">
-          ${iconUrl ? `<img src="${iconUrl}" alt="${description}" style="width:44px;height:44px;" />` : ''}
+          ${iconUrl ? `<img src="${iconUrl}" alt="${description || 'Weather icon'}" style="width:44px;height:44px;" />` : ''}
           <div style="flex:1;">
             <div class="card-name">${formatDay(item.dt_txt)}</div>
             <div class="card-note" style="margin-bottom:0;text-transform:capitalize;">${description}</div>
@@ -2166,7 +2180,16 @@ async function loadWeather() {
         : 'Updated just now.';
     }
   } catch (error) {
-    if (statusEl) statusEl.textContent = 'Unable to load live weather right now.';
+    console.error('Weather fetch error:', error);
+    if (statusEl) {
+      if (error.message && error.message.includes('404')) {
+        statusEl.textContent = 'Weather service not configured. This site requires Netlify Functions.';
+      } else if (error.message && error.message.includes('Weather error')) {
+        statusEl.textContent = 'Weather service unavailable. Please try again later.';
+      } else {
+        statusEl.textContent = 'Unable to load live weather right now.';
+      }
+    }
     const forecastEl = document.getElementById('weather-forecast');
     if (forecastEl) {
       forecastEl.innerHTML = '<div class="card weather-empty">Live forecast unavailable. Check the links below.</div>';
