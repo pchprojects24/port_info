@@ -351,7 +351,7 @@ transition: transform 0.3s;
 .lb-hotels .icon-wrap { background: var(--plum-soft); color: var(--plum); }
 .lb-safety .icon-wrap { background: var(--teal-soft); color: var(--teal); }
 .lb-contacts .icon-wrap { background: var(--ocean-soft); color: var(--ocean); }
-.lb-crow .icon-wrap { background: var(--rose-soft); color: var(--rose); }
+.lb-crow .icon-wrap { background: #f5f0e0; color: #8b6914; }
 .lb-weather .icon-wrap { background: var(--ocean-soft); color: var(--ocean); }
 .lb-explore .icon-wrap { background: var(--green-soft); color: var(--green); }
 
@@ -882,74 +882,618 @@ animation: colorShift 8s ease-in-out infinite;
 50% { background-position: 100% 50%; }
 }
 
-/* ===== CROW'S NEST GALLERY ===== */
-.gallery-card {
-background: var(--glass-bg);
-backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-border: 1px solid var(--glass-border);
-border-radius: var(--radius);
-box-shadow: var(--shadow-sm);
-padding: 16px;
-margin-bottom: 16px;
-transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+/* ===== CROW'S NEST — OLD NAVY HERITAGE THEME ===== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+#crowsnest {
+  --cn-navy: #0a1628;
+  --cn-navy-mid: #152238;
+  --cn-navy-light: #1e3050;
+  --cn-gold: #c9a84c;
+  --cn-gold-light: #e8d48b;
+  --cn-gold-dim: #8b7a3e;
+  --cn-cream: #f0e6d3;
+  --cn-cream-dark: #d4c4a8;
+  --cn-parchment: #faf4e8;
+  --cn-rust: #8b4513;
+  --cn-red: #8b2500;
+  --cn-rope: #c4a265;
 }
-.gallery-card:hover {
-transform: translateY(-2px);
-box-shadow: var(--shadow-md);
+#crowsnest.page {
+  background: linear-gradient(175deg, #0a1628 0%, #152238 30%, #1a2a42 60%, #0f1d30 100%);
+  padding: 0 0 80px;
+  position: relative;
 }
-.gallery-title {
-font-weight: 800;
-font-size: 1rem;
-margin-bottom: 10px;
+#crowsnest.page.active { display: block; }
+
+/* --- Decorative background texture --- */
+#crowsnest::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(201,168,76,0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(201,168,76,0.02) 0%, transparent 40%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
 }
-.gallery-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-gap: 12px;
+#crowsnest > * { position: relative; z-index: 1; }
+
+/* --- Back button override --- */
+#crowsnest .back-btn {
+  margin: 16px 16px 0;
+  background: rgba(201,168,76,0.12);
+  border: 1px solid rgba(201,168,76,0.25);
+  color: var(--cn-gold-light);
+  font-family: 'Crimson Text', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: 0.03em;
 }
-.gallery-item {
-background: var(--bg);
-border-radius: 14px;
-overflow: hidden;
-box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
-transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-position: relative;
+#crowsnest .back-btn::before { color: var(--cn-gold); }
+#crowsnest .back-btn:hover {
+  background: rgba(201,168,76,0.2);
+  border-color: var(--cn-gold);
 }
-.gallery-item:hover {
-transform: translateY(-3px);
-box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+/* --- Hero banner --- */
+.cn-hero {
+  position: relative;
+  padding: 32px 20px 28px;
+  text-align: center;
+  overflow: hidden;
 }
-.gallery-item::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.05) 100%);
-pointer-events: none;
-z-index: 1;
-opacity: 0;
-transition: opacity 0.3s;
+.cn-hero::before {
+  content: '';
+  position: absolute;
+  top: -20px; left: -20px; right: -20px; bottom: -20px;
+  background: radial-gradient(ellipse at center, rgba(201,168,76,0.08) 0%, transparent 70%);
+  pointer-events: none;
 }
-.gallery-item:hover::before {
-opacity: 1;
+.cn-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 20px;
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--cn-gold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
 }
-.gallery-item img {
-width: 100%;
-height: 150px;
-object-fit: cover;
-display: block;
-transition: transform 0.5s ease;
+.cn-hero-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--cn-cream);
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
 }
-.gallery-item:hover img {
-transform: scale(1.08);
+.cn-hero-est {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 1rem;
+  color: var(--cn-gold);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
 }
-.gallery-caption {
-padding: 8px 10px 10px;
-font-size: 0.75rem;
-font-weight: 700;
-color: var(--text-mid);
+.cn-hero-designation {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 0.82rem;
+  color: var(--cn-cream-dark);
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* --- Gold divider line --- */
+.cn-divider {
+  height: 1px;
+  margin: 0 20px;
+  background: linear-gradient(90deg, transparent 0%, var(--cn-gold-dim) 20%, var(--cn-gold) 50%, var(--cn-gold-dim) 80%, transparent 100%);
+  opacity: 0.5;
+}
+.cn-divider-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 16px 20px;
+  color: var(--cn-gold-dim);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-family: 'Crimson Text', Georgia, serif;
+}
+.cn-divider-ornament::before,
+.cn-divider-ornament::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.4), transparent);
+}
+
+/* --- Intro quote block --- */
+.cn-intro {
+  margin: 20px 16px;
+  padding: 24px 22px;
+  background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, rgba(10,22,40,0.4) 100%);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-left: 3px solid var(--cn-gold);
+  border-radius: 4px;
+  position: relative;
+}
+.cn-intro::before {
+  content: '\201C';
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3rem;
+  color: rgba(201,168,76,0.15);
+  line-height: 1;
+}
+.cn-intro p {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 1.02rem;
+  color: var(--cn-cream);
+  line-height: 1.8;
+  font-style: italic;
+}
+.cn-intro .cn-intro-source {
+  display: block;
+  margin-top: 12px;
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 0.82rem;
+  color: var(--cn-gold-dim);
+  font-style: normal;
+  letter-spacing: 0.03em;
+}
+
+/* --- At a Glance quick facts --- */
+.cn-glance {
+  margin: 24px 16px 20px;
+}
+.cn-glance-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--cn-gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  padding-left: 2px;
+}
+.cn-glance-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.cn-glance-item {
+  padding: 14px 14px;
+  background: rgba(201,168,76,0.04);
+  border: 1px solid rgba(201,168,76,0.12);
+  border-radius: 6px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.cn-glance-item:hover {
+  background: rgba(201,168,76,0.08);
+  border-color: rgba(201,168,76,0.25);
+}
+.cn-glance-icon {
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+  display: block;
+}
+.cn-glance-label {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--cn-gold-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 3px;
+}
+.cn-glance-value {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--cn-cream);
+  line-height: 1.3;
+}
+
+/* --- Section blocks --- */
+.cn-section {
+  margin: 0 16px 20px;
+  padding: 24px 20px;
+  background: linear-gradient(180deg, rgba(21,34,56,0.9) 0%, rgba(15,29,48,0.95) 100%);
+  border: 1px solid rgba(201,168,76,0.1);
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+.cn-section::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
+}
+.cn-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.cn-section-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: rgba(201,168,76,0.2);
+  line-height: 1;
+  min-width: 28px;
+}
+.cn-section-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--cn-cream);
+  line-height: 1.2;
+}
+.cn-section-subtitle {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 0.78rem;
+  color: var(--cn-gold-dim);
+  font-style: italic;
+  margin-top: 2px;
+}
+.cn-section p {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 0.95rem;
+  color: var(--cn-cream-dark);
+  line-height: 1.85;
+  margin-bottom: 14px;
+}
+.cn-section p:last-of-type { margin-bottom: 0; }
+.cn-section strong { color: var(--cn-cream); font-weight: 700; }
+.cn-section em { color: var(--cn-gold-light); }
+
+/* --- Section images --- */
+.cn-section-img {
+  margin-top: 18px;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(201,168,76,0.15);
+}
+.cn-section-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 60%, rgba(10,22,40,0.4) 100%);
+  pointer-events: none;
+}
+.cn-section-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  filter: sepia(15%) contrast(1.05);
+  transition: filter 0.5s ease, transform 0.5s ease;
+}
+.cn-section-img:hover img {
+  filter: sepia(5%) contrast(1.1);
+  transform: scale(1.03);
+}
+.cn-section-img-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 14px;
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--cn-cream-dark);
+  z-index: 2;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+/* --- Notable quote callout --- */
+.cn-callout {
+  margin: 0 16px 20px;
+  padding: 20px 22px;
+  background: rgba(139,69,19,0.08);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 4px;
+  text-align: center;
+}
+.cn-callout-text {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cn-cream);
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+.cn-callout-attr {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 0.78rem;
+  color: var(--cn-gold-dim);
+  letter-spacing: 0.05em;
+}
+
+/* --- Timeline --- */
+.cn-timeline {
+  margin: 0 16px 24px;
+  padding: 24px 20px;
+  background: linear-gradient(180deg, rgba(21,34,56,0.9) 0%, rgba(15,29,48,0.95) 100%);
+  border: 1px solid rgba(201,168,76,0.1);
+  border-radius: 6px;
+  position: relative;
+}
+.cn-timeline::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
+}
+.cn-timeline-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--cn-cream);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cn-timeline-list {
+  position: relative;
+  padding-left: 24px;
+  list-style: none;
+}
+.cn-timeline-list::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--cn-gold) 0%, var(--cn-gold-dim) 50%, rgba(201,168,76,0.15) 100%);
+  border-radius: 2px;
+}
+.cn-timeline-item {
+  position: relative;
+  margin-bottom: 18px;
+  padding-bottom: 0;
+}
+.cn-timeline-item:last-child { margin-bottom: 0; }
+.cn-timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -21px;
+  top: 7px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cn-navy);
+  border: 2px solid var(--cn-gold);
+  z-index: 1;
+}
+.cn-timeline-item.cn-tl-highlight::before {
+  background: var(--cn-gold);
+  box-shadow: 0 0 8px rgba(201,168,76,0.4);
+}
+.cn-timeline-year {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: var(--cn-gold);
+  margin-bottom: 2px;
+  letter-spacing: 0.02em;
+}
+.cn-timeline-text {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 0.88rem;
+  color: var(--cn-cream-dark);
+  line-height: 1.6;
+}
+
+/* --- Photo gallery strip --- */
+.cn-gallery {
+  margin: 0 16px 24px;
+}
+.cn-gallery-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--cn-gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  padding-left: 2px;
+}
+.cn-gallery-strip {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+}
+.cn-gallery-strip::-webkit-scrollbar { display: none; }
+.cn-gallery-item {
+  flex: 0 0 72%;
+  scroll-snap-align: start;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(201,168,76,0.15);
+  position: relative;
+  background: var(--cn-navy);
+}
+.cn-gallery-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  filter: sepia(10%) contrast(1.05);
+  transition: filter 0.4s ease;
+}
+.cn-gallery-item:hover img { filter: sepia(0%) contrast(1.1); }
+.cn-gallery-item-caption {
+  padding: 10px 12px;
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 0.78rem;
+  color: var(--cn-cream-dark);
+  font-style: italic;
+  background: rgba(10,22,40,0.9);
+}
+
+/* --- Visiting info panel --- */
+.cn-visit {
+  margin: 0 16px 24px;
+  padding: 24px 20px;
+  background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, rgba(10,22,40,0.6) 100%);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 6px;
+  position: relative;
+}
+.cn-visit::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: 20px; right: 20px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cn-gold), transparent);
+  border-radius: 2px;
+}
+.cn-visit-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--cn-cream);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cn-visit-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(201,168,76,0.08);
+}
+.cn-visit-row:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.cn-visit-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+  opacity: 0.7;
+}
+.cn-visit-label {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--cn-gold-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 3px;
+}
+.cn-visit-value {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 0.9rem;
+  color: var(--cn-cream);
+  line-height: 1.6;
+}
+.cn-visit-hours {
+  list-style: none;
+  padding: 0;
+}
+.cn-visit-hours li {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 0.88rem;
+  color: var(--cn-cream-dark);
+  line-height: 1.7;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.cn-visit-hours li strong {
+  color: var(--cn-cream);
+  min-width: 80px;
+}
+.cn-visit-note {
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: rgba(201,168,76,0.05);
+  border-radius: 4px;
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 0.82rem;
+  color: var(--cn-cream-dark);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* --- Action links (bottom) --- */
+.cn-actions {
+  display: flex;
+  gap: 10px;
+  margin: 0 16px 24px;
+  flex-wrap: wrap;
+}
+.cn-action-btn {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 12px;
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 6px;
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--cn-gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: all 0.3s ease;
+}
+.cn-action-btn:hover {
+  background: rgba(201,168,76,0.15);
+  border-color: var(--cn-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(201,168,76,0.15);
+}
+
+/* --- Closing footer --- */
+.cn-footer {
+  margin: 8px 16px 0;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid rgba(201,168,76,0.1);
+}
+.cn-footer-text {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 0.78rem;
+  color: var(--cn-gold-dim);
+  font-style: italic;
+  line-height: 1.7;
+  opacity: 0.7;
 }
 </style>
 
@@ -1011,8 +1555,8 @@ color: var(--text-mid);
       <span class="btn-arrow">›</span>
     </button>
     <button class="landing-btn lb-crow full-width" onclick="nav('crowsnest')">
-      <span class="icon-wrap">🪶</span>
-      <span>Crow's Nest</span>
+      <span class="icon-wrap">&#9875;</span>
+      <span>The Crow's Nest</span>
       <span class="btn-arrow">›</span>
     </button>
   </div>
@@ -1835,108 +2379,275 @@ color: var(--text-mid);
 
 <div id="crowsnest" class="page">
   <button class="back-btn" onclick="nav('landing')">Home</button>
-  <div class="page-title">The Crow's Nest</div>
-  <div class="page-subtitle">National Historic Site · Est. 1942</div>
-  <div class="color-bar"></div>
 
-  <div class="card" style="margin-bottom:16px;">
-    <div class="card-name" style="font-size:1.05rem; margin-bottom:6px;">A Living Museum of the Battle of the Atlantic</div>
-    <div class="card-note" style="color:var(--text-mid); line-height:1.7; font-size:0.88rem;">
-      Perched on the third and fourth floors of a brick warehouse on Water Street — up a famous 59-step staircase — the Crow's Nest Officers' Club is one of the most remarkable military heritage sites in Canada. Designated a National Historic Site in 2011, it remains an active club and a living museum, virtually unchanged since the Second World War. Visitors, guests, and serving members are all welcome.
-    </div>
+  <!-- HERO -->
+  <div class="cn-hero">
+    <div class="cn-hero-badge">National Historic Site of Canada</div>
+    <div class="cn-hero-title">The Crow's Nest</div>
+    <div class="cn-hero-est">Officers' Club &middot; Est. 1942</div>
+    <div class="cn-hero-designation">88 Water Street, St. John's, Newfoundland</div>
   </div>
 
-  <div class="accordion-item" data-group="crow">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">Origins <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <p>In 1942, at the height of the Battle of the Atlantic, St. John's was the home port of the Newfoundland Escort Force — the handover point for the critical supply convoys that kept Britain in the war. Thousands of Allied naval and merchant navy officers passed through the harbour, often exhausted after harrowing crossings under constant U-boat threat.</p>
-      <p style="margin-top:10px;">Captain Edward Rollo Mainguy, RCN, Captain (Destroyers) of the Newfoundland Escort Force, recognized that these officers needed somewhere ashore to decompress, build camaraderie, and develop the trust that would make them more effective at sea. On <strong>27 January 1942</strong>, he opened the <em>Seagoing Officers' Club</em> on the top floor of the Old Butler Building, a warehouse built after St. John's Great Fire of 1892.</p>
-      <p style="margin-top:10px;">The name "Crow's Nest" came naturally — climbing those 59 steep steps to the fourth floor, with its sweeping view of the harbour and the Narrows, felt exactly like ascending to a ship's crow's nest. Club lore also credits Lieutenant Colonel Pete Stevens, who reportedly took one look and declared it "a snug little crow's nest."
-      </p>
-      <div class="accordion-media">
-        <img src="IMG_0524.jpeg" alt="Crow's Nest interior with memorabilia on the walls.">
+  <div class="cn-divider"></div>
+
+  <!-- INTRO QUOTE -->
+  <div class="cn-intro">
+    <p>Perched on the third and fourth floors of a brick warehouse on Water Street &mdash; up a famous 59-step staircase &mdash; the Crow's Nest Officers' Club is one of the most remarkable military heritage sites in Canada. Virtually unchanged since the Second World War, it remains an active club and a living museum. Visitors, guests, and serving members are all welcome.</p>
+    <span class="cn-intro-source">&mdash; A Living Museum of the Battle of the Atlantic</span>
+  </div>
+
+  <!-- AT A GLANCE -->
+  <div class="cn-glance">
+    <div class="cn-glance-title">At a Glance</div>
+    <div class="cn-glance-grid">
+      <div class="cn-glance-item">
+        <span class="cn-glance-icon">&#9875;</span>
+        <div class="cn-glance-label">Founded</div>
+        <div class="cn-glance-value">27 Jan 1942</div>
+      </div>
+      <div class="cn-glance-item">
+        <span class="cn-glance-icon">&#127987;</span>
+        <div class="cn-glance-label">Designation</div>
+        <div class="cn-glance-value">National Historic Site (2010)</div>
+      </div>
+      <div class="cn-glance-item">
+        <span class="cn-glance-icon">&#128506;</span>
+        <div class="cn-glance-label">The Famous Climb</div>
+        <div class="cn-glance-value">59 Steps to the Top</div>
+      </div>
+      <div class="cn-glance-item">
+        <span class="cn-glance-icon">&#128270;</span>
+        <div class="cn-glance-label">Signature Artefact</div>
+        <div class="cn-glance-value">U-190 Periscope</div>
       </div>
     </div>
   </div>
 
-  <div class="accordion-item" data-group="crow">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">The War Years (1942–1945) <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <p>For the remainder of the war, the Crow's Nest served as a sanctuary for Allied officers from more than a dozen nations. Between convoy runs, they gathered around the fireplace, shared stories of victory and loss over a drink, and enjoyed a home-cooked meal — a rare comfort in wartime.</p>
-      <p style="margin-top:10px;">The walls themselves became a canvas. Sailors began leaving handwritten messages, drawings, and mementos wherever they could find space. Captain Mainguy eventually gave each ship's company four square feet of wall to decorate as they saw fit. Much of this original wartime art — including striking gunshield paintings — remains on the walls today, exactly where it was placed over eighty years ago.</p>
-      <p style="margin-top:10px;">These are not just decorations. For many of those young men, it was the last mark they left before heading out to sea, never knowing if they would return. The walls of the Crow's Nest are a quiet and powerful memorial to their courage.</p>
-      <div class="accordion-media">
-        <img src="IMG_0525.jpeg" alt="Crow's Nest space with heritage artifacts and seating.">
+  <div class="cn-divider-ornament">Chapter I</div>
+
+  <!-- SECTION 1: ORIGINS -->
+  <div class="cn-section">
+    <div class="cn-section-header">
+      <div class="cn-section-number">I</div>
+      <div>
+        <div class="cn-section-title">Origins</div>
+        <div class="cn-section-subtitle">How a wartime refuge came to be</div>
+      </div>
+    </div>
+    <p>In 1942, at the height of the Battle of the Atlantic, St. John's was the home port of the Newfoundland Escort Force &mdash; the handover point for the critical supply convoys that kept Britain in the war. Thousands of Allied naval and merchant navy officers passed through the harbour, often exhausted after harrowing crossings under constant U-boat threat.</p>
+    <p><strong>Captain Edward Rollo Mainguy</strong>, RCN, Captain (Destroyers) of the Newfoundland Escort Force, recognized that these officers needed somewhere ashore to decompress, build camaraderie, and develop the trust that would make them more effective at sea. On <strong>27 January 1942</strong>, he opened the <em>Seagoing Officers' Club</em> on the top floor of the Old Butler Building, a warehouse built after St. John's Great Fire of 1892.</p>
+    <p>The name came naturally &mdash; climbing those 59 steep steps to the fourth floor, with its sweeping view of the harbour and the Narrows, felt exactly like ascending to a ship's crow's nest. Club lore also credits Lieutenant Colonel Pete Stevens, who reportedly took one look and declared it &ldquo;a snug little crow's nest.&rdquo;</p>
+    <div class="cn-section-img">
+      <img src="IMG_0524.jpeg" alt="Crow's Nest interior with memorabilia on the walls.">
+      <div class="cn-section-img-caption">The main room, with original wartime memorabilia lining the walls</div>
+    </div>
+  </div>
+
+  <div class="cn-divider-ornament">Chapter II</div>
+
+  <!-- SECTION 2: WAR YEARS -->
+  <div class="cn-section">
+    <div class="cn-section-header">
+      <div class="cn-section-number">II</div>
+      <div>
+        <div class="cn-section-title">The War Years</div>
+        <div class="cn-section-subtitle">1942 &ndash; 1945</div>
+      </div>
+    </div>
+    <p>For the remainder of the war, the Crow's Nest served as a sanctuary for Allied officers from more than a dozen nations. Between convoy runs, they gathered around the fireplace, shared stories of victory and loss over a drink, and enjoyed a home-cooked meal &mdash; a rare comfort in wartime.</p>
+    <p>The walls themselves became a canvas. Sailors began leaving handwritten messages, drawings, and mementos wherever they could find space. Captain Mainguy eventually gave each ship's company <strong>four square feet of wall</strong> to decorate as they saw fit. Much of this original wartime art &mdash; including striking gunshield paintings &mdash; remains on the walls today, exactly where it was placed over eighty years ago.</p>
+    <p>These are not mere decorations. For many of those young men, it was the last mark they left before heading out to sea, never knowing if they would return. The walls of the Crow's Nest stand as a quiet and powerful memorial to their courage.</p>
+    <div class="cn-section-img">
+      <img src="IMG_0525.jpeg" alt="Crow's Nest space with heritage artifacts and seating.">
+      <div class="cn-section-img-caption">Heritage artifacts and original wartime seating, preserved as they were</div>
+    </div>
+  </div>
+
+  <!-- MID-PAGE QUOTE -->
+  <div class="cn-callout">
+    <div class="cn-callout-text">&ldquo;Veterans who returned decades later said it looked exactly the same &mdash; the ultimate compliment.&rdquo;</div>
+    <div class="cn-callout-attr">&mdash; Crow's Nest Military Artifacts Association</div>
+  </div>
+
+  <div class="cn-divider-ornament">Chapter III</div>
+
+  <!-- SECTION 3: U-BOAT PERISCOPE -->
+  <div class="cn-section">
+    <div class="cn-section-header">
+      <div class="cn-section-number">III</div>
+      <div>
+        <div class="cn-section-title">The U-Boat Periscope</div>
+        <div class="cn-section-subtitle">From instrument of war to harbour lookout</div>
+      </div>
+    </div>
+    <p>The club's most striking artefact is a German U-boat periscope that rises through the ceiling of the main room and out through the roof. It is one of only <strong>eight known-to-exist</strong> U-boat periscopes in the world, and one of only two in North America.</p>
+    <p>The periscope belonged to <strong>U-190</strong>, a Type IXC/40 submarine. On 16 April 1945, U-190 torpedoed and sank HMCS <em>Esquimalt</em> in the approaches to Halifax harbour &mdash; the last RCN warship lost in the war. After Germany's surrender, U-190 was ordered to surface and sailed into Bay Bulls, Newfoundland, where she surrendered on 12 May 1945.</p>
+    <p>The periscope was salvaged and installed in the Crow's Nest, where it still provides a working view of St. John's Harbour and the Narrows &mdash; a fitting transformation from an instrument of war into a lookout over the peaceful harbour it once threatened.</p>
+    <div class="cn-section-img">
+      <img src="IMG_0526.jpeg" alt="Crow's Nest details showing artifacts and memorabilia.">
+      <div class="cn-section-img-caption">Artifacts and memorabilia, including pieces from Allied navies of twelve nations</div>
+    </div>
+  </div>
+
+  <div class="cn-divider-ornament">Chapter IV</div>
+
+  <!-- SECTION 4: AFTER THE WAR -->
+  <div class="cn-section">
+    <div class="cn-section-header">
+      <div class="cn-section-number">IV</div>
+      <div>
+        <div class="cn-section-title">After the War &amp; Today</div>
+        <div class="cn-section-subtitle">Eight decades of continuous service</div>
+      </div>
+    </div>
+    <p>The Seagoing Officers' Club closed on 13 June 1945. But with thousands of Newfoundlanders returning from overseas, there was a strong desire to preserve the space. In June 1946, it reopened as the <strong>Crow's Nest Officers' Club</strong>, and has operated continuously ever since.</p>
+    <p>Over the decades, the club has evolved from an all-male, seagoing officers' club to a mixed-gender, tri-service, all-ranks club that also welcomes civilians. What has not changed is the atmosphere &mdash; the original wartime art, the fireplace, the intimate rooms that feel untouched by time.</p>
+    <p>The Crow's Nest Military Artifacts Association, a registered charity, conserves, preserves, and displays the hundreds of wartime artefacts. The club is recognized as a museum by the Museum Association of Newfoundland and Labrador and has received the <strong>Manning Award for Excellence</strong> in the Public Presentation of Historic Places.</p>
+    <p>It remains a place of pilgrimage. Visitors sometimes arrive because a father or grandfather served in Newfoundland during the war, and find something on the walls connected to their family story. These moments can be deeply moving.</p>
+    <div class="cn-section-img">
+      <img src="IMG_0527.jpeg" alt="Crow's Nest upper deck view overlooking the room.">
+      <div class="cn-section-img-caption">The upper deck bar, overlooking the main room below</div>
+    </div>
+  </div>
+
+  <div class="cn-divider"></div>
+
+  <!-- PHOTO GALLERY -->
+  <div class="cn-gallery">
+    <div class="cn-gallery-title">Gallery</div>
+    <div class="cn-gallery-strip">
+      <div class="cn-gallery-item">
+        <img src="IMG_0524.jpeg" alt="Wartime memorabilia on the walls">
+        <div class="cn-gallery-item-caption">Original wartime wall decorations and ship company crests</div>
+      </div>
+      <div class="cn-gallery-item">
+        <img src="IMG_0525.jpeg" alt="Heritage artifacts and seating">
+        <div class="cn-gallery-item-caption">The heritage room with period furnishings and artifacts</div>
+      </div>
+      <div class="cn-gallery-item">
+        <img src="IMG_0526.jpeg" alt="Artifacts and memorabilia">
+        <div class="cn-gallery-item-caption">Artifacts from Allied navies spanning twelve nations</div>
+      </div>
+      <div class="cn-gallery-item">
+        <img src="IMG_0527.jpeg" alt="Upper deck view">
+        <div class="cn-gallery-item-caption">View from the upper deck bar</div>
+      </div>
+      <div class="cn-gallery-item">
+        <img src="IMG_0528.jpeg" alt="Interior wartime displays">
+        <div class="cn-gallery-item-caption">Wartime displays and original seating arrangements</div>
       </div>
     </div>
   </div>
 
-  <div class="accordion-item" data-group="crow">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">The U-Boat Periscope <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <p>The club's most striking artefact is a German U-boat periscope that rises through the ceiling of the main room and out through the roof. It is one of only eight known-to-exist U-boat periscopes in the world, and one of only two in North America.</p>
-      <p style="margin-top:10px;">The periscope belonged to <strong>U-190</strong>, a Type IXC/40 submarine. On 16 April 1945, U-190 torpedoed and sank HMCS <em>Esquimalt</em> in the approaches to Halifax harbour — the last RCN warship lost in the war. After Germany's surrender, U-190 was ordered to surface and sailed into Bay Bulls, Newfoundland, where she surrendered on 12 May 1945.</p>
-      <p style="margin-top:10px;">The periscope was salvaged and installed in the Crow's Nest, where it still provides a working view of St. John's Harbour and the Narrows — a fitting transformation from an instrument of war into a lookout over the peaceful harbour it once threatened.</p>
-      <div class="accordion-media">
-        <img src="IMG_0526.jpeg" alt="Crow's Nest details showing artifacts and memorabilia.">
+  <div class="cn-divider"></div>
+
+  <!-- TIMELINE -->
+  <div class="cn-timeline">
+    <div class="cn-timeline-title">Timeline</div>
+    <ul class="cn-timeline-list">
+      <li class="cn-timeline-item">
+        <div class="cn-timeline-year">1892</div>
+        <div class="cn-timeline-text">The Old Butler Building constructed after the Great Fire of St. John's.</div>
+      </li>
+      <li class="cn-timeline-item cn-tl-highlight">
+        <div class="cn-timeline-year">27 January 1942</div>
+        <div class="cn-timeline-text">Captain E.R. Mainguy, RCN, founds the Seagoing Officers' Club on the top floor.</div>
+      </li>
+      <li class="cn-timeline-item">
+        <div class="cn-timeline-year">1942 &ndash; 1945</div>
+        <div class="cn-timeline-text">Thousands of Allied officers from 12+ nations gather between convoy escort runs across the North Atlantic.</div>
+      </li>
+      <li class="cn-timeline-item">
+        <div class="cn-timeline-year">16 April 1945</div>
+        <div class="cn-timeline-text">U-190 torpedoes and sinks HMCS Esquimalt &mdash; the last RCN warship lost in the war.</div>
+      </li>
+      <li class="cn-timeline-item">
+        <div class="cn-timeline-year">12 May 1945</div>
+        <div class="cn-timeline-text">U-190 surrenders at Bay Bulls, NL. Her periscope is later salvaged and installed in the club.</div>
+      </li>
+      <li class="cn-timeline-item">
+        <div class="cn-timeline-year">13 June 1945</div>
+        <div class="cn-timeline-text">The wartime Seagoing Officers' Club closes its doors.</div>
+      </li>
+      <li class="cn-timeline-item cn-tl-highlight">
+        <div class="cn-timeline-year">June 1946</div>
+        <div class="cn-timeline-text">Reopens as the Crow's Nest Officers' Club &mdash; and has operated continuously ever since.</div>
+      </li>
+      <li class="cn-timeline-item">
+        <div class="cn-timeline-year">April 1990</div>
+        <div class="cn-timeline-text">Designated a Registered Heritage Structure by the Heritage Foundation of Newfoundland and Labrador.</div>
+      </li>
+      <li class="cn-timeline-item cn-tl-highlight">
+        <div class="cn-timeline-year">June 2010</div>
+        <div class="cn-timeline-text">Designated a National Historic Site of Canada by Parks Canada.</div>
+      </li>
+      <li class="cn-timeline-item">
+        <div class="cn-timeline-year">Present Day</div>
+        <div class="cn-timeline-text">A living museum, active club, and national treasure &mdash; open to all who wish to visit.</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="cn-divider"></div>
+
+  <!-- VISITING INFORMATION -->
+  <div class="cn-visit">
+    <div class="cn-visit-title">Plan Your Visit</div>
+
+    <div class="cn-visit-row">
+      <div class="cn-visit-icon">&#128205;</div>
+      <div>
+        <div class="cn-visit-label">Address</div>
+        <div class="cn-visit-value">88 Water Street, St. John's, NL<br>Next to the National War Memorial &mdash; look for the 59 steps</div>
       </div>
     </div>
-  </div>
 
-  <div class="accordion-item" data-group="crow">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">After the War &amp; Today <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <p>The Seagoing Officers' Club closed on 13 June 1945. But with thousands of Newfoundlanders returning from overseas, there was a strong desire to preserve the space. In June 1946, it reopened as the <strong>Crow's Nest Officers' Club</strong>, and has operated continuously ever since.</p>
-      <p style="margin-top:10px;">Over the decades, the club has evolved from an all-male, seagoing officers' club to a mixed-gender, tri-service, all-ranks club that also welcomes civilians. What has not changed is the atmosphere. Veterans who returned decades later said it looked exactly the same — the ultimate compliment.</p>
-      <p style="margin-top:10px;">The Crow's Nest Military Artifacts Association, a registered charity, conserves, preserves, and displays the hundreds of wartime artefacts. The club is recognized as a museum by the Museum Association of Newfoundland and Labrador and has received the Manning Award for Excellence in the Public Presentation of Historic Places.</p>
-      <p style="margin-top:10px;">It remains a place of pilgrimage. Visitors sometimes arrive because a father or grandfather served in Newfoundland during the war, and find something on the walls connected to their family story. These moments can be deeply moving.</p>
-      <div class="accordion-media">
-        <img src="IMG_0527.jpeg" alt="Crow's Nest upper deck view overlooking the room.">
+    <div class="cn-visit-row">
+      <div class="cn-visit-icon">&#128336;</div>
+      <div>
+        <div class="cn-visit-label">Hours (subject to change)</div>
+        <ul class="cn-visit-hours">
+          <li><strong>Thursday</strong> 4:30 &ndash; 7:00 PM</li>
+          <li><strong>Friday</strong> 12:00 &ndash; 7:00 PM</li>
+          <li><strong>Saturday</strong> 4:00 &ndash; 7:00 PM</li>
+          <li><strong>Sunday</strong> 1:30 &ndash; 5:00 PM</li>
+        </ul>
       </div>
     </div>
-  </div>
 
-  <div class="accordion-item" data-group="crow">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">Timeline <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <ul>
-        <li><strong>1892</strong> — The Old Butler Building constructed after the Great Fire of St. John's.</li>
-        <li><strong>27 Jan 1942</strong> — Captain E.R. Mainguy, RCN, founds the Seagoing Officers' Club.</li>
-        <li><strong>1942–1945</strong> — Thousands of Allied officers from 12+ nations gather between convoy runs.</li>
-        <li><strong>16 Apr 1945</strong> — U-190 sinks HMCS <em>Esquimalt</em> — the last RCN ship lost in the war.</li>
-        <li><strong>12 May 1945</strong> — U-190 surrenders at Bay Bulls, NL. Her periscope is later installed in the club.</li>
-        <li><strong>13 Jun 1945</strong> — The wartime Seagoing Officers' Club closes.</li>
-        <li><strong>Jun 1946</strong> — Reopens as the Crow's Nest Officers' Club.</li>
-        <li><strong>Apr 1990</strong> — Designated a Registered Heritage Structure by the Heritage Foundation of NL.</li>
-        <li><strong>Jun 2010</strong> — Designated a National Historic Site of Canada.</li>
-        <li><strong>Today</strong> — A living museum, active club, and national treasure — open to all who wish to visit.</li>
-      </ul>
-      <div class="accordion-media">
-        <img src="IMG_0528.jpeg" alt="Crow's Nest interior showing wartime displays and seating.">
+    <div class="cn-visit-row">
+      <div class="cn-visit-icon">&#127860;</div>
+      <div>
+        <div class="cn-visit-label">Dining &amp; Capacity</div>
+        <div class="cn-visit-value">Upper deck bar seats 40 &middot; Lower deck dining room seats 37<br>Friday lunch served 12:00 &ndash; 2:00 PM &middot; Sunday tours at 2:00 PM</div>
       </div>
     </div>
-  </div>
 
-  <div class="accordion-item" data-group="crow">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">Visiting <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <p><strong>Address:</strong> 88 Water Street, St. John's, NL (next to the National War Memorial — look for the 59 steps)</p>
-      <p style="margin-top:8px;"><strong>Hours (subject to change — call ahead):</strong></p>
-      <ul>
-        <li>Thursday: 4:30 – 7:00 PM</li>
-        <li>Friday: 12:00 – 7:00 PM (Lunch served 12:00 – 2:00 PM)</li>
-        <li>Saturday: 4:00 – 7:00 PM</li>
-        <li>Sunday: 1:30 – 5:00 PM (Tours at 2:00 PM)</li>
-      </ul>
-      <p style="margin-top:8px;">Casual dress. Guests and visitors are welcome. Free tours available — donations to this charitable organisation are greatly appreciated.</p>
-      <p style="margin-top:8px;">The upper deck bar holds 40 persons and the lower deck dining room holds 37. Food and beverages are inexpensive to moderate.</p>
+    <div class="cn-visit-row">
+      <div class="cn-visit-icon">&#127894;</div>
+      <div>
+        <div class="cn-visit-label">Dress &amp; Admission</div>
+        <div class="cn-visit-value">Casual dress. Guests and visitors are welcome.<br>Free tours available &mdash; donations to this charitable organisation are greatly appreciated.</div>
+      </div>
+    </div>
+
+    <div class="cn-visit-note">
+      Food and beverages are inexpensive to moderate. Call ahead to confirm hours, especially during winter months.
     </div>
   </div>
 
-  <div style="margin-top:16px;" class="card-actions">
-    <a class="btn-sm btn-map" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Crow's+Nest+Officers+Club+88+Water+Street+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">🚶 Walk</a>
-    <a class="btn-sm btn-web" href="https://crowsnestnl.ca/" target="_blank" rel="noopener">🌐 Website</a>
-    <a class="btn-sm btn-web" href="https://parks.canada.ca/culture/designation/lieu-site/crowsnest" target="_blank" rel="noopener">🏛️ Parks Canada</a>
+  <!-- ACTION BUTTONS -->
+  <div class="cn-actions">
+    <a class="cn-action-btn" href="https://www.google.com/maps/dir/?api=1&origin=47.5598,-52.7088&destination=Crow's+Nest+Officers+Club+88+Water+Street+St.+John's+NL&travelmode=walking" target="_blank" rel="noopener">&#9898; Walking Directions</a>
+    <a class="cn-action-btn" href="https://crowsnestnl.ca/" target="_blank" rel="noopener">&#9875; Official Website</a>
+  </div>
+  <div class="cn-actions">
+    <a class="cn-action-btn" href="https://parks.canada.ca/culture/designation/lieu-site/crowsnest" target="_blank" rel="noopener">&#127983; Parks Canada Listing</a>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="cn-footer">
+    <div class="cn-footer-text">&ldquo;Lest We Forget&rdquo;<br>In honour of those who served in the Battle of the Atlantic, 1939&ndash;1945</div>
   </div>
 </div>
 
