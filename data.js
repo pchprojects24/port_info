@@ -1,67 +1,61 @@
 window.PORT_DATA = {
   activities: [
-    { name: "Signal Hill", desc: "Hike to Cabot Tower for panoramic harbour and ocean views.", tags: ["Iconic","Outdoors","Quick"], map: "Signal Hill St. John's NL", web: "https://parks.canada.ca/lhn-nhs/nl/signalhill" },
-    { name: "Cape Spear", desc: "The most easterly point in North America.", tags: ["Iconic","Outdoors","Half-day"], map: "Cape Spear Newfoundland", web: "https://parks.canada.ca/lhn-nhs/nl/capespear" },
-    { name: "The Rooms", desc: "Provincial museum, art gallery, and archives under one roof.", tags: ["Iconic","Indoors","Half-day"], map: "The Rooms St. John's NL", web: "https://www.therooms.ca/" },
-    { name: "George Street", desc: "Two blocks of pubs, live music, and nightlife. Legendary.", tags: ["Iconic","Food-Drink","Quick"], map: "George Street St. John's NL", web: "" },
-    { name: "Quidi Vidi Village", desc: "Picturesque fishing village with a craft brewery and trails.", tags: ["Iconic","Outdoors","Food-Drink","Half-day"], map: "Quidi Vidi Village St. John's NL", web: "" },
-    { name: "Johnson Geo Centre", desc: "Underground geology and Titanic exhibits inside Signal Hill.", tags: ["Indoors","Quick"], map: "Johnson Geo Centre St. John's NL", web: "https://www.mun.ca/geocentre/" },
-    { name: "North Head Trail", desc: "Coastal cliffs trail above the Narrows — stunning views.", tags: ["Outdoors","Quick"], map: "North Head Trail St. John's NL", web: "" },
-    { name: "Jellybean Row", desc: "The colourful row houses — the St. John's icon.", tags: ["Iconic","Quick","Outdoors"], map: "Jellybean Row St. John's NL", web: "" },
-    { name: "Basilica Cathedral", desc: "Stunning 19th-century cathedral in the city centre.", tags: ["Iconic","Indoors","Quick"], map: "Basilica Cathedral of St. John the Baptist", web: "https://thebasilica.church/" },
-    { name: "East Coast Trail", desc: "World-class coastal hiking starting near the city.", tags: ["Outdoors","Half-day"], map: "East Coast Trail St. John's NL", web: "https://www.eastcoasttrail.com/" },
-    { name: "Get Screeched In", desc: "Kiss the cod, do the shot, become an honorary Newfoundlander.", tags: ["Iconic","Food-Drink","Quick","Indoors"], map: "George Street St. John's NL", web: "" },
-    { name: "Bowring Park", desc: "Beautiful urban park with trails and the Peter Pan statue.", tags: ["Outdoors","Quick"], map: "Bowring Park St. John's NL", web: "" },
-    { name: "Escape Quest", desc: "Escape room experiences — great group activity.", tags: ["Indoors","Quick"], map: "Escape Quest St. John's NL", web: "https://www.escapequeststjohns.com/" },
-    { name: "Bannerman Park", desc: "Downtown heritage park — outdoor skating in winter.", tags: ["Outdoors","Quick"], map: "Bannerman Park St. John's NL", web: "" },
-    { name: "The Loop", desc: "Popular 6.3 km walking trail around Signal Hill with panoramic views.", tags: ["Iconic","Outdoors","Half-day"], map: "Signal Hill Loop St. John's NL", web: "" },
-    { name: "Titanic & Iceberg Exhibit Museum", desc: "Immersive Titanic history with artifacts and interactive exhibits.", tags: ["Iconic","Indoors","Quick"], map: "291 Water Street St. John's NL", web: "https://titanicnewfoundland.ca/" },
-    { name: "Avalon Mall", desc: "Largest shopping center in Newfoundland with 140+ stores.", tags: ["Indoors","Quick"], map: "48 Kenmount Road St. John's NL", web: "https://shopavalonmall.com/" }
+    { name: "Halifax Waterfront Boardwalk", desc: "4 km harbourfront walk with views, shops, and public art.", tags: ["Iconic","Outdoors","Quick"], map: "Halifax Waterfront Boardwalk", web: "" },
+    { name: "Halifax Citadel National Historic Site", desc: "Star-shaped fortress with the noon gun, ramparts, and living history programs.", tags: ["Iconic","Outdoors","Half-day"], map: "Halifax Citadel National Historic Site", web: "https://parks.canada.ca/lhn-nhs/ns/halifax" },
+    { name: "Maritime Museum of the Atlantic", desc: "Naval history, ship models, and Titanic artifacts on the harbour.", tags: ["Iconic","Indoors","Half-day"], map: "Maritime Museum of the Atlantic Halifax", web: "https://maritimemuseum.novascotia.ca/" },
+    { name: "HMCS Sackville", desc: "Restored WWII corvette and Canada's Naval Memorial.", tags: ["Iconic","Indoors","Quick"], map: "HMCS Sackville Halifax", web: "https://hmcssackville.ca/" },
+    { name: "Canadian Museum of Immigration at Pier 21", desc: "Powerful stories of newcomers told inside the historic ocean terminal.", tags: ["Iconic","Indoors","Half-day"], map: "Canadian Museum of Immigration at Pier 21", web: "https://www.pier21.ca/" },
+    { name: "Point Pleasant Park", desc: "Coastal forest trails and historic batteries at the harbour entrance.", tags: ["Outdoors","Half-day"], map: "Point Pleasant Park Halifax", web: "" },
+    { name: "Halifax Public Gardens", desc: "Victorian-era gardens with wrought-iron gates and winding paths.", tags: ["Iconic","Outdoors","Quick"], map: "Halifax Public Gardens", web: "https://www.halifaxpublicgardens.ca/" },
+    { name: "Alexander Keith's Brewery Tour", desc: "Interactive brewery tour in the original 1820s building.", tags: ["Food-Drink","Indoors","Quick"], map: "Alexander Keith's Brewery Halifax", web: "https://alexanderkeithsbrewery.com/" },
+    { name: "Seaport Farmers' Market", desc: "Local vendors, baked goods, and crafts beside the waterfront.", tags: ["Food-Drink","Indoors","Quick"], map: "Halifax Seaport Farmers Market", web: "" },
+    { name: "Art Gallery of Nova Scotia", desc: "Atlantic Canada's largest art museum, featuring the Maud Lewis house.", tags: ["Indoors","Quick"], map: "Art Gallery of Nova Scotia", web: "https://www.artgalleryofnovascotia.ca/" },
+    { name: "Hydrostone Market", desc: "Cafés and boutiques in a unique garden suburb rebuilt after the Explosion.", tags: ["Food-Drink","Quick","Outdoors"], map: "Hydrostone Market Halifax", web: "" },
+    { name: "Alderney Ferry to Dartmouth", desc: "10-minute harbour crossing with skyline views, running every 15–30 minutes.", tags: ["Iconic","Outdoors","Quick"], map: "Halifax Ferry Terminal", web: "https://www.halifax.ca/transportation/halifax-transit/ferry-service" }
   ],
   todoChips: ["Iconic","Outdoors","Indoors","Food-Drink","Quick","Half-day"],
   venueData: {
     'tab-food': [
-      { name: "The Merchant Tavern", note: "Upscale NL cuisine in a gorgeous heritage bank building.", price: "$$$", map: "Merchant Tavern St. John's NL", web: "https://www.themerchanttavern.ca/" },
-      { name: "The Gypsy Tea Room", note: "Fine dining with a pub atmosphere — lamb, duck, salmon, soups & salads.", price: "$$", map: "Gypsy Tea Room St. John's NL", web: "https://www.gypsytearoom.ca/" },
-      { name: "YellowBelly Brewery", note: "Traditional Newfoundland food, wood-fired pizza oven. Since the 1800s.", price: "$$", map: "YellowBelly Brewery St. John's NL", web: "https://www.yellowbellybrewery.com/" },
-      { name: "Adelaide Oyster House", note: "Global dishes, east coast oysters — known for their tacos.", price: "$$", map: "Adelaide Oyster House St. John's NL", web: "https://theadelaideoysterhouse.com/" },
-      { name: "Portage", note: "Family-style sharing plates and eclectic wines on Water St.", price: "$$", map: "Portage Restaurant St. John's NL", web: "https://www.portagenl.ca/" },
-      { name: "St. John's Fish Exchange", note: "Seafood-forward menu in a historic Water Street building.", price: "$$", map: "St. John's Fish Exchange NL", web: "https://sjfx.ca/" },
-      { name: "Chinched Bistro", note: "Creative small plates with local NL ingredients.", price: "$$", map: "Chinched Bistro St. John's NL", web: "https://www.chinched.com/" },
-      { name: "Cojones Tacos & Tequila", note: "Authentic Mexican — moose taquitos, margaritas, Dia de Muertos vibe.", price: "$$", map: "Cojones St. John's NL", web: "https://cojones.ca/" },
-      { name: "Three Sisters", note: "Vietnamese cuisine — fresh, flavourful, and affordable.", price: "$", map: "Three Sisters Vietnamese St. John's NL", web: "" },
-      { name: "Duke of Duckworth", note: "Traditional Newfie pub — famous for their fish & chips.", price: "$", map: "Duke of Duckworth St. John's NL", web: "" }
+      { name: "The Bicycle Thief", note: "Upscale North American Italian on the boardwalk.", price: "$$$", map: "The Bicycle Thief Halifax", web: "https://bicyclethief.ca/" },
+      { name: "Bar Kismet", note: "Seafood-forward small plates with top-tier cocktails.", price: "$$$", map: "Bar Kismet Halifax", web: "https://www.barkismet.com/" },
+      { name: "2 Doors Down", note: "Casual comfort food using local ingredients.", price: "$$", map: "2 Doors Down Halifax", web: "https://2doorsdown.ca/" },
+      { name: "The Wooden Monkey", note: "Local, sustainable menu with vegan and gluten-free options.", price: "$$", map: "The Wooden Monkey Halifax", web: "https://thewoodenmonkey.ca/" },
+      { name: "Shuck Seafood + Raw Bar", note: "Raw bar, chowders, and Maritime seafood classics.", price: "$$", map: "Shuck Seafood Halifax", web: "https://shuckseafood.ca/" },
+      { name: "The Barrington Steakhouse", note: "Steaks, oysters, and a deep wine list downtown.", price: "$$$", map: "The Barrington Steakhouse Halifax", web: "https://barringtonsteakhouse.ca/" },
+      { name: "Waterfront Warehouse", note: "Lobster, chowder, and seafood towers steps from the harbour.", price: "$$", map: "Waterfront Warehouse Halifax", web: "https://waterfrontwarehouse.ca/" },
+      { name: "Lot Six", note: "Cocktail bar and raw bar with a stunning atrium.", price: "$$", map: "Lot Six Halifax", web: "https://www.lotsix.ca/" },
+      { name: "Gahan House Nova Centre", note: "Brewpub with pub fare and PEI-inspired dishes.", price: "$$", map: "Gahan House Nova Centre Halifax", web: "https://gahan.ca/locations/halifax/" },
+      { name: "Pickford & Black", note: "Seafood and drinks right on the waterfront.", price: "$$", map: "Pickford & Black Halifax", web: "https://pickfordandblack.ca/" }
     ],
     'tab-coffee': [
-      { name: "The Battery Café", note: "Cozy spot at the foot of Signal Hill — great flat whites.", price: "$", map: "The Battery Cafe St. John's NL", web: "https://www.instagram.com/thebatterycafe/" },
-      { name: "Rocket Bakery", note: "Downtown institution for specialty coffee and baked goods.", price: "$", map: "Rocket Bakery St. John's NL", web: "https://rocketfood.ca/" },
-      { name: "Fixed Coffee & Baking", note: "Local favourite with pour-over by Harbourside Park.", price: "$", map: "Fixed Coffee St. John's NL", web: "https://www.instagram.com/fixedcoffee/" },
-      { name: "Coffee Matters", note: "Locally roasted beans, homemade soups, sandwiches.", price: "$", map: "Coffee Matters St. John's NL", web: "https://www.coffeematters.ca/" }
+      { name: "Weird Harbour Espresso Bar", note: "Tiny espresso bar serving carefully dialed-in shots.", price: "$", map: "Weird Harbour Espresso Bar Halifax", web: "https://www.instagram.com/weirdharbour/" },
+      { name: "Java Blend Coffee Roasters", note: "Local roaster with a North Street cafe.", price: "$", map: "Java Blend Coffee Halifax", web: "https://www.javablendcoffee.com/" },
+      { name: "Pavia Gallery Espresso Bar", note: "Excellent espresso inside the Seaport Market.", price: "$", map: "Pavia Espresso Bar Seaport Market Halifax", web: "https://www.pavia.ca/" },
+      { name: "Dilly Dally Coffee Cafe", note: "Neighbourhood cafe with great sandwiches and pour-over.", price: "$", map: "Dilly Dally Coffee Halifax", web: "" }
     ],
     'tab-bars': [
-      { name: "O'Reilly's Irish Pub", note: "Live trad music nightly — voted Canada's favourite bar.", map: "O'Reilly's Irish Pub George Street St. John's NL", web: "https://www.oreillyspub.com/" },
-      { name: "Bridie Molloy's", note: "Irish pub with live music & a 24/7 restaurant downstairs.", map: "Bridie Molloy's St. John's NL", web: "https://bridiemolloys.ca/" },
-      { name: "Shamrock City", note: "Multi-level entertainment venue on George Street.", map: "Shamrock City St. John's NL", web: "" },
-      { name: "Erin's Pub", note: "Intimate trad music venue on Water Street.", map: "Erin's Pub St. John's NL", web: "" },
-      { name: "Karaoke Kops", note: "Karaoke bar — great for a group night out.", map: "Karaoke Kops George Street St. John's NL", web: "" },
-      { name: "Konfusion", note: "High-energy party bar on George Street.", map: "Konfusion St. John's NL", web: "" },
-      { name: "Christian's", note: "Popular bar and nightlife spot on George Street.", map: "Christian's Bar George Street St. John's NL", web: "" },
-      { name: "Trapper John's", note: "Where you go to get Screeched In — a must-do experience.", map: "Trapper John's St. John's NL", web: "" },
-      { name: "Lottie's", note: "Cozy spot on George Street with great drinks.", map: "Lottie's Place George Street St. John's NL", web: "" }
+      { name: "The Lower Deck", note: "Historic waterfront pub with nightly live music.", map: "The Lower Deck Halifax", web: "https://www.lowerdeck.ca/" },
+      { name: "Durty Nelly's", note: "Lively Irish pub imported from Dublin.", map: "Durty Nelly's Halifax", web: "https://durtynellys.ca/" },
+      { name: "The Old Triangle", note: "Classic Irish alehouse with trad music sessions.", map: "The Old Triangle Halifax", web: "https://oldtriangle.com/halifax/" },
+      { name: "Stillwell Beer Bar", note: "Craft beer destination with rotating taps and snacks.", map: "Stillwell Beer Bar Halifax", web: "https://barstillwell.com/" },
+      { name: "The Split Crow Pub", note: "Popular pub near the waterfront with daily specials.", map: "Split Crow Pub Halifax", web: "https://splitcrow.com/" },
+      { name: "The Pint Public House", note: "Sports and party bar on Argyle Street.", map: "The Pint Public House Halifax", web: "https://halifax.thepint.ca/" },
+      { name: "Gahan House Nova Centre", note: "House-brewed beer and pub fare downtown.", map: "Gahan House Nova Centre Halifax", web: "https://gahan.ca/locations/halifax/" },
+      { name: "The Stubborn Goat Beer Garden", note: "Seasonal waterfront beer garden (check hours in March).", map: "Stubborn Goat Beer Garden Halifax", web: "https://sturburngoat.ca/" }
     ],
     'tab-brew': [
-      { name: "YellowBelly Brewery", note: "Heritage brewpub — wood-fired pizza and craft beer.", map: "YellowBelly Brewery St. John's NL", web: "https://www.yellowbellybrewery.com/" },
-      { name: "Quidi Vidi Brewery", note: "NL's largest craft brewery in scenic Quidi Vidi Village.", map: "Quidi Vidi Brewery St. John's NL", web: "https://quidividibrewery.ca/" },
-      { name: "Bannerman Brewing", note: "Taproom in the historic East Fire Station, Duckworth St.", map: "Bannerman Brewing St. John's NL", web: "https://www.bannermanbrewing.com/" },
-      { name: "Landwash Brewery", note: "Flavour-forward craft beer, beer-hall style taproom.", map: "Landwash Brewery Mount Pearl NL", web: "https://www.landwashbrewery.com/" }
+      { name: "Garrison Brewing Co.", note: "Waterfront brewery with a taproom and beer garden.", map: "Garrison Brewing Halifax", web: "https://garrisonbrewing.com/" },
+      { name: "Propeller Brewing Co.", note: "Local staple serving classics and seasonals.", map: "Propeller Brewing Halifax", web: "https://drinkpropeller.ca/" },
+      { name: "2 Crows Brewing Co.", note: "Modern craft brewery near the seaport.", map: "2 Crows Brewing Halifax", web: "https://2crowsbrewing.com/" },
+      { name: "Good Robot Brewing", note: "Playful North End brewery with a large patio.", map: "Good Robot Brewing Halifax", web: "https://www.goodrobotbrewing.ca/" }
     ]
   },
   hotelData: [
-    { name: "Sheraton Hotel Newfoundland", note: "Overlooking the harbour at the base of Signal Hill.", map: "Sheraton Hotel Newfoundland St. John's", web: "https://www.marriott.com/en-us/hotels/yytsi-sheraton-hotel-newfoundland/overview/" },
-    { name: "Delta Hotels Conference Centre", note: "Connected to convention centre, steps from George St.", map: "Delta Hotels St. John's Conference Centre", web: "https://www.marriott.com/en-us/hotels/yytds-delta-hotels-st-johns-conference-centre/overview/" },
-    { name: "Alt Hotel St. John's", note: "Modern boutique on Water Street with harbour views.", map: "Alt Hotel St. John's NL", web: "https://www.germainhotels.com/en/alt-hotel/st-johns" },
-    { name: "Hilton Garden Inn", note: "Downtown, walking distance to George St and harbour.", map: "Hilton Garden Inn St. John's Newfoundland", web: "https://www.hilton.com/en/hotels/ysjfdgi-hilton-garden-inn-st-johns-newfoundland/" },
-    { name: "JAG Hotel", note: "Music-themed boutique hotel right on George Street.", map: "JAG Hotel St. John's NL", web: "https://jaghotel.ca/" },
-    { name: "Murray Premises Hotel", note: "Heritage waterfront property in a restored 19th-century building.", map: "Murray Premises Hotel St. John's NL", web: "https://murraypremiseshotel.com/" }
+    { name: "The Prince George Hotel", note: "Downtown upscale hotel near Citadel Hill and City Hall.", map: "Prince George Hotel Halifax", web: "https://www.princegeorgehotel.com/" },
+    { name: "Muir, Autograph Collection", note: "Luxury waterfront hotel in Queen's Marque.", map: "Muir Hotel Halifax", web: "https://www.marriott.com/en-us/hotels/yhzar-muir-autograph-collection/overview/" },
+    { name: "Halifax Marriott Harbourfront Hotel", note: "On the boardwalk with harbour views.", map: "Halifax Marriott Harbourfront Hotel", web: "https://www.marriott.com/en-us/hotels/yhzmc-halifax-marriott-harbourfront-hotel/overview/" },
+    { name: "The Westin Nova Scotian", note: "Steps from the Seaport and VIA Rail station.", map: "Westin Nova Scotian Halifax", web: "https://www.marriott.com/en-us/hotels/yhzwi-the-westin-nova-scotian/overview/" },
+    { name: "The Sutton Place Hotel Halifax", note: "Modern hotel beside the Halifax Convention Centre.", map: "Sutton Place Hotel Halifax", web: "https://www.suttonplace.com/hotels/sutton-place-hotel-halifax" },
+    { name: "The Lord Nelson Hotel & Suites", note: "Historic hotel overlooking the Public Gardens.", map: "Lord Nelson Hotel Halifax", web: "https://lordnelsonhotel.ca/" }
   ]
 };
