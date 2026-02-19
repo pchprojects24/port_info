@@ -14,7 +14,7 @@ function pickDailyForecast(list) {
     .slice(0, 4);
 }
 
-const DEFAULT_COORDS = { lat: 47.5615, lon: -52.7126 };
+const DEFAULT_COORDS = { lat: 44.6488, lon: -63.5724 };
 
 function isValidCoordinate(lat, lon) {
   return (
