@@ -1520,7 +1520,7 @@ animation: colorShift 8s ease-in-out infinite;
 <div id="landing" class="page active">
   <div class="landing-hero">
     <div class="landing-title">Welcome to<br>Halifax</div>
-    <div class="landing-dates">Mar 6 – 9, 2026 &nbsp;·&nbsp; Halifax, Nova Scotia</div>
+    <div class="landing-dates">Mar 6 – 9, 2026 &nbsp;·&nbsp; Nova Scotia</div>
   </div>
 
   <div class="landing-grid">
@@ -1556,7 +1556,7 @@ animation: colorShift 8s ease-in-out infinite;
     </button>
     <button class="landing-btn lb-crow full-width" onclick="nav('crowsnest')">
       <span class="icon-wrap">&#9875;</span>
-      <span>Naval Heritage</span>
+      <span>HMCS Sackville</span>
       <span class="btn-arrow">›</span>
     </button>
   </div>
@@ -1572,7 +1572,7 @@ animation: colorShift 8s ease-in-out infinite;
 
   <div class="accordion-item" data-group="routine">
     <button class="accordion-trigger" onclick="toggleAccordion(this)">Port Window <span class="accordion-icon">+</span></button>
-    <div class="accordion-body"><p>Mar 6–9, 2026 (Halifax, NS)</p></div>
+    <div class="accordion-body"><p>Mar 6–9 (Halifax, NS)</p></div>
   </div>
   <div class="accordion-item" data-group="routine">
     <button class="accordion-trigger" onclick="toggleAccordion(this)">Tours / Admin <span class="accordion-icon">+</span></button>
@@ -1606,7 +1606,7 @@ animation: colorShift 8s ease-in-out infinite;
           </tr>
           <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
             <td style="padding:8px 4px;"><strong>7 Mar</strong></td>
-            <td style="padding:8px 4px;">Sunday Routine</td>
+            <td style="padding:8px 4px;">Weekend Routine</td>
             <td style="padding:8px 4px;">0730 (8 Mar)</td>
             <td style="padding:8px 4px;">Yes</td>
           </tr>
@@ -1805,23 +1805,23 @@ animation: colorShift 8s ease-in-out infinite;
   <div class="section-header">What to Expect</div>
   <div class="card" style="margin-bottom:16px;">
     <div class="card-note" style="color:var(--text-mid);line-height:1.7;margin-bottom:0;">
-      Early March in Halifax is cool and changeable. Expect daytime temperatures around <strong>0° to 6°C</strong> and nights around <strong>-4° to 1°C</strong>. Wind off the harbour can make it feel colder, and conditions can shift quickly between sun, rain, and wet snow. Wear waterproof layers and sturdy footwear for slushy sidewalks.
+      Expect daytime highs around <strong>2° to 6°C</strong> and overnight lows near <strong>-4° to -1°C</strong>. March in Halifax swings between rain and wet snow, with frequent wind off the harbour. Pack a waterproof shell, warm mid-layer, and footwear with grip for slush or black ice. Weather changes quickly on the Atlantic — always check a live forecast.
     </div>
   </div>
 
   <div class="section-header">Live Forecast Links</div>
   <div class="map-btns">
-    <a class="map-btn" href="https://weather.gc.ca/city/pages/ns-19_metric_e.html" target="_blank" rel="noopener">
+    <a class="map-btn" href="https://weather.gc.ca/en/location/index.html?coords=44.649,-63.575" target="_blank" rel="noopener">
       <span class="map-pin" style="background:linear-gradient(135deg,var(--royal-blue),var(--navy-gold));">🍁</span> Environment Canada <span class="chevron">›</span>
     </a>
-    <a class="map-btn" href="https://www.accuweather.com/en/ca/halifax/b3j/weather-forecast/53286" target="_blank" rel="noopener">
+    <a class="map-btn" href="https://www.accuweather.com/en/ca/halifax/b3k/weather-forecast/55489" target="_blank" rel="noopener">
       <span class="map-pin" style="background:linear-gradient(135deg,var(--royal-blue-light),var(--bright-gold));">🌡️</span> AccuWeather <span class="chevron">›</span>
     </a>
     <a class="map-btn" href="https://www.timeanddate.com/weather/canada/halifax/ext" target="_blank" rel="noopener">
       <span class="map-pin" style="background:linear-gradient(135deg,var(--navy-gold),var(--royal-blue-light));">📅</span> 14-Day Forecast <span class="chevron">›</span>
     </a>
-    <a class="map-btn" href="https://www.canada.ca/en/services/environment/weather/radar-satellites.html" target="_blank" rel="noopener">
-      <span class="map-pin" style="background:linear-gradient(135deg,var(--bright-gold),var(--royal-blue));">📡</span> Weather Radar (NS) <span class="chevron">›</span>
+    <a class="map-btn" href="https://www.canada.ca/en/environment-climate-change/services/weather-general-tools-resources/radar-overview/radar-sites/atlantic.html" target="_blank" rel="noopener">
+      <span class="map-pin" style="background:linear-gradient(135deg,var(--bright-gold),var(--royal-blue));">📡</span> Weather Radar (Atlantic) <span class="chevron">›</span>
     </a>
   </div>
 </div>
@@ -1834,37 +1834,232 @@ animation: colorShift 8s ease-in-out infinite;
   <div class="page-subtitle">Tap any destination for walking directions from the ship</div>
   <div class="color-bar"></div>
 
+  <!-- Embedded Map Overview -->
   <div class="map-embed-wrap">
-    <iframe src="https://www.google.com/maps?q=Halifax+Waterfront,+Halifax,+NS&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Downtown Halifax"></iframe>
+    <iframe src="https://www.google.com/maps?q=Halifax,+NS&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Downtown Halifax"></iframe>
   </div>
 
+  <!-- Popular Destinations (always visible) -->
   <div class="section-header">Popular Destinations</div>
   <div class="map-btns">
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6488,-63.5724&destination=Halifax+Waterfront+Boardwalk&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">📍</span> <span class="map-btn-label">Halifax Waterfront Boardwalk</span> <span class="map-btn-dist">600m</span><span class="chevron">›</span>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=Halifax+Waterfront+Boardwalk&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">📍</span> <span class="map-btn-label">Waterfront Boardwalk</span> <span class="map-btn-dist">Steps</span><span class="chevron">›</span>
     </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6488,-63.5724&destination=Halifax+Citadel+National+Historic+Site&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">🏰</span> <span class="map-btn-label">Halifax Citadel</span> <span class="map-btn-dist">1.3 km</span><span class="chevron">›</span>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=Maritime+Museum+of+the+Atlantic+Halifax&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">🚢</span> <span class="map-btn-label">Maritime Museum of the Atlantic</span> <span class="map-btn-dist">450m</span><span class="chevron">›</span>
     </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6488,-63.5724&destination=Maritime+Museum+of+the+Atlantic&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">⚓</span> <span class="map-btn-label">Maritime Museum of the Atlantic</span> <span class="map-btn-dist">1.0 km</span><span class="chevron">›</span>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=Halifax+Citadel+National+Historic+Site&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">🏰</span> <span class="map-btn-label">Halifax Citadel</span> <span class="map-btn-dist">1.2 km</span><span class="chevron">›</span>
     </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6488,-63.5724&destination=Spring+Garden+Road+Halifax&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">🛍️</span> <span class="map-btn-label">Spring Garden Road</span> <span class="map-btn-dist">1.8 km</span><span class="chevron">›</span>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=Canadian+Museum+of+Immigration+at+Pier+21&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">🧭</span> <span class="map-btn-label">Pier 21 (Immigration Museum)</span> <span class="map-btn-dist">400m</span><span class="chevron">›</span>
     </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6488,-63.5724&destination=Point+Pleasant+Park+Halifax&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">🌲</span> <span class="map-btn-label">Point Pleasant Park</span> <span class="map-btn-dist">3.6 km</span><span class="chevron">›</span>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=Halifax+Public+Gardens&travelmode=walking" target="_blank" rel="noopener">
+      <span class="map-pin">🌿</span> <span class="map-btn-label">Public Gardens</span> <span class="map-btn-dist">1.3 km</span><span class="chevron">›</span>
     </a>
   </div>
 
-  <div class="section-header">Transit &amp; Ride Options</div>
-  <div class="map-btns">
-    <a class="map-btn" href="https://www.halifax.ca/transportation/halifax-transit" target="_blank" rel="noopener">
-      <span class="map-pin" style="background:linear-gradient(135deg,var(--teal),var(--ocean));">🚌</span> Halifax Transit <span class="chevron">›</span>
+  <!-- Restaurants & Bars (collapsible) -->
+  <div class="map-section open" data-map-group="map-nav">
+    <button class="map-section-trigger" onclick="toggleMapSection(this)">
+      <span class="map-section-icon" style="background:var(--coral-soft);color:var(--coral);">🍽️</span>
+      <span>Restaurants &amp; Bars</span>
+      <span class="map-section-count">8 places</span>
+      <span class="map-section-chevron">›</span>
+    </button>
+    <div class="map-section-body">
+      <div class="map-btns">
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=The+Bicycle+Thief+Halifax&travelmode=walking" target="_blank" rel="noopener">
+          <span class="map-pin">🍝</span> <span class="map-btn-label">The Bicycle Thief</span> <span class="map-btn-dist">300m</span><span class="chevron">›</span>
+        </a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=Bar+Kismet+Halifax&travelmode=walking" target="_blank" rel="noopener">
+          <span class="map-pin">🦪</span> <span class="map-btn-label">Bar Kismet</span> <span class="map-btn-dist">1.0 km</span><span class="chevron">›</span>
+        </a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=Lot+Six+Halifax&travelmode=walking" target="_blank" rel="noopener">
+          <span class="map-pin">🍸</span> <span class="map-btn-label">Lot Six</span> <span class="map-btn-dist">900m</span><span class="chevron">›</span>
+        </a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=The+Lower+Deck+Halifax&travelmode=walking" target="_blank" rel="noopener">
+          <span class="map-pin">🎶</span> <span class="map-btn-label">The Lower Deck</span> <span class="map-btn-dist">600m</span><span class="chevron">›</span>
+        </a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=Durty+Nelly's+Halifax&travelmode=walking" target="_blank" rel="noopener">
+          <span class="map-pin">🍺</span> <span class="map-btn-label">Durty Nelly's</span> <span class="map-btn-dist">850m</span><span class="chevron">›</span>
+        </a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=Bar+Stillwell+Halifax&travelmode=walking" target="_blank" rel="noopener">
+          <span class="map-pin">🍻</span> <span class="map-btn-label">Stillwell Beer Bar</span> <span class="map-btn-dist">750m</span><span class="chevron">›</span>
+        </a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=Pickford+%26+Black+Halifax&travelmode=walking" target="_blank" rel="noopener">
+          <span class="map-pin">🌊</span> <span class="map-btn-label">Pickford &amp; Black</span> <span class="map-btn-dist">300m</span><span class="chevron">›</span>
+        </a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=Gahan+House+Nova+Centre+Halifax&travelmode=walking" target="_blank" rel="noopener">
+          <span class="map-pin">🍺</span> <span class="map-btn-label">Gahan House</span> <span class="map-btn-dist">850m</span><span class="chevron">›</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Attractions & Activities (collapsible) -->
+  <div class="map-section" data-map-group="map-nav">
+    <button class="map-section-trigger" onclick="toggleMapSection(this)">
+      <span class="map-section-icon" style="background:var(--gold-soft);color:var(--gold);">🎯</span>
+      <span>Attractions &amp; Activities</span>
+      <span class="map-section-count">6 places</span>
+      <span class="map-section-chevron">›</span>
+    </button>
+    <div class="map-section-body">
+      <div class="map-btns">
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=Halifax+Citadel+National+Historic+Site&travelmode=walking" target="_blank" rel="noopener">
+          <span class="map-pin">🏰</span> <span class="map-btn-label">Halifax Citadel</span> <span class="map-btn-dist">1.2 km</span><span class="chevron">›</span>
+        </a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=Maritime+Museum+of+the+Atlantic+Halifax&travelmode=walking" target="_blank" rel="noopener">
+          <span class="map-pin">⚓</span> <span class="map-btn-label">Maritime Museum</span> <span class="map-btn-dist">450m</span><span class="chevron">›</span>
+        </a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=Point+Pleasant+Park&travelmode=driving" target="_blank" rel="noopener">
+          <span class="map-pin">🌲</span> <span class="map-btn-label">Point Pleasant Park</span> <span class="map-btn-dist">Drive</span><span class="chevron">›</span>
+        </a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=Halifax+Public+Gardens&travelmode=walking" target="_blank" rel="noopener">
+          <span class="map-pin">🌿</span> <span class="map-btn-label">Public Gardens</span> <span class="map-btn-dist">1.3 km</span><span class="chevron">›</span>
+        </a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=HMCS+Sackville+Halifax&travelmode=walking" target="_blank" rel="noopener">
+          <span class="map-pin">🚢</span> <span class="map-btn-label">HMCS Sackville</span> <span class="map-btn-dist">500m</span><span class="chevron">›</span>
+        </a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=Canadian+Museum+of+Immigration+at+Pier+21&travelmode=walking" target="_blank" rel="noopener">
+          <span class="map-pin">🧭</span> <span class="map-btn-label">Pier 21 Museum</span> <span class="map-btn-dist">400m</span><span class="chevron">›</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Historic Sites & Landmarks (collapsible, collapsed by default) -->
+  <div class="map-section" data-map-group="map-nav">
+    <button class="map-section-trigger" onclick="toggleMapSection(this)">
+      <span class="map-section-icon" style="background:var(--plum-soft);color:var(--plum);">🏛️</span>
+      <span>Historic Sites &amp; Landmarks</span>
+      <span class="map-section-count">9 places</span>
+      <span class="map-section-chevron">›</span>
+    </button>
+    <div class="map-section-body">
+      <div class="map-btns">
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=Old+Town+Clock+Halifax&travelmode=walking" target="_blank" rel="noopener">
+          <span class="map-pin">🕰️</span> <span class="map-btn-label">Old Town Clock</span> <span class="chevron">›</span>
+        </a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=Province+House+Halifax&travelmode=walking" target="_blank" rel="noopener">
+          <span class="map-pin">⚖️</span> <span class="map-btn-label">Province House</span> <span class="chevron">›</span>
+        </a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=St.+Paul's+Church+Halifax&travelmode=walking" target="_blank" rel="noopener">
+          <span class="map-pin">⛪</span> <span class="map-btn-label">St. Paul's Church</span> <span class="chevron">›</span>
+        </a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=Art+Gallery+of+Nova+Scotia&travelmode=walking" target="_blank" rel="noopener">
+          <span class="map-pin">🎨</span> <span class="map-btn-label">Art Gallery of NS</span> <span class="chevron">›</span>
+        </a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=Hydrostone+Market+Halifax&travelmode=driving" target="_blank" rel="noopener">
+          <span class="map-pin">🛍️</span> <span class="map-btn-label">Hydrostone Market</span> <span class="chevron">›</span>
+        </a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=Fort+Needham+Memorial+Park+Halifax&travelmode=driving" target="_blank" rel="noopener">
+          <span class="map-pin">🕊️</span> <span class="map-btn-label">Fort Needham Memorial Park</span> <span class="chevron">›</span>
+        </a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=Africville+Museum+Halifax&travelmode=driving" target="_blank" rel="noopener">
+          <span class="map-pin">🏛️</span> <span class="map-btn-label">Africville Museum</span> <span class="chevron">›</span>
+        </a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=York+Redoubt+National+Historic+Site&travelmode=driving" target="_blank" rel="noopener">
+          <span class="map-pin">🪖</span> <span class="map-btn-label">York Redoubt</span> <span class="chevron">›</span>
+        </a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=Georges+Island+National+Historic+Site+Halifax&travelmode=walking" target="_blank" rel="noopener">
+          <span class="map-pin">🏝️</span> <span class="map-btn-label">Georges Island Ferry</span> <span class="chevron">›</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Essential Services (collapsible) -->
+  <div class="map-section" data-map-group="map-nav">
+    <button class="map-section-trigger" onclick="toggleMapSection(this)">
+      <span class="map-section-icon" style="background:var(--coral-soft);color:var(--coral);">🏥</span>
+      <span>Essential Services</span>
+      <span class="map-section-count">3 places</span>
+      <span class="map-section-chevron">›</span>
+    </button>
+    <div class="map-section-body">
+      <div class="map-btns">
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=QEII+Health+Sciences+Centre+Halifax+Infirmary&travelmode=walking" target="_blank" rel="noopener">
+          <span class="map-pin" style="background:linear-gradient(135deg,var(--coral),#ff4757);">🏥</span> <span class="map-btn-label">QEII Halifax Infirmary</span> <span class="map-btn-dist">1.6 km</span><span class="chevron">›</span>
+        </a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=QEII+Victoria+General+Halifax&travelmode=walking" target="_blank" rel="noopener">
+          <span class="map-pin" style="background:linear-gradient(135deg,var(--coral),#ff4757);">🏥</span> <span class="map-btn-label">QEII VG Site</span> <span class="map-btn-dist">2.0 km</span><span class="chevron">›</span>
+        </a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=Halifax+Regional+Police+Headquarters&travelmode=walking" target="_blank" rel="noopener">
+          <span class="map-pin" style="background:linear-gradient(135deg,var(--royal-blue),var(--royal-blue-light));">👮</span> <span class="map-btn-label">Halifax Regional Police HQ</span> <span class="chevron">›</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Transportation Section -->
+  <div class="section-header" style="margin-top:28px;">Getting Around</div>
+
+  <div class="transport-grid">
+    <a class="transport-card" href="https://www.uber.com" target="_blank" rel="noopener">
+      <div class="transport-card-icon">🚗</div>
+      <div class="transport-card-name">Uber</div>
+      <div class="transport-card-sub">Reliable across HRM</div>
     </a>
-    <a class="map-btn" href="https://www.uber.com/global/en/cities/halifax/" target="_blank" rel="noopener">
-      <span class="map-pin" style="background:linear-gradient(135deg,var(--coral),var(--plum));">🚕</span> Uber Halifax <span class="chevron">›</span>
+    <a class="transport-card" href="https://www.halifax.ca/transportation/halifax-transit" target="_blank" rel="noopener">
+      <div class="transport-card-icon">🚌</div>
+      <div class="transport-card-name">Halifax Transit</div>
+      <div class="transport-card-sub">Buses + ferry — use HFX GO app</div>
     </a>
+  </div>
+
+  <div class="card" style="margin-bottom:14px;">
+    <div class="card-note" style="color:var(--text-mid);line-height:1.7;margin-bottom:0;">
+      The waterfront and downtown are flat and walkable. Citadel Hill is uphill; grab a rideshare if you're short on time. Halifax Transit buses and ferries take cash or e-tickets (HFX GO). Route 320 connects downtown to the airport if needed.
+    </div>
+  </div>
+
+  <div class="section-header">Taxi Companies</div>
+  <div class="taxi-list">
+    <div class="taxi-item">
+      <div class="taxi-info">
+        <div class="taxi-name">Casino Taxi</div>
+        <div class="taxi-sub">24/7 — long-running local fleet</div>
+      </div>
+      <a href="tel:+19024296666" class="btn-sm btn-call">📞 (902) 429-6666</a>
+    </div>
+    <div class="taxi-item">
+      <div class="taxi-info">
+        <div class="taxi-name">Yellow Cab</div>
+        <div class="taxi-sub">24/7 — downtown specialist</div>
+      </div>
+      <a href="tel:+19024200000" class="btn-sm btn-call">📞 (902) 420-0000</a>
+    </div>
+    <div class="taxi-item">
+      <div class="taxi-info">
+        <div class="taxi-name">Bob's Taxi</div>
+        <div class="taxi-sub">24/7 — Dartmouth &amp; downtown</div>
+      </div>
+      <a href="tel:+19024632222" class="btn-sm btn-call">📞 (902) 463-2222</a>
+    </div>
+    <div class="taxi-item">
+      <div class="taxi-info">
+        <div class="taxi-name">Blue Bell Taxi</div>
+        <div class="taxi-sub">24/7 — bookings by phone</div>
+      </div>
+      <a href="tel:+19024446888" class="btn-sm btn-call">📞 (902) 444-6888</a>
+    </div>
+  </div>
+
+  <!-- Fun Facts -->
+  <div class="accordion-item" style="margin-top:22px;">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">Fun Facts / Local Context <span class="accordion-icon">+</span></button>
+    <div class="accordion-body">
+      <ul>
+        <li>Halifax was founded in 1749 as a British naval base; the noon gun still fires daily from Citadel Hill.</li>
+        <li>One of the world’s largest natural, ice-free harbours — deep enough for naval and cruise ships year-round.</li>
+        <li>Pier 21 processed over one million immigrants between 1928 and 1971.</li>
+        <li>HMCS Sackville, berthed on the waterfront, is Canada’s Naval Memorial.</li>
+        <li>The Public Gardens opened in 1867 and remain one of North America’s finest Victorian gardens.</li>
+        <li>The harbour ferries to Dartmouth are among the oldest saltwater commuter ferries in North America.</li>
+      </ul>
+    </div>
   </div>
 </div>
 
@@ -1944,14 +2139,14 @@ animation: colorShift 8s ease-in-out infinite;
     <button class="accordion-trigger" onclick="toggleAccordion(this)">General <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
       <ul>
-        <li>Overall crime rates slightly higher than the national average</li>
-        <li>Pickpockets and crimes against tourists significantly lower than national average, but not zero — be careful</li>
-        <li>Halifax is generally safe — use common sense and stay aware</li>
+        <li>Overall crime rates are moderate; downtown and the waterfront are well-patrolled.</li>
+        <li>Pickpocketing is uncommon but use awareness in busy bar areas.</li>
+        <li>Halifax is generally safe — use common sense and stay aware.</li>
         <li><strong>Travel in pairs/groups</strong> — buddy system in full effect</li>
         <li>Stick to well-lit, populated areas at night — <strong>do not travel on unlit streets</strong></li>
         <li>Stay on main roadways</li>
         <li>Do not engage in political arguments with locals</li>
-        <li>March weather changes fast: dress in warm layers and watch for ice</li>
+        <li>March weather swings between rain and snow: layer, waterproof, and watch for ice</li>
         <li>Photograph/photocopy front and back of credit cards (helps with cancellation if lost/stolen)</li>
         <li><strong>Do not take passport ashore</strong></li>
       </ul>
@@ -1983,10 +2178,10 @@ animation: colorShift 8s ease-in-out infinite;
       </div>
       <p style="margin-bottom:8px;font-weight:700;color:var(--white);">Nights Out:</p>
       <ul>
-        <li>Argyle Street and the waterfront are popular nightlife zones — pace yourself</li>
+        <li>Argyle Street and the waterfront boardwalk are the main strips — pace yourself</li>
         <li>Arrange your ride back before going out</li>
         <li>Look out for your shipmates</li>
-        <li>Bars close at 3 AM on weekends</li>
+        <li>Bars close at 2 AM on weekends</li>
       </ul>
     </div>
   </div>
@@ -2005,7 +2200,7 @@ animation: colorShift 8s ease-in-out infinite;
     <div class="accordion-body">
       <ul>
         <li>Call <strong>911</strong> for police, fire, or ambulance.</li>
-        <li>Nearest hospital: QEII Health Sciences Centre, 1796 Summer St.</li>
+        <li>Nearest hospital: QEII Halifax Infirmary, 1796 Summer St.</li>
         <li>Non-emergency police: Halifax Regional Police.</li>
         <li>Inform the ship of any incidents as soon as practical.</li>
       </ul>
@@ -2097,30 +2292,30 @@ animation: colorShift 8s ease-in-out infinite;
     <div class="contact-label">QEII Health Sciences Centre</div>
     <div class="contact-sub">1796 Summer St, Halifax, NS</div>
     <div class="contact-actions">
-      <a href="tel:+19024731317" class="btn-sm btn-call">📞 Call</a>
-      <a href="https://www.google.com/maps/dir/?api=1&origin=44.6488,-63.5724&destination=QEII+Health+Sciences+Centre+Halifax&travelmode=walking" target="_blank" rel="noopener" class="btn-sm btn-map">🚶 Walk</a>
+      <a href="tel:+19024732700" class="btn-sm btn-call">📞 Call</a>
+      <a href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=QEII+Health+Sciences+Centre+Halifax+Infirmary&travelmode=walking" target="_blank" rel="noopener" class="btn-sm btn-map">🚶 Walk</a>
     </div>
   </div>
   <div class="contact-card">
     <div class="contact-label">Police (Non-Emergency)</div>
     <div class="contact-sub">Halifax Regional Police</div>
     <div class="contact-actions">
-      <a href="tel:+19024901000" class="btn-sm btn-call">📞 Call</a>
-      <a href="https://www.google.com/maps/dir/?api=1&origin=44.6488,-63.5724&destination=Halifax+Regional+Police+Headquarters&travelmode=walking" target="_blank" rel="noopener" class="btn-sm btn-map">🚶 Walk</a>
+      <a href="tel:+19024905020" class="btn-sm btn-call">📞 Call</a>
+      <a href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=Halifax+Regional+Police+Headquarters&travelmode=walking" target="_blank" rel="noopener" class="btn-sm btn-map">🚶 Walk</a>
     </div>
   </div>
   <div class="contact-card">
     <div class="contact-label">Mental Health Crisis Line</div>
-    <div class="contact-sub">NS Mental Health Crisis Line (24/7)</div>
+    <div class="contact-sub">Nova Scotia 24/7 Crisis Support</div>
     <div class="contact-actions">
-      <a href="tel:+18884298162" class="btn-sm btn-call">📞 1-888-429-8167</a>
+      <a href="tel:+18884298167" class="btn-sm btn-call">📞 1-888-429-8167</a>
     </div>
   </div>
   <div class="contact-card">
     <div class="contact-label">Poison Control</div>
     <div class="contact-sub">Atlantic Canada Poison Centre</div>
     <div class="contact-actions">
-      <a href="tel:+18005658166" class="btn-sm btn-call">📞 1-800-565-8161</a>
+      <a href="tel:+18447647669" class="btn-sm btn-call">📞 1-844-764-7669</a>
     </div>
   </div>
   <div class="contact-card">
@@ -2131,61 +2326,283 @@ animation: colorShift 8s ease-in-out infinite;
     </div>
   </div>
   <div class="contact-card">
-    <div class="contact-label">City Wide Taxi</div>
+    <div class="contact-label">Casino Taxi</div>
     <div class="contact-sub">24/7 cab service</div>
     <div class="contact-actions">
       <a href="tel:+19024296666" class="btn-sm btn-call">📞 (902) 429-6666</a>
     </div>
   </div>
   <div class="contact-card">
-    <div class="contact-label">Casino Taxi</div>
+    <div class="contact-label">Yellow Cab</div>
     <div class="contact-sub">24/7 cab service</div>
     <div class="contact-actions">
-      <a href="tel:+19024256666" class="btn-sm btn-call">📞 (902) 425-6666</a>
+      <a href="tel:+19024200000" class="btn-sm btn-call">📞 (902) 420-0000</a>
     </div>
   </div>
 </div>
 
-<!-- ===== PAGE 8: HALIFAX NAVAL HERITAGE ===== -->
+<!-- ===== PAGE 8: CROW'S NEST ===== -->
 
 <div id="crowsnest" class="page">
   <button class="back-btn" onclick="nav('landing')">Home</button>
-  <div class="page-title">Halifax Naval Heritage</div>
-  <div class="page-subtitle">Battle of the Atlantic city highlights</div>
-  <div class="color-bar"></div>
 
-  <div class="card" style="margin-bottom:14px;">
-    <div class="card-name">Why Halifax Matters</div>
-    <div class="card-note" style="line-height:1.7;margin-bottom:0;">
-      Halifax was one of the most important convoy assembly and escort ports in the North Atlantic during the Second World War. Its harbour, dockyards, and command facilities made it a strategic lifeline between North America and Europe.
+  <!-- HERO -->
+  <div class="cn-hero">
+    <div class="cn-hero-badge">Canada's Naval Memorial</div>
+    <div class="cn-hero-title">HMCS Sackville</div>
+    <div class="cn-hero-est">Flower-class Corvette &middot; Launched 1941</div>
+    <div class="cn-hero-designation">1675 Lower Water Street, Halifax, Nova Scotia</div>
+  </div>
+
+  <div class="cn-divider"></div>
+
+  <!-- INTRO QUOTE -->
+  <div class="cn-intro">
+    <p>Moored on the Halifax waterfront beside the Maritime Museum of the Atlantic, HMCS <em>Sackville</em> is the last surviving Flower-class corvette in the world. Maintained by the Canadian Naval Memorial Trust, she honours the sailors and merchant mariners who fought the Battle of the Atlantic. Visitors can step aboard the restored ship and experience the cramped messdecks and bridge that carried crews through the North Atlantic.</p>
+    <span class="cn-intro-source">&mdash; Canadian Naval Memorial Trust</span>
+  </div>
+
+  <!-- AT A GLANCE -->
+  <div class="cn-glance">
+    <div class="cn-glance-title">At a Glance</div>
+    <div class="cn-glance-grid">
+      <div class="cn-glance-item">
+        <span class="cn-glance-icon">&#9875;</span>
+        <div class="cn-glance-label">Founded</div>
+        <div class="cn-glance-value">Commissioned 1941</div>
+      </div>
+      <div class="cn-glance-item">
+        <span class="cn-glance-icon">&#127987;</span>
+        <div class="cn-glance-label">Designation</div>
+        <div class="cn-glance-value">Canada's Naval Memorial (1985)</div>
+      </div>
+      <div class="cn-glance-item">
+        <span class="cn-glance-icon">&#128506;</span>
+        <div class="cn-glance-label">Ship Type</div>
+        <div class="cn-glance-value">Flower-class Corvette</div>
+      </div>
+      <div class="cn-glance-item">
+        <span class="cn-glance-icon">&#128270;</span>
+        <div class="cn-glance-label">Signature Artefact</div>
+        <div class="cn-glance-value">Wartime crew of ~85</div>
+      </div>
     </div>
   </div>
 
-  <div class="section-header">Key Sites to Visit</div>
-  <div class="map-btns">
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6488,-63.5724&destination=Maritime+Museum+of+the+Atlantic&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">⚓</span> <span class="map-btn-label">Maritime Museum of the Atlantic</span> <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6488,-63.5724&destination=HMCS+Sackville+Halifax&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">🛳️</span> <span class="map-btn-label">HMCS Sackville</span> <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6488,-63.5724&destination=Halifax+Citadel+National+Historic+Site&travelmode=walking" target="_blank" rel="noopener">
-      <span class="map-pin">🏰</span> <span class="map-btn-label">Halifax Citadel National Historic Site</span> <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6488,-63.5724&destination=Fairview+Lawn+Cemetery+Halifax&travelmode=driving" target="_blank" rel="noopener">
-      <span class="map-pin">🕊️</span> <span class="map-btn-label">Fairview Lawn Cemetery (Titanic Graves)</span> <span class="chevron">›</span>
-    </a>
+  <div class="cn-divider-ornament">Chapter I</div>
+
+  <!-- SECTION 1: ORIGINS -->
+  <div class="cn-section">
+    <div class="cn-section-header">
+      <div class="cn-section-number">I</div>
+      <div>
+        <div class="cn-section-title">Design &amp; Build</div>
+        <div class="cn-section-subtitle">A small escort for a big ocean</div>
+      </div>
+    </div>
+    <p>Built at Saint John Shipbuilding and launched in May 1941, <em>Sackville</em> was one of 123 corvettes constructed for the Royal Canadian Navy. These compact escorts could be produced quickly in civilian yards, giving Canada the numbers needed to protect convoys from U-boats.</p>
+    <p>At just over 205 feet long with a single propeller and a top speed of 16 knots, Flower-class corvettes were wet, cramped, and demanding to sail. Yet their shallow draft and tight turning circle made them invaluable in the harsh North Atlantic.</p>
+    <div class="cn-section-img">
+      <img src="IMG_0524.jpeg" alt="Historic naval artifacts and memorabilia.">
+      <div class="cn-section-img-caption">Restored spaces showcase the equipment and atmosphere of wartime corvettes</div>
+    </div>
   </div>
 
-  <div class="section-header">Historical Notes</div>
-  <div class="card" style="margin-bottom:10px;">
-    <ul class="list">
-      <li>Halifax Harbour served as a major convoy departure point in the Battle of the Atlantic.</li>
-      <li>HMCS <em>Sackville</em>, preserved in Halifax, is the last surviving Flower-class corvette.</li>
-      <li>The city remains a central base for Atlantic Canadian naval operations today.</li>
+  <div class="cn-divider-ornament">Chapter II</div>
+
+  <!-- SECTION 2: WAR YEARS -->
+  <div class="cn-section">
+    <div class="cn-section-header">
+      <div class="cn-section-number">II</div>
+      <div>
+        <div class="cn-section-title">Battle of the Atlantic</div>
+        <div class="cn-section-subtitle">1941 &ndash; 1945</div>
+      </div>
+    </div>
+    <p><em>Sackville</em> escorted convoys from Halifax and St. John's into the North Atlantic, enduring brutal weather and constant submarine threats. In August 1942 she fought through heavy seas to depth-charge a U-boat contact, one of several close engagements during her wartime service.</p>
+    <p>Like most corvettes, she rolled heavily and was often soaked by green water, but her crew kept steaming. After a major refit in 1944, <em>Sackville</em> returned to duty with improved habitability and anti-submarine gear, serving until the war's end.</p>
+    <div class="cn-section-img">
+      <img src="IMG_0525.jpeg" alt="Heritage naval artifacts and seating.">
+      <div class="cn-section-img-caption">Interpretive displays explain life aboard a corvette on North Atlantic escort duty</div>
+    </div>
+  </div>
+
+  <!-- MID-PAGE QUOTE -->
+  <div class="cn-callout">
+    <div class="cn-callout-text">&ldquo;A living memorial to those who braved the North Atlantic in small ships.&rdquo;</div>
+    <div class="cn-callout-attr">&mdash; Canadian Naval Memorial Trust</div>
+  </div>
+
+  <div class="cn-divider-ornament">Chapter III</div>
+
+  <!-- SECTION 3: U-BOAT PERISCOPE -->
+  <div class="cn-section">
+    <div class="cn-section-header">
+      <div class="cn-section-number">III</div>
+      <div>
+        <div class="cn-section-title">From Workhorse to Memorial</div>
+        <div class="cn-section-subtitle">A second life in Halifax</div>
+      </div>
+    </div>
+    <p>Paid off in 1946, <em>Sackville</em> later served as a civilian research vessel. In the 1980s she was transferred to the Canadian Naval Memorial Trust, whose volunteers and veterans restored her to a 1944 wartime fit with original machinery and fittings.</p>
+    <p>Today she is berthed in Halifax each summer (and moved under cover in winter), hosting public tours, commemorations, and naval ceremonies.</p>
+    <div class="cn-section-img">
+      <img src="IMG_0526.jpeg" alt="Naval artifacts and memorabilia aboard a corvette.">
+      <div class="cn-section-img-caption">Restoration work keeps original equipment and living spaces intact</div>
+    </div>
+  </div>
+
+  <div class="cn-divider-ornament">Chapter IV</div>
+
+  <!-- SECTION 4: AFTER THE WAR -->
+  <div class="cn-section">
+    <div class="cn-section-header">
+      <div class="cn-section-number">IV</div>
+      <div>
+        <div class="cn-section-title">Visiting Today</div>
+        <div class="cn-section-subtitle">A hands-on history lesson</div>
+      </div>
+    </div>
+    <p>Guides and volunteers are happy to explain the engine room, messes, and bridge layout. The restored spaces make it easy to picture watch rotations, cramped bunks, and the long nights on the North Atlantic.</p>
+    <p>Donations support ongoing maintenance and the memory of those lost in the Battle of the Atlantic.</p>
+    <div class="cn-section-img">
+      <img src="IMG_0527.jpeg" alt="Upper deck of a preserved naval vessel.">
+      <div class="cn-section-img-caption">Upper deck fittings and bridge equipment remain largely original</div>
+    </div>
+  </div>
+
+  <div class="cn-divider"></div>
+
+  <!-- PHOTO GALLERY -->
+  <div class="cn-gallery">
+    <div class="cn-gallery-title">Gallery</div>
+    <div class="cn-gallery-strip">
+      <div class="cn-gallery-item">
+        <img src="IMG_0524.jpeg" alt="Wartime memorabilia on the walls">
+        <div class="cn-gallery-item-caption">Wartime memorabilia and naval heritage displays</div>
+      </div>
+      <div class="cn-gallery-item">
+        <img src="IMG_0525.jpeg" alt="Heritage artifacts and seating">
+        <div class="cn-gallery-item-caption">Period furnishings illustrate life aboard a corvette</div>
+      </div>
+      <div class="cn-gallery-item">
+        <img src="IMG_0526.jpeg" alt="Artifacts and memorabilia">
+        <div class="cn-gallery-item-caption">Restored equipment and artifacts from Atlantic convoys</div>
+      </div>
+      <div class="cn-gallery-item">
+        <img src="IMG_0527.jpeg" alt="Upper deck view">
+        <div class="cn-gallery-item-caption">Upper deck details and bridge view</div>
+      </div>
+      <div class="cn-gallery-item">
+        <img src="IMG_0528.jpeg" alt="Interior wartime displays">
+        <div class="cn-gallery-item-caption">Wartime displays and messdeck layouts</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cn-divider"></div>
+
+  <!-- TIMELINE -->
+  <div class="cn-timeline">
+    <div class="cn-timeline-title">Timeline</div>
+    <ul class="cn-timeline-list">
+      <li class="cn-timeline-item">
+        <div class="cn-timeline-year">15 May 1941</div>
+        <div class="cn-timeline-text">Launched at Saint John Shipbuilding as part of Canada's corvette program.</div>
+      </li>
+      <li class="cn-timeline-item cn-tl-highlight">
+        <div class="cn-timeline-year">Dec 1941</div>
+        <div class="cn-timeline-text">Commissioned into the Royal Canadian Navy as HMCS <em>Sackville</em>.</div>
+      </li>
+      <li class="cn-timeline-item">
+        <div class="cn-timeline-year">1942 &ndash; 1944</div>
+        <div class="cn-timeline-text">Escorts North Atlantic convoys from Halifax and St. John's during the Battle of the Atlantic.</div>
+      </li>
+      <li class="cn-timeline-item">
+        <div class="cn-timeline-year">1944</div>
+        <div class="cn-timeline-text">Receives a major refit, improving stability, accommodation, and anti-submarine weapons.</div>
+      </li>
+      <li class="cn-timeline-item">
+        <div class="cn-timeline-year">1946</div>
+        <div class="cn-timeline-text">Paid off and later employed as a civilian research vessel.</div>
+      </li>
+      <li class="cn-timeline-item">
+        <div class="cn-timeline-year">1983</div>
+        <div class="cn-timeline-text">Transferred to the Canadian Naval Memorial Trust for preservation.</div>
+      </li>
+      <li class="cn-timeline-item cn-tl-highlight">
+        <div class="cn-timeline-year">1985</div>
+        <div class="cn-timeline-text">Commissioned as Canada's Naval Memorial.</div>
+      </li>
+      <li class="cn-timeline-item">
+        <div class="cn-timeline-year">Present Day</div>
+        <div class="cn-timeline-text">A living memorial on Halifax's waterfront honouring the Battle of the Atlantic.</div>
+      </li>
     </ul>
   </div>
+
+  <div class="cn-divider"></div>
+
+  <!-- VISITING INFORMATION -->
+  <div class="cn-visit">
+    <div class="cn-visit-title">Plan Your Visit</div>
+
+    <div class="cn-visit-row">
+      <div class="cn-visit-icon">&#128205;</div>
+      <div>
+        <div class="cn-visit-label">Address</div>
+        <div class="cn-visit-value">1675 Lower Water Street, Halifax, NS<br>Along the boardwalk beside the Maritime Museum of the Atlantic</div>
+      </div>
+    </div>
+
+    <div class="cn-visit-row">
+      <div class="cn-visit-icon">&#128336;</div>
+      <div>
+        <div class="cn-visit-label">Hours (subject to change)</div>
+        <ul class="cn-visit-hours">
+          <li><strong>Seasonal</strong> Typically May &ndash; October</li>
+          <li><strong>Off-season</strong> Check website; group tours by appointment</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cn-visit-row">
+      <div class="cn-visit-icon">&#127860;</div>
+      <div>
+        <div class="cn-visit-label">Dining &amp; Capacity</div>
+        <div class="cn-visit-value">Open-deck tours; small interior spaces &mdash; plan for staggered entry during busy times.</div>
+      </div>
+    </div>
+
+    <div class="cn-visit-row">
+      <div class="cn-visit-icon">&#127894;</div>
+      <div>
+        <div class="cn-visit-label">Dress &amp; Admission</div>
+        <div class="cn-visit-value">Casual dress. Donations encouraged to support upkeep of the memorial.</div>
+      </div>
+    </div>
+
+    <div class="cn-visit-note">
+      Operations are weather-dependent; confirm hours before heading down the pier, especially in winter/early spring.
+    </div>
+  </div>
+
+  <!-- ACTION BUTTONS -->
+  <div class="cn-actions">
+    <a class="cn-action-btn" href="https://www.google.com/maps/dir/?api=1&origin=44.6465,-63.5729&destination=HMCS+Sackville+Halifax&travelmode=walking" target="_blank" rel="noopener">&#9898; Walking Directions</a>
+    <a class="cn-action-btn" href="https://hmcssackville.ca/" target="_blank" rel="noopener">&#9875; Official Website</a>
+  </div>
+  <div class="cn-actions">
+    <a class="cn-action-btn" href="https://hmcssackville.ca/about/" target="_blank" rel="noopener">&#127983; Naval Memorial Trust</a>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="cn-footer">
+    <div class="cn-footer-text">&ldquo;We will remember them.&rdquo;<br>In honour of those who sailed the Battle of the Atlantic, 1939&ndash;1945</div>
+  </div>
 </div>
+
+<button id="quick-home" class="quick-home" onclick="nav('landing')" aria-label="Back to home">🏠 Home</button>
 
 <script src="data.js"></script>
 <script>
@@ -2266,8 +2683,8 @@ if (!window.PORT_DATA) {
 
 let activeFilters = new Set();
 
-// Ship location in Halifax (44.6488°N, -63.5724°W)
-const SHIP_LOCATION = '44.6488,-63.5724';
+// Ship location in Halifax (44.6465°N, -63.5729°W)
+const SHIP_LOCATION = '44.6465,-63.5729';
 
 // HTML escaping function to prevent XSS
 function escapeHtml(str) {
@@ -2425,7 +2842,7 @@ checkHash();
 updateQuickHome(document.querySelector('.page.active')?.id || 'landing');
 
 /* ===== WEATHER ===== */
-const WEATHER_COORDS = { lat: 44.6488, lon: -63.5724 };
+const WEATHER_COORDS = { lat: 44.6488, lon: -63.5752 };
 let weatherLoaded = false;
 
 function formatTemp(value) {
