@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Labrador (mainland) - upper portion -->
+  <path d="M 100 20 L 120 25 L 135 30 L 145 40 L 150 55 L 148 70 L 145 85 L 140 95 L 130 100 L 120 98 L 110 95 L 100 88 L 92 82 L 85 75 L 80 65 L 78 50 L 82 35 L 90 25 Z" fill="currentColor" opacity="0.9"/>
+
+  <!-- Newfoundland Island (main island) - lower portion -->
+  <path d="M 60 140 L 75 135 L 90 132 L 105 130 L 120 132 L 135 138 L 145 145 L 150 155 L 152 170 L 150 185 L 145 200 L 138 215 L 128 230 L 115 242 L 100 248 L 85 250 L 70 248 L 55 242 L 45 232 L 38 218 L 35 203 L 35 188 L 38 173 L 42 160 L 50 148 Z" fill="currentColor" opacity="0.9"/>
+
+  <!-- Northern Peninsula - connecting feature -->
+  <path d="M 95 115 L 100 120 L 105 125 L 107 132 L 105 130" fill="none"/>
+</svg>
