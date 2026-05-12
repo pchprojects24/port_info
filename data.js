@@ -1,42 +1,61 @@
 window.PORT_DATA = {
   activities: [
-    { name: "Place du Général de Gaulle", desc: "The main town square — cafés, colourful buildings, and a great first-stop orientation point.", tags: ["Iconic","Outdoors","Quick"], map: "Place du Général de Gaulle Saint-Pierre Saint Pierre and Miquelon", web: "" },
-    { name: "L'Arche Museum & Archives", desc: "Essential local history museum (including the archipelago’s famous guillotine exhibit).", tags: ["Iconic","Indoors","Half-day"], map: "L'Arche Musée et Archives Saint-Pierre Saint Pierre and Miquelon", web: "https://www.spm-archives.fr" },
-    { name: "Cathédrale Saint-Pierre", desc: "Town landmark with classic French lines — quick, peaceful visit near the centre.", tags: ["Iconic","Indoors","Quick"], map: "Cathédrale Saint-Pierre Saint-Pierre Saint Pierre and Miquelon", web: "" },
-    { name: "Île aux Marins", desc: "Short boat ride to a preserved fishing village with church, museum sites, and sea views.", tags: ["Iconic","Outdoors","Half-day"], map: "Île aux Marins Saint-Pierre Saint Pierre and Miquelon", web: "https://en.spm-tourisme.fr/en/ile-aux-marins/" },
-    { name: "Pointe-aux-Canons Viewpoint", desc: "Coastal lookout for wind, waves, and big Atlantic horizons — great for photos.", tags: ["Outdoors","Quick"], map: "Pointe-aux-Canons Saint-Pierre Saint Pierre and Miquelon", web: "" },
-    { name: "Waterfront Stroll (Port & Quays)", desc: "Walk the harbour edge and backstreets for classic Saint-Pierre colour and sea air.", tags: ["Outdoors","Quick"], map: "Port de Saint-Pierre Saint Pierre and Miquelon", web: "" },
-    { name: "Distillerie du Goéland", desc: "Local distillery tours/tastings (availability varies by season — check ahead).", tags: ["Food-Drink","Indoors","Quick"], map: "Distillerie du Goéland Saint-Pierre Saint Pierre and Miquelon", web: "" },
-    { name: "Cap aux Basques", desc: "A favourite hike for cliffs, ocean wind, and (often) seabirds — dress for weather.", tags: ["Outdoors","Half-day"], map: "Cap aux Basques Saint Pierre and Miquelon", web: "" },
-    { name: "Vallée de la Cormorandière", desc: "Easy nature escape close to town — trails, viewpoints, and a quiet reset.", tags: ["Outdoors","Half-day"], map: "Vallée de la Cormorandière Saint-Pierre Saint Pierre and Miquelon", web: "" }
+    { name: "Halifax Waterfront Boardwalk", desc: "4 km harbourfront walk with views, shops, and public art.", tags: ["Iconic","Outdoors","Quick"], map: "Halifax Waterfront Boardwalk", web: "" },
+    { name: "Halifax Citadel National Historic Site", desc: "Star-shaped fortress with the noon gun, ramparts, and living history programs.", tags: ["Iconic","Outdoors","Half-day"], map: "Halifax Citadel National Historic Site", web: "https://parks.canada.ca/lhn-nhs/ns/halifax" },
+    { name: "Maritime Museum of the Atlantic", desc: "Naval history, ship models, and Titanic artifacts on the harbour.", tags: ["Iconic","Indoors","Half-day"], map: "Maritime Museum of the Atlantic Halifax", web: "https://maritimemuseum.novascotia.ca/" },
+    { name: "HMCS Sackville", desc: "Restored WWII corvette and Canada's Naval Memorial.", tags: ["Iconic","Indoors","Quick"], map: "HMCS Sackville Halifax", web: "https://hmcssackville.ca/" },
+    { name: "Canadian Museum of Immigration at Pier 21", desc: "Powerful stories of newcomers told inside the historic ocean terminal.", tags: ["Iconic","Indoors","Half-day"], map: "Canadian Museum of Immigration at Pier 21", web: "https://www.pier21.ca/" },
+    { name: "Point Pleasant Park", desc: "Coastal forest trails and historic batteries at the harbour entrance.", tags: ["Outdoors","Half-day"], map: "Point Pleasant Park Halifax", web: "" },
+    { name: "Halifax Public Gardens", desc: "Victorian-era gardens with wrought-iron gates and winding paths.", tags: ["Iconic","Outdoors","Quick"], map: "Halifax Public Gardens", web: "https://www.halifaxpublicgardens.ca/" },
+    { name: "Alexander Keith's Brewery Tour", desc: "Interactive brewery tour in the original 1820s building.", tags: ["Food-Drink","Indoors","Quick"], map: "Alexander Keith's Brewery Halifax", web: "https://alexanderkeithsbrewery.com/" },
+    { name: "Seaport Farmers' Market", desc: "Local vendors, baked goods, and crafts beside the waterfront.", tags: ["Food-Drink","Indoors","Quick"], map: "Halifax Seaport Farmers Market", web: "" },
+    { name: "Art Gallery of Nova Scotia", desc: "Atlantic Canada's largest art museum, featuring the Maud Lewis house.", tags: ["Indoors","Quick"], map: "Art Gallery of Nova Scotia", web: "https://www.artgalleryofnovascotia.ca/" },
+    { name: "Hydrostone Market", desc: "Cafés and boutiques in a unique garden suburb rebuilt after the Explosion.", tags: ["Food-Drink","Quick","Outdoors"], map: "Hydrostone Market Halifax", web: "" },
+    { name: "Alderney Ferry to Dartmouth", desc: "10-minute harbour crossing with skyline views, running every 15–30 minutes.", tags: ["Iconic","Outdoors","Quick"], map: "Halifax Ferry Terminal", web: "https://www.halifax.ca/transportation/halifax-transit/ferry-service" }
   ],
   todoChips: ["Iconic","Outdoors","Indoors","Food-Drink","Quick","Half-day"],
   venueData: {
     'tab-food': [
-      { name: "Le Café de la Poste", note: "Classic café vibes and a solid all-round pick in the centre of town.", price: "$$", map: "Café de la Poste Saint-Pierre Saint Pierre and Miquelon", web: "https://nuitssaintpierre.com/restaurant" },
-      { name: "Les Terrasses du Port", note: "Harbour-view restaurant (and an easy ‘nice night out’ option).", price: "$$$", map: "Les Terrasses du Port Saint-Pierre Saint Pierre and Miquelon", web: "https://ltdpspm.com" },
-      { name: "Auberge Quatre-Temps", note: "A well-known local kitchen — check opening days/hours.", price: "$$$", map: "Auberge Quatre-Temps Saint-Pierre Saint Pierre and Miquelon", web: "https://aubergequatretemps.fr/" },
-      { name: "Hôtel Robert (Crêperie)", note: "Crêpes and French comfort food by the water.", price: "$$", map: "Hotel Robert Saint-Pierre Saint Pierre and Miquelon", web: "http://hotelrobertspm.fr/" },
-      { name: "Le Feu de Braise", note: "Popular dining option — if it’s open, it’s usually a safe bet.", price: "$$", map: "Le Feu de Braise Saint-Pierre Saint Pierre and Miquelon", web: "" }
+      { name: "The Bicycle Thief", note: "Upscale North American Italian on the boardwalk.", price: "$$$", map: "The Bicycle Thief Halifax", web: "https://bicyclethief.ca/" },
+      { name: "Bar Kismet", note: "Seafood-forward small plates with top-tier cocktails.", price: "$$$", map: "Bar Kismet Halifax", web: "https://www.barkismet.com/" },
+      { name: "2 Doors Down", note: "Casual comfort food using local ingredients.", price: "$$", map: "2 Doors Down Halifax", web: "https://2doorsdown.ca/" },
+      { name: "The Wooden Monkey", note: "Local, sustainable menu with vegan and gluten-free options.", price: "$$", map: "The Wooden Monkey Halifax", web: "https://thewoodenmonkey.ca/" },
+      { name: "Shuck Seafood + Raw Bar", note: "Raw bar, chowders, and Maritime seafood classics.", price: "$$", map: "Shuck Seafood Halifax", web: "https://shuckseafood.ca/" },
+      { name: "The Barrington Steakhouse", note: "Steaks, oysters, and a deep wine list downtown.", price: "$$$", map: "The Barrington Steakhouse Halifax", web: "https://barringtonsteakhouse.ca/" },
+      { name: "Waterfront Warehouse", note: "Lobster, chowder, and seafood towers steps from the harbour.", price: "$$", map: "Waterfront Warehouse Halifax", web: "https://waterfrontwarehouse.ca/" },
+      { name: "Lot Six", note: "Cocktail bar and raw bar with a stunning atrium.", price: "$$", map: "Lot Six Halifax", web: "https://www.lotsix.ca/" },
+      { name: "Gahan House Nova Centre", note: "Brewpub with pub fare and PEI-inspired dishes.", price: "$$", map: "Gahan House Nova Centre Halifax", web: "https://gahan.ca/locations/halifax/" },
+      { name: "Pickford & Black", note: "Seafood and drinks right on the waterfront.", price: "$$", map: "Pickford & Black Halifax", web: "https://pickfordandblack.ca/" }
     ],
     'tab-coffee': [
-      { name: "Le Café de la Poste", note: "Easy coffee stop downtown — good for a warm-up on windy days.", price: "$$", map: "Café de la Poste Saint-Pierre Saint Pierre and Miquelon", web: "https://nuitssaintpierre.com/restaurant" },
-      { name: "Hôtel Robert (Crêperie)", note: "Coffee + a sweet crêpe works as a quick refuel between walks.", price: "$$", map: "Hotel Robert Saint-Pierre Saint Pierre and Miquelon", web: "http://hotelrobertspm.fr/" }
+      { name: "Weird Harbour Espresso Bar", note: "Tiny espresso bar serving carefully dialed-in shots.", price: "$", map: "Weird Harbour Espresso Bar Halifax", web: "https://www.instagram.com/weirdharbour/" },
+      { name: "Java Blend Coffee Roasters", note: "Local roaster with a North Street cafe.", price: "$", map: "Java Blend Coffee Halifax", web: "https://www.javablendcoffee.com/" },
+      { name: "Pavia Gallery Espresso Bar", note: "Excellent espresso inside the Seaport Market.", price: "$", map: "Pavia Espresso Bar Seaport Market Halifax", web: "https://www.pavia.ca/" },
+      { name: "Dilly Dally Coffee Cafe", note: "Neighbourhood cafe with great sandwiches and pour-over.", price: "$", map: "Dilly Dally Coffee Halifax", web: "" }
     ],
     'tab-bars': [
-      { name: "Le Café de la Poste", note: "A central spot to start the evening; keep an eye on last-call times.", map: "Café de la Poste Saint-Pierre Saint Pierre and Miquelon", web: "https://nuitssaintpierre.com/restaurant" },
-      { name: "Les Terrasses du Port (Bar)", note: "Harbour views with drinks — check hours/seasonal closures.", map: "Les Terrasses du Port Saint-Pierre Saint Pierre and Miquelon", web: "https://ltdpspm.com" },
-      { name: "Distillerie du Goéland", note: "Local tasting option (if tours are running).", map: "Distillerie du Goéland Saint-Pierre Saint Pierre and Miquelon", web: "" }
+      { name: "The Lower Deck", note: "Historic waterfront pub with nightly live music.", map: "The Lower Deck Halifax", web: "https://www.lowerdeck.ca/" },
+      { name: "Durty Nelly's", note: "Lively Irish pub imported from Dublin.", map: "Durty Nelly's Halifax", web: "https://durtynellys.ca/" },
+      { name: "The Old Triangle", note: "Classic Irish alehouse with trad music sessions.", map: "The Old Triangle Halifax", web: "https://oldtriangle.com/halifax/" },
+      { name: "Stillwell Beer Bar", note: "Craft beer destination with rotating taps and snacks.", map: "Stillwell Beer Bar Halifax", web: "https://barstillwell.com/" },
+      { name: "The Split Crow Pub", note: "Popular pub near the waterfront with daily specials.", map: "Split Crow Pub Halifax", web: "https://splitcrow.com/" },
+      { name: "The Pint Public House", note: "Sports and party bar on Argyle Street.", map: "The Pint Public House Halifax", web: "https://halifax.thepint.ca/" },
+      { name: "Gahan House Nova Centre", note: "House-brewed beer and pub fare downtown.", map: "Gahan House Nova Centre Halifax", web: "https://gahan.ca/locations/halifax/" },
+      { name: "The Stubborn Goat Beer Garden", note: "Seasonal waterfront beer garden (check hours in March).", map: "Stubborn Goat Beer Garden Halifax", web: "https://sturburngoat.ca/" }
     ],
     'tab-brew': [
-      // No dedicated breweries listed yet for Saint-Pierre — add as discovered.
+      { name: "Garrison Brewing Co.", note: "Waterfront brewery with a taproom and beer garden.", map: "Garrison Brewing Halifax", web: "https://garrisonbrewing.com/" },
+      { name: "Propeller Brewing Co.", note: "Local staple serving classics and seasonals.", map: "Propeller Brewing Halifax", web: "https://drinkpropeller.ca/" },
+      { name: "2 Crows Brewing Co.", note: "Modern craft brewery near the seaport.", map: "2 Crows Brewing Halifax", web: "https://2crowsbrewing.com/" },
+      { name: "Good Robot Brewing", note: "Playful North End brewery with a large patio.", map: "Good Robot Brewing Halifax", web: "https://www.goodrobotbrewing.ca/" }
     ]
   },
   hotelData: [
-    { name: "Les Terrasses du Port", note: "Modern harbour-front hotel with spa/fitness and on-site dining.", map: "Les Terrasses du Port Saint-Pierre Saint Pierre and Miquelon", web: "https://ltdpspm.com" },
-    { name: "Hôtel Robert", note: "Oceanfront hotel with a well-known crêperie.", map: "Hotel Robert Saint-Pierre Saint Pierre and Miquelon", web: "http://hotelrobertspm.fr/" },
-    { name: "Auberge Saint-Pierre", note: "Small hotel close to downtown and the waterfront.", map: "Auberge Saint-Pierre Saint-Pierre Saint Pierre and Miquelon", web: "https://auberge-saintpierre.fr" },
-    { name: "Nuits Saint-Pierre", note: "Boutique accommodation in/near the town centre.", map: "Nuits Saint-Pierre Saint-Pierre Saint Pierre and Miquelon", web: "https://nuitssaintpierre.com/" },
-    { name: "Auberge Quatre-Temps", note: "Inn-style stay; check availability and seasonal openings.", map: "Auberge Quatre-Temps Saint-Pierre Saint Pierre and Miquelon", web: "https://aubergequatretemps.fr/" }
+    { name: "The Prince George Hotel", note: "Downtown upscale hotel near Citadel Hill and City Hall.", map: "Prince George Hotel Halifax", web: "https://www.princegeorgehotel.com/" },
+    { name: "Muir, Autograph Collection", note: "Luxury waterfront hotel in Queen's Marque.", map: "Muir Hotel Halifax", web: "https://www.marriott.com/en-us/hotels/yhzar-muir-autograph-collection/overview/" },
+    { name: "Halifax Marriott Harbourfront Hotel", note: "On the boardwalk with harbour views.", map: "Halifax Marriott Harbourfront Hotel", web: "https://www.marriott.com/en-us/hotels/yhzmc-halifax-marriott-harbourfront-hotel/overview/" },
+    { name: "The Westin Nova Scotian", note: "Steps from the Seaport and VIA Rail station.", map: "Westin Nova Scotian Halifax", web: "https://www.marriott.com/en-us/hotels/yhzwi-the-westin-nova-scotian/overview/" },
+    { name: "The Sutton Place Hotel Halifax", note: "Modern hotel beside the Halifax Convention Centre.", map: "Sutton Place Hotel Halifax", web: "https://www.suttonplace.com/hotels/sutton-place-hotel-halifax" },
+    { name: "The Lord Nelson Hotel & Suites", note: "Historic hotel overlooking the Public Gardens.", map: "Lord Nelson Hotel Halifax", web: "https://lordnelsonhotel.ca/" }
   ]
 };
