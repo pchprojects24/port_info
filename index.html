@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#ffffff">
 <title>Saint-Pierre Port Brief</title>
@@ -236,7 +236,8 @@ box-shadow: 0 3px 10px rgba(46,204,113,0.3);
 padding: 8px 16px; border-radius: 20px;
 background: var(--white); border: 1.5px solid var(--border);
 color: var(--text-mid); font-size: 0.8rem; font-weight: 700;
-cursor: pointer;
+cursor: pointer; font-family: inherit;
+-webkit-appearance: none; appearance: none;
 transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 user-select: none; box-shadow: var(--shadow-sm);
 }
@@ -458,19 +459,19 @@ white-space: nowrap; flex-shrink: 0;
   <div class="color-bar"></div>
 
   <div class="accordion-item" data-group="routine">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">Port Window <span class="accordion-icon">+</span></button>
+    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Port Window <span class="accordion-icon">+</span></button>
     <div class="accordion-body"><p>Per Routine Orders — Saint-Pierre &amp; Miquelon</p></div>
   </div>
   <div class="accordion-item" data-group="routine">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">Daily Routine <span class="accordion-icon">+</span></button>
+    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Daily Routine <span class="accordion-icon">+</span></button>
     <div class="accordion-body"><p>Per Routine Orders.</p></div>
   </div>
   <div class="accordion-item" data-group="routine">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">Leave <span class="accordion-icon">+</span></button>
+    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Leave <span class="accordion-icon">+</span></button>
     <div class="accordion-body"><p>Per Routine Orders.</p></div>
   </div>
   <div class="accordion-item" data-group="routine">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">Currency &amp; Language <span class="accordion-icon">+</span></button>
+    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Currency &amp; Language <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
       <ul>
         <li><strong>Currency:</strong> Euro (€) is official. Canadian dollars are widely accepted but you may get an unfavourable exchange rate. US dollars are also accepted in many places.</li>
@@ -481,7 +482,7 @@ white-space: nowrap; flex-shrink: 0;
     </div>
   </div>
   <div class="accordion-item" data-group="routine">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">Overnight Leave <span class="accordion-icon">+</span></button>
+    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Overnight Leave <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
       <ul>
         <li>Have your hotel name, address, and phone number ready before requesting leave.</li>
@@ -602,7 +603,7 @@ white-space: nowrap; flex-shrink: 0;
   </div>
 
   <div class="accordion-item">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">Transportation <span class="accordion-icon">+</span></button>
+    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Transportation <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
       <ul>
         <li><strong>Walking:</strong> The entire town of Saint-Pierre is walkable. The main quay, town square, shops, restaurants, and waterfront are all close together.</li>
@@ -705,7 +706,7 @@ white-space: nowrap; flex-shrink: 0;
   </div>
 
   <div class="accordion-item" data-group="safety">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">General <span class="accordion-icon">+</span></button>
+    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">General <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
       <ul>
         <li>Saint-Pierre is one of the safest ports you will visit. The population is around 6,000 and crime is very low.</li>
@@ -716,7 +717,7 @@ white-space: nowrap; flex-shrink: 0;
     </div>
   </div>
   <div class="accordion-item" data-group="safety">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">Weather Hazards <span class="accordion-icon">+</span></button>
+    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Weather Hazards <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
       <ul>
         <li>Dense fog can reduce visibility to near zero with little warning. Stay on marked paths.</li>
@@ -728,7 +729,7 @@ white-space: nowrap; flex-shrink: 0;
     </div>
   </div>
   <div class="accordion-item" data-group="safety">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">Alcohol / Nights Out <span class="accordion-icon">+</span></button>
+    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Alcohol / Nights Out <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
       <ul>
         <li>Alcohol is significantly cheaper here than in Canada — it's duty-free French territory. Pace yourself.</li>
@@ -739,7 +740,7 @@ white-space: nowrap; flex-shrink: 0;
     </div>
   </div>
   <div class="accordion-item" data-group="safety">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">ID / Valuables <span class="accordion-icon">+</span></button>
+    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">ID / Valuables <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
       <ul>
         <li>Carry your military ID and a second piece of government photo ID.</li>
@@ -750,7 +751,7 @@ white-space: nowrap; flex-shrink: 0;
     </div>
   </div>
   <div class="accordion-item" data-group="safety">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">Medical &amp; Emergencies <span class="accordion-icon">+</span></button>
+    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Medical &amp; Emergencies <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
       <ul>
         <li>Call <strong>15</strong> for medical emergencies (SAMU).</li>
@@ -796,35 +797,19 @@ white-space: nowrap; flex-shrink: 0;
 
   <div class="contact-card">
     <div class="contact-label">Brow</div>
-    <div class="contact-sub">+1-555-0100 (placeholder)</div>
-    <div class="contact-actions">
-      <a href="tel:+15550100" class="btn-sm btn-call">📞 Call</a>
-      <a href="sms:+15550100" class="btn-sm btn-text">💬 Text</a>
-    </div>
+    <div class="contact-sub">Number to be confirmed — update before sailing</div>
   </div>
   <div class="contact-card">
     <div class="contact-label">Cox'n</div>
-    <div class="contact-sub">+1-555-0101 (placeholder)</div>
-    <div class="contact-actions">
-      <a href="tel:+15550101" class="btn-sm btn-call">📞 Call</a>
-      <a href="sms:+15550101" class="btn-sm btn-text">💬 Text</a>
-    </div>
+    <div class="contact-sub">Number to be confirmed — update before sailing</div>
   </div>
   <div class="contact-card">
     <div class="contact-label">XO</div>
-    <div class="contact-sub">+1-555-0102 (placeholder)</div>
-    <div class="contact-actions">
-      <a href="tel:+15550102" class="btn-sm btn-call">📞 Call</a>
-      <a href="sms:+15550102" class="btn-sm btn-text">💬 Text</a>
-    </div>
+    <div class="contact-sub">Number to be confirmed — update before sailing</div>
   </div>
   <div class="contact-card">
     <div class="contact-label">Duty Medical</div>
-    <div class="contact-sub">+1-555-0103 (placeholder)</div>
-    <div class="contact-actions">
-      <a href="tel:+15550103" class="btn-sm btn-call">📞 Call</a>
-      <a href="sms:+15550103" class="btn-sm btn-text">💬 Text</a>
-    </div>
+    <div class="contact-sub">Number to be confirmed — update before sailing</div>
   </div>
 </div>
 
@@ -894,7 +879,7 @@ white-space: nowrap; flex-shrink: 0;
   </div>
 
   <div class="accordion-item" data-group="rum">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">How It Started <span class="accordion-icon">+</span></button>
+    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">How It Started <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
       <p>On 17 January 1920, the Volstead Act came into force across the United States, making the manufacture, sale, and transport of alcohol illegal. What it could not do was make alcohol illegal in Saint-Pierre et Miquelon — French territory, subject to French law, sitting 25 kilometres off the coast of Newfoundland.</p>
       <p style="margin-top:10px;">The geography was obvious. The legal loophole was absolute. Within months, whisky and rum traders had discovered the islands. Ships from Scotland loaded with Scotch whisky, vessels from Barbados and Jamaica carrying Caribbean rum, and freighters from Canada laden with rye began converging on Saint-Pierre's harbour.</p>
@@ -903,7 +888,7 @@ white-space: nowrap; flex-shrink: 0;
   </div>
 
   <div class="accordion-item" data-group="rum">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">The Operation <span class="accordion-icon">+</span></button>
+    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">The Operation <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
       <p>At its peak in the late 1920s, more than <strong>4 million bottles of spirits</strong> were passing through Saint-Pierre annually. Warehouses went up across the island. The main wharf, where your ship is likely berthed today, was stacked with bonded goods of every kind.</p>
       <p style="margin-top:10px;">The supply chain worked like this: liquor arrived in bulk by legitimate cargo ship, was stored in bonded warehouses, and was then loaded onto fast, low-slung contact boats — some capable of 20+ knots — that would make the run to the American coastline under cover of darkness, or to a rendezvous point outside US territorial waters where larger rum-running schooners waited to ferry it the final distance.</p>
@@ -913,7 +898,7 @@ white-space: nowrap; flex-shrink: 0;
   </div>
 
   <div class="accordion-item" data-group="rum">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">The Al Capone Connection <span class="accordion-icon">+</span></button>
+    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">The Al Capone Connection <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
       <p>The Chicago Outfit — Al Capone's organization — was among the most active American buyers in Saint-Pierre. Capone's representatives were regular visitors to the island, negotiating contracts with Scotch whisky suppliers and arranging shipments through the rum-running network to supply Chicago's speakeasies.</p>
       <p style="margin-top:10px;">Local legend — difficult to fully verify but persistent — holds that Capone himself visited Saint-Pierre at least once, staying at the hotel on the main square. What is beyond doubt is that the money from Chicago, New York, and Boston flowed freely through Saint-Pierre's banks and businesses during the boom years. The islands, previously living on the margins of the cod trade, were suddenly prosperous.</p>
@@ -922,7 +907,7 @@ white-space: nowrap; flex-shrink: 0;
   </div>
 
   <div class="accordion-item" data-group="rum">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">The Boom — and the Bust <span class="accordion-icon">+</span></button>
+    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">The Boom — and the Bust <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
       <p>The economic transformation of Saint-Pierre during Prohibition was staggering. New stone warehouses were built along the waterfront. A new hotel went up. The harbour was busy year-round. Workers arrived from Newfoundland and mainland France. Tax revenues soared. The local population more than doubled during the peak years as workers flooded in to manage the warehouses, service the boats, and serve the trade.</p>
       <p style="margin-top:10px;">Then, on <strong>5 December 1933</strong>, Franklin Roosevelt signed the proclamation repealing Prohibition. By the following morning, the bottom had dropped out of Saint-Pierre's bootleg economy. Orders stopped. Ships stopped coming. Warehouse workers left. The hotel emptied. The islands' brief, improbable boom was over almost as suddenly as it had begun.</p>
@@ -931,7 +916,7 @@ white-space: nowrap; flex-shrink: 0;
   </div>
 
   <div class="accordion-item" data-group="rum">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">WWII: The Free French Liberation <span class="accordion-icon">+</span></button>
+    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">WWII: The Free French Liberation <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
       <p>The islands have a second remarkable chapter, less well-known but equally dramatic. After France fell in June 1940, Saint-Pierre came under the nominal authority of the Vichy regime — the German-aligned French government. A Vichy-appointed governor enforced the official line.</p>
       <p style="margin-top:10px;">On the night of <strong>24 December 1941</strong>, a small Free French naval force under Admiral Émile Muselier sailed into Saint-Pierre harbour in three corvettes and a submarine — vessels of the type that would have been familiar to the Crow's Nest officers in St. John's. By Christmas morning, the islands had been liberated. The Vichy governor was deported. A plebiscite confirmed the islanders' overwhelming support for de Gaulle and the Free French.</p>
@@ -940,7 +925,7 @@ white-space: nowrap; flex-shrink: 0;
   </div>
 
   <div class="accordion-item" data-group="rum">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">Timeline <span class="accordion-icon">+</span></button>
+    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Timeline <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
       <ul>
         <li><strong>1920</strong> — US Prohibition begins. Saint-Pierre becomes a liquor transshipment hub almost immediately.</li>
@@ -955,7 +940,7 @@ white-space: nowrap; flex-shrink: 0;
   </div>
 
   <div class="accordion-item" data-group="rum">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">See It Today <span class="accordion-icon">+</span></button>
+    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">See It Today <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
       <p><strong>Musée de l'Arche</strong> — The main heritage museum in Saint-Pierre has excellent exhibits on the Prohibition era, including photographs, artefacts, and the stories of the rum-running families. Highly recommended.</p>
       <p style="margin-top:8px;"><strong>The Waterfront Warehouses</strong> — Several of the original stone warehouses that stored bonded liquor during the 1920s still line the port area. You can see them from the quay where your ship is berthed.</p>
@@ -972,11 +957,12 @@ white-space: nowrap; flex-shrink: 0;
 
 <script>
 /* ===== NAVIGATION ===== */
-function nav(pageId) {
+function nav(pageId, pushHistory = true) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const el = document.getElementById(pageId);
   if (el) { el.classList.add('active'); window.scrollTo({top:0,behavior:'instant'}); }
   if (pageId === 'weather') loadWeather();
+  if (pushHistory) history.pushState(null, '', '#' + pageId);
 }
 
 /* ===== ACCORDION ===== */
@@ -985,9 +971,15 @@ function toggleAccordion(trigger) {
   const group = item.dataset.group;
   const isOpen = item.classList.contains('open');
   if (group) {
-    document.querySelectorAll(`.accordion-item[data-group="${group}"]`).forEach(a => a.classList.remove('open'));
+    document.querySelectorAll(`.accordion-item[data-group="${group}"]`).forEach(a => {
+      a.classList.remove('open');
+      a.querySelector('.accordion-trigger').setAttribute('aria-expanded', 'false');
+    });
   }
-  if (!isOpen) item.classList.add('open');
+  if (!isOpen) {
+    item.classList.add('open');
+    trigger.setAttribute('aria-expanded', 'true');
+  }
 }
 
 /* ===== LIVE WEATHER ===== */
@@ -1100,7 +1092,7 @@ let activeFilters = new Set();
 
 function renderTodoChips() {
   document.getElementById('todo-chips').innerHTML = todoChips.map(c =>
-    `<span class="chip${activeFilters.has(c)?' active':''}" onclick="toggleChip('${c}')">${c}</span>`
+    `<button class="chip${activeFilters.has(c)?' active':''}" aria-pressed="${activeFilters.has(c)}" onclick="toggleChip('${c}')">${c}</button>`
   ).join('');
 }
 
@@ -1224,9 +1216,10 @@ renderHotels();
 /* ===== HASH ROUTING ===== */
 function checkHash() {
   const hash = location.hash.replace('#','');
-  if (hash && document.getElementById(hash)) nav(hash);
+  if (hash && document.getElementById(hash)) nav(hash, false);
 }
 window.addEventListener('hashchange', checkHash);
+window.addEventListener('popstate', checkHash);
 checkHash();
 </script>
 
