@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#ffffff">
-<title>St. John's Port Brief — Feb 13–16</title>
+<title>Saint-Pierre Port Brief</title>
 <style>
 :root {
   --bg: #f5f0eb;
@@ -21,7 +21,6 @@
   --radius: 18px;
   --radius-sm: 12px;
   --radius-xs: 8px;
-  /* Jellybean Row palette */
   --coral: #FF6B6B;
   --coral-soft: #fff0f0;
   --teal: #20B2AA;
@@ -62,14 +61,14 @@ padding: 10px 16px;
 .header-left { display: flex; align-items: center; gap: 10px; }
 .header-flag {
 width: 38px; height: 38px; border-radius: 12px;
-background: linear-gradient(135deg, var(--coral), var(--gold));
+background: linear-gradient(135deg, var(--ocean), var(--coral));
 display: flex; align-items: center; justify-content: center;
-font-size: 1.2rem; box-shadow: 0 2px 8px rgba(255,107,107,0.3);
+font-size: 1.2rem; box-shadow: 0 2px 8px rgba(52,152,219,0.3);
 }
 .header-text {}
 .header-title {
 font-size: 1rem; font-weight: 800; letter-spacing: -0.03em;
-background: linear-gradient(135deg, var(--coral), var(--plum));
+background: linear-gradient(135deg, var(--ocean), var(--plum));
 -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 background-clip: text;
 }
@@ -116,7 +115,7 @@ margin-bottom: 6px; line-height: 1.15;
 @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
 .landing-title {
 font-size: 1.8rem; font-weight: 900; letter-spacing: -0.04em;
-background: linear-gradient(135deg, var(--coral), var(--plum), var(--ocean));
+background: linear-gradient(135deg, var(--ocean), var(--plum), var(--coral));
 -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 background-clip: text; line-height: 1.15; margin-bottom: 4px;
 }
@@ -149,7 +148,6 @@ margin-left: auto; font-size: 1.1rem; color: var(--text-light);
 transition: transform 0.2s;
 }
 .landing-btn:active .btn-arrow { transform: translateX(3px); }
-/* Color coding per button */
 .lb-routine .icon-wrap { background: var(--ocean-soft); color: var(--ocean); }
 .lb-map .icon-wrap { background: var(--green-soft); color: var(--green); }
 .lb-todo .icon-wrap { background: var(--gold-soft); color: var(--gold); }
@@ -157,11 +155,10 @@ transition: transform 0.2s;
 .lb-hotels .icon-wrap { background: var(--plum-soft); color: var(--plum); }
 .lb-safety .icon-wrap { background: var(--teal-soft); color: var(--teal); }
 .lb-contacts .icon-wrap { background: var(--ocean-soft); color: var(--ocean); }
-.lb-crow .icon-wrap { background: var(--rose-soft); color: var(--rose); }
+.lb-rum .icon-wrap { background: var(--gold-soft); color: var(--gold); }
 .lb-weather .icon-wrap { background: var(--ocean-soft); color: var(--ocean); }
 .lb-explore .icon-wrap { background: var(--green-soft); color: var(--green); }
 
-/* Staggered entrance */
 .landing-btn { opacity: 0; animation: staggerIn 0.4s cubic-bezier(0.34, 1.3, 0.64, 1) forwards; }
 .landing-btn:nth-child(1) { animation-delay: 0.04s; }
 .landing-btn:nth-child(2) { animation-delay: 0.08s; }
@@ -212,19 +209,6 @@ transition: max-height 0.3s ease, padding 0.3s ease;
 .accordion-body p, .accordion-body li { font-size: 0.9rem; color: var(--text-mid); line-height: 1.65; }
 .accordion-body ul { padding-left: 18px; }
 .accordion-body li { margin-bottom: 6px; }
-.accordion-media {
-margin-top: 12px;
-border-radius: 14px;
-overflow: hidden;
-background: var(--bg);
-box-shadow: inset 0 0 0 1px rgba(0,0,0,0.04);
-}
-.accordion-media img {
-width: 100%;
-height: 180px;
-object-fit: cover;
-display: block;
-}
 
 /* ===== MAP LOCATION BUTTONS ===== */
 .map-btns { display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px; }
@@ -258,9 +242,9 @@ user-select: none; box-shadow: var(--shadow-sm);
 }
 .chip:active { transform: scale(0.93); }
 .chip.active {
-background: linear-gradient(135deg, var(--coral), var(--gold));
+background: linear-gradient(135deg, var(--ocean), var(--plum));
 color: #fff; border-color: transparent;
-box-shadow: 0 3px 12px rgba(255,107,107,0.3);
+box-shadow: 0 3px 12px rgba(52,152,219,0.3);
 }
 
 /* ===== CARDS ===== */
@@ -320,9 +304,9 @@ color: var(--text-light); font-size: 0.82rem; font-weight: 700;
 cursor: pointer; transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .tab.active {
-background: linear-gradient(135deg, var(--coral), var(--gold));
+background: linear-gradient(135deg, var(--ocean), var(--plum));
 color: #fff;
-box-shadow: 0 2px 10px rgba(255,107,107,0.25);
+box-shadow: 0 2px 10px rgba(52,152,219,0.25);
 }
 .tab:active { transform: scale(0.95); }
 .tab-panel { display: none; }
@@ -338,7 +322,7 @@ box-shadow: var(--shadow-sm);
 transition: border-color 0.2s, box-shadow 0.2s;
 }
 .search-input::placeholder { color: var(--text-light); }
-.search-input:focus { border-color: var(--coral); box-shadow: 0 0 0 3px rgba(255,107,107,0.12); }
+.search-input:focus { border-color: var(--ocean); box-shadow: 0 0 0 3px rgba(52,152,219,0.12); }
 
 /* ===== EMERGENCY ===== */
 .emergency-box {
@@ -387,7 +371,15 @@ background-size: 24px 24px;
 /* ===== COLOR BAR on pages ===== */
 .color-bar {
 height: 4px; border-radius: 4px; margin-bottom: 16px;
-background: linear-gradient(90deg, var(--coral), var(--gold), var(--green), var(--ocean), var(--plum));
+background: linear-gradient(90deg, var(--ocean), var(--plum), var(--coral), var(--gold), var(--green));
+}
+
+/* ===== INFO BADGE ===== */
+.info-badge {
+display: inline-block; font-size: 0.72rem; font-weight: 800;
+background: var(--ocean-soft); color: var(--ocean);
+padding: 2px 8px; border-radius: 6px; letter-spacing: 0.02em;
+white-space: nowrap; flex-shrink: 0;
 }
 
 </style>
@@ -403,8 +395,8 @@ background: linear-gradient(90deg, var(--coral), var(--gold), var(--green), var(
   <div class="header-left">
     <div class="header-flag">⚓</div>
     <div class="header-text">
-      <div class="header-title">St. John's Port Brief</div>
-      <div class="header-sub">Feb 13 – 16 · Newfoundland</div>
+      <div class="header-title">Saint-Pierre Port Brief</div>
+      <div class="header-sub">Saint-Pierre &amp; Miquelon · French Territory</div>
     </div>
   </div>
   <button class="header-home" onclick="nav('landing')">🏠 Home</button>
@@ -414,9 +406,9 @@ background: linear-gradient(90deg, var(--coral), var(--gold), var(--green), var(
 
 <div id="landing" class="page active">
   <div class="landing-hero">
-    <span class="landing-emoji">🏔️</span>
-    <div class="landing-title">Welcome to<br>St. John's</div>
-    <div class="landing-dates">Feb 13 – 16 &nbsp;·&nbsp; Newfoundland &amp; Labrador</div>
+    <span class="landing-emoji">🇫🇷</span>
+    <div class="landing-title">Bienvenue à<br>Saint-Pierre</div>
+    <div class="landing-dates">Saint-Pierre &amp; Miquelon &nbsp;·&nbsp; French Territory</div>
   </div>
   <div class="landing-grid">
     <button class="landing-btn lb-routine" onclick="nav('routine')">
@@ -426,7 +418,7 @@ background: linear-gradient(90deg, var(--coral), var(--gold), var(--green), var(
     </button>
     <button class="landing-btn lb-map" onclick="nav('explore')">
       <span class="icon-wrap">🧭</span>
-      <span>Explore St. John's</span>
+      <span>Explore Saint-Pierre</span>
       <span class="btn-arrow">›</span>
     </button>
     <button class="landing-btn lb-hotels" onclick="nav('hotels')">
@@ -435,7 +427,7 @@ background: linear-gradient(90deg, var(--coral), var(--gold), var(--green), var(
       <span class="btn-arrow">›</span>
     </button>
     <button class="landing-btn lb-todo" onclick="nav('weather')">
-      <span class="icon-wrap">🌨️</span>
+      <span class="icon-wrap">🌫️</span>
       <span>Weather</span>
       <span class="btn-arrow">›</span>
     </button>
@@ -449,9 +441,9 @@ background: linear-gradient(90deg, var(--coral), var(--gold), var(--green), var(
       <span>Contacts</span>
       <span class="btn-arrow">›</span>
     </button>
-    <button class="landing-btn lb-crow" onclick="nav('crowsnest')">
-      <span class="icon-wrap">🪶</span>
-      <span>Crow's Nest</span>
+    <button class="landing-btn lb-rum" onclick="nav('rumrunning')">
+      <span class="icon-wrap">🥃</span>
+      <span>The Rum Running Era</span>
       <span class="btn-arrow">›</span>
     </button>
   </div>
@@ -462,12 +454,12 @@ background: linear-gradient(90deg, var(--coral), var(--gold), var(--green), var(
 <div id="routine" class="page">
   <button class="back-btn" onclick="nav('landing')">Home</button>
   <div class="page-title">Ship Routine &amp; Leave</div>
-  <div class="page-subtitle">Port of St. John's · Feb 13–16</div>
+  <div class="page-subtitle">Port of Saint-Pierre &amp; Miquelon</div>
   <div class="color-bar"></div>
 
   <div class="accordion-item" data-group="routine">
     <button class="accordion-trigger" onclick="toggleAccordion(this)">Port Window <span class="accordion-icon">+</span></button>
-    <div class="accordion-body"><p>Feb 13–16 (St. John's, NL)</p></div>
+    <div class="accordion-body"><p>Per Routine Orders — Saint-Pierre &amp; Miquelon</p></div>
   </div>
   <div class="accordion-item" data-group="routine">
     <button class="accordion-trigger" onclick="toggleAccordion(this)">Daily Routine <span class="accordion-icon">+</span></button>
@@ -478,6 +470,17 @@ background: linear-gradient(90deg, var(--coral), var(--gold), var(--green), var(
     <div class="accordion-body"><p>Per Routine Orders.</p></div>
   </div>
   <div class="accordion-item" data-group="routine">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">Currency &amp; Language <span class="accordion-icon">+</span></button>
+    <div class="accordion-body">
+      <ul>
+        <li><strong>Currency:</strong> Euro (€) is official. Canadian dollars are widely accepted but you may get an unfavourable exchange rate. US dollars are also accepted in many places.</li>
+        <li><strong>ATMs:</strong> Available in Saint-Pierre town centre.</li>
+        <li><strong>Language:</strong> French. Most locals in shops and restaurants understand basic English, but coming with a few French phrases goes a long way and is appreciated.</li>
+        <li><strong>Phones:</strong> Canadian phones typically roam on French networks. Check your plan for international rates. Country code is +508.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="accordion-item" data-group="routine">
     <button class="accordion-trigger" onclick="toggleAccordion(this)">Overnight Leave <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
       <ul>
@@ -486,6 +489,7 @@ background: linear-gradient(90deg, var(--coral), var(--gold), var(--green), var(
         <li>Know your leave expiry time and plan return travel accordingly.</li>
         <li>If your plans change, inform the ship per routine as soon as possible.</li>
         <li>Keep your military ID and leave pass on your person.</li>
+        <li>Saint-Pierre is small — the entire town is walkable and there is no public transit.</li>
       </ul>
     </div>
   </div>
@@ -495,7 +499,7 @@ background: linear-gradient(90deg, var(--coral), var(--gold), var(--green), var(
 
 <div id="explore" class="page">
   <button class="back-btn" onclick="nav('landing')">Home</button>
-  <div class="page-title">Explore St. John's</div>
+  <div class="page-title">Explore Saint-Pierre</div>
   <div class="page-subtitle">Get around, get out, get fed</div>
   <div class="color-bar"></div>
   <div class="landing-grid">
@@ -522,108 +526,42 @@ background: linear-gradient(90deg, var(--coral), var(--gold), var(--green), var(
 <div id="weather" class="page">
   <button class="back-btn" onclick="nav('landing')">Home</button>
   <div class="page-title">Weather</div>
-  <div class="page-subtitle">St. John's · Feb 13–16</div>
+  <div class="page-subtitle">Saint-Pierre &amp; Miquelon</div>
   <div class="color-bar"></div>
 
   <div class="card" style="margin-bottom:10px; padding:14px 16px;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
-      <span style="font-size:1.6rem;">⚠️</span>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <span style="font-size:1.6rem;">🌫️</span>
       <div style="font-size:0.82rem;color:var(--text-mid);line-height:1.5;">
-        <strong>Snapshot forecast only.</strong> St. John's weather changes fast — always check a live source before heading out.
+        <strong>SPM is one of the foggiest places in North America.</strong> Conditions can change quickly — always check a live source before heading out.
       </div>
     </div>
   </div>
 
-  <div class="section-header">4-Day Forecast (as of Feb 7)</div>
-
-  <div class="card" style="margin-bottom:8px;">
-    <div style="display:flex;align-items:center;gap:12px;">
-      <span style="font-size:1.8rem;">🌨️</span>
-      <div style="flex:1;">
-        <div class="card-name">Fri, Feb 13</div>
-        <div class="card-note" style="margin-bottom:0;">Light snow late · Overcast</div>
-      </div>
-      <div style="text-align:right;">
-        <div style="font-size:1.2rem;font-weight:800;color:var(--ocean);">1°</div>
-        <div style="font-size:0.78rem;color:var(--text-light);">-3° low</div>
-      </div>
-    </div>
-    <div style="display:flex;gap:16px;margin-top:8px;font-size:0.78rem;color:var(--text-light);">
-      <span>💨 24 km/h</span><span>💧 88%</span><span>❄️ 22% chance</span><span>🌅 7:09 AM</span><span>🌇 5:21 PM</span>
-    </div>
-  </div>
-
-  <div class="card" style="margin-bottom:8px;">
-    <div style="display:flex;align-items:center;gap:12px;">
-      <span style="font-size:1.8rem;">🌨️</span>
-      <div style="flex:1;">
-        <div class="card-name">Sat, Feb 14</div>
-        <div class="card-note" style="margin-bottom:0;">Light snow late · Overcast</div>
-      </div>
-      <div style="text-align:right;">
-        <div style="font-size:1.2rem;font-weight:800;color:var(--ocean);">-2°</div>
-        <div style="font-size:0.78rem;color:var(--text-light);">-4° low</div>
-      </div>
-    </div>
-    <div style="display:flex;gap:16px;margin-top:8px;font-size:0.78rem;color:var(--text-light);">
-      <span>💨 21 km/h</span><span>💧 88%</span><span>❄️ 51% chance</span><span>🌅 7:07 AM</span><span>🌇 5:22 PM</span>
-    </div>
-  </div>
-
-  <div class="card" style="margin-bottom:8px;">
-    <div style="display:flex;align-items:center;gap:12px;">
-      <span style="font-size:1.8rem;">⛅</span>
-      <div style="flex:1;">
-        <div class="card-name">Sun, Feb 15</div>
-        <div class="card-note" style="margin-bottom:0;">Partly cloudy</div>
-      </div>
-      <div style="text-align:right;">
-        <div style="font-size:1.2rem;font-weight:800;color:var(--ocean);">-2°</div>
-        <div style="font-size:0.78rem;color:var(--text-light);">-5° low</div>
-      </div>
-    </div>
-    <div style="display:flex;gap:16px;margin-top:8px;font-size:0.78rem;color:var(--text-light);">
-      <span>💨 19 km/h</span><span>💧 83%</span><span>❄️ 47% chance</span><span>🌅 7:06 AM</span><span>🌇 5:24 PM</span>
-    </div>
-  </div>
-
-  <div class="card" style="margin-bottom:8px;">
-    <div style="display:flex;align-items:center;gap:12px;">
-      <span style="font-size:1.8rem;">🌤️</span>
-      <div style="flex:1;">
-        <div class="card-name">Mon, Feb 16</div>
-        <div class="card-note" style="margin-bottom:0;">Broken clouds</div>
-      </div>
-      <div style="text-align:right;">
-        <div style="font-size:1.2rem;font-weight:800;color:var(--ocean);">-1°</div>
-        <div style="font-size:0.78rem;color:var(--text-light);">-7° low</div>
-      </div>
-    </div>
-    <div style="display:flex;gap:16px;margin-top:8px;font-size:0.78rem;color:var(--text-light);">
-      <span>💨 13 km/h</span><span>💧 91%</span><span>❄️ 6% chance</span><span>🌅 7:04 AM</span><span>🌇 5:25 PM</span>
-    </div>
+  <div id="weather-dynamic">
+    <div class="card" style="text-align:center;padding:24px;color:var(--text-light);">Loading weather…</div>
   </div>
 
   <div class="section-header">What to Expect</div>
   <div class="card" style="margin-bottom:16px;">
     <div class="card-note" style="color:var(--text-mid);line-height:1.7;margin-bottom:0;">
-      Expect temperatures around <strong>-1° to 1°C</strong> during the day, dropping to <strong>-4° to -7°C</strong> at night. Wind chill will make it feel significantly colder. Dress in warm, windproof layers. Sidewalks may be icy — wear boots with good traction. St. John's averages about 33 cm of snow in February, with roughly 18 snow days through the month. Weather can change rapidly — always check a live forecast.
+      Saint-Pierre has a maritime subarctic climate — cool, humid, and famously foggy. The islands sit at the meeting point of the cold Labrador Current and warmer Gulf Stream air, producing near-constant fog from spring through autumn. Wind is almost always present; dress in windproof layers year-round. Rain and drizzle are frequent. Snow is possible from November through April. Summer (July–August) brings the mildest weather, with temperatures reaching 15–20°C on good days, but fog remains. Spring and autumn average 5–12°C. Check the live forecast below before going out.
     </div>
   </div>
 
   <div class="section-header">Live Forecast Links</div>
   <div class="map-btns">
-    <a class="map-btn" href="https://weather.gc.ca/en/location/index.html?coords=47.558,-52.717" target="_blank" rel="noopener">
-      <span class="map-pin" style="background:linear-gradient(135deg,var(--coral),var(--gold));">🍁</span> Environment Canada <span class="chevron">›</span>
+    <a class="map-btn" href="https://meteofrance.gp/fr/previsions-meteo-france/saint-pierre-et-miquelon/PM975" target="_blank" rel="noopener">
+      <span class="map-pin" style="background:linear-gradient(135deg,var(--ocean),var(--teal));">🇫🇷</span> Météo France <span class="chevron">›</span>
     </a>
-    <a class="map-btn" href="https://www.accuweather.com/en/ca/st-johns/a1b/weather-forecast/49427" target="_blank" rel="noopener">
-      <span class="map-pin" style="background:linear-gradient(135deg,var(--ocean),var(--teal));">🌡️</span> AccuWeather <span class="chevron">›</span>
+    <a class="map-btn" href="https://www.accuweather.com/en/pm/saint-pierre/50388/weather-forecast/50388" target="_blank" rel="noopener">
+      <span class="map-pin" style="background:linear-gradient(135deg,var(--coral),var(--gold));">🌡️</span> AccuWeather <span class="chevron">›</span>
     </a>
-    <a class="map-btn" href="https://www.timeanddate.com/weather/canada/st-johns/ext" target="_blank" rel="noopener">
+    <a class="map-btn" href="https://weather.gc.ca/en/location/index.html?coords=46.779,-56.176" target="_blank" rel="noopener">
+      <span class="map-pin" style="background:linear-gradient(135deg,var(--green),var(--teal));">🍁</span> Environment Canada <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://www.timeanddate.com/weather/france/saint-pierre/ext" target="_blank" rel="noopener">
       <span class="map-pin" style="background:linear-gradient(135deg,var(--plum),var(--ocean));">📅</span> 14-Day Forecast <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://weather.gc.ca/radar/index_e.html?id=WTP" target="_blank" rel="noopener">
-      <span class="map-pin" style="background:linear-gradient(135deg,var(--green),var(--teal));">📡</span> Weather Radar (NL) <span class="chevron">›</span>
     </a>
   </div>
 </div>
@@ -636,21 +574,30 @@ background: linear-gradient(90deg, var(--coral), var(--gold), var(--green), var(
   <div class="page-subtitle">Tap to open in Google Maps</div>
   <div class="color-bar"></div>
 
+  <div class="card" style="margin-bottom:14px;padding:14px 16px;">
+    <div style="font-size:0.84rem;color:var(--text-mid);line-height:1.6;">
+      <strong>Saint-Pierre town is entirely walkable.</strong> The main waterfront, square, restaurants, and shops are all within a 10–15 minute walk of the quay. There is no public bus service. For the Grand Barachois or further exploration, take a taxi or rent a vehicle.
+    </div>
+  </div>
+
   <div class="map-btns">
-    <a class="map-btn" href="https://www.google.com/maps/search/Downtown+St.+John's+NL" target="_blank" rel="noopener">
-      <span class="map-pin">📍</span> Downtown St. John's <span class="chevron">›</span>
+    <a class="map-btn" href="https://www.google.com/maps/search/Centre-Ville+Saint-Pierre+Miquelon" target="_blank" rel="noopener">
+      <span class="map-pin">📍</span> Centre-Ville Saint-Pierre <span class="chevron">›</span>
     </a>
-    <a class="map-btn" href="https://www.google.com/maps/search/George+Street+St.+John's+NL" target="_blank" rel="noopener">
-      <span class="map-pin">🎶</span> George Street <span class="chevron">›</span>
+    <a class="map-btn" href="https://www.google.com/maps/search/Place+du+Général+de+Gaulle+Saint-Pierre+Miquelon" target="_blank" rel="noopener">
+      <span class="map-pin">🏛️</span> Place du Général de Gaulle <span class="chevron">›</span>
     </a>
-    <a class="map-btn" href="https://www.google.com/maps/search/Signal+Hill+St.+John's+NL" target="_blank" rel="noopener">
-      <span class="map-pin">⛰️</span> Signal Hill <span class="chevron">›</span>
+    <a class="map-btn" href="https://www.google.com/maps/search/Île+aux+Marins+Saint-Pierre+Miquelon" target="_blank" rel="noopener">
+      <span class="map-pin">⛵</span> Île aux Marins <span class="chevron">›</span>
     </a>
-    <a class="map-btn" href="https://www.google.com/maps/search/The+Rooms+St.+John's+NL" target="_blank" rel="noopener">
-      <span class="map-pin">🏛️</span> The Rooms <span class="chevron">›</span>
+    <a class="map-btn" href="https://www.google.com/maps/search/Musée+de+l'Arche+Saint-Pierre+Miquelon" target="_blank" rel="noopener">
+      <span class="map-pin">🏛️</span> Musée de l'Arche <span class="chevron">›</span>
     </a>
-    <a class="map-btn" href="https://www.google.com/maps/search/Cape+Spear+Newfoundland" target="_blank" rel="noopener">
-      <span class="map-pin">🌊</span> Cape Spear <span class="chevron">›</span>
+    <a class="map-btn" href="https://www.google.com/maps/search/Grand+Barachois+Saint-Pierre+Miquelon" target="_blank" rel="noopener">
+      <span class="map-pin">🐎</span> Grand Barachois <span class="chevron">›</span>
+    </a>
+    <a class="map-btn" href="https://www.google.com/maps/search/Pain+de+Sucre+Saint-Pierre+Miquelon" target="_blank" rel="noopener">
+      <span class="map-pin">🌊</span> Pain de Sucre <span class="chevron">›</span>
     </a>
   </div>
 
@@ -658,39 +605,14 @@ background: linear-gradient(90deg, var(--coral), var(--gold), var(--green), var(
     <button class="accordion-trigger" onclick="toggleAccordion(this)">Transportation <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
       <ul>
-        <li><strong>Rideshare:</strong> Uber is available in St. John's.</li>
-        <li><strong>Bus:</strong> Metrobus serves the St. John's metro area. Routes and schedules at metrobus.com.</li>
-        <li><strong>Walking / Tours:</strong> Downtown is compact and walkable. Walking tours of downtown and Signal Hill are popular.</li>
+        <li><strong>Walking:</strong> The entire town of Saint-Pierre is walkable. The main quay, town square, shops, restaurants, and waterfront are all close together.</li>
+        <li><strong>Taxi:</strong> A small number of local taxis operate on the island. Ask at the port or your hotel for current contact numbers — the fleet is small and numbers change.</li>
+        <li><strong>No Uber / Rideshare:</strong> Not available on the islands.</li>
+        <li><strong>Vehicle rental:</strong> Cars and scooters are available for rent in town — useful for reaching the Grand Barachois or Pain de Sucre.</li>
+        <li><strong>Bicycle rental:</strong> Bikes available in season — ask at the tourism office near the town centre.</li>
+        <li><strong>Ferry to Île aux Marins:</strong> Regular passenger ferry service from the Saint-Pierre waterfront. Check locally for departure times.</li>
+        <li><strong>Ferry to Miquelon:</strong> Regular service connects Saint-Pierre to the larger but more remote Miquelon island. A full-day trip.</li>
       </ul>
-      <div style="margin-top:14px; font-weight:700; font-size:0.85rem; color:var(--text-mid); margin-bottom:8px;">🚕 Taxi Companies</div>
-      <div class="contact-card" style="margin-bottom:8px;">
-        <div class="contact-label">City Wide Taxi</div>
-        <div class="contact-sub">24/7 — Airport taxi provider</div>
-        <div class="contact-actions">
-          <a href="tel:+17097227777" class="btn-sm btn-call">📞 (709) 722-7777</a>
-        </div>
-      </div>
-      <div class="contact-card" style="margin-bottom:8px;">
-        <div class="contact-label">Jiffy Cabs</div>
-        <div class="contact-sub">24/7 — Largest fleet in St. John's</div>
-        <div class="contact-actions">
-          <a href="tel:+17097222222" class="btn-sm btn-call">📞 (709) 722-2222</a>
-        </div>
-      </div>
-      <div class="contact-card" style="margin-bottom:8px;">
-        <div class="contact-label">Bugden's Taxi</div>
-        <div class="contact-sub">24/7 — Also offers tours</div>
-        <div class="contact-actions">
-          <a href="tel:+17097224400" class="btn-sm btn-call">📞 (709) 722-4400</a>
-        </div>
-      </div>
-      <div class="contact-card" style="margin-bottom:8px;">
-        <div class="contact-label">Red &amp; Yellow Cabs</div>
-        <div class="contact-sub">24/7 — App available</div>
-        <div class="contact-actions">
-          <a href="tel:+17097266666" class="btn-sm btn-call">📞 (709) 726-6666</a>
-        </div>
-      </div>
     </div>
   </div>
 </div>
@@ -712,14 +634,20 @@ background: linear-gradient(90deg, var(--coral), var(--gold), var(--green), var(
 <div id="food" class="page">
   <button class="back-btn" onclick="nav('explore')">Explore</button>
   <div class="page-title">Food, Coffee &amp; Bars</div>
-  <div class="page-subtitle">Verified local picks</div>
+  <div class="page-subtitle">It's France — eat well</div>
   <div class="color-bar"></div>
+
+  <div class="card" style="margin-bottom:14px;padding:14px 16px;">
+    <div style="font-size:0.84rem;color:var(--text-mid);line-height:1.6;">
+      Saint-Pierre has surprisingly good food for its size — fresh Atlantic seafood, French bistro classics, and excellent bread. Options are limited compared to a city; reservations are recommended for dinner. Alcohol (wine, spirits, beer) is significantly cheaper than in Canada — no federal excise tax.
+    </div>
+  </div>
 
   <div class="tabs">
     <button class="tab active" onclick="switchTab('food','tab-food',this)">🍴 Food</button>
     <button class="tab" onclick="switchTab('food','tab-coffee',this)">☕ Coffee</button>
     <button class="tab" onclick="switchTab('food','tab-bars',this)">🍺 Bars</button>
-    <button class="tab" onclick="switchTab('food','tab-brew',this)">🍻 Brew</button>
+    <button class="tab" onclick="switchTab('food','tab-shop',this)">🛍️ Shop</button>
   </div>
 
   <div id="tab-food" class="tab-panel active">
@@ -727,15 +655,15 @@ background: linear-gradient(90deg, var(--coral), var(--gold), var(--green), var(
     <div class="venue-list"></div>
   </div>
   <div id="tab-coffee" class="tab-panel">
-    <input type="text" class="search-input" placeholder="Search coffee shops…" oninput="filterVenues('tab-coffee',this.value)">
+    <input type="text" class="search-input" placeholder="Search coffee &amp; cafés…" oninput="filterVenues('tab-coffee',this.value)">
     <div class="venue-list"></div>
   </div>
   <div id="tab-bars" class="tab-panel">
     <input type="text" class="search-input" placeholder="Search bars…" oninput="filterVenues('tab-bars',this.value)">
     <div class="venue-list"></div>
   </div>
-  <div id="tab-brew" class="tab-panel">
-    <input type="text" class="search-input" placeholder="Search breweries…" oninput="filterVenues('tab-brew',this.value)">
+  <div id="tab-shop" class="tab-panel">
+    <input type="text" class="search-input" placeholder="Search shops…" oninput="filterVenues('tab-shop',this.value)">
     <div class="venue-list"></div>
   </div>
 </div>
@@ -745,8 +673,15 @@ background: linear-gradient(90deg, var(--coral), var(--gold), var(--green), var(
 <div id="hotels" class="page">
   <button class="back-btn" onclick="nav('landing')">Home</button>
   <div class="page-title">Hotels</div>
-  <div class="page-subtitle">Downtown St. John's area</div>
+  <div class="page-subtitle">Saint-Pierre town · Limited options — book ahead</div>
   <div class="color-bar"></div>
+
+  <div class="card" style="margin-bottom:14px;padding:14px 16px;">
+    <div style="font-size:0.84rem;color:var(--text-mid);line-height:1.6;">
+      Saint-Pierre has a small number of hotels and chambres d'hôtes (B&Bs). During the brief summer tourist season, availability is tight. Book as early as possible. Most properties are small and centrally located.
+    </div>
+  </div>
+
   <input type="text" class="search-input" placeholder="Search hotels…" oninput="filterHotels(this.value)">
   <div id="hotel-list"></div>
 </div>
@@ -759,16 +694,36 @@ background: linear-gradient(90deg, var(--coral), var(--gold), var(--green), var(
   <div class="page-subtitle">Stay sharp, stay safe</div>
   <div class="color-bar"></div>
 
-<a href="tel:911" class="emergency-box">🚨&nbsp; Emergency: 911  &rarr;</a>
+  <div class="card" style="background:linear-gradient(135deg,var(--coral),#ff4757);margin-bottom:12px;padding:16px 18px;">
+    <div style="color:#fff;font-weight:800;font-size:1rem;margin-bottom:8px;">🚨 French Territory — Emergency Numbers</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <a href="tel:15" style="background:rgba(255,255,255,0.2);color:#fff;font-weight:800;font-size:0.88rem;padding:8px 14px;border-radius:10px;text-decoration:none;">15 · SAMU (Medical)</a>
+      <a href="tel:17" style="background:rgba(255,255,255,0.2);color:#fff;font-weight:800;font-size:0.88rem;padding:8px 14px;border-radius:10px;text-decoration:none;">17 · Gendarmerie</a>
+      <a href="tel:18" style="background:rgba(255,255,255,0.2);color:#fff;font-weight:800;font-size:0.88rem;padding:8px 14px;border-radius:10px;text-decoration:none;">18 · Pompiers</a>
+      <a href="tel:112" style="background:rgba(255,255,255,0.25);color:#fff;font-weight:800;font-size:0.88rem;padding:8px 14px;border-radius:10px;text-decoration:none;">112 · All Emergencies</a>
+    </div>
+  </div>
 
   <div class="accordion-item" data-group="safety">
     <button class="accordion-trigger" onclick="toggleAccordion(this)">General <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
       <ul>
-        <li>St. John's is generally safe — use common sense and stay aware.</li>
-        <li>Stick to well-lit, populated areas at night.</li>
-        <li>February weather changes fast: dress in warm layers and watch for ice.</li>
-        <li>Buddy system — especially at night.</li>
+        <li>Saint-Pierre is one of the safest ports you will visit. The population is around 6,000 and crime is very low.</li>
+        <li>Use common sense and stay aware of your surroundings, particularly at night near the bars.</li>
+        <li>The weather and the waterfront are your biggest hazards — fog rolls in fast and the harbour edge can be slippery.</li>
+        <li>Buddy system, especially at night.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="accordion-item" data-group="safety">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">Weather Hazards <span class="accordion-icon">+</span></button>
+    <div class="accordion-body">
+      <ul>
+        <li>Dense fog can reduce visibility to near zero with little warning. Stay on marked paths.</li>
+        <li>Wind is almost constant. Dress in windproof layers even in summer.</li>
+        <li>Rain and drizzle are frequent. The waterfront boardwalk and dock areas can be slippery.</li>
+        <li>If hiking to Pain de Sucre or along the coast, be cautious near cliff edges — fog removes depth perception quickly.</li>
+        <li>Cold water temperatures year-round — if you go near the water's edge, be careful.</li>
       </ul>
     </div>
   </div>
@@ -776,10 +731,10 @@ background: linear-gradient(90deg, var(--coral), var(--gold), var(--green), var(
     <button class="accordion-trigger" onclick="toggleAccordion(this)">Alcohol / Nights Out <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
       <ul>
-        <li>George Street is the main strip — fun, but pace yourself.</li>
-        <li>Arrange your ride back before going out.</li>
+        <li>Alcohol is significantly cheaper here than in Canada — it's duty-free French territory. Pace yourself.</li>
+        <li>The bar scene is small but active. Know how you're getting back to the ship before you go out.</li>
         <li>Look out for your shipmates.</li>
-        <li>Bars close at 3 AM on weekends.</li>
+        <li>It's a small community — be a good guest.</li>
       </ul>
     </div>
   </div>
@@ -787,19 +742,23 @@ background: linear-gradient(90deg, var(--coral), var(--gold), var(--green), var(
     <button class="accordion-trigger" onclick="toggleAccordion(this)">ID / Valuables <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
       <ul>
-        <li>Carry military ID and a second piece of government photo ID.</li>
-        <li>Don't carry more cash than you need.</li>
+        <li>Carry your military ID and a second piece of government photo ID.</li>
+        <li>You are in French territory — your passport or DND ID card may be requested.</li>
+        <li>Don't carry more cash than you need; use a card where accepted.</li>
         <li>Leave valuables secured aboard or in your hotel safe.</li>
       </ul>
     </div>
   </div>
   <div class="accordion-item" data-group="safety">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">Emergencies <span class="accordion-icon">+</span></button>
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">Medical &amp; Emergencies <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
       <ul>
-        <li>Call <strong>911</strong> for police, fire, or ambulance.</li>
-        <li>Nearest hospital: Health Sciences Centre, 300 Prince Philip Dr.</li>
-        <li>Non-emergency police: Royal Newfoundland Constabulary (RNC).</li>
+        <li>Call <strong>15</strong> for medical emergencies (SAMU).</li>
+        <li>Call <strong>17</strong> for police (Gendarmerie Nationale).</li>
+        <li>Call <strong>18</strong> for fire (Pompiers).</li>
+        <li>Call <strong>112</strong> from any mobile for all emergencies.</li>
+        <li>Hospital: Centre Hospitalier François Dunan, Saint-Pierre — the only hospital on the islands.</li>
+        <li>Medical care will be billed at French rates. Ensure your health coverage is in order before going ashore.</li>
         <li>Inform the ship of any incidents as soon as practical.</li>
       </ul>
     </div>
@@ -874,170 +833,140 @@ background: linear-gradient(90deg, var(--coral), var(--gold), var(--green), var(
 <div id="contacts-local" class="page">
   <button class="back-btn" onclick="nav('contacts')">Contacts</button>
   <div class="page-title">Local Contacts</div>
-  <div class="page-subtitle">St. John's, NL</div>
+  <div class="page-subtitle">Saint-Pierre &amp; Miquelon · French Territory</div>
   <div class="color-bar"></div>
 
-<a href="tel:911" class="emergency-box">🚨&nbsp; Emergency: 911  &rarr;</a>
+  <div class="card" style="background:linear-gradient(135deg,var(--coral),#ff4757);margin-bottom:12px;padding:16px 18px;">
+    <div style="color:#fff;font-weight:800;font-size:1rem;margin-bottom:8px;">🚨 Emergency Numbers (France)</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <a href="tel:15" style="background:rgba(255,255,255,0.2);color:#fff;font-weight:800;font-size:0.88rem;padding:8px 14px;border-radius:10px;text-decoration:none;">15 · SAMU</a>
+      <a href="tel:17" style="background:rgba(255,255,255,0.2);color:#fff;font-weight:800;font-size:0.88rem;padding:8px 14px;border-radius:10px;text-decoration:none;">17 · Gendarmerie</a>
+      <a href="tel:18" style="background:rgba(255,255,255,0.2);color:#fff;font-weight:800;font-size:0.88rem;padding:8px 14px;border-radius:10px;text-decoration:none;">18 · Pompiers</a>
+      <a href="tel:112" style="background:rgba(255,255,255,0.25);color:#fff;font-weight:800;font-size:0.88rem;padding:8px 14px;border-radius:10px;text-decoration:none;">112 · Mobile</a>
+    </div>
+  </div>
 
   <div class="contact-card">
-    <div class="contact-label">Health Sciences Centre</div>
-    <div class="contact-sub">300 Prince Philip Dr, St. John's, NL</div>
+    <div class="contact-label">Centre Hospitalier François Dunan</div>
+    <div class="contact-sub">Saint-Pierre — only hospital on the islands</div>
     <div class="contact-actions">
-      <a href="tel:+17097776300" class="btn-sm btn-call">📞 Call</a>
-      <a href="https://www.google.com/maps/search/Health+Sciences+Centre+St.+John's+NL" target="_blank" rel="noopener" class="btn-sm btn-map">📍 Map</a>
+      <a href="tel:+50841918181" class="btn-sm btn-call">📞 +508 41 91 81</a>
+      <a href="https://www.google.com/maps/search/Centre+Hospitalier+François+Dunan+Saint-Pierre+Miquelon" target="_blank" rel="noopener" class="btn-sm btn-map">📍 Map</a>
     </div>
   </div>
   <div class="contact-card">
-    <div class="contact-label">Police (Non-Emergency)</div>
-    <div class="contact-sub">Royal Newfoundland Constabulary</div>
+    <div class="contact-label">Gendarmerie (Non-Emergency)</div>
+    <div class="contact-sub">Gendarmerie Nationale, Saint-Pierre</div>
     <div class="contact-actions">
-      <a href="tel:+17097291212" class="btn-sm btn-call">📞 Call</a>
-      <a href="https://www.google.com/maps/search/Royal+Newfoundland+Constabulary+St.+John's" target="_blank" rel="noopener" class="btn-sm btn-map">📍 Map</a>
-    </div>
-  </div>
-  <div class="contact-card">
-    <div class="contact-label">Mental Health Crisis Line</div>
-    <div class="contact-sub">NL 24/7 Crisis Support</div>
-    <div class="contact-actions">
-      <a href="tel:+17097372583" class="btn-sm btn-call">📞 (709) 737-2583</a>
-    </div>
-  </div>
-  <div class="contact-card">
-    <div class="contact-label">Poison Control</div>
-    <div class="contact-sub">NL Poison Information Centre</div>
-    <div class="contact-actions">
-      <a href="tel:+17097224320" class="btn-sm btn-call">📞 (709) 722-4320</a>
+      <a href="tel:17" class="btn-sm btn-call">📞 17</a>
+      <a href="https://www.google.com/maps/search/Gendarmerie+Saint-Pierre+Miquelon" target="_blank" rel="noopener" class="btn-sm btn-map">📍 Map</a>
     </div>
   </div>
   <div class="contact-card">
     <div class="contact-label">Canadian Coast Guard</div>
-    <div class="contact-sub">Marine emergencies</div>
+    <div class="contact-sub">Marine emergencies — NL sector</div>
     <div class="contact-actions">
       <a href="tel:+18002670780" class="btn-sm btn-call">📞 1-800-267-0780</a>
     </div>
   </div>
   <div class="contact-card">
-    <div class="contact-label">City Wide Taxi</div>
-    <div class="contact-sub">24/7 cab service</div>
+    <div class="contact-label">Taxis</div>
+    <div class="contact-sub">A small local taxi fleet — ask at the port or your hotel for current numbers</div>
     <div class="contact-actions">
-      <a href="tel:+17097227777" class="btn-sm btn-call">📞 (709) 722-7777</a>
-    </div>
-  </div>
-  <div class="contact-card">
-    <div class="contact-label">Jiffy Cabs</div>
-    <div class="contact-sub">24/7 cab service</div>
-    <div class="contact-actions">
-      <a href="tel:+17097222222" class="btn-sm btn-call">📞 (709) 722-2222</a>
+      <a href="https://www.google.com/maps/search/taxi+Saint-Pierre+Miquelon" target="_blank" rel="noopener" class="btn-sm btn-map">📍 Find Nearby</a>
     </div>
   </div>
 </div>
 
-<!-- ===== PAGE 8: CROW'S NEST ===== -->
+<!-- ===== PAGE 8: RUM RUNNING ERA ===== -->
 
-<div id="crowsnest" class="page">
+<div id="rumrunning" class="page">
   <button class="back-btn" onclick="nav('landing')">Home</button>
-  <div class="page-title">The Crow's Nest</div>
-  <div class="page-subtitle">National Historic Site · Est. 1942</div>
+  <div class="page-title">The Rum Running Era</div>
+  <div class="page-subtitle">Saint-Pierre: Rum Capital of North America · 1920–1933</div>
   <div class="color-bar"></div>
 
   <div class="card" style="margin-bottom:16px;">
-    <div class="card-name" style="font-size:1.05rem; margin-bottom:6px;">A Living Museum of the Battle of the Atlantic</div>
+    <div class="card-name" style="font-size:1.05rem; margin-bottom:6px;">The Most Improbable Story in the North Atlantic</div>
     <div class="card-note" style="color:var(--text-mid); line-height:1.7; font-size:0.88rem;">
-      Perched on the third and fourth floors of a brick warehouse on Water Street — up a famous 59-step staircase — the Crow's Nest Officers' Club is one of the most remarkable military heritage sites in Canada. Designated a National Historic Site in 2011, it remains an active club and a living museum, virtually unchanged since the Second World War. Visitors, guests, and serving members are all welcome.
+      For thirteen extraordinary years, this quiet French fishing archipelago — population a few thousand, economy built on cod — became the single most important transshipment hub for illicit alcohol in North America. When the United States went dry in 1920, the bootleggers of the world discovered Saint-Pierre, and the islands were never quite the same.
     </div>
   </div>
 
-  <div class="accordion-item" data-group="crow">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">Origins <span class="accordion-icon">+</span></button>
+  <div class="accordion-item" data-group="rum">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">How It Started <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
-      <p>In 1942, at the height of the Battle of the Atlantic, St. John's was the home port of the Newfoundland Escort Force — the handover point for the critical supply convoys that kept Britain in the war. Thousands of Allied naval and merchant navy officers passed through the harbour, often exhausted after harrowing crossings under constant U-boat threat.</p>
-      <p style="margin-top:10px;">Captain Edward Rollo Mainguy, RCN, Captain (Destroyers) of the Newfoundland Escort Force, recognized that these officers needed somewhere ashore to decompress, build camaraderie, and develop the trust that would make them more effective at sea. On <strong>27 January 1942</strong>, he opened the <em>Seagoing Officers' Club</em> on the top floor of the Old Butler Building, a warehouse built after St. John's Great Fire of 1892.</p>
-      <p style="margin-top:10px;">The name "Crow's Nest" came naturally — climbing those 59 steep steps to the fourth floor, with its sweeping view of the harbour and the Narrows, felt exactly like ascending to a ship's crow's nest. Club lore also credits Lieutenant Colonel Pete Stevens, who reportedly took one look and declared it "a snug little crow's nest."
-      </p>
-      <div class="accordion-media">
-        <img src="IMG_0524.jpeg" alt="Crow's Nest interior with memorabilia on the walls.">
-      </div>
+      <p>On 17 January 1920, the Volstead Act came into force across the United States, making the manufacture, sale, and transport of alcohol illegal. What it could not do was make alcohol illegal in Saint-Pierre et Miquelon — French territory, subject to French law, sitting 25 kilometres off the coast of Newfoundland.</p>
+      <p style="margin-top:10px;">The geography was obvious. The legal loophole was absolute. Within months, whisky and rum traders had discovered the islands. Ships from Scotland loaded with Scotch whisky, vessels from Barbados and Jamaica carrying Caribbean rum, and freighters from Canada laden with rye began converging on Saint-Pierre's harbour.</p>
+      <p style="margin-top:10px;">The trade was entirely legitimate on the French side. The liquor was imported legally, warehoused legally, and sold legally to buyers who would then carry it into American — or occasionally Canadian — waters by whatever means they chose. What happened after it left Saint-Pierre was someone else's problem.</p>
     </div>
   </div>
 
-  <div class="accordion-item" data-group="crow">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">The War Years (1942–1945) <span class="accordion-icon">+</span></button>
+  <div class="accordion-item" data-group="rum">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">The Operation <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
-      <p>For the remainder of the war, the Crow's Nest served as a sanctuary for Allied officers from more than a dozen nations. Between convoy runs, they gathered around the fireplace, shared stories of victory and loss over a drink, and enjoyed a home-cooked meal — a rare comfort in wartime.</p>
-      <p style="margin-top:10px;">The walls themselves became a canvas. Sailors began leaving handwritten messages, drawings, and mementos wherever they could find space. Captain Mainguy eventually gave each ship's company four square feet of wall to decorate as they saw fit. Much of this original wartime art — including striking gunshield paintings — remains on the walls today, exactly where it was placed over eighty years ago.</p>
-      <p style="margin-top:10px;">These are not just decorations. For many of those young men, it was the last mark they left before heading out to sea, never knowing if they would return. The walls of the Crow's Nest are a quiet and powerful memorial to their courage.</p>
-      <div class="accordion-media">
-        <img src="IMG_0525.jpeg" alt="Crow's Nest space with heritage artifacts and seating.">
-      </div>
+      <p>At its peak in the late 1920s, more than <strong>4 million bottles of spirits</strong> were passing through Saint-Pierre annually. Warehouses went up across the island. The main wharf, where your ship is likely berthed today, was stacked with bonded goods of every kind.</p>
+      <p style="margin-top:10px;">The supply chain worked like this: liquor arrived in bulk by legitimate cargo ship, was stored in bonded warehouses, and was then loaded onto fast, low-slung contact boats — some capable of 20+ knots — that would make the run to the American coastline under cover of darkness, or to a rendezvous point outside US territorial waters where larger rum-running schooners waited to ferry it the final distance.</p>
+      <p style="margin-top:10px;">The most popular destinations were the rum rows off Montauk Point, New York, and the New England coast. Boston, New York, and Philadelphia were the ultimate markets. The Canadian provinces of Nova Scotia and Newfoundland were also supplied — Prohibition had Canadian dimensions too, with provincial dry laws.</p>
+      <p style="margin-top:10px;">The Newfoundland schooner fleet, many captained by men who knew the North Atlantic fog better than any coast guard, became the backbone of the transportation network. Vessels like the famous <em>Nellie J. Banks</em> made dozens of runs and are still remembered in local lore.</p>
     </div>
   </div>
 
-  <div class="accordion-item" data-group="crow">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">The U-Boat Periscope <span class="accordion-icon">+</span></button>
+  <div class="accordion-item" data-group="rum">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">The Al Capone Connection <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
-      <p>The club's most striking artefact is a German U-boat periscope that rises through the ceiling of the main room and out through the roof. It is one of only eight known-to-exist U-boat periscopes in the world, and one of only two in North America.</p>
-      <p style="margin-top:10px;">The periscope belonged to <strong>U-190</strong>, a Type IXC/40 submarine. On 16 April 1945, U-190 torpedoed and sank HMCS <em>Esquimalt</em> in the approaches to Halifax harbour — the last RCN warship lost in the war. After Germany's surrender, U-190 was ordered to surface and sailed into Bay Bulls, Newfoundland, where she surrendered on 12 May 1945.</p>
-      <p style="margin-top:10px;">The periscope was salvaged and installed in the Crow's Nest, where it still provides a working view of St. John's Harbour and the Narrows — a fitting transformation from an instrument of war into a lookout over the peaceful harbour it once threatened.</p>
-      <div class="accordion-media">
-        <img src="IMG_0526.jpeg" alt="Crow's Nest details showing artifacts and memorabilia.">
-      </div>
+      <p>The Chicago Outfit — Al Capone's organization — was among the most active American buyers in Saint-Pierre. Capone's representatives were regular visitors to the island, negotiating contracts with Scotch whisky suppliers and arranging shipments through the rum-running network to supply Chicago's speakeasies.</p>
+      <p style="margin-top:10px;">Local legend — difficult to fully verify but persistent — holds that Capone himself visited Saint-Pierre at least once, staying at the hotel on the main square. What is beyond doubt is that the money from Chicago, New York, and Boston flowed freely through Saint-Pierre's banks and businesses during the boom years. The islands, previously living on the margins of the cod trade, were suddenly prosperous.</p>
+      <p style="margin-top:10px;">Beyond Capone, virtually every major American bootlegging operation of the era had some connection to Saint-Pierre. The island became a kind of neutral trading floor — a place where American gangsters, Canadian schooner captains, Scottish distillers, and French officials coexisted in a relationship of mutual self-interest.</p>
     </div>
   </div>
 
-  <div class="accordion-item" data-group="crow">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">After the War &amp; Today <span class="accordion-icon">+</span></button>
+  <div class="accordion-item" data-group="rum">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">The Boom — and the Bust <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
-      <p>The Seagoing Officers' Club closed on 13 June 1945. But with thousands of Newfoundlanders returning from overseas, there was a strong desire to preserve the space. In June 1946, it reopened as the <strong>Crow's Nest Officers' Club</strong>, and has operated continuously ever since.</p>
-      <p style="margin-top:10px;">Over the decades, the club has evolved from an all-male, seagoing officers' club to a mixed-gender, tri-service, all-ranks club that also welcomes civilians. What has not changed is the atmosphere. Veterans who returned decades later said it looked exactly the same — the ultimate compliment.</p>
-      <p style="margin-top:10px;">The Crow's Nest Military Artifacts Association, a registered charity, conserves, preserves, and displays the hundreds of wartime artefacts. The club is recognized as a museum by the Museum Association of Newfoundland and Labrador and has received the Manning Award for Excellence in the Public Presentation of Historic Places.</p>
-      <p style="margin-top:10px;">It remains a place of pilgrimage. Visitors sometimes arrive because a father or grandfather served in Newfoundland during the war, and find something on the walls connected to their family story. These moments can be deeply moving.</p>
-      <div class="accordion-media">
-        <img src="IMG_0527.jpeg" alt="Crow's Nest upper deck view overlooking the room.">
-      </div>
+      <p>The economic transformation of Saint-Pierre during Prohibition was staggering. New stone warehouses were built along the waterfront. A new hotel went up. The harbour was busy year-round. Workers arrived from Newfoundland and mainland France. Tax revenues soared. The local population more than doubled during the peak years as workers flooded in to manage the warehouses, service the boats, and serve the trade.</p>
+      <p style="margin-top:10px;">Then, on <strong>5 December 1933</strong>, Franklin Roosevelt signed the proclamation repealing Prohibition. By the following morning, the bottom had dropped out of Saint-Pierre's bootleg economy. Orders stopped. Ships stopped coming. Warehouse workers left. The hotel emptied. The islands' brief, improbable boom was over almost as suddenly as it had begun.</p>
+      <p style="margin-top:10px;">The legacy, however, endured. The warehouses remained. The stories were told and retold. And the French tradition of fine spirits — particularly rum, connected to the island's long history of trade with the French Caribbean — never entirely disappeared. Rhum SPM, the islands' own rhum agricole, is a direct descendant of that tradition.</p>
     </div>
   </div>
 
-  <div class="accordion-item" data-group="crow">
+  <div class="accordion-item" data-group="rum">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">WWII: The Free French Liberation <span class="accordion-icon">+</span></button>
+    <div class="accordion-body">
+      <p>The islands have a second remarkable chapter, less well-known but equally dramatic. After France fell in June 1940, Saint-Pierre came under the nominal authority of the Vichy regime — the German-aligned French government. A Vichy-appointed governor enforced the official line.</p>
+      <p style="margin-top:10px;">On the night of <strong>24 December 1941</strong>, a small Free French naval force under Admiral Émile Muselier sailed into Saint-Pierre harbour in three corvettes and a submarine — vessels of the type that would have been familiar to the Crow's Nest officers in St. John's. By Christmas morning, the islands had been liberated. The Vichy governor was deported. A plebiscite confirmed the islanders' overwhelming support for de Gaulle and the Free French.</p>
+      <p style="margin-top:10px;">The operation caused a significant diplomatic incident. The United States, which still recognized Vichy France, was furious. Secretary of State Cordell Hull demanded the islands be returned. Canada was embarrassed. De Gaulle was unapologetic. In the end, Saint-Pierre remained Free French — and the islands became, however briefly, a symbol of resistance and liberation in the western hemisphere.</p>
+    </div>
+  </div>
+
+  <div class="accordion-item" data-group="rum">
     <button class="accordion-trigger" onclick="toggleAccordion(this)">Timeline <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
       <ul>
-        <li><strong>1892</strong> — The Old Butler Building constructed after the Great Fire of St. John's.</li>
-        <li><strong>27 Jan 1942</strong> — Captain E.R. Mainguy, RCN, founds the Seagoing Officers' Club.</li>
-        <li><strong>1942–1945</strong> — Thousands of Allied officers from 12+ nations gather between convoy runs.</li>
-        <li><strong>16 Apr 1945</strong> — U-190 sinks HMCS <em>Esquimalt</em> — the last RCN ship lost in the war.</li>
-        <li><strong>12 May 1945</strong> — U-190 surrenders at Bay Bulls, NL. Her periscope is later installed in the club.</li>
-        <li><strong>13 Jun 1945</strong> — The wartime Seagoing Officers' Club closes.</li>
-        <li><strong>Jun 1946</strong> — Reopens as the Crow's Nest Officers' Club.</li>
-        <li><strong>Apr 1990</strong> — Designated a Registered Heritage Structure by the Heritage Foundation of NL.</li>
-        <li><strong>Jun 2010</strong> — Designated a National Historic Site of Canada.</li>
-        <li><strong>Today</strong> — A living museum, active club, and national treasure — open to all who wish to visit.</li>
+        <li><strong>1920</strong> — US Prohibition begins. Saint-Pierre becomes a liquor transshipment hub almost immediately.</li>
+        <li><strong>mid-1920s</strong> — Peak of the rum-running trade. Scotch, rye, rum, and brandy flow through the islands at millions of bottles per year.</li>
+        <li><strong>c. 1930</strong> — Al Capone's organization among the most active American buyers.</li>
+        <li><strong>5 Dec 1933</strong> — US Prohibition repealed. The rum-running economy collapses within days.</li>
+        <li><strong>24 Dec 1941</strong> — Free French naval force liberates Saint-Pierre from Vichy authority in a Christmas Eve operation.</li>
+        <li><strong>1945</strong> — End of WWII. The islands remain French territory.</li>
+        <li><strong>Today</strong> — The rum-running warehouses still stand along the waterfront. Musée de l'Arche tells the full story. Rhum SPM keeps the spirits tradition alive.</li>
       </ul>
-      <div class="accordion-media">
-        <img src="IMG_0528.jpeg" alt="Crow's Nest interior showing wartime displays and seating.">
-      </div>
     </div>
   </div>
 
-  <div class="accordion-item" data-group="crow">
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">Visiting <span class="accordion-icon">+</span></button>
+  <div class="accordion-item" data-group="rum">
+    <button class="accordion-trigger" onclick="toggleAccordion(this)">See It Today <span class="accordion-icon">+</span></button>
     <div class="accordion-body">
-      <p><strong>Address:</strong> 88 Water Street, St. John's, NL (next to the National War Memorial — look for the 59 steps)</p>
-      <p style="margin-top:8px;"><strong>Hours (subject to change — call ahead):</strong></p>
-      <ul>
-        <li>Thursday: 4:30 – 7:00 PM</li>
-        <li>Friday: 12:00 – 7:00 PM (Lunch served 12:00 – 2:00 PM)</li>
-        <li>Saturday: 4:00 – 7:00 PM</li>
-        <li>Sunday: 1:30 – 5:00 PM (Tours at 2:00 PM)</li>
-      </ul>
-      <p style="margin-top:8px;">Casual dress. Guests and visitors are welcome. Free tours available — donations to this charitable organisation are greatly appreciated.</p>
-      <p style="margin-top:8px;">The upper deck bar holds 40 persons and the lower deck dining room holds 37. Food and beverages are inexpensive to moderate.</p>
+      <p><strong>Musée de l'Arche</strong> — The main heritage museum in Saint-Pierre has excellent exhibits on the Prohibition era, including photographs, artefacts, and the stories of the rum-running families. Highly recommended.</p>
+      <p style="margin-top:8px;"><strong>The Waterfront Warehouses</strong> — Several of the original stone warehouses that stored bonded liquor during the 1920s still line the port area. You can see them from the quay where your ship is berthed.</p>
+      <p style="margin-top:8px;"><strong>Rhum SPM</strong> — Pick up a bottle of the islands' own rum. It connects directly to the long tradition of spirits on the island and makes an excellent reminder of the visit.</p>
+      <p style="margin-top:8px;"><strong>Île aux Marins</strong> — Many of the Newfoundland schooner captains and crew involved in the rum trade lived on this small island. Walking it today, you can feel the history in the abandoned houses and fishing stages.</p>
     </div>
   </div>
 
   <div style="margin-top:16px;" class="card-actions">
-    <a class="btn-sm btn-map" href="https://www.google.com/maps/search/Crow's+Nest+Officers+Club+88+Water+Street+St.+John's+NL" target="_blank" rel="noopener">📍 Map</a>
-    <a class="btn-sm btn-web" href="https://crowsnestnl.ca/" target="_blank" rel="noopener">🌐 Website</a>
-    <a class="btn-sm btn-web" href="https://parks.canada.ca/culture/designation/lieu-site/crowsnest" target="_blank" rel="noopener">🏛️ Parks Canada</a>
+    <a class="btn-sm btn-map" href="https://www.google.com/maps/search/Musée+de+l'Arche+Saint-Pierre+Miquelon" target="_blank" rel="noopener">📍 Musée de l'Arche</a>
+    <a class="btn-sm btn-map" href="https://www.google.com/maps/search/Saint-Pierre+Miquelon+waterfront" target="_blank" rel="noopener">📍 Waterfront</a>
   </div>
 </div>
 
@@ -1047,6 +976,7 @@ function nav(pageId) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const el = document.getElementById(pageId);
   if (el) { el.classList.add('active'); window.scrollTo({top:0,behavior:'instant'}); }
+  if (pageId === 'weather') loadWeather();
 }
 
 /* ===== ACCORDION ===== */
@@ -1060,22 +990,109 @@ function toggleAccordion(trigger) {
   if (!isOpen) item.classList.add('open');
 }
 
+/* ===== LIVE WEATHER ===== */
+function weatherEmoji(iconCode) {
+  if (!iconCode) return '🌡️';
+  const code = iconCode.substring(0, 2);
+  const isNight = iconCode.endsWith('n');
+  const map = { '01': isNight ? '🌙' : '☀️', '02': '⛅', '03': '🌥️', '04': '☁️', '09': '🌧️', '10': '🌦️', '11': '⛈️', '13': '🌨️', '50': '🌫️' };
+  return map[code] || '🌡️';
+}
+
+function formatForecastDay(dtTxt) {
+  const d = new Date(dtTxt.replace(' ', 'T') + '+00:00');
+  return d.toLocaleDateString('en-CA', { weekday: 'short', month: 'short', day: 'numeric', timeZone: 'America/Miquelon' });
+}
+
+let weatherLoaded = false;
+
+async function loadWeather() {
+  if (weatherLoaded) return;
+  const container = document.getElementById('weather-dynamic');
+  try {
+    const res = await fetch('/.netlify/functions/weather?lat=46.7792&lon=-56.1762');
+    if (!res.ok) throw new Error('fetch failed');
+    const data = await res.json();
+    let html = '';
+
+    if (data.current) {
+      const c = data.current;
+      const temp = Math.round(c.main.temp);
+      const feels = Math.round(c.main.feels_like);
+      const wind = Math.round((c.wind.speed || 0) * 3.6);
+      const desc = c.weather[0].description;
+      const icon = weatherEmoji(c.weather[0].icon);
+      const humidity = c.main.humidity;
+      const updatedTime = new Date(data.updated).toLocaleTimeString('en-CA', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Miquelon' });
+
+      html += `<div class="section-header">Current Conditions · ${updatedTime} SPM time</div>
+      <div class="card" style="margin-bottom:10px;">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <span style="font-size:2.4rem;">${icon}</span>
+          <div style="flex:1;">
+            <div style="font-size:1.6rem;font-weight:900;color:var(--ocean);letter-spacing:-0.03em;">${temp}°C</div>
+            <div style="font-size:0.84rem;color:var(--text-light);text-transform:capitalize;">${desc}</div>
+          </div>
+          <div style="text-align:right;font-size:0.8rem;color:var(--text-light);line-height:1.8;">
+            <div>Feels ${feels}°</div>
+            <div>💨 ${wind} km/h</div>
+            <div>💧 ${humidity}%</div>
+          </div>
+        </div>
+      </div>`;
+    }
+
+    if (data.forecast && data.forecast.length > 0) {
+      html += '<div class="section-header">4-Day Forecast</div>';
+      data.forecast.forEach(item => {
+        const tMax = Math.round(item.main.temp_max);
+        const tMin = Math.round(item.main.temp_min);
+        const desc = item.weather[0].description;
+        const icon = weatherEmoji(item.weather[0].icon);
+        const wind = Math.round((item.wind.speed || 0) * 3.6);
+        const humidity = item.main.humidity;
+        const pop = Math.round((item.pop || 0) * 100);
+        const day = formatForecastDay(item.dt_txt);
+        html += `<div class="card" style="margin-bottom:8px;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <span style="font-size:1.8rem;">${icon}</span>
+            <div style="flex:1;">
+              <div class="card-name">${day}</div>
+              <div class="card-note" style="margin-bottom:0;text-transform:capitalize;">${desc}</div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-size:1.2rem;font-weight:800;color:var(--ocean);">${tMax}°</div>
+              <div style="font-size:0.78rem;color:var(--text-light);">${tMin}° low</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:14px;margin-top:8px;font-size:0.78rem;color:var(--text-light);flex-wrap:wrap;">
+            <span>💨 ${wind} km/h</span><span>💧 ${humidity}%</span><span>🌧️ ${pop}%</span>
+          </div>
+        </div>`;
+      });
+    }
+
+    if (!html) throw new Error('empty');
+    container.innerHTML = html;
+    weatherLoaded = true;
+  } catch (e) {
+    container.innerHTML = '<div class="card"><div class="card-note" style="margin:0;">Live weather unavailable — use the links below for a current forecast.</div></div>';
+  }
+}
+
 /* ===== THINGS TO DO ===== */
 const activities = [
-  { name: "Signal Hill", desc: "Hike to Cabot Tower for panoramic harbour and ocean views.", tags: ["Iconic","Outdoors","Quick"], map: "Signal Hill St. John's NL", web: "https://parks.canada.ca/lhn-nhs/nl/signalhill" },
-  { name: "Cape Spear", desc: "The most easterly point in North America.", tags: ["Iconic","Outdoors","Half-day"], map: "Cape Spear Newfoundland", web: "https://parks.canada.ca/lhn-nhs/nl/capespear" },
-  { name: "The Rooms", desc: "Provincial museum, art gallery, and archives under one roof.", tags: ["Iconic","Indoors","Half-day"], map: "The Rooms St. John's NL", web: "https://www.therooms.ca/" },
-  { name: "George Street", desc: "Two blocks of pubs, live music, and nightlife. Legendary.", tags: ["Iconic","Food-Drink","Quick"], map: "George Street St. John's NL", web: "" },
-  { name: "Quidi Vidi Village", desc: "Picturesque fishing village with a craft brewery and trails.", tags: ["Iconic","Outdoors","Food-Drink","Half-day"], map: "Quidi Vidi Village St. John's NL", web: "" },
-  { name: "Johnson Geo Centre", desc: "Underground geology and Titanic exhibits inside Signal Hill.", tags: ["Indoors","Quick"], map: "Johnson Geo Centre St. John's NL", web: "https://www.geocentre.ca/" },
-  { name: "North Head Trail", desc: "Coastal cliffs trail above the Narrows — stunning views.", tags: ["Outdoors","Quick"], map: "North Head Trail St. John's NL", web: "" },
-  { name: "Jellybean Row", desc: "The colourful row houses — the St. John's icon.", tags: ["Iconic","Quick","Outdoors"], map: "Jellybean Row St. John's NL", web: "" },
-  { name: "Basilica Cathedral", desc: "Stunning 19th-century cathedral in the city centre.", tags: ["Iconic","Indoors","Quick"], map: "Basilica Cathedral of St. John the Baptist", web: "https://thebasilica.ca/" },
-  { name: "East Coast Trail", desc: "World-class coastal hiking starting near the city.", tags: ["Outdoors","Half-day"], map: "East Coast Trail St. John's NL", web: "https://www.eastcoasttrail.com/" },
-  { name: "Get Screeched In", desc: "Kiss the cod, do the shot, become an honorary Newfoundlander.", tags: ["Iconic","Food-Drink","Quick","Indoors"], map: "George Street St. John's NL", web: "" },
-  { name: "Bowring Park", desc: "Beautiful urban park with trails and the Peter Pan statue.", tags: ["Outdoors","Quick"], map: "Bowring Park St. John's NL", web: "" },
-  { name: "Escape Quest", desc: "Escape room experiences — great group activity.", tags: ["Indoors","Quick"], map: "Escape Quest St. John's NL", web: "https://www.escapequeststjohns.com/" },
-  { name: "Bannerman Park", desc: "Downtown heritage park — outdoor skating in winter.", tags: ["Outdoors","Quick"], map: "Bannerman Park St. John's NL", web: "" }
+  { name: "Place du Général de Gaulle", desc: "The beating heart of Saint-Pierre — a lively square ringed by colourful French buildings, restaurants, and the waterfront.", tags: ["Iconic","Outdoors","Quick"], map: "Place du Général de Gaulle Saint-Pierre Miquelon", web: "" },
+  { name: "Île aux Marins", desc: "Ferry to the ghostly abandoned fishing village island just across the harbour. One of the most evocative spots in the North Atlantic.", tags: ["Iconic","Outdoors","Half-day"], map: "Île aux Marins Saint-Pierre Miquelon", web: "" },
+  { name: "Musée de l'Arche", desc: "The main heritage museum — fishing history, the Prohibition rum-running era, and Saint-Pierre's remarkable past. A must.", tags: ["Iconic","Indoors","Half-day"], map: "Musée de l'Arche Saint-Pierre Miquelon", web: "" },
+  { name: "Quai de la Roncière", desc: "Stroll the main waterfront quay past colourful fishing boats and the old warehouses — the best introduction to the town.", tags: ["Iconic","Outdoors","Quick"], map: "Quai de la Roncière Saint-Pierre Miquelon", web: "" },
+  { name: "Grand Barachois Lagoon", desc: "A beautiful coastal lagoon about 10 km from town, home to a famous herd of wild horses that roam freely.", tags: ["Outdoors","Half-day"], map: "Grand Barachois Saint-Pierre Miquelon", web: "" },
+  { name: "Pain de Sucre", desc: "A dramatic rocky promontory at the island's southern tip with sweeping views over the harbour and open Atlantic.", tags: ["Outdoors","Half-day"], map: "Pain de Sucre Saint-Pierre Miquelon", web: "" },
+  { name: "Duty-Free Shopping", desc: "French wines, Cognac, Champagne, cheese, perfumes, and cosmetics at true EU prices — no Canadian excise tax.", tags: ["Quick","Indoors"], map: "Centre-Ville Saint-Pierre Miquelon", web: "" },
+  { name: "Rhum SPM", desc: "Track down a bottle of the islands' own rhum agricole — one of the very few French rums produced in the western hemisphere.", tags: ["Food-Drink","Quick"], map: "Saint-Pierre Miquelon", web: "" },
+  { name: "Free French Heritage Walk", desc: "On Christmas Eve 1941, three French corvettes sailed in and liberated the islands overnight. The square and harbour tell the story.", tags: ["Iconic","Outdoors","Quick"], map: "Place du Général de Gaulle Saint-Pierre Miquelon", web: "" },
+  { name: "French Bakery Breakfast", desc: "Fresh baguettes, croissants, and pain au chocolat from a local boulangerie. It's France — breakfast matters.", tags: ["Food-Drink","Quick","Indoors"], map: "Boulangerie Saint-Pierre Miquelon", web: "" },
+  { name: "Boat Tour of the Islands", desc: "Several operators offer boat tours around Saint-Pierre and to nearby islets. Good way to see the coast and wildlife.", tags: ["Outdoors","Half-day"], map: "Saint-Pierre Miquelon boat tours", web: "" }
 ];
 
 const todoChips = ["Iconic","Outdoors","Indoors","Food-Drink","Quick","Half-day"];
@@ -1112,39 +1129,26 @@ renderTodoChips(); renderTodoList();
 /* ===== VENUE DATA ===== */
 const venueData = {
   'tab-food': [
-    { name: "The Merchant Tavern", note: "Upscale NL cuisine in a gorgeous heritage bank building.", price: "$$$", map: "Merchant Tavern St. John's NL", web: "https://www.themerchanttavern.ca/" },
-    { name: "The Gypsy Tea Room", note: "Fine dining with a pub atmosphere — lamb, duck, salmon, soups & salads.", price: "$$", map: "Gypsy Tea Room St. John's NL", web: "https://www.gypsytearoom.ca/" },
-    { name: "YellowBelly Brewery", note: "Traditional Newfoundland food, wood-fired pizza oven. Since the 1800s.", price: "$$", map: "YellowBelly Brewery St. John's NL", web: "https://www.yellowbellybrewery.com/" },
-    { name: "Adelaide Oyster House", note: "Global dishes, east coast oysters — known for their tacos.", price: "$$", map: "Adelaide Oyster House St. John's NL", web: "https://www.adelaideoysterhouse.ca/" },
-    { name: "Portage", note: "Family-style sharing plates and eclectic wines on Water St.", price: "$$", map: "Portage Restaurant St. John's NL", web: "https://www.portagenl.ca/" },
-    { name: "St. John's Fish Exchange", note: "Seafood-forward menu in a historic Water Street building.", price: "$$", map: "St. John's Fish Exchange NL", web: "https://sjfx.ca/" },
-    { name: "Chinched Bistro", note: "Creative small plates with local NL ingredients.", price: "$$", map: "Chinched Bistro St. John's NL", web: "https://www.chinched.com/" },
-    { name: "Cojones Tacos & Tequila", note: "Authentic Mexican — moose taquitos, margaritas, Dia de Muertos vibe.", price: "$$", map: "Cojones St. John's NL", web: "https://cojones.ca/" },
-    { name: "Three Sisters", note: "Vietnamese cuisine — fresh, flavourful, and affordable.", price: "$", map: "Three Sisters Vietnamese St. John's NL", web: "" },
-    { name: "Duke of Duckworth", note: "Traditional Newfie pub — famous for their fish & chips.", price: "$", map: "Duke of Duckworth St. John's NL", web: "" }
+    { name: "Le Feu de Braise", note: "The best table in Saint-Pierre — classic French cuisine with fresh Atlantic seafood. Book ahead.", price: "$$$", map: "Le Feu de Braise Saint-Pierre Miquelon", web: "" },
+    { name: "L'Escale", note: "Waterfront brasserie with fresh fish, mussels, and French bistro classics.", price: "$$", map: "L'Escale brasserie Saint-Pierre Miquelon", web: "" },
+    { name: "Restaurant Robert", note: "The historic Hôtel Robert dining room — traditional Franco-Atlantic cooking in an old-world setting.", price: "$$", map: "Restaurant Hôtel Robert Saint-Pierre Miquelon", web: "" },
+    { name: "Crêperie", note: "Savoury galettes and sweet crêpes — a casual, affordable local staple. Look for signs near the town centre.", price: "$", map: "crêperie Saint-Pierre Miquelon", web: "" },
+    { name: "Boulangeries", note: "Multiple French bakeries in town. Fresh baguettes, croissants, viennoiseries. Start your morning here.", price: "$", map: "Boulangerie Saint-Pierre Miquelon", web: "" }
   ],
   'tab-coffee': [
-    { name: "The Battery Café", note: "Cozy spot at the foot of Signal Hill — great flat whites.", price: "$", map: "The Battery Cafe St. John's NL", web: "https://www.instagram.com/thebatterycafe/" },
-    { name: "Rocket Bakery", note: "Downtown institution for specialty coffee and baked goods.", price: "$", map: "Rocket Bakery St. John's NL", web: "https://www.rfrocketfood.com/" },
-    { name: "Fixed Coffee & Baking", note: "Local favourite with pour-over by Harbourside Park.", price: "$", map: "Fixed Coffee St. John's NL", web: "https://www.instagram.com/fixedcoffee/" },
-    { name: "Coffee Matters", note: "Locally roasted beans, homemade soups, sandwiches.", price: "$", map: "Coffee Matters St. John's NL", web: "https://www.coffeematters.ca/" }
+    { name: "Cafés Around Place du Général de Gaulle", note: "Several small cafés ring the main square — espresso, café crème, and light bites. Walk the square and find your spot.", price: "$", map: "café Place du Général de Gaulle Saint-Pierre Miquelon", web: "" },
+    { name: "Boulangerie Café", note: "Most bakeries in town also serve coffee. The best option for an early morning espresso and fresh pastry.", price: "$", map: "Boulangerie café Saint-Pierre Miquelon", web: "" }
   ],
   'tab-bars': [
-    { name: "O'Reilly's Irish Pub", note: "Live trad music nightly — voted Canada's favourite bar.", map: "O'Reilly's Irish Pub George Street St. John's NL", web: "https://www.oreillyspub.com/" },
-    { name: "Bridie Molloy's", note: "Irish pub with live music & a 24/7 restaurant downstairs.", map: "Bridie Molloy's St. John's NL", web: "https://bridiemolloys.ca/" },
-    { name: "Shamrock City", note: "Multi-level entertainment venue on George Street.", map: "Shamrock City St. John's NL", web: "" },
-    { name: "Erin's Pub", note: "Intimate trad music venue on Water Street.", map: "Erin's Pub St. John's NL", web: "" },
-    { name: "Karaoke Kops", note: "Karaoke bar — great for a group night out.", map: "Karaoke Kops George Street St. John's NL", web: "" },
-    { name: "Konfusion", note: "High-energy party bar on George Street.", map: "Konfusion St. John's NL", web: "" },
-    { name: "Christian's", note: "Popular bar and nightlife spot on George Street.", map: "Christian's Bar George Street St. John's NL", web: "" },
-    { name: "Trapper John's", note: "Where you go to get Screeched In — a must-do experience.", map: "Trapper John's St. John's NL", web: "" },
-    { name: "Lottie's", note: "Cozy spot on George Street with great drinks.", map: "Lottie's Place George Street St. John's NL", web: "" }
+    { name: "Bars Near the Waterfront", note: "A handful of lively bars operate near the port and town centre. Alcohol is significantly cheaper than Canada — duty-free French territory. Enjoy responsibly.", price: "$", map: "bar Saint-Pierre Miquelon", web: "" },
+    { name: "Bar/Lounge at Hôtel Robert", note: "The hotel bar is a reliable option in the evenings — locals and visitors mix well.", price: "$$", map: "Hôtel Robert Saint-Pierre Miquelon", web: "" },
+    { name: "Note: Small Scene", note: "Saint-Pierre has a modest but authentic bar scene for its size. Don't expect a George Street — expect a quiet French Atlantic port town after dark.", price: "$", map: "nightlife Saint-Pierre Miquelon", web: "" }
   ],
-  'tab-brew': [
-    { name: "YellowBelly Brewery", note: "Heritage brewpub — wood-fired pizza and craft beer.", map: "YellowBelly Brewery St. John's NL", web: "https://www.yellowbellybrewery.com/" },
-    { name: "Quidi Vidi Brewery", note: "NL's largest craft brewery in scenic Quidi Vidi Village.", map: "Quidi Vidi Brewery St. John's NL", web: "https://www.quidividibrewery.ca/" },
-    { name: "Bannerman Brewing", note: "Taproom in the historic East Fire Station, Duckworth St.", map: "Bannerman Brewing St. John's NL", web: "https://www.bannermanbrewing.com/" },
-    { name: "Landwash Brewery", note: "Flavour-forward craft beer, beer-hall style taproom.", map: "Landwash Brewery Mount Pearl NL", web: "https://www.landwashbrewery.com/" }
+  'tab-shop': [
+    { name: "Wine & Spirits Shops", note: "French wines, Cognac, Armagnac, Calvados, and Champagne at EU prices. No Canadian or US excise tax. Stock up — you're allowed a reasonable personal allowance.", price: "$$", map: "wine spirits Saint-Pierre Miquelon", web: "" },
+    { name: "French Grocery / Épicerie", note: "French cheeses, charcuterie, chocolates, and other products you won't find at those prices in Canada.", price: "$", map: "épicerie Saint-Pierre Miquelon", web: "" },
+    { name: "Cosmetics & Parfumerie", note: "French cosmetics and perfumes at Paris-equivalent prices. Popular stop for duty-free shopping.", price: "$$", map: "parfumerie Saint-Pierre Miquelon", web: "" },
+    { name: "Rhum SPM", note: "The islands' own rhum agricole — a unique souvenir that connects to Saint-Pierre's long spirits tradition.", price: "$$", map: "Rhum SPM Saint-Pierre Miquelon", web: "" }
   ]
 };
 
@@ -1172,7 +1176,7 @@ function filterVenues(tabId, query) {
   const panel = document.getElementById(tabId);
   panel.querySelectorAll('.venue-card').forEach((card, i) => {
     const v = venueData[tabId][i];
-    const match = v.name.toLowerCase().includes(q) || (v.note && v.note.toLowerCase().includes(q)) || (v.price && v.price.toLowerCase().includes(q));
+    const match = v.name.toLowerCase().includes(q) || (v.note && v.note.toLowerCase().includes(q));
     card.style.display = match ? '' : 'none';
   });
 }
@@ -1189,12 +1193,10 @@ function switchTab(pageId, tabId, btn) {
 
 /* ===== HOTELS ===== */
 const hotelData = [
-  { name: "Sheraton Hotel Newfoundland", note: "Overlooking the harbour at the base of Signal Hill.", map: "Sheraton Hotel Newfoundland St. John's", web: "https://www.marriott.com/en-us/hotels/yytsi-sheraton-hotel-newfoundland/overview/" },
-  { name: "Delta Hotels Conference Centre", note: "Connected to convention centre, steps from George St.", map: "Delta Hotels St. John's Conference Centre", web: "https://www.marriott.com/en-us/hotels/yytdj-delta-hotels-st-johns-conference-centre/overview/" },
-  { name: "Alt Hotel St. John's", note: "Modern boutique on Water Street with harbour views.", map: "Alt Hotel St. John's NL", web: "https://www.germainhotels.com/en/alt-hotel/st-johns" },
-  { name: "Hilton Garden Inn", note: "Downtown, walking distance to George St and harbour.", map: "Hilton Garden Inn St. John's Newfoundland", web: "https://www.hilton.com/en/hotels/ysjfdgi-hilton-garden-inn-st-johns-newfoundland/" },
-  { name: "JAG Hotel", note: "Music-themed boutique hotel right on George Street.", map: "JAG Hotel St. John's NL", web: "https://jaghotel.com/" },
-  { name: "Murray Premises Hotel", note: "Heritage waterfront property in a restored 19th-century building.", map: "Murray Premises Hotel St. John's NL", web: "https://www.murraypremiseshotel.com/" }
+  { name: "Hôtel Robert", note: "The historic main hotel of Saint-Pierre — central location, classic French character, on-site restaurant and bar.", map: "Hôtel Robert Saint-Pierre Miquelon", web: "" },
+  { name: "Hôtel Ile de France", note: "Comfortable mid-range hotel in the town centre, close to the waterfront and main square.", map: "Hôtel Ile de France Saint-Pierre Miquelon", web: "" },
+  { name: "Chambres d'Hôtes / B&Bs", note: "Several private B&Bs offer rooms in Saint-Pierre. Often the most atmospheric option. Ask locally or check tourist listings.", map: "chambre d'hôte Saint-Pierre Miquelon", web: "" },
+  { name: "Auberge Saint-Pierre", note: "Small inn with modest rooms in town — a practical base for a short stay.", map: "Auberge Saint-Pierre Miquelon", web: "" }
 ];
 
 function renderHotels() {
