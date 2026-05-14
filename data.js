@@ -9,7 +9,8 @@ window.PORT_DATA = {
     { name: "Duty-Free Shopping", desc: "French wines, Cognac, Champagne, cheese, perfumes at EU prices — no Canadian excise tax.", tags: ["Quick","Indoors"], map: "Centre-Ville Saint-Pierre Miquelon", web: "" },
     { name: "Rhum SPM", desc: "The islands' own rhum agricole — one of the few French rums made in the western hemisphere.", tags: ["Food-Drink","Quick"], map: "Saint-Pierre Miquelon", web: "" },
     { name: "Free French Heritage Walk", desc: "On Christmas Eve 1941, three French corvettes liberated the islands overnight.", tags: ["Iconic","Outdoors","Quick"], map: "Place du Général de Gaulle Saint-Pierre Miquelon", web: "" },
-    { name: "French Bakery Breakfast", desc: "Fresh baguettes, croissants, and pain au chocolat. It's France — breakfast matters.", tags: ["Food-Drink","Quick","Indoors"], map: "Boulangerie Saint-Pierre Miquelon", web: "" }
+    { name: "French Bakery Breakfast", desc: "Fresh baguettes, croissants, and pain au chocolat. It's France — breakfast matters.", tags: ["Food-Drink","Quick","Indoors"], map: "Boulangerie Saint-Pierre Miquelon", web: "" },
+    { name: "Boat Tour of the Islands", desc: "Several operators offer boat tours around Saint-Pierre and to nearby islets. Good way to see the coast and wildlife.", tags: ["Outdoors","Half-day"], map: "Saint-Pierre Miquelon boat tours", web: "" }
   ],
   todoChips: ["Iconic","Outdoors","Indoors","Food-Drink","Quick","Half-day"],
   venueData: {

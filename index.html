@@ -955,6 +955,7 @@ white-space: nowrap; flex-shrink: 0;
   </div>
 </div>
 
+<script src="data.js"></script>
 <script>
 /* ===== NAVIGATION ===== */
 function nav(pageId, pushHistory = true) {
@@ -1073,21 +1074,9 @@ async function loadWeather() {
 }
 
 /* ===== THINGS TO DO ===== */
-const activities = [
-  { name: "Place du Général de Gaulle", desc: "The beating heart of Saint-Pierre — a lively square ringed by colourful French buildings, restaurants, and the waterfront.", tags: ["Iconic","Outdoors","Quick"], map: "Place du Général de Gaulle Saint-Pierre Miquelon", web: "" },
-  { name: "Île aux Marins", desc: "Ferry to the ghostly abandoned fishing village island just across the harbour. One of the most evocative spots in the North Atlantic.", tags: ["Iconic","Outdoors","Half-day"], map: "Île aux Marins Saint-Pierre Miquelon", web: "" },
-  { name: "Musée de l'Arche", desc: "The main heritage museum — fishing history, the Prohibition rum-running era, and Saint-Pierre's remarkable past. A must.", tags: ["Iconic","Indoors","Half-day"], map: "Musée de l'Arche Saint-Pierre Miquelon", web: "" },
-  { name: "Quai de la Roncière", desc: "Stroll the main waterfront quay past colourful fishing boats and the old warehouses — the best introduction to the town.", tags: ["Iconic","Outdoors","Quick"], map: "Quai de la Roncière Saint-Pierre Miquelon", web: "" },
-  { name: "Grand Barachois Lagoon", desc: "A beautiful coastal lagoon about 10 km from town, home to a famous herd of wild horses that roam freely.", tags: ["Outdoors","Half-day"], map: "Grand Barachois Saint-Pierre Miquelon", web: "" },
-  { name: "Pain de Sucre", desc: "A dramatic rocky promontory at the island's southern tip with sweeping views over the harbour and open Atlantic.", tags: ["Outdoors","Half-day"], map: "Pain de Sucre Saint-Pierre Miquelon", web: "" },
-  { name: "Duty-Free Shopping", desc: "French wines, Cognac, Champagne, cheese, perfumes, and cosmetics at true EU prices — no Canadian excise tax.", tags: ["Quick","Indoors"], map: "Centre-Ville Saint-Pierre Miquelon", web: "" },
-  { name: "Rhum SPM", desc: "Track down a bottle of the islands' own rhum agricole — one of the very few French rums produced in the western hemisphere.", tags: ["Food-Drink","Quick"], map: "Saint-Pierre Miquelon", web: "" },
-  { name: "Free French Heritage Walk", desc: "On Christmas Eve 1941, three French corvettes sailed in and liberated the islands overnight. The square and harbour tell the story.", tags: ["Iconic","Outdoors","Quick"], map: "Place du Général de Gaulle Saint-Pierre Miquelon", web: "" },
-  { name: "French Bakery Breakfast", desc: "Fresh baguettes, croissants, and pain au chocolat from a local boulangerie. It's France — breakfast matters.", tags: ["Food-Drink","Quick","Indoors"], map: "Boulangerie Saint-Pierre Miquelon", web: "" },
-  { name: "Boat Tour of the Islands", desc: "Several operators offer boat tours around Saint-Pierre and to nearby islets. Good way to see the coast and wildlife.", tags: ["Outdoors","Half-day"], map: "Saint-Pierre Miquelon boat tours", web: "" }
-];
+const activities = window.PORT_DATA.activities;
 
-const todoChips = ["Iconic","Outdoors","Indoors","Food-Drink","Quick","Half-day"];
+const todoChips = window.PORT_DATA.todoChips;
 let activeFilters = new Set();
 
 function renderTodoChips() {
@@ -1119,30 +1108,7 @@ function renderTodoList() {
 renderTodoChips(); renderTodoList();
 
 /* ===== VENUE DATA ===== */
-const venueData = {
-  'tab-food': [
-    { name: "Le Feu de Braise", note: "The best table in Saint-Pierre — classic French cuisine with fresh Atlantic seafood. Book ahead.", price: "$$$", map: "Le Feu de Braise Saint-Pierre Miquelon", web: "" },
-    { name: "L'Escale", note: "Waterfront brasserie with fresh fish, mussels, and French bistro classics.", price: "$$", map: "L'Escale brasserie Saint-Pierre Miquelon", web: "" },
-    { name: "Restaurant Robert", note: "The historic Hôtel Robert dining room — traditional Franco-Atlantic cooking in an old-world setting.", price: "$$", map: "Restaurant Hôtel Robert Saint-Pierre Miquelon", web: "" },
-    { name: "Crêperie", note: "Savoury galettes and sweet crêpes — a casual, affordable local staple. Look for signs near the town centre.", price: "$", map: "crêperie Saint-Pierre Miquelon", web: "" },
-    { name: "Boulangeries", note: "Multiple French bakeries in town. Fresh baguettes, croissants, viennoiseries. Start your morning here.", price: "$", map: "Boulangerie Saint-Pierre Miquelon", web: "" }
-  ],
-  'tab-coffee': [
-    { name: "Cafés Around Place du Général de Gaulle", note: "Several small cafés ring the main square — espresso, café crème, and light bites. Walk the square and find your spot.", price: "$", map: "café Place du Général de Gaulle Saint-Pierre Miquelon", web: "" },
-    { name: "Boulangerie Café", note: "Most bakeries in town also serve coffee. The best option for an early morning espresso and fresh pastry.", price: "$", map: "Boulangerie café Saint-Pierre Miquelon", web: "" }
-  ],
-  'tab-bars': [
-    { name: "Bars Near the Waterfront", note: "A handful of lively bars operate near the port and town centre. Alcohol is significantly cheaper than Canada — duty-free French territory. Enjoy responsibly.", price: "$", map: "bar Saint-Pierre Miquelon", web: "" },
-    { name: "Bar/Lounge at Hôtel Robert", note: "The hotel bar is a reliable option in the evenings — locals and visitors mix well.", price: "$$", map: "Hôtel Robert Saint-Pierre Miquelon", web: "" },
-    { name: "Note: Small Scene", note: "Saint-Pierre has a modest but authentic bar scene for its size. Don't expect a George Street — expect a quiet French Atlantic port town after dark.", price: "$", map: "nightlife Saint-Pierre Miquelon", web: "" }
-  ],
-  'tab-shop': [
-    { name: "Wine & Spirits Shops", note: "French wines, Cognac, Armagnac, Calvados, and Champagne at EU prices. No Canadian or US excise tax. Stock up — you're allowed a reasonable personal allowance.", price: "$$", map: "wine spirits Saint-Pierre Miquelon", web: "" },
-    { name: "French Grocery / Épicerie", note: "French cheeses, charcuterie, chocolates, and other products you won't find at those prices in Canada.", price: "$", map: "épicerie Saint-Pierre Miquelon", web: "" },
-    { name: "Cosmetics & Parfumerie", note: "French cosmetics and perfumes at Paris-equivalent prices. Popular stop for duty-free shopping.", price: "$$", map: "parfumerie Saint-Pierre Miquelon", web: "" },
-    { name: "Rhum SPM", note: "The islands' own rhum agricole — a unique souvenir that connects to Saint-Pierre's long spirits tradition.", price: "$$", map: "Rhum SPM Saint-Pierre Miquelon", web: "" }
-  ]
-};
+const venueData = window.PORT_DATA.venueData;
 
 function renderVenues(tabId) {
   const panel = document.getElementById(tabId);
@@ -1184,12 +1150,7 @@ function switchTab(pageId, tabId, btn) {
 }
 
 /* ===== HOTELS ===== */
-const hotelData = [
-  { name: "Hôtel Robert", note: "The historic main hotel of Saint-Pierre — central location, classic French character, on-site restaurant and bar.", map: "Hôtel Robert Saint-Pierre Miquelon", web: "" },
-  { name: "Hôtel Ile de France", note: "Comfortable mid-range hotel in the town centre, close to the waterfront and main square.", map: "Hôtel Ile de France Saint-Pierre Miquelon", web: "" },
-  { name: "Chambres d'Hôtes / B&Bs", note: "Several private B&Bs offer rooms in Saint-Pierre. Often the most atmospheric option. Ask locally or check tourist listings.", map: "chambre d'hôte Saint-Pierre Miquelon", web: "" },
-  { name: "Auberge Saint-Pierre", note: "Small inn with modest rooms in town — a practical base for a short stay.", map: "Auberge Saint-Pierre Miquelon", web: "" }
-];
+const hotelData = window.PORT_DATA.hotelData;
 
 function renderHotels() {
   document.getElementById('hotel-list').innerHTML = hotelData.map((h, i) => `
