@@ -36,9 +36,21 @@ window.PORT_DATA = {
     ]
   },
   hotelData: [
-    { name: "Hôtel Robert", note: "The historic main hotel — central, classic French character, on-site restaurant and bar.", map: "Hôtel Robert Saint-Pierre Miquelon", web: "" },
-    { name: "Hôtel Ile de France", note: "Comfortable mid-range hotel in the town centre, close to the waterfront.", map: "Hôtel Ile de France Saint-Pierre Miquelon", web: "" },
-    { name: "Chambres d'Hôtes / B&Bs", note: "Several private B&Bs offer rooms in Saint-Pierre — often the most atmospheric option.", map: "chambre d'hôte Saint-Pierre Miquelon", web: "" },
-    { name: "Auberge Saint-Pierre", note: "Small inn with modest rooms in town — a practical base for a short stay.", map: "Auberge Saint-Pierre Miquelon", web: "" }
+    { name: "Hôtel Robert", note: "The historic main hotel — central, classic French character, on-site restaurant and bar.", phone: "", map: "Hôtel Robert Saint-Pierre Miquelon", web: "" },
+    { name: "Hôtel Ile de France", note: "Comfortable mid-range hotel in the town centre, close to the waterfront.", phone: "", map: "Hôtel Ile de France Saint-Pierre Miquelon", web: "" },
+    { name: "Chambres d'Hôtes / B&Bs", note: "Several private B&Bs offer rooms in Saint-Pierre — often the most atmospheric option.", phone: "", map: "chambre d'hôte Saint-Pierre Miquelon", web: "" },
+    { name: "Auberge Saint-Pierre", note: "Small inn with modest rooms in town — a practical base for a short stay.", phone: "", map: "Auberge Saint-Pierre Miquelon", web: "" }
+  ],
+  shipContacts: [
+    { name: "Brow", sub: "Number to be confirmed — update before sailing", phone: "" },
+    { name: "Cox'n", sub: "Number to be confirmed — update before sailing", phone: "" },
+    { name: "XO", sub: "Number to be confirmed — update before sailing", phone: "" },
+    { name: "Duty Medical", sub: "Number to be confirmed — update before sailing", phone: "" }
+  ],
+  localContacts: [
+    { name: "Centre Hospitalier François Dunan", sub: "Saint-Pierre — only hospital on the islands", phone: "+50841918181", phoneLabel: "+508 41 91 81", map: "Centre Hospitalier François Dunan Saint-Pierre Miquelon" },
+    { name: "Gendarmerie (Non-Emergency)", sub: "Gendarmerie Nationale, Saint-Pierre", phone: "17", phoneLabel: "17", map: "Gendarmerie Saint-Pierre Miquelon" },
+    { name: "Canadian Coast Guard", sub: "Marine emergencies — NL sector", phone: "+18002670780", phoneLabel: "1-800-267-0780", map: "" },
+    { name: "Taxis", sub: "A small local taxi fleet — ask at the port or your hotel for current numbers", phone: "", map: "taxi Saint-Pierre Miquelon", mapLabel: "Find Nearby" }
   ]
 };

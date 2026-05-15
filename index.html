@@ -82,6 +82,38 @@ box-shadow: var(--shadow-sm);
 }
 .header-home:active { transform: scale(0.92); box-shadow: none; }
 
+/* ===== A2HS BANNER ===== */
+.a2hs-banner {
+position: sticky; top: 58px; z-index: 99;
+margin: 10px 16px 0;
+background: rgba(255,255,255,0.92);
+backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+border: 1.5px solid var(--border);
+border-radius: 16px;
+box-shadow: var(--shadow-sm);
+padding: 10px 12px;
+display: flex; align-items: center; gap: 12px;
+}
+.a2hs-title { font-size: 0.88rem; font-weight: 900; letter-spacing: -0.02em; }
+.a2hs-sub { font-size: 0.78rem; color: var(--text-light); line-height: 1.35; margin-top: 2px; }
+.a2hs-actions { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+.a2hs-btn {
+background: linear-gradient(135deg, var(--ocean), var(--plum));
+color: #fff; border: none;
+font-weight: 900; font-size: 0.78rem;
+padding: 9px 12px; border-radius: 12px;
+box-shadow: var(--shadow-btn); cursor: pointer;
+}
+.a2hs-btn:active { transform: scale(0.96); box-shadow: var(--shadow-sm); }
+.a2hs-close {
+width: 34px; height: 34px; border-radius: 12px;
+border: 1.5px solid var(--border); background: var(--white);
+color: var(--text-light); font-weight: 900;
+display: inline-flex; align-items: center; justify-content: center;
+cursor: pointer;
+}
+.a2hs-close:active { transform: scale(0.92); }
+
 /* ===== PAGES ===== */
 .page { display: none; padding: 16px 16px 100px; }
 .page.active { display: block; animation: pageIn 0.35s cubic-bezier(0.34, 1.3, 0.64, 1); }
@@ -403,6 +435,17 @@ white-space: nowrap; flex-shrink: 0;
   <button class="header-home" onclick="nav('landing')">🏠 Home</button>
 </div>
 
+<div id="a2hs-banner" class="a2hs-banner" hidden>
+  <div>
+    <div class="a2hs-title">Add to Home Screen</div>
+    <div id="a2hs-sub" class="a2hs-sub">Save this brief for one‑tap access.</div>
+  </div>
+  <div class="a2hs-actions">
+    <button id="a2hs-action" class="a2hs-btn" type="button">Install</button>
+    <button id="a2hs-dismiss" class="a2hs-close" type="button" aria-label="Dismiss">✕</button>
+  </div>
+</div>
+
 <!-- ===== LANDING ===== -->
 
 <div id="landing" class="page active">
@@ -602,16 +645,16 @@ white-space: nowrap; flex-shrink: 0;
     </a>
   </div>
 
-  <div class="accordion-item">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Transportation <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <ul>
-        <li><strong>Walking:</strong> The entire town of Saint-Pierre is walkable. The main quay, town square, shops, restaurants, and waterfront are all close together.</li>
-        <li><strong>Taxi:</strong> A small number of local taxis operate on the island. Ask at the port or your hotel for current contact numbers — the fleet is small and numbers change.</li>
-        <li><strong>No Uber / Rideshare:</strong> Not available on the islands.</li>
-        <li><strong>Vehicle rental:</strong> Cars and scooters are available for rent in town — useful for reaching the Grand Barachois or Pain de Sucre.</li>
-        <li><strong>Bicycle rental:</strong> Bikes available in season — ask at the tourism office near the town centre.</li>
-        <li><strong>Ferry to Île aux Marins:</strong> Regular passenger ferry service from the Saint-Pierre waterfront. Check locally for departure times.</li>
+  <div class="section-header">Transportation</div>
+  <div class="card" style="margin-bottom:16px;">
+    <div class="card-note" style="color:var(--text-mid);line-height:1.65;margin-bottom:0;">
+      <ul style="padding-left:18px;">
+        <li style="margin-bottom:6px;"><strong>Walking:</strong> The entire town of Saint-Pierre is walkable. The main quay, town square, shops, restaurants, and waterfront are all close together.</li>
+        <li style="margin-bottom:6px;"><strong>Taxi:</strong> A small number of local taxis operate on the island. Ask at the port or your hotel for current contact numbers — the fleet is small and numbers change.</li>
+        <li style="margin-bottom:6px;"><strong>No Uber / Rideshare:</strong> Not available on the islands.</li>
+        <li style="margin-bottom:6px;"><strong>Vehicle rental:</strong> Cars and scooters are available for rent in town — useful for reaching the Grand Barachois or Pain de Sucre.</li>
+        <li style="margin-bottom:6px;"><strong>Bicycle rental:</strong> Bikes available in season — ask at the tourism office near the town centre.</li>
+        <li style="margin-bottom:6px;"><strong>Ferry to Île aux Marins:</strong> Regular passenger ferry service from the Saint-Pierre waterfront. Check locally for departure times.</li>
         <li><strong>Ferry to Miquelon:</strong> Regular service connects Saint-Pierre to the larger but more remote Miquelon island. A full-day trip.</li>
       </ul>
     </div>
@@ -795,22 +838,7 @@ white-space: nowrap; flex-shrink: 0;
   <div class="page-subtitle">Placeholder numbers — update before sailing</div>
   <div class="color-bar"></div>
 
-  <div class="contact-card">
-    <div class="contact-label">Brow</div>
-    <div class="contact-sub">Number to be confirmed — update before sailing</div>
-  </div>
-  <div class="contact-card">
-    <div class="contact-label">Cox'n</div>
-    <div class="contact-sub">Number to be confirmed — update before sailing</div>
-  </div>
-  <div class="contact-card">
-    <div class="contact-label">XO</div>
-    <div class="contact-sub">Number to be confirmed — update before sailing</div>
-  </div>
-  <div class="contact-card">
-    <div class="contact-label">Duty Medical</div>
-    <div class="contact-sub">Number to be confirmed — update before sailing</div>
-  </div>
+  <div id="ship-contact-list"></div>
 </div>
 
 <!-- LOCAL CONTACTS -->
@@ -831,36 +859,7 @@ white-space: nowrap; flex-shrink: 0;
     </div>
   </div>
 
-  <div class="contact-card">
-    <div class="contact-label">Centre Hospitalier François Dunan</div>
-    <div class="contact-sub">Saint-Pierre — only hospital on the islands</div>
-    <div class="contact-actions">
-      <a href="tel:+50841918181" class="btn-sm btn-call">📞 +508 41 91 81</a>
-      <a href="https://www.google.com/maps/search/Centre+Hospitalier+François+Dunan+Saint-Pierre+Miquelon" target="_blank" rel="noopener" class="btn-sm btn-map">📍 Map</a>
-    </div>
-  </div>
-  <div class="contact-card">
-    <div class="contact-label">Gendarmerie (Non-Emergency)</div>
-    <div class="contact-sub">Gendarmerie Nationale, Saint-Pierre</div>
-    <div class="contact-actions">
-      <a href="tel:17" class="btn-sm btn-call">📞 17</a>
-      <a href="https://www.google.com/maps/search/Gendarmerie+Saint-Pierre+Miquelon" target="_blank" rel="noopener" class="btn-sm btn-map">📍 Map</a>
-    </div>
-  </div>
-  <div class="contact-card">
-    <div class="contact-label">Canadian Coast Guard</div>
-    <div class="contact-sub">Marine emergencies — NL sector</div>
-    <div class="contact-actions">
-      <a href="tel:+18002670780" class="btn-sm btn-call">📞 1-800-267-0780</a>
-    </div>
-  </div>
-  <div class="contact-card">
-    <div class="contact-label">Taxis</div>
-    <div class="contact-sub">A small local taxi fleet — ask at the port or your hotel for current numbers</div>
-    <div class="contact-actions">
-      <a href="https://www.google.com/maps/search/taxi+Saint-Pierre+Miquelon" target="_blank" rel="noopener" class="btn-sm btn-map">📍 Find Nearby</a>
-    </div>
-  </div>
+  <div id="local-contact-list"></div>
 </div>
 
 <!-- ===== PAGE 8: RUM RUNNING ERA ===== -->
@@ -957,6 +956,69 @@ white-space: nowrap; flex-shrink: 0;
 
 <script src="data.js"></script>
 <script>
+/* ===== A2HS ===== */
+const A2HS_DISMISSED_KEY = 'a2hs_dismissed_v1';
+let deferredInstallPrompt = null;
+
+function isStandaloneMode() {
+  return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+}
+
+function shouldShowA2HSBanner() {
+  if (isStandaloneMode()) return false;
+  try { return !localStorage.getItem(A2HS_DISMISSED_KEY); } catch { return true; }
+}
+
+function dismissA2HSBanner() {
+  const banner = document.getElementById('a2hs-banner');
+  if (banner) banner.hidden = true;
+  try { localStorage.setItem(A2HS_DISMISSED_KEY, '1'); } catch {}
+}
+
+function setupA2HSBanner() {
+  const banner = document.getElementById('a2hs-banner');
+  const sub = document.getElementById('a2hs-sub');
+  const actionBtn = document.getElementById('a2hs-action');
+  const dismissBtn = document.getElementById('a2hs-dismiss');
+  if (!banner || !sub || !actionBtn || !dismissBtn) return;
+
+  if (!shouldShowA2HSBanner()) { banner.hidden = true; return; }
+
+  const ua = navigator.userAgent || '';
+  const isIOS = /iPad|iPhone|iPod/.test(ua);
+
+  if (deferredInstallPrompt) {
+    sub.textContent = 'Install this brief for one‑tap access.';
+    actionBtn.hidden = false;
+    actionBtn.textContent = 'Install';
+  } else if (isIOS) {
+    sub.textContent = 'On iPhone/iPad: tap Share → “Add to Home Screen”.';
+    actionBtn.hidden = true;
+  } else {
+    sub.textContent = 'Save this brief for one‑tap access (when install is available).';
+    actionBtn.hidden = true;
+  }
+
+  banner.hidden = false;
+
+  dismissBtn.onclick = dismissA2HSBanner;
+  actionBtn.onclick = async () => {
+    if (!deferredInstallPrompt) return;
+    deferredInstallPrompt.prompt();
+    try { await deferredInstallPrompt.userChoice; } catch {}
+    deferredInstallPrompt = null;
+    dismissA2HSBanner();
+  };
+}
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredInstallPrompt = e;
+  setupA2HSBanner();
+});
+
+setupA2HSBanner();
+
 /* ===== NAVIGATION ===== */
 function nav(pageId, pushHistory = true) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -1109,6 +1171,12 @@ renderTodoChips(); renderTodoList();
 
 /* ===== VENUE DATA ===== */
 const venueData = window.PORT_DATA.venueData;
+const shipContacts = window.PORT_DATA.shipContacts || [];
+const localContacts = window.PORT_DATA.localContacts || [];
+
+function phoneToTelHref(phone) {
+  return 'tel:' + String(phone || '').trim().replace(/[^0-9+*#]/g, '');
+}
 
 function renderVenues(tabId) {
   const panel = document.getElementById(tabId);
@@ -1158,6 +1226,7 @@ function renderHotels() {
       <div class="card-name">${h.name}</div>
       ${h.note ? `<div class="card-note">${h.note}</div>` : ''}
       <div class="card-actions">
+        ${h.phone ? `<a class="btn-sm btn-call" href="${phoneToTelHref(h.phone)}">📞 Call</a>` : ''}
         <a class="btn-sm btn-map" href="https://www.google.com/maps/search/${encodeURIComponent(h.map)}" target="_blank" rel="noopener">📍 Map</a>
         ${h.web ? `<a class="btn-sm btn-web" href="${h.web}" target="_blank" rel="noopener">🌐 Website</a>` : ''}
       </div>
@@ -1173,6 +1242,25 @@ function filterHotels(query) {
   });
 }
 renderHotels();
+
+/* ===== CONTACTS ===== */
+function renderContactCards(containerId, contacts) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  container.innerHTML = contacts.map(c => `
+    <div class="contact-card">
+      <div class="contact-label">${c.name}</div>
+      ${c.sub ? `<div class="contact-sub">${c.sub}</div>` : ''}
+      ${(c.phone || c.map) ? `<div class="contact-actions">
+        ${c.phone ? `<a href="${phoneToTelHref(c.phone)}" class="btn-sm btn-call">📞 ${c.phoneLabel || c.phone}</a>` : ''}
+        ${c.map ? `<a href="https://www.google.com/maps/search/${encodeURIComponent(c.map)}" target="_blank" rel="noopener" class="btn-sm btn-map">📍 ${c.mapLabel || 'Map'}</a>` : ''}
+      </div>` : ''}
+    </div>
+  `).join('');
+}
+
+renderContactCards('ship-contact-list', shipContacts);
+renderContactCards('local-contact-list', localContacts);
 
 /* ===== HASH ROUTING ===== */
 function checkHash() {
