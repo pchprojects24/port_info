@@ -82,6 +82,38 @@ box-shadow: var(--shadow-sm);
 }
 .header-home:active { transform: scale(0.92); box-shadow: none; }
 
+/* ===== A2HS BANNER ===== */
+.a2hs-banner {
+position: sticky; top: 58px; z-index: 99;
+margin: 10px 16px 0;
+background: rgba(255,255,255,0.92);
+backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+border: 1.5px solid var(--border);
+border-radius: 16px;
+box-shadow: var(--shadow-sm);
+padding: 10px 12px;
+display: flex; align-items: center; gap: 12px;
+}
+.a2hs-title { font-size: 0.88rem; font-weight: 900; letter-spacing: -0.02em; }
+.a2hs-sub { font-size: 0.78rem; color: var(--text-light); line-height: 1.35; margin-top: 2px; }
+.a2hs-actions { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+.a2hs-btn {
+background: linear-gradient(135deg, var(--ocean), var(--plum));
+color: #fff; border: none;
+font-weight: 900; font-size: 0.78rem;
+padding: 9px 12px; border-radius: 12px;
+box-shadow: var(--shadow-btn); cursor: pointer;
+}
+.a2hs-btn:active { transform: scale(0.96); box-shadow: var(--shadow-sm); }
+.a2hs-close {
+width: 34px; height: 34px; border-radius: 12px;
+border: 1.5px solid var(--border); background: var(--white);
+color: var(--text-light); font-weight: 900;
+display: inline-flex; align-items: center; justify-content: center;
+cursor: pointer;
+}
+.a2hs-close:active { transform: scale(0.92); }
+
 /* ===== PAGES ===== */
 .page { display: none; padding: 16px 16px 100px; }
 .page.active { display: block; animation: pageIn 0.35s cubic-bezier(0.34, 1.3, 0.64, 1); }
@@ -401,6 +433,17 @@ white-space: nowrap; flex-shrink: 0;
     </div>
   </div>
   <button class="header-home" onclick="nav('landing')">🏠 Home</button>
+</div>
+
+<div id="a2hs-banner" class="a2hs-banner" hidden>
+  <div>
+    <div class="a2hs-title">Add to Home Screen</div>
+    <div id="a2hs-sub" class="a2hs-sub">Save this brief for one‑tap access.</div>
+  </div>
+  <div class="a2hs-actions">
+    <button id="a2hs-action" class="a2hs-btn" type="button">Install</button>
+    <button id="a2hs-dismiss" class="a2hs-close" type="button" aria-label="Dismiss">✕</button>
+  </div>
 </div>
 
 <!-- ===== LANDING ===== -->
@@ -913,6 +956,69 @@ white-space: nowrap; flex-shrink: 0;
 
 <script src="data.js"></script>
 <script>
+/* ===== A2HS ===== */
+const A2HS_DISMISSED_KEY = 'a2hs_dismissed_v1';
+let deferredInstallPrompt = null;
+
+function isStandaloneMode() {
+  return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+}
+
+function shouldShowA2HSBanner() {
+  if (isStandaloneMode()) return false;
+  try { return !localStorage.getItem(A2HS_DISMISSED_KEY); } catch { return true; }
+}
+
+function dismissA2HSBanner() {
+  const banner = document.getElementById('a2hs-banner');
+  if (banner) banner.hidden = true;
+  try { localStorage.setItem(A2HS_DISMISSED_KEY, '1'); } catch {}
+}
+
+function setupA2HSBanner() {
+  const banner = document.getElementById('a2hs-banner');
+  const sub = document.getElementById('a2hs-sub');
+  const actionBtn = document.getElementById('a2hs-action');
+  const dismissBtn = document.getElementById('a2hs-dismiss');
+  if (!banner || !sub || !actionBtn || !dismissBtn) return;
+
+  if (!shouldShowA2HSBanner()) { banner.hidden = true; return; }
+
+  const ua = navigator.userAgent || '';
+  const isIOS = /iPad|iPhone|iPod/.test(ua);
+
+  if (deferredInstallPrompt) {
+    sub.textContent = 'Install this brief for one‑tap access.';
+    actionBtn.hidden = false;
+    actionBtn.textContent = 'Install';
+  } else if (isIOS) {
+    sub.textContent = 'On iPhone/iPad: tap Share → “Add to Home Screen”.';
+    actionBtn.hidden = true;
+  } else {
+    sub.textContent = 'Save this brief for one‑tap access (when install is available).';
+    actionBtn.hidden = true;
+  }
+
+  banner.hidden = false;
+
+  dismissBtn.onclick = dismissA2HSBanner;
+  actionBtn.onclick = async () => {
+    if (!deferredInstallPrompt) return;
+    deferredInstallPrompt.prompt();
+    try { await deferredInstallPrompt.userChoice; } catch {}
+    deferredInstallPrompt = null;
+    dismissA2HSBanner();
+  };
+}
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredInstallPrompt = e;
+  setupA2HSBanner();
+});
+
+setupA2HSBanner();
+
 /* ===== NAVIGATION ===== */
 function nav(pageId, pushHistory = true) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
