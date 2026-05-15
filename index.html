@@ -795,22 +795,7 @@ white-space: nowrap; flex-shrink: 0;
   <div class="page-subtitle">Placeholder numbers — update before sailing</div>
   <div class="color-bar"></div>
 
-  <div class="contact-card">
-    <div class="contact-label">Brow</div>
-    <div class="contact-sub">Number to be confirmed — update before sailing</div>
-  </div>
-  <div class="contact-card">
-    <div class="contact-label">Cox'n</div>
-    <div class="contact-sub">Number to be confirmed — update before sailing</div>
-  </div>
-  <div class="contact-card">
-    <div class="contact-label">XO</div>
-    <div class="contact-sub">Number to be confirmed — update before sailing</div>
-  </div>
-  <div class="contact-card">
-    <div class="contact-label">Duty Medical</div>
-    <div class="contact-sub">Number to be confirmed — update before sailing</div>
-  </div>
+  <div id="ship-contact-list"></div>
 </div>
 
 <!-- LOCAL CONTACTS -->
@@ -831,36 +816,7 @@ white-space: nowrap; flex-shrink: 0;
     </div>
   </div>
 
-  <div class="contact-card">
-    <div class="contact-label">Centre Hospitalier François Dunan</div>
-    <div class="contact-sub">Saint-Pierre — only hospital on the islands</div>
-    <div class="contact-actions">
-      <a href="tel:+50841918181" class="btn-sm btn-call">📞 +508 41 91 81</a>
-      <a href="https://www.google.com/maps/search/Centre+Hospitalier+François+Dunan+Saint-Pierre+Miquelon" target="_blank" rel="noopener" class="btn-sm btn-map">📍 Map</a>
-    </div>
-  </div>
-  <div class="contact-card">
-    <div class="contact-label">Gendarmerie (Non-Emergency)</div>
-    <div class="contact-sub">Gendarmerie Nationale, Saint-Pierre</div>
-    <div class="contact-actions">
-      <a href="tel:17" class="btn-sm btn-call">📞 17</a>
-      <a href="https://www.google.com/maps/search/Gendarmerie+Saint-Pierre+Miquelon" target="_blank" rel="noopener" class="btn-sm btn-map">📍 Map</a>
-    </div>
-  </div>
-  <div class="contact-card">
-    <div class="contact-label">Canadian Coast Guard</div>
-    <div class="contact-sub">Marine emergencies — NL sector</div>
-    <div class="contact-actions">
-      <a href="tel:+18002670780" class="btn-sm btn-call">📞 1-800-267-0780</a>
-    </div>
-  </div>
-  <div class="contact-card">
-    <div class="contact-label">Taxis</div>
-    <div class="contact-sub">A small local taxi fleet — ask at the port or your hotel for current numbers</div>
-    <div class="contact-actions">
-      <a href="https://www.google.com/maps/search/taxi+Saint-Pierre+Miquelon" target="_blank" rel="noopener" class="btn-sm btn-map">📍 Find Nearby</a>
-    </div>
-  </div>
+  <div id="local-contact-list"></div>
 </div>
 
 <!-- ===== PAGE 8: RUM RUNNING ERA ===== -->
@@ -1109,6 +1065,12 @@ renderTodoChips(); renderTodoList();
 
 /* ===== VENUE DATA ===== */
 const venueData = window.PORT_DATA.venueData;
+const shipContacts = window.PORT_DATA.shipContacts || [];
+const localContacts = window.PORT_DATA.localContacts || [];
+
+function phoneToTelHref(phone) {
+  return 'tel:' + String(phone || '').trim().replace(/[^0-9+*#]/g, '');
+}
 
 function renderVenues(tabId) {
   const panel = document.getElementById(tabId);
@@ -1158,6 +1120,7 @@ function renderHotels() {
       <div class="card-name">${h.name}</div>
       ${h.note ? `<div class="card-note">${h.note}</div>` : ''}
       <div class="card-actions">
+        ${h.phone ? `<a class="btn-sm btn-call" href="${phoneToTelHref(h.phone)}">📞 Call</a>` : ''}
         <a class="btn-sm btn-map" href="https://www.google.com/maps/search/${encodeURIComponent(h.map)}" target="_blank" rel="noopener">📍 Map</a>
         ${h.web ? `<a class="btn-sm btn-web" href="${h.web}" target="_blank" rel="noopener">🌐 Website</a>` : ''}
       </div>
@@ -1173,6 +1136,25 @@ function filterHotels(query) {
   });
 }
 renderHotels();
+
+/* ===== CONTACTS ===== */
+function renderContactCards(containerId, contacts) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  container.innerHTML = contacts.map(c => `
+    <div class="contact-card">
+      <div class="contact-label">${c.name}</div>
+      ${c.sub ? `<div class="contact-sub">${c.sub}</div>` : ''}
+      ${(c.phone || c.map) ? `<div class="contact-actions">
+        ${c.phone ? `<a href="${phoneToTelHref(c.phone)}" class="btn-sm btn-call">📞 ${c.phoneLabel || c.phone}</a>` : ''}
+        ${c.map ? `<a href="https://www.google.com/maps/search/${encodeURIComponent(c.map)}" target="_blank" rel="noopener" class="btn-sm btn-map">📍 ${c.mapLabel || 'Map'}</a>` : ''}
+      </div>` : ''}
+    </div>
+  `).join('');
+}
+
+renderContactCards('ship-contact-list', shipContacts);
+renderContactCards('local-contact-list', localContacts);
 
 /* ===== HASH ROUTING ===== */
 function checkHash() {
