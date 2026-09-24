@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#ffffff">
-<title>Saint-Pierre Port Brief</title>
+<title>Port Brief</title>
 <style>
 :root {
   --bg: #f5f0eb;
@@ -415,6 +415,14 @@ padding: 2px 8px; border-radius: 6px; letter-spacing: 0.02em;
 white-space: nowrap; flex-shrink: 0;
 }
 
+/* ===== EMERGENCY STRIP ===== */
+.emergency-card { background: linear-gradient(135deg,var(--coral),#ff4757); margin-bottom: 12px; padding: 16px 18px; }
+.emergency-card-title { color: #fff; font-weight: 800; font-size: 1rem; margin-bottom: 8px; }
+.emergency-nums { display: flex; gap: 10px; flex-wrap: wrap; }
+.emergency-nums a { background: rgba(255,255,255,0.2); color: #fff; font-weight: 800; font-size: 0.88rem; padding: 8px 14px; border-radius: 10px; }
+.emergency-note { color: rgba(255,255,255,0.92); font-size: 0.78rem; font-weight: 600; margin-top: 10px; line-height: 1.4; }
+.intro-card { margin-bottom: 14px; padding: 14px 16px; font-size: 0.84rem; color: var(--text-mid); line-height: 1.6; }
+.more-link { margin: 6px 0 4px; }
 </style>
 
 </head>
@@ -428,8 +436,8 @@ white-space: nowrap; flex-shrink: 0;
   <div class="header-left">
     <div class="header-flag">⚓</div>
     <div class="header-text">
-      <div class="header-title">Saint-Pierre Port Brief</div>
-      <div class="header-sub">Saint-Pierre &amp; Miquelon · French Territory</div>
+      <div class="header-title" id="header-title">Port Brief</div>
+      <div class="header-sub" id="header-sub"></div>
     </div>
   </div>
   <button class="header-home" onclick="nav('landing')">🏠 Home</button>
@@ -450,102 +458,31 @@ white-space: nowrap; flex-shrink: 0;
 
 <div id="landing" class="page active">
   <div class="landing-hero">
-    <span class="landing-emoji">🇫🇷</span>
-    <div class="landing-title">Bienvenue à<br>Saint-Pierre</div>
-    <div class="landing-dates">Saint-Pierre &amp; Miquelon &nbsp;·&nbsp; French Territory</div>
+    <span class="landing-emoji" id="landing-flag">⚓</span>
+    <div class="landing-title" id="landing-title">Loading…</div>
+    <div class="landing-dates" id="landing-region"></div>
   </div>
-  <div class="landing-grid">
-    <button class="landing-btn lb-routine" onclick="nav('routine')">
-      <span class="icon-wrap">⚓</span>
-      <span>Ship Routine &amp; Leave</span>
-      <span class="btn-arrow">›</span>
-    </button>
-    <button class="landing-btn lb-map" onclick="nav('explore')">
-      <span class="icon-wrap">🧭</span>
-      <span>Explore Saint-Pierre</span>
-      <span class="btn-arrow">›</span>
-    </button>
-    <button class="landing-btn lb-hotels" onclick="nav('hotels')">
-      <span class="icon-wrap">🏨</span>
-      <span>Hotels</span>
-      <span class="btn-arrow">›</span>
-    </button>
-    <button class="landing-btn lb-todo" onclick="nav('weather')">
-      <span class="icon-wrap">🌫️</span>
-      <span>Weather</span>
-      <span class="btn-arrow">›</span>
-    </button>
-    <button class="landing-btn lb-safety" onclick="nav('safety')">
-      <span class="icon-wrap">🛡️</span>
-      <span>Safety</span>
-      <span class="btn-arrow">›</span>
-    </button>
-    <button class="landing-btn lb-contacts" onclick="nav('contacts')">
-      <span class="icon-wrap">📞</span>
-      <span>Contacts</span>
-      <span class="btn-arrow">›</span>
-    </button>
-    <button class="landing-btn lb-rum" onclick="nav('rumrunning')">
-      <span class="icon-wrap">🥃</span>
-      <span>The Rum Running Era</span>
-      <span class="btn-arrow">›</span>
-    </button>
-  </div>
+  <div class="landing-grid" id="landing-grid"></div>
 </div>
 
-<!-- ===== PAGE 1: SHIP ROUTINE & LEAVE ===== -->
+<!-- ===== SHIP ROUTINE & LEAVE ===== -->
 
 <div id="routine" class="page">
   <button class="back-btn" onclick="nav('landing')">Home</button>
   <div class="page-title">Ship Routine &amp; Leave</div>
-  <div class="page-subtitle">Port of Saint-Pierre &amp; Miquelon</div>
+  <div class="page-subtitle" data-port-subtitle></div>
   <div class="color-bar"></div>
-
-  <div class="accordion-item" data-group="routine">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Port Window <span class="accordion-icon">+</span></button>
-    <div class="accordion-body"><p>Per Routine Orders — Saint-Pierre &amp; Miquelon</p></div>
-  </div>
-  <div class="accordion-item" data-group="routine">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Daily Routine <span class="accordion-icon">+</span></button>
-    <div class="accordion-body"><p>Per Routine Orders.</p></div>
-  </div>
-  <div class="accordion-item" data-group="routine">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Leave <span class="accordion-icon">+</span></button>
-    <div class="accordion-body"><p>Per Routine Orders.</p></div>
-  </div>
-  <div class="accordion-item" data-group="routine">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Currency &amp; Language <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <ul>
-        <li><strong>Currency:</strong> Euro (€) is official. Canadian dollars are widely accepted but you may get an unfavourable exchange rate. US dollars are also accepted in many places.</li>
-        <li><strong>ATMs:</strong> Available in Saint-Pierre town centre.</li>
-        <li><strong>Language:</strong> French. Most locals in shops and restaurants understand basic English, but coming with a few French phrases goes a long way and is appreciated.</li>
-        <li><strong>Phones:</strong> Canadian phones typically roam on French networks. Check your plan for international rates. Country code is +508.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="accordion-item" data-group="routine">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Overnight Leave <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <ul>
-        <li>Have your hotel name, address, and phone number ready before requesting leave.</li>
-        <li>Provide a contact number where you can be reached at all times.</li>
-        <li>Know your leave expiry time and plan return travel accordingly.</li>
-        <li>If your plans change, inform the ship per routine as soon as possible.</li>
-        <li>Keep your military ID and leave pass on your person.</li>
-        <li>Saint-Pierre is small — the entire town is walkable and there is no public transit.</li>
-      </ul>
-    </div>
-  </div>
+  <div id="routine-list"></div>
 </div>
 
 <!-- ===== EXPLORE HUB ===== -->
 
 <div id="explore" class="page">
   <button class="back-btn" onclick="nav('landing')">Home</button>
-  <div class="page-title">Explore Saint-Pierre</div>
+  <div class="page-title" id="explore-title">Explore</div>
   <div class="page-subtitle">Get around, get out, get fed</div>
   <div class="color-bar"></div>
+  <div id="about-card" class="card" hidden></div>
   <div class="landing-grid">
     <button class="landing-btn lb-map" onclick="nav('map')">
       <span class="icon-wrap">🗺️</span>
@@ -570,122 +507,52 @@ white-space: nowrap; flex-shrink: 0;
 <div id="weather" class="page">
   <button class="back-btn" onclick="nav('landing')">Home</button>
   <div class="page-title">Weather</div>
-  <div class="page-subtitle">Saint-Pierre &amp; Miquelon</div>
+  <div class="page-subtitle" data-port-subtitle></div>
   <div class="color-bar"></div>
-
-  <div class="card" style="margin-bottom:10px; padding:14px 16px;">
-    <div style="display:flex;align-items:center;gap:10px;">
-      <span style="font-size:1.6rem;">🌫️</span>
-      <div style="font-size:0.82rem;color:var(--text-mid);line-height:1.5;">
-        <strong>SPM is one of the foggiest places in North America.</strong> Conditions can change quickly — always check a live source before heading out.
-      </div>
-    </div>
-  </div>
-
+  <div id="weather-note"></div>
   <div id="weather-dynamic">
     <div class="card" style="text-align:center;padding:24px;color:var(--text-light);">Loading weather…</div>
   </div>
-
-  <div class="section-header">What to Expect</div>
-  <div class="card" style="margin-bottom:16px;">
-    <div class="card-note" style="color:var(--text-mid);line-height:1.7;margin-bottom:0;">
-      Saint-Pierre has a maritime subarctic climate — cool, humid, and famously foggy. The islands sit at the meeting point of the cold Labrador Current and warmer Gulf Stream air, producing near-constant fog from spring through autumn. Wind is almost always present; dress in windproof layers year-round. Rain and drizzle are frequent. Snow is possible from November through April. Summer (July–August) brings the mildest weather, with temperatures reaching 15–20°C on good days, but fog remains. Spring and autumn average 5–12°C. Check the live forecast below before going out.
-    </div>
-  </div>
-
+  <div id="weather-climate"></div>
   <div class="section-header">Live Forecast Links</div>
-  <div class="map-btns">
-    <a class="map-btn" href="https://meteofrance.gp/fr/previsions-meteo-france/saint-pierre-et-miquelon/PM975" target="_blank" rel="noopener">
-      <span class="map-pin" style="background:linear-gradient(135deg,var(--ocean),var(--teal));">🇫🇷</span> Météo France <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.accuweather.com/en/pm/saint-pierre/50388/weather-forecast/50388" target="_blank" rel="noopener">
-      <span class="map-pin" style="background:linear-gradient(135deg,var(--coral),var(--gold));">🌡️</span> AccuWeather <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://weather.gc.ca/en/location/index.html?coords=46.779,-56.176" target="_blank" rel="noopener">
-      <span class="map-pin" style="background:linear-gradient(135deg,var(--green),var(--teal));">🍁</span> Environment Canada <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.timeanddate.com/weather/france/saint-pierre/ext" target="_blank" rel="noopener">
-      <span class="map-pin" style="background:linear-gradient(135deg,var(--plum),var(--ocean));">📅</span> 14-Day Forecast <span class="chevron">›</span>
-    </a>
-  </div>
+  <div class="map-btns" id="weather-links"></div>
 </div>
 
-<!-- ===== PAGE 2: MAP & GETTING AROUND ===== -->
+<!-- ===== MAP & GETTING AROUND ===== -->
 
 <div id="map" class="page">
   <button class="back-btn" onclick="nav('explore')">Explore</button>
   <div class="page-title">Map &amp; Getting Around</div>
   <div class="page-subtitle">Tap to open in Google Maps</div>
   <div class="color-bar"></div>
-
-  <div class="card" style="margin-bottom:14px;padding:14px 16px;">
-    <div style="font-size:0.84rem;color:var(--text-mid);line-height:1.6;">
-      <strong>Saint-Pierre town is entirely walkable.</strong> The main waterfront, square, restaurants, and shops are all within a 10–15 minute walk of the quay. There is no public bus service. For the Grand Barachois or further exploration, take a taxi or rent a vehicle.
-    </div>
-  </div>
-
-  <div class="map-btns">
-    <a class="map-btn" href="https://www.google.com/maps/search/Centre-Ville+Saint-Pierre+Miquelon" target="_blank" rel="noopener">
-      <span class="map-pin">📍</span> Centre-Ville Saint-Pierre <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/search/Place+du+Général+de+Gaulle+Saint-Pierre+Miquelon" target="_blank" rel="noopener">
-      <span class="map-pin">🏛️</span> Place du Général de Gaulle <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/search/Île+aux+Marins+Saint-Pierre+Miquelon" target="_blank" rel="noopener">
-      <span class="map-pin">⛵</span> Île aux Marins <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/search/Musée+de+l'Arche+Saint-Pierre+Miquelon" target="_blank" rel="noopener">
-      <span class="map-pin">🏛️</span> Musée de l'Arche <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/search/Grand+Barachois+Saint-Pierre+Miquelon" target="_blank" rel="noopener">
-      <span class="map-pin">🐎</span> Grand Barachois <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/search/Pain+de+Sucre+Saint-Pierre+Miquelon" target="_blank" rel="noopener">
-      <span class="map-pin">🌊</span> Pain de Sucre <span class="chevron">›</span>
-    </a>
-  </div>
-
-  <div class="section-header">Transportation</div>
-  <div class="card" style="margin-bottom:16px;">
-    <div class="card-note" style="color:var(--text-mid);line-height:1.65;margin-bottom:0;">
-      <ul style="padding-left:18px;">
-        <li style="margin-bottom:6px;"><strong>Walking:</strong> The entire town of Saint-Pierre is walkable. The main quay, town square, shops, restaurants, and waterfront are all close together.</li>
-        <li style="margin-bottom:6px;"><strong>Taxi:</strong> A small number of local taxis operate on the island. Ask at the port or your hotel for current contact numbers — the fleet is small and numbers change.</li>
-        <li style="margin-bottom:6px;"><strong>No Uber / Rideshare:</strong> Not available on the islands.</li>
-        <li style="margin-bottom:6px;"><strong>Vehicle rental:</strong> Cars and scooters are available for rent in town — useful for reaching the Grand Barachois or Pain de Sucre.</li>
-        <li style="margin-bottom:6px;"><strong>Bicycle rental:</strong> Bikes available in season — ask at the tourism office near the town centre.</li>
-        <li style="margin-bottom:6px;"><strong>Ferry to Île aux Marins:</strong> Regular passenger ferry service from the Saint-Pierre waterfront. Check locally for departure times.</li>
-        <li><strong>Ferry to Miquelon:</strong> Regular service connects Saint-Pierre to the larger but more remote Miquelon island. A full-day trip.</li>
-      </ul>
-    </div>
-  </div>
+  <div id="map-intro"></div>
+  <div class="map-btns" id="map-places"></div>
+  <div class="section-header">Handy Nearby</div>
+  <div class="map-btns" id="map-handy"></div>
+  <div id="map-transport"></div>
 </div>
 
-<!-- ===== PAGE 3: THINGS TO DO ===== -->
+<!-- ===== THINGS TO DO ===== -->
 
 <div id="todo" class="page">
   <button class="back-btn" onclick="nav('explore')">Explore</button>
   <div class="page-title">Things To Do</div>
   <div class="page-subtitle">Filter by what you're feeling</div>
   <div class="color-bar"></div>
-
   <div class="chips" id="todo-chips"></div>
   <div id="todo-list"></div>
+  <div class="section-header">Find More</div>
+  <div class="card-actions more-link" id="todo-more"></div>
 </div>
 
-<!-- ===== PAGE 4: FOOD, COFFEE & BARS ===== -->
+<!-- ===== FOOD, COFFEE & BARS ===== -->
 
 <div id="food" class="page">
   <button class="back-btn" onclick="nav('explore')">Explore</button>
   <div class="page-title">Food, Coffee &amp; Bars</div>
-  <div class="page-subtitle">It's France — eat well</div>
+  <div class="page-subtitle" id="food-subtitle">Eat, drink, shop</div>
   <div class="color-bar"></div>
-
-  <div class="card" style="margin-bottom:14px;padding:14px 16px;">
-    <div style="font-size:0.84rem;color:var(--text-mid);line-height:1.6;">
-      Saint-Pierre has surprisingly good food for its size — fresh Atlantic seafood, French bistro classics, and excellent bread. Options are limited compared to a city; reservations are recommended for dinner. Alcohol (wine, spirits, beer) is significantly cheaper than in Canada — no federal excise tax.
-    </div>
-  </div>
+  <div id="food-intro"></div>
 
   <div class="tabs">
     <button class="tab active" onclick="switchTab('food','tab-food',this)">🍴 Food</button>
@@ -712,104 +579,31 @@ white-space: nowrap; flex-shrink: 0;
   </div>
 </div>
 
-<!-- ===== PAGE 5: HOTELS ===== -->
+<!-- ===== HOTELS ===== -->
 
 <div id="hotels" class="page">
   <button class="back-btn" onclick="nav('landing')">Home</button>
   <div class="page-title">Hotels</div>
-  <div class="page-subtitle">Saint-Pierre town · Limited options — book ahead</div>
+  <div class="page-subtitle" id="hotels-subtitle"></div>
   <div class="color-bar"></div>
-
-  <div class="card" style="margin-bottom:14px;padding:14px 16px;">
-    <div style="font-size:0.84rem;color:var(--text-mid);line-height:1.6;">
-      Saint-Pierre has a small number of hotels and chambres d'hôtes (B&Bs). During the brief summer tourist season, availability is tight. Book as early as possible. Most properties are small and centrally located.
-    </div>
-  </div>
-
+  <div id="hotels-intro"></div>
   <input type="text" class="search-input" placeholder="Search hotels…" oninput="filterHotels(this.value)">
   <div id="hotel-list"></div>
+  <div class="card-actions more-link" id="hotels-more"></div>
 </div>
 
-<!-- ===== PAGE 6: SAFETY ===== -->
+<!-- ===== SAFETY ===== -->
 
 <div id="safety" class="page">
   <button class="back-btn" onclick="nav('landing')">Home</button>
   <div class="page-title">Safety</div>
   <div class="page-subtitle">Stay sharp, stay safe</div>
   <div class="color-bar"></div>
-
-  <div class="card" style="background:linear-gradient(135deg,var(--coral),#ff4757);margin-bottom:12px;padding:16px 18px;">
-    <div style="color:#fff;font-weight:800;font-size:1rem;margin-bottom:8px;">🚨 French Territory — Emergency Numbers</div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;">
-      <a href="tel:15" style="background:rgba(255,255,255,0.2);color:#fff;font-weight:800;font-size:0.88rem;padding:8px 14px;border-radius:10px;text-decoration:none;">15 · SAMU (Medical)</a>
-      <a href="tel:17" style="background:rgba(255,255,255,0.2);color:#fff;font-weight:800;font-size:0.88rem;padding:8px 14px;border-radius:10px;text-decoration:none;">17 · Gendarmerie</a>
-      <a href="tel:18" style="background:rgba(255,255,255,0.2);color:#fff;font-weight:800;font-size:0.88rem;padding:8px 14px;border-radius:10px;text-decoration:none;">18 · Pompiers</a>
-      <a href="tel:112" style="background:rgba(255,255,255,0.25);color:#fff;font-weight:800;font-size:0.88rem;padding:8px 14px;border-radius:10px;text-decoration:none;">112 · All Emergencies</a>
-    </div>
-  </div>
-
-  <div class="accordion-item" data-group="safety">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">General <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <ul>
-        <li>Saint-Pierre is one of the safest ports you will visit. The population is around 6,000 and crime is very low.</li>
-        <li>Use common sense and stay aware of your surroundings, particularly at night near the bars.</li>
-        <li>The weather and the waterfront are your biggest hazards — fog rolls in fast and the harbour edge can be slippery.</li>
-        <li>Buddy system, especially at night.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="accordion-item" data-group="safety">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Weather Hazards <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <ul>
-        <li>Dense fog can reduce visibility to near zero with little warning. Stay on marked paths.</li>
-        <li>Wind is almost constant. Dress in windproof layers even in summer.</li>
-        <li>Rain and drizzle are frequent. The waterfront boardwalk and dock areas can be slippery.</li>
-        <li>If hiking to Pain de Sucre or along the coast, be cautious near cliff edges — fog removes depth perception quickly.</li>
-        <li>Cold water temperatures year-round — if you go near the water's edge, be careful.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="accordion-item" data-group="safety">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Alcohol / Nights Out <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <ul>
-        <li>Alcohol is significantly cheaper here than in Canada — it's duty-free French territory. Pace yourself.</li>
-        <li>The bar scene is small but active. Know how you're getting back to the ship before you go out.</li>
-        <li>Look out for your shipmates.</li>
-        <li>It's a small community — be a good guest.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="accordion-item" data-group="safety">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">ID / Valuables <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <ul>
-        <li>Carry your military ID and a second piece of government photo ID.</li>
-        <li>You are in French territory — your passport or DND ID card may be requested.</li>
-        <li>Don't carry more cash than you need; use a card where accepted.</li>
-        <li>Leave valuables secured aboard or in your hotel safe.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="accordion-item" data-group="safety">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Medical &amp; Emergencies <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <ul>
-        <li>Call <strong>15</strong> for medical emergencies (SAMU).</li>
-        <li>Call <strong>17</strong> for police (Gendarmerie Nationale).</li>
-        <li>Call <strong>18</strong> for fire (Pompiers).</li>
-        <li>Call <strong>112</strong> from any mobile for all emergencies.</li>
-        <li>Hospital: Centre Hospitalier François Dunan, Saint-Pierre — the only hospital on the islands.</li>
-        <li>Medical care will be billed at French rates. Ensure your health coverage is in order before going ashore.</li>
-        <li>Inform the ship of any incidents as soon as practical.</li>
-      </ul>
-    </div>
-  </div>
+  <div class="emergency-slot"></div>
+  <div id="safety-list"></div>
 </div>
 
-<!-- ===== PAGE 7: CONTACTS ===== -->
+<!-- ===== CONTACTS ===== -->
 
 <div id="contacts" class="page">
   <button class="back-btn" onclick="nav('landing')">Home</button>
@@ -830,131 +624,34 @@ white-space: nowrap; flex-shrink: 0;
   </div>
 </div>
 
-<!-- SHIP CONTACTS -->
-
 <div id="contacts-ship" class="page">
   <button class="back-btn" onclick="nav('contacts')">Contacts</button>
   <div class="page-title">Ship Contacts</div>
   <div class="page-subtitle">Placeholder numbers — update before sailing</div>
   <div class="color-bar"></div>
-
   <div id="ship-contact-list"></div>
 </div>
-
-<!-- LOCAL CONTACTS -->
 
 <div id="contacts-local" class="page">
   <button class="back-btn" onclick="nav('contacts')">Contacts</button>
   <div class="page-title">Local Contacts</div>
-  <div class="page-subtitle">Saint-Pierre &amp; Miquelon · French Territory</div>
+  <div class="page-subtitle" data-port-subtitle></div>
   <div class="color-bar"></div>
-
-  <div class="card" style="background:linear-gradient(135deg,var(--coral),#ff4757);margin-bottom:12px;padding:16px 18px;">
-    <div style="color:#fff;font-weight:800;font-size:1rem;margin-bottom:8px;">🚨 Emergency Numbers (France)</div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;">
-      <a href="tel:15" style="background:rgba(255,255,255,0.2);color:#fff;font-weight:800;font-size:0.88rem;padding:8px 14px;border-radius:10px;text-decoration:none;">15 · SAMU</a>
-      <a href="tel:17" style="background:rgba(255,255,255,0.2);color:#fff;font-weight:800;font-size:0.88rem;padding:8px 14px;border-radius:10px;text-decoration:none;">17 · Gendarmerie</a>
-      <a href="tel:18" style="background:rgba(255,255,255,0.2);color:#fff;font-weight:800;font-size:0.88rem;padding:8px 14px;border-radius:10px;text-decoration:none;">18 · Pompiers</a>
-      <a href="tel:112" style="background:rgba(255,255,255,0.25);color:#fff;font-weight:800;font-size:0.88rem;padding:8px 14px;border-radius:10px;text-decoration:none;">112 · Mobile</a>
-    </div>
-  </div>
-
+  <div class="emergency-slot"></div>
   <div id="local-contact-list"></div>
 </div>
 
-<!-- ===== PAGE 8: RUM RUNNING ERA ===== -->
+<!-- ===== OPTIONAL FEATURE PAGE (e.g. local history) ===== -->
 
-<div id="rumrunning" class="page">
+<div id="feature" class="page">
   <button class="back-btn" onclick="nav('landing')">Home</button>
-  <div class="page-title">The Rum Running Era</div>
-  <div class="page-subtitle">Saint-Pierre: Rum Capital of North America · 1920–1933</div>
+  <div class="page-title" id="feature-title"></div>
+  <div class="page-subtitle" id="feature-subtitle"></div>
   <div class="color-bar"></div>
-
-  <div class="card" style="margin-bottom:16px;">
-    <div class="card-name" style="font-size:1.05rem; margin-bottom:6px;">The Most Improbable Story in the North Atlantic</div>
-    <div class="card-note" style="color:var(--text-mid); line-height:1.7; font-size:0.88rem;">
-      For thirteen extraordinary years, this quiet French fishing archipelago — population a few thousand, economy built on cod — became the single most important transshipment hub for illicit alcohol in North America. When the United States went dry in 1920, the bootleggers of the world discovered Saint-Pierre, and the islands were never quite the same.
-    </div>
-  </div>
-
-  <div class="accordion-item" data-group="rum">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">How It Started <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <p>On 17 January 1920, the Volstead Act came into force across the United States, making the manufacture, sale, and transport of alcohol illegal. What it could not do was make alcohol illegal in Saint-Pierre et Miquelon — French territory, subject to French law, sitting 25 kilometres off the coast of Newfoundland.</p>
-      <p style="margin-top:10px;">The geography was obvious. The legal loophole was absolute. Within months, whisky and rum traders had discovered the islands. Ships from Scotland loaded with Scotch whisky, vessels from Barbados and Jamaica carrying Caribbean rum, and freighters from Canada laden with rye began converging on Saint-Pierre's harbour.</p>
-      <p style="margin-top:10px;">The trade was entirely legitimate on the French side. The liquor was imported legally, warehoused legally, and sold legally to buyers who would then carry it into American — or occasionally Canadian — waters by whatever means they chose. What happened after it left Saint-Pierre was someone else's problem.</p>
-    </div>
-  </div>
-
-  <div class="accordion-item" data-group="rum">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">The Operation <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <p>At its peak in the late 1920s, more than <strong>4 million bottles of spirits</strong> were passing through Saint-Pierre annually. Warehouses went up across the island. The main wharf, where your ship is likely berthed today, was stacked with bonded goods of every kind.</p>
-      <p style="margin-top:10px;">The supply chain worked like this: liquor arrived in bulk by legitimate cargo ship, was stored in bonded warehouses, and was then loaded onto fast, low-slung contact boats — some capable of 20+ knots — that would make the run to the American coastline under cover of darkness, or to a rendezvous point outside US territorial waters where larger rum-running schooners waited to ferry it the final distance.</p>
-      <p style="margin-top:10px;">The most popular destinations were the rum rows off Montauk Point, New York, and the New England coast. Boston, New York, and Philadelphia were the ultimate markets. The Canadian provinces of Nova Scotia and Newfoundland were also supplied — Prohibition had Canadian dimensions too, with provincial dry laws.</p>
-      <p style="margin-top:10px;">The Newfoundland schooner fleet, many captained by men who knew the North Atlantic fog better than any coast guard, became the backbone of the transportation network. Vessels like the famous <em>Nellie J. Banks</em> made dozens of runs and are still remembered in local lore.</p>
-    </div>
-  </div>
-
-  <div class="accordion-item" data-group="rum">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">The Al Capone Connection <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <p>The Chicago Outfit — Al Capone's organization — was among the most active American buyers in Saint-Pierre. Capone's representatives were regular visitors to the island, negotiating contracts with Scotch whisky suppliers and arranging shipments through the rum-running network to supply Chicago's speakeasies.</p>
-      <p style="margin-top:10px;">Local legend — difficult to fully verify but persistent — holds that Capone himself visited Saint-Pierre at least once, staying at the hotel on the main square. What is beyond doubt is that the money from Chicago, New York, and Boston flowed freely through Saint-Pierre's banks and businesses during the boom years. The islands, previously living on the margins of the cod trade, were suddenly prosperous.</p>
-      <p style="margin-top:10px;">Beyond Capone, virtually every major American bootlegging operation of the era had some connection to Saint-Pierre. The island became a kind of neutral trading floor — a place where American gangsters, Canadian schooner captains, Scottish distillers, and French officials coexisted in a relationship of mutual self-interest.</p>
-    </div>
-  </div>
-
-  <div class="accordion-item" data-group="rum">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">The Boom — and the Bust <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <p>The economic transformation of Saint-Pierre during Prohibition was staggering. New stone warehouses were built along the waterfront. A new hotel went up. The harbour was busy year-round. Workers arrived from Newfoundland and mainland France. Tax revenues soared. The local population more than doubled during the peak years as workers flooded in to manage the warehouses, service the boats, and serve the trade.</p>
-      <p style="margin-top:10px;">Then, on <strong>5 December 1933</strong>, Franklin Roosevelt signed the proclamation repealing Prohibition. By the following morning, the bottom had dropped out of Saint-Pierre's bootleg economy. Orders stopped. Ships stopped coming. Warehouse workers left. The hotel emptied. The islands' brief, improbable boom was over almost as suddenly as it had begun.</p>
-      <p style="margin-top:10px;">The legacy, however, endured. The warehouses remained. The stories were told and retold. And the French tradition of fine spirits — particularly rum, connected to the island's long history of trade with the French Caribbean — never entirely disappeared. Rhum SPM, the islands' own rhum agricole, is a direct descendant of that tradition.</p>
-    </div>
-  </div>
-
-  <div class="accordion-item" data-group="rum">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">WWII: The Free French Liberation <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <p>The islands have a second remarkable chapter, less well-known but equally dramatic. After France fell in June 1940, Saint-Pierre came under the nominal authority of the Vichy regime — the German-aligned French government. A Vichy-appointed governor enforced the official line.</p>
-      <p style="margin-top:10px;">On the night of <strong>24 December 1941</strong>, a small Free French naval force under Admiral Émile Muselier sailed into Saint-Pierre harbour in three corvettes and a submarine — vessels of the type that would have been familiar to the Crow's Nest officers in St. John's. By Christmas morning, the islands had been liberated. The Vichy governor was deported. A plebiscite confirmed the islanders' overwhelming support for de Gaulle and the Free French.</p>
-      <p style="margin-top:10px;">The operation caused a significant diplomatic incident. The United States, which still recognized Vichy France, was furious. Secretary of State Cordell Hull demanded the islands be returned. Canada was embarrassed. De Gaulle was unapologetic. In the end, Saint-Pierre remained Free French — and the islands became, however briefly, a symbol of resistance and liberation in the western hemisphere.</p>
-    </div>
-  </div>
-
-  <div class="accordion-item" data-group="rum">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Timeline <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <ul>
-        <li><strong>1920</strong> — US Prohibition begins. Saint-Pierre becomes a liquor transshipment hub almost immediately.</li>
-        <li><strong>mid-1920s</strong> — Peak of the rum-running trade. Scotch, rye, rum, and brandy flow through the islands at millions of bottles per year.</li>
-        <li><strong>c. 1930</strong> — Al Capone's organization among the most active American buyers.</li>
-        <li><strong>5 Dec 1933</strong> — US Prohibition repealed. The rum-running economy collapses within days.</li>
-        <li><strong>24 Dec 1941</strong> — Free French naval force liberates Saint-Pierre from Vichy authority in a Christmas Eve operation.</li>
-        <li><strong>1945</strong> — End of WWII. The islands remain French territory.</li>
-        <li><strong>Today</strong> — The rum-running warehouses still stand along the waterfront. Musée de l'Arche tells the full story. Rhum SPM keeps the spirits tradition alive.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="accordion-item" data-group="rum">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">See It Today <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <p><strong>Musée de l'Arche</strong> — The main heritage museum in Saint-Pierre has excellent exhibits on the Prohibition era, including photographs, artefacts, and the stories of the rum-running families. Highly recommended.</p>
-      <p style="margin-top:8px;"><strong>The Waterfront Warehouses</strong> — Several of the original stone warehouses that stored bonded liquor during the 1920s still line the port area. You can see them from the quay where your ship is berthed.</p>
-      <p style="margin-top:8px;"><strong>Rhum SPM</strong> — Pick up a bottle of the islands' own rum. It connects directly to the long tradition of spirits on the island and makes an excellent reminder of the visit.</p>
-      <p style="margin-top:8px;"><strong>Île aux Marins</strong> — Many of the Newfoundland schooner captains and crew involved in the rum trade lived on this small island. Walking it today, you can feel the history in the abandoned houses and fishing stages.</p>
-    </div>
-  </div>
-
-  <div style="margin-top:16px;" class="card-actions">
-    <a class="btn-sm btn-map" href="https://www.google.com/maps/search/Musée+de+l'Arche+Saint-Pierre+Miquelon" target="_blank" rel="noopener">📍 Musée de l'Arche</a>
-    <a class="btn-sm btn-map" href="https://www.google.com/maps/search/Saint-Pierre+Miquelon+waterfront" target="_blank" rel="noopener">📍 Waterfront</a>
-  </div>
+  <div id="feature-body"></div>
 </div>
 
-<script src="data.js"></script>
+<script src="ship.js"></script>
 <script>
 /* ===== A2HS ===== */
 const A2HS_DISMISSED_KEY = 'a2hs_dismissed_v1';
@@ -1019,13 +716,247 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
 setupA2HSBanner();
 
+/* ===== WHICH PORT? =====
+   index.html                 -> ports/<DEFAULT_PORT>.js
+   index.html?port=halifax    -> ports/halifax.js
+   index.html?city=Reykjavik  -> no port file; everything is looked up automatically
+   (add &country=IS to pick the right city when the name is ambiguous) */
+const DEFAULT_PORT = 'saint-pierre';
+
+const SHIP = window.SHIP_DATA || {};
+let P = {};
+
+/* ===== HELPERS ===== */
+function esc(s) {
+  return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+function hasCoords() { return Number.isFinite(P.lat) && Number.isFinite(P.lon); }
+
+function mapsSearch(query) {
+  return 'https://www.google.com/maps/search/' + encodeURIComponent(query);
+}
+
+// Search for a kind of place around the port ("pharmacy", "hotels", …)
+function mapsNearby(what) {
+  return hasCoords()
+    ? `https://www.google.com/maps/search/${encodeURIComponent(what)}/@${P.lat},${P.lon},14z`
+    : mapsSearch(`${what} ${P.mapQuery}`);
+}
+
+function phoneToTelHref(phone) {
+  return 'tel:' + String(phone || '').trim().replace(/[^0-9+*#]/g, '');
+}
+
+function flagEmoji(cc) {
+  if (!/^[A-Za-z]{2}$/.test(cc || '')) return '';
+  return String.fromCodePoint(...[...cc.toUpperCase()].map(c => 127397 + c.charCodeAt(0)));
+}
+
+function distanceKm(lat1, lon1, lat2, lon2) {
+  const r = Math.PI / 180;
+  const a = Math.sin((lat2 - lat1) * r / 2) ** 2 +
+    Math.cos(lat1 * r) * Math.cos(lat2 * r) * Math.sin((lon2 - lon1) * r / 2) ** 2;
+  return 12742 * Math.asin(Math.sqrt(a));
+}
+
+function mapBtn(label, href, icon = '📍') {
+  return `<a class="map-btn" href="${esc(href)}" target="_blank" rel="noopener">
+      <span class="map-pin">${esc(icon)}</span> ${esc(label)} <span class="chevron">›</span>
+    </a>`;
+}
+
+function moreBtn(label, what) {
+  return `<a class="btn-sm btn-map" href="${esc(mapsNearby(what))}" target="_blank" rel="noopener">🔎 ${esc(label)}</a>`;
+}
+
+// Accordion section: { title, html } or { title, items: [...] }.
+// html/items come from the port & ship files and may contain simple markup like <strong>.
+function accordionHTML(group, sec) {
+  const body = sec.html || (sec.items ? `<ul>${sec.items.map(i => `<li>${i}</li>`).join('')}</ul>` : '');
+  return `<div class="accordion-item" data-group="${group}">
+    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">${esc(sec.title)} <span class="accordion-icon">+</span></button>
+    <div class="accordion-body">${body}</div>
+  </div>`;
+}
+
+function introCard(html) {
+  return html ? `<div class="card intro-card">${html}</div>` : '';
+}
+
+/* ===== AUTO LOOKUPS (free, no API key) ===== */
+
+// General emergency numbers by country, used only when the port file doesn't list its own.
+const EMERGENCY_BY_COUNTRY = {
+  CA: [{ number: '911', label: 'Police · Fire · Ambulance' }],
+  US: [{ number: '911', label: 'Police · Fire · Ambulance' }],
+  BM: [{ number: '911', label: 'Police · Fire · Ambulance' }],
+  GB: [{ number: '999', label: 'Police · Fire · Ambulance' }, { number: '112', label: 'Mobile' }],
+  IE: [{ number: '112', label: 'All Emergencies' }, { number: '999', label: 'All Emergencies' }],
+  FR: [{ number: '15', label: 'Medical' }, { number: '17', label: 'Police' }, { number: '18', label: 'Fire' }, { number: '112', label: 'All Emergencies' }],
+  PM: [{ number: '15', label: 'Medical' }, { number: '17', label: 'Gendarmerie' }, { number: '18', label: 'Fire' }, { number: '112', label: 'All Emergencies' }],
+  DE: [{ number: '112', label: 'Fire · Ambulance' }, { number: '110', label: 'Police' }],
+  NO: [{ number: '113', label: 'Ambulance' }, { number: '112', label: 'Police' }, { number: '110', label: 'Fire' }]
+};
+const EU_112 = ['AT','BE','BG','CY','CZ','DK','EE','ES','FI','GR','HR','HU','IS','IT','LT','LU','LV','MT','NL','PL','PT','RO','SE','SI','SK'];
+
+function emergencyNumbers() {
+  if (P.emergency && P.emergency.length) return { nums: P.emergency, verified: true };
+  const cc = (P.countryCode || '').toUpperCase();
+  if (EMERGENCY_BY_COUNTRY[cc]) return { nums: EMERGENCY_BY_COUNTRY[cc], verified: false };
+  if (EU_112.includes(cc)) return { nums: [{ number: '112', label: 'All Emergencies' }], verified: false };
+  return { nums: [{ number: '112', label: 'Emergency (most mobiles)' }], verified: false, unknown: true };
+}
+
+// Fill in lat/lon, timezone and country from the city name (Open-Meteo geocoding).
+async function fillLocation() {
+  if (!(hasCoords() && P.timezone && P.countryCode)) {
+    try {
+      const params = new URLSearchParams({ name: P.geocode || P.name, count: '1', language: 'en', format: 'json' });
+      if (P.countryHint) params.set('countryCode', P.countryHint);
+      const res = await fetch('https://geocoding-api.open-meteo.com/v1/search?' + params);
+      const g = res.ok ? (await res.json()).results?.[0] : null;
+      if (g) {
+        if (!hasCoords()) { P.lat = g.latitude; P.lon = g.longitude; }
+        P.timezone ??= g.timezone;
+        P.countryCode ??= g.country_code;
+        P.country ??= g.country;
+        P.admin1 ??= g.admin1;
+        if (P.auto) P.name = g.name;
+      }
+    } catch { /* offline or blocked — carry on with what we have */ }
+  }
+  P.region ??= [P.admin1, P.country].filter(Boolean).join(' · ');
+  P.mapQuery ??= [P.name, P.admin1 || P.country].filter(Boolean).join(' ');
+  P.flag ??= flagEmoji(P.countryCode) || '⚓';
+}
+
+// Short "About" blurb from Wikipedia on the Explore page.
+async function loadAbout() {
+  const card = document.getElementById('about-card');
+  if (P.wiki === false) return;
+  const titles = [...new Set([P.wiki, P.admin1 && `${P.name}, ${P.admin1}`, P.country && `${P.name}, ${P.country}`, P.name].filter(Boolean))];
+  for (const title of titles) {
+    try {
+      const res = await fetch('https://en.wikipedia.org/api/rest_v1/page/summary/' + encodeURIComponent(title.replace(/ /g, '_')));
+      if (!res.ok) continue;
+      const j = await res.json();
+      if (j.type !== 'standard' || !j.extract) continue;
+      // Skip articles about a same-named place somewhere else
+      if (j.coordinates && hasCoords() && distanceKm(P.lat, P.lon, j.coordinates.lat, j.coordinates.lon) > 75) continue;
+      const link = j.content_urls?.mobile?.page || j.content_urls?.desktop?.page;
+      card.innerHTML = `<div class="card-name">About ${esc(P.name)}</div>
+        <div class="card-note" style="color:var(--text-mid);line-height:1.6;">${esc(j.extract)}</div>
+        ${link ? `<div class="card-actions"><a class="btn-sm btn-web" href="${esc(link)}" target="_blank" rel="noopener">🌐 Wikipedia</a></div>` : ''}`;
+      card.hidden = false;
+      return;
+    } catch { /* try the next title */ }
+  }
+}
+
+/* ===== RENDERING ===== */
+function renderChrome() {
+  document.title = `${P.name} Port Brief`;
+  document.getElementById('header-title').textContent = `${P.name} Port Brief`;
+  document.getElementById('header-sub').textContent = P.region || '';
+  document.getElementById('landing-flag').textContent = P.flag;
+  document.getElementById('landing-title').innerHTML = `${esc(P.greeting || 'Welcome to')}<br>${esc(P.name)}`;
+  document.getElementById('landing-region').textContent = P.region || '';
+  document.getElementById('explore-title').textContent = `Explore ${P.name}`;
+  document.querySelectorAll('[data-port-subtitle]').forEach(el => { el.textContent = P.region || P.name; });
+
+  const buttons = [
+    ['routine', 'lb-routine', '⚓', 'Ship Routine &amp; Leave'],
+    ['explore', 'lb-map', '🧭', `Explore ${esc(P.name)}`],
+    ['hotels', 'lb-hotels', '🏨', 'Hotels'],
+    ['weather', 'lb-todo', P.weather?.icon || '🌦️', 'Weather'],
+    ['safety', 'lb-safety', '🛡️', 'Safety'],
+    ['contacts', 'lb-contacts', '📞', 'Contacts']
+  ];
+  if (P.feature) buttons.push(['feature', 'lb-rum', P.feature.icon || '📜', esc(P.feature.title)]);
+  document.getElementById('landing-grid').innerHTML = buttons.map(([page, cls, icon, label]) => `
+    <button class="landing-btn ${cls}" onclick="nav('${page}')">
+      <span class="icon-wrap">${esc(icon)}</span>
+      <span>${label}</span>
+      <span class="btn-arrow">›</span>
+    </button>`).join('');
+}
+
+function renderRoutine() {
+  const sections = [...(SHIP.routine || []), ...(P.routine || [])];
+  document.getElementById('routine-list').innerHTML = sections.map(s => accordionHTML('routine', s)).join('');
+}
+
+function renderEmergency() {
+  const { nums, verified, unknown } = emergencyNumbers();
+  const title = P.emergencyTitle || 'Emergency Numbers';
+  const note = unknown
+    ? 'Local emergency numbers not set for this port — 112 works from most mobiles. Confirm on arrival.'
+    : verified ? '' : 'General numbers for this country — confirm locally on arrival.';
+  const html = `<div class="card emergency-card">
+    <div class="emergency-card-title">🚨 ${esc(title)}</div>
+    <div class="emergency-nums">${nums.map(n => `<a href="${phoneToTelHref(n.number)}">${esc(n.number)} · ${esc(n.label)}</a>`).join('')}</div>
+    ${note ? `<div class="emergency-note">${note}</div>` : ''}
+  </div>`;
+  document.querySelectorAll('.emergency-slot').forEach(el => { el.innerHTML = html; });
+}
+
+function renderSafety() {
+  const sections = P.safety || SHIP.safety || [];
+  document.getElementById('safety-list').innerHTML = sections.map(s => accordionHTML('safety', s)).join('');
+}
+
+function renderWeatherPage() {
+  const w = P.weather || {};
+  document.getElementById('weather-note').innerHTML = w.note ? `<div class="card" style="margin-bottom:10px;padding:14px 16px;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span style="font-size:1.6rem;">${esc(w.icon || '🌦️')}</span>
+        <div style="font-size:0.82rem;color:var(--text-mid);line-height:1.5;">${w.note}</div>
+      </div>
+    </div>` : '';
+  document.getElementById('weather-climate').innerHTML = w.climate ? `<div class="section-header">What to Expect</div>
+    <div class="card" style="margin-bottom:16px;">
+      <div class="card-note" style="color:var(--text-mid);line-height:1.7;margin-bottom:0;">${w.climate}</div>
+    </div>` : '';
+
+  let links = w.links || [];
+  if (!links.length && hasCoords()) {
+    links = [
+      { label: 'Windy (wind & waves)', icon: '🌬️', url: `https://www.windy.com/?${P.lat},${P.lon},10` },
+      { label: 'Ventusky', icon: '🗺️', url: `https://www.ventusky.com/?p=${P.lat};${P.lon};9` }
+    ];
+  }
+  links = [...links, { label: `Search "${P.name} weather"`, icon: '🔎', url: 'https://www.google.com/search?q=' + encodeURIComponent(`${P.mapQuery} weather`) }];
+  document.getElementById('weather-links').innerHTML = links.map(l => mapBtn(l.label, l.url, l.icon || '🌡️')).join('');
+}
+
+function renderMap() {
+  const g = P.gettingAround || {};
+  document.getElementById('map-intro').innerHTML = introCard(g.intro);
+  const places = g.places && g.places.length ? g.places
+    : [{ label: `${P.name} (centre)`, icon: '📍', map: P.mapQuery }];
+  document.getElementById('map-places').innerHTML = places.map(p => mapBtn(p.label, mapsSearch(p.map), p.icon || '📍')).join('');
+
+  const handy = [['Pharmacy', '💊'], ['ATM', '🏧'], ['Grocery store', '🛒'], ['Hospital', '🏥'], ['Taxi', '🚕']];
+  document.getElementById('map-handy').innerHTML = handy.map(([what, icon]) => mapBtn(what, mapsNearby(what), icon)).join('');
+
+  document.getElementById('map-transport').innerHTML = g.transport && g.transport.length
+    ? `<div class="section-header">Transportation</div>
+      <div class="card" style="margin-bottom:16px;">
+        <div class="card-note" style="color:var(--text-mid);line-height:1.65;margin-bottom:0;">
+          <ul style="padding-left:18px;">${g.transport.map(t => `<li style="margin-bottom:6px;">${t}</li>`).join('')}</ul>
+        </div>
+      </div>`
+    : '';
+}
+
 /* ===== NAVIGATION ===== */
 function nav(pageId, pushHistory = true) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const el = document.getElementById(pageId);
   if (el) { el.classList.add('active'); window.scrollTo({top:0,behavior:'instant'}); }
   if (pageId === 'weather') loadWeather();
-  if (pushHistory) history.pushState(null, '', '#' + pageId);
+  if (pushHistory && location.hash !== '#' + pageId) history.pushState(null, '', '#' + pageId);
 }
 
 /* ===== ACCORDION ===== */
@@ -1054,9 +985,15 @@ function weatherEmoji(iconCode) {
   return map[code] || '🌡️';
 }
 
-function formatForecastDay(dtTxt) {
-  const d = new Date(dtTxt.replace(' ', 'T') + '+00:00');
-  return d.toLocaleDateString('en-CA', { weekday: 'short', month: 'short', day: 'numeric', timeZone: 'America/Miquelon' });
+function formatForecastDay(date) {
+  // `date` is already the port's local calendar date (YYYY-MM-DD)
+  return new Date(date + 'T12:00:00Z').toLocaleDateString('en-CA', { weekday: 'short', month: 'short', day: 'numeric', timeZone: 'UTC' });
+}
+
+function formatPortTime(iso) {
+  const opts = { hour: '2-digit', minute: '2-digit' };
+  try { return new Date(iso).toLocaleTimeString('en-CA', { ...opts, timeZone: P.timezone }); }
+  catch { return new Date(iso).toLocaleTimeString('en-CA', opts); }
 }
 
 let weatherLoaded = false;
@@ -1065,7 +1002,8 @@ async function loadWeather() {
   if (weatherLoaded) return;
   const container = document.getElementById('weather-dynamic');
   try {
-    const res = await fetch('/.netlify/functions/weather?lat=46.7792&lon=-56.1762');
+    if (!hasCoords()) throw new Error('no coordinates');
+    const res = await fetch(`/.netlify/functions/weather?lat=${P.lat}&lon=${P.lon}`);
     if (!res.ok) throw new Error('fetch failed');
     const data = await res.json();
     let html = '';
@@ -1078,15 +1016,15 @@ async function loadWeather() {
       const desc = c.weather[0].description;
       const icon = weatherEmoji(c.weather[0].icon);
       const humidity = c.main.humidity;
-      const updatedTime = new Date(data.updated).toLocaleTimeString('en-CA', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Miquelon' });
+      const tzLabel = P.tzLabel || (P.timezone ? 'local time' : 'your time');
 
-      html += `<div class="section-header">Current Conditions · ${updatedTime} SPM time</div>
+      html += `<div class="section-header">Current Conditions · ${formatPortTime(data.updated)} ${esc(tzLabel)}</div>
       <div class="card" style="margin-bottom:10px;">
         <div style="display:flex;align-items:center;gap:12px;">
           <span style="font-size:2.4rem;">${icon}</span>
           <div style="flex:1;">
             <div style="font-size:1.6rem;font-weight:900;color:var(--ocean);letter-spacing:-0.03em;">${temp}°C</div>
-            <div style="font-size:0.84rem;color:var(--text-light);text-transform:capitalize;">${desc}</div>
+            <div style="font-size:0.84rem;color:var(--text-light);text-transform:capitalize;">${esc(desc)}</div>
           </div>
           <div style="text-align:right;font-size:0.8rem;color:var(--text-light);line-height:1.8;">
             <div>Feels ${feels}°</div>
@@ -1098,30 +1036,24 @@ async function loadWeather() {
     }
 
     if (data.forecast && data.forecast.length > 0) {
-      html += '<div class="section-header">4-Day Forecast</div>';
-      data.forecast.forEach(item => {
-        const tMax = Math.round(item.main.temp_max);
-        const tMin = Math.round(item.main.temp_min);
-        const desc = item.weather[0].description;
-        const icon = weatherEmoji(item.weather[0].icon);
-        const wind = Math.round((item.wind.speed || 0) * 3.6);
-        const humidity = item.main.humidity;
-        const pop = Math.round((item.pop || 0) * 100);
-        const day = formatForecastDay(item.dt_txt);
+      html += `<div class="section-header">${data.forecast.length}-Day Forecast</div>`;
+      data.forecast.forEach(day => {
+        const wind = Math.round((day.wind || 0) * 3.6);
+        const pop = Math.round((day.pop || 0) * 100);
         html += `<div class="card" style="margin-bottom:8px;">
           <div style="display:flex;align-items:center;gap:12px;">
-            <span style="font-size:1.8rem;">${icon}</span>
+            <span style="font-size:1.8rem;">${weatherEmoji(day.icon)}</span>
             <div style="flex:1;">
-              <div class="card-name">${day}</div>
-              <div class="card-note" style="margin-bottom:0;text-transform:capitalize;">${desc}</div>
+              <div class="card-name">${formatForecastDay(day.date)}</div>
+              <div class="card-note" style="margin-bottom:0;text-transform:capitalize;">${esc(day.description)}</div>
             </div>
             <div style="text-align:right;">
-              <div style="font-size:1.2rem;font-weight:800;color:var(--ocean);">${tMax}°</div>
-              <div style="font-size:0.78rem;color:var(--text-light);">${tMin}° low</div>
+              <div style="font-size:1.2rem;font-weight:800;color:var(--ocean);">${Math.round(day.temp_max)}°</div>
+              <div style="font-size:0.78rem;color:var(--text-light);">${Math.round(day.temp_min)}° low</div>
             </div>
           </div>
           <div style="display:flex;gap:14px;margin-top:8px;font-size:0.78rem;color:var(--text-light);flex-wrap:wrap;">
-            <span>💨 ${wind} km/h</span><span>💧 ${humidity}%</span><span>🌧️ ${pop}%</span>
+            <span>💨 up to ${wind} km/h</span><span>💧 ${day.humidity}%</span><span>🌧️ ${pop}%</span>
           </div>
         </div>`;
       });
@@ -1136,65 +1068,71 @@ async function loadWeather() {
 }
 
 /* ===== THINGS TO DO ===== */
-const activities = window.PORT_DATA.activities;
-
-const todoChips = window.PORT_DATA.todoChips;
+let activities = [];
+let todoChips = [];
 let activeFilters = new Set();
 
 function renderTodoChips() {
-  document.getElementById('todo-chips').innerHTML = todoChips.map(c =>
-    `<button class="chip${activeFilters.has(c)?' active':''}" aria-pressed="${activeFilters.has(c)}" onclick="toggleChip('${c}')">${c}</button>`
+  document.getElementById('todo-chips').innerHTML = todoChips.map((c, i) =>
+    `<button class="chip${activeFilters.has(c)?' active':''}" aria-pressed="${activeFilters.has(c)}" onclick="toggleChip(${i})">${esc(c)}</button>`
   ).join('');
 }
 
-function toggleChip(tag) {
+function toggleChip(i) {
+  const tag = todoChips[i];
   if (activeFilters.has(tag)) activeFilters.delete(tag); else activeFilters.add(tag);
   renderTodoChips(); renderTodoList();
 }
 
 function renderTodoList() {
   const filtered = activeFilters.size === 0 ? activities :
-    activities.filter(a => a.tags.some(t => activeFilters.has(t)));
-  document.getElementById('todo-list').innerHTML = filtered.map(a => `
+    activities.filter(a => (a.tags || []).some(t => activeFilters.has(t)));
+  document.getElementById('todo-list').innerHTML = activities.length === 0
+    ? `<div class="placeholder-block"><div class="placeholder-text">No hand-picked activities for this port yet — try the searches below.</div></div>`
+    : filtered.map(a => `
     <div class="card">
-      <div class="card-name">${a.name}</div>
-      <div class="card-note">${a.desc}</div>
-      <div class="card-tags">${a.tags.map(t => `<span class="card-tag">${t}</span>`).join('')}</div>
+      <div class="card-name">${esc(a.name)}</div>
+      ${a.desc ? `<div class="card-note">${esc(a.desc)}</div>` : ''}
+      <div class="card-tags">${(a.tags || []).map(t => `<span class="card-tag">${esc(t)}</span>`).join('')}</div>
       <div class="card-actions">
-        <a class="btn-sm btn-map" href="https://www.google.com/maps/search/${encodeURIComponent(a.map)}" target="_blank" rel="noopener">📍 Map</a>
-        ${a.web ? `<a class="btn-sm btn-web" href="${a.web}" target="_blank" rel="noopener">🌐 Website</a>` : ''}
+        <a class="btn-sm btn-map" href="${esc(mapsSearch(a.map || `${a.name} ${P.mapQuery}`))}" target="_blank" rel="noopener">📍 Map</a>
+        ${a.web ? `<a class="btn-sm btn-web" href="${esc(a.web)}" target="_blank" rel="noopener">🌐 Website</a>` : ''}
       </div>
     </div>
   `).join('');
 }
-renderTodoChips(); renderTodoList();
 
-/* ===== VENUE DATA ===== */
-const venueData = window.PORT_DATA.venueData;
-const shipContacts = window.PORT_DATA.shipContacts || [];
-const localContacts = window.PORT_DATA.localContacts || [];
-
-function phoneToTelHref(phone) {
-  return 'tel:' + String(phone || '').trim().replace(/[^0-9+*#]/g, '');
+function renderTodo() {
+  activities = P.activities || [];
+  todoChips = P.todoChips || [...new Set(activities.flatMap(a => a.tags || []))];
+  renderTodoChips(); renderTodoList();
+  document.getElementById('todo-more').innerHTML =
+    [['Attractions', 'tourist attractions'], ['Museums', 'museums'], ['Parks & trails', 'parks and hiking trails'], ['Tours', 'tours']]
+      .map(([label, what]) => moreBtn(label, what)).join('');
 }
+
+/* ===== VENUES ===== */
+let venueData = {};
+const VENUE_SEARCH = { 'tab-food': ['More restaurants', 'restaurants'], 'tab-coffee': ['More cafés', 'cafes'], 'tab-bars': ['More bars', 'bars'], 'tab-shop': ['Shopping', 'shopping'] };
 
 function renderVenues(tabId) {
   const panel = document.getElementById(tabId);
   const list = panel.querySelector('.venue-list');
   const data = venueData[tabId] || [];
+  const [moreLabel, moreWhat] = VENUE_SEARCH[tabId];
   list.innerHTML = data.map((v, i) => `
     <div class="card venue-card" data-idx="${i}">
       <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-        <div class="card-name">${v.name}</div>
-        ${v.price ? `<span class="price-badge">${v.price}</span>` : ''}
+        <div class="card-name">${esc(v.name)}</div>
+        ${v.price ? `<span class="price-badge">${esc(v.price)}</span>` : ''}
       </div>
-      ${v.note ? `<div class="card-note">${v.note}</div>` : ''}
+      ${v.note ? `<div class="card-note">${esc(v.note)}</div>` : ''}
       <div class="card-actions">
-        <a class="btn-sm btn-map" href="https://www.google.com/maps/search/${encodeURIComponent(v.map)}" target="_blank" rel="noopener">📍 Map</a>
-        ${v.web ? `<a class="btn-sm btn-web" href="${v.web}" target="_blank" rel="noopener">🌐 Website</a>` : ''}
+        <a class="btn-sm btn-map" href="${esc(mapsSearch(v.map || `${v.name} ${P.mapQuery}`))}" target="_blank" rel="noopener">📍 Map</a>
+        ${v.web ? `<a class="btn-sm btn-web" href="${esc(v.web)}" target="_blank" rel="noopener">🌐 Website</a>` : ''}
       </div>
     </div>
-  `).join('');
+  `).join('') + `<div class="card-actions more-link">${moreBtn(moreLabel + ' nearby', moreWhat)}</div>`;
 }
 
 function filterVenues(tabId, query) {
@@ -1206,7 +1144,14 @@ function filterVenues(tabId, query) {
     card.style.display = match ? '' : 'none';
   });
 }
-Object.keys(venueData).forEach(renderVenues);
+
+function renderFood() {
+  venueData = P.venueData || {};
+  const f = P.food || {};
+  if (f.subtitle) document.getElementById('food-subtitle').textContent = f.subtitle;
+  document.getElementById('food-intro').innerHTML = introCard(f.intro && esc(f.intro));
+  Object.keys(VENUE_SEARCH).forEach(renderVenues);
+}
 
 /* ===== TABS ===== */
 function switchTab(pageId, tabId, btn) {
@@ -1218,20 +1163,25 @@ function switchTab(pageId, tabId, btn) {
 }
 
 /* ===== HOTELS ===== */
-const hotelData = window.PORT_DATA.hotelData;
+let hotelData = [];
 
 function renderHotels() {
+  hotelData = P.hotelData || [];
+  const h = P.hotels || {};
+  document.getElementById('hotels-subtitle').textContent = h.subtitle || P.name;
+  document.getElementById('hotels-intro').innerHTML = introCard(h.intro && esc(h.intro));
   document.getElementById('hotel-list').innerHTML = hotelData.map((h, i) => `
     <div class="card hotel-card" data-idx="${i}">
-      <div class="card-name">${h.name}</div>
-      ${h.note ? `<div class="card-note">${h.note}</div>` : ''}
+      <div class="card-name">${esc(h.name)}</div>
+      ${h.note ? `<div class="card-note">${esc(h.note)}</div>` : ''}
       <div class="card-actions">
         ${h.phone ? `<a class="btn-sm btn-call" href="${phoneToTelHref(h.phone)}">📞 Call</a>` : ''}
-        <a class="btn-sm btn-map" href="https://www.google.com/maps/search/${encodeURIComponent(h.map)}" target="_blank" rel="noopener">📍 Map</a>
-        ${h.web ? `<a class="btn-sm btn-web" href="${h.web}" target="_blank" rel="noopener">🌐 Website</a>` : ''}
+        <a class="btn-sm btn-map" href="${esc(mapsSearch(h.map || `${h.name} ${P.mapQuery}`))}" target="_blank" rel="noopener">📍 Map</a>
+        ${h.web ? `<a class="btn-sm btn-web" href="${esc(h.web)}" target="_blank" rel="noopener">🌐 Website</a>` : ''}
       </div>
     </div>
   `).join('');
+  document.getElementById('hotels-more').innerHTML = moreBtn(hotelData.length ? 'More hotels nearby' : 'Find hotels nearby', 'hotels');
 }
 
 function filterHotels(query) {
@@ -1241,7 +1191,6 @@ function filterHotels(query) {
     card.style.display = (h.name.toLowerCase().includes(q) || (h.note && h.note.toLowerCase().includes(q))) ? '' : 'none';
   });
 }
-renderHotels();
 
 /* ===== CONTACTS ===== */
 function renderContactCards(containerId, contacts) {
@@ -1249,27 +1198,99 @@ function renderContactCards(containerId, contacts) {
   if (!container) return;
   container.innerHTML = contacts.map(c => `
     <div class="contact-card">
-      <div class="contact-label">${c.name}</div>
-      ${c.sub ? `<div class="contact-sub">${c.sub}</div>` : ''}
+      <div class="contact-label">${esc(c.name)}</div>
+      ${c.sub ? `<div class="contact-sub">${esc(c.sub)}</div>` : ''}
       ${(c.phone || c.map) ? `<div class="contact-actions">
-        ${c.phone ? `<a href="${phoneToTelHref(c.phone)}" class="btn-sm btn-call">📞 ${c.phoneLabel || c.phone}</a>` : ''}
-        ${c.map ? `<a href="https://www.google.com/maps/search/${encodeURIComponent(c.map)}" target="_blank" rel="noopener" class="btn-sm btn-map">📍 ${c.mapLabel || 'Map'}</a>` : ''}
+        ${c.phone ? `<a href="${phoneToTelHref(c.phone)}" class="btn-sm btn-call">📞 ${esc(c.phoneLabel || c.phone)}</a>` : ''}
+        ${c.map ? `<a href="${esc(mapsSearch(c.map))}" target="_blank" rel="noopener" class="btn-sm btn-map">📍 ${esc(c.mapLabel || 'Map')}</a>` : ''}
       </div>` : ''}
     </div>
   `).join('');
 }
 
-renderContactCards('ship-contact-list', shipContacts);
-renderContactCards('local-contact-list', localContacts);
+function renderContacts() {
+  renderContactCards('ship-contact-list', P.shipContacts || SHIP.shipContacts || []);
+  const local = P.localContacts && P.localContacts.length ? P.localContacts : [
+    { name: 'Nearest Hospital', sub: 'Look up before going ashore', map: 'hospital' },
+    { name: 'Pharmacy', sub: 'Closest open pharmacy', map: 'pharmacy' },
+    { name: 'Taxis', sub: 'Local taxi companies', map: 'taxi', mapLabel: 'Find Nearby' }
+  ].map(c => ({ ...c, map: `${c.map} ${P.mapQuery}` }));
+  renderContactCards('local-contact-list', local);
+}
+
+/* ===== FEATURE PAGE ===== */
+function renderFeature() {
+  const f = P.feature;
+  if (!f) return;
+  document.getElementById('feature-title').textContent = f.title;
+  document.getElementById('feature-subtitle').textContent = f.subtitle || '';
+  document.getElementById('feature-body').innerHTML =
+    (f.intro ? `<div class="card" style="margin-bottom:16px;">
+      ${f.introTitle ? `<div class="card-name" style="font-size:1.05rem; margin-bottom:6px;">${esc(f.introTitle)}</div>` : ''}
+      <div class="card-note" style="color:var(--text-mid); line-height:1.7; font-size:0.88rem;">${f.intro}</div>
+    </div>` : '') +
+    (f.sections || []).map(s => accordionHTML('feature', s)).join('') +
+    (f.links && f.links.length ? `<div style="margin-top:16px;" class="card-actions">
+      ${f.links.map(l => `<a class="btn-sm btn-map" href="${esc(mapsSearch(l.map))}" target="_blank" rel="noopener">📍 ${esc(l.label)}</a>`).join('')}
+    </div>` : '');
+}
+
+function renderAll() {
+  renderChrome();
+  renderRoutine();
+  renderEmergency();
+  renderSafety();
+  renderWeatherPage();
+  renderMap();
+  renderTodo();
+  renderFood();
+  renderHotels();
+  renderContacts();
+  renderFeature();
+  loadAbout();
+}
 
 /* ===== HASH ROUTING ===== */
 function checkHash() {
-  const hash = location.hash.replace('#','');
-  if (hash && document.getElementById(hash)) nav(hash, false);
+  const hash = location.hash.replace('#', '');
+  const target = hash && document.getElementById(hash) ? hash : 'landing';
+  if (target === 'feature' && !P.feature) return nav('landing', false);
+  nav(target, false);
 }
-window.addEventListener('hashchange', checkHash);
 window.addEventListener('popstate', checkHash);
-checkHash();
+
+/* ===== BOOT ===== */
+function loadScript(src) {
+  return new Promise((resolve, reject) => {
+    const s = document.createElement('script');
+    s.src = src;
+    s.onload = resolve;
+    s.onerror = () => reject(new Error(`Couldn't load ${src}`));
+    document.head.appendChild(s);
+  });
+}
+
+(async function boot() {
+  const params = new URLSearchParams(location.search);
+  const city = (params.get('city') || '').trim();
+  try {
+    if (city) {
+      P = { name: city, auto: true, countryHint: (params.get('country') || '').toUpperCase() || undefined };
+    } else {
+      const slug = (params.get('port') || DEFAULT_PORT).toLowerCase().replace(/[^a-z0-9-]/g, '');
+      await loadScript(`ports/${slug}.js`);
+      if (!window.PORT_DATA || !window.PORT_DATA.name) throw new Error(`ports/${slug}.js didn't set window.PORT_DATA.name`);
+      P = window.PORT_DATA;
+    }
+    await fillLocation();
+    renderAll();
+  } catch (e) {
+    document.getElementById('landing-title').textContent = 'Port not found';
+    document.getElementById('landing-region').textContent = e.message;
+    return;
+  }
+  checkHash();
+})();
 </script>
 
 </body>

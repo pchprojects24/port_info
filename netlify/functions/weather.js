@@ -1,17 +1,43 @@
-function pickDailyForecast(list) {
-  const dayMap = new Map();
+// Roll the 3-hourly forecast up into daily highs/lows in the port's local time.
+function dailyForecast(list, tzOffsetSec = 0) {
+  const days = new Map();
   list.forEach((item) => {
-    if (!item.dt_txt) return;
-    const [date, time] = item.dt_txt.split(' ');
-    const existing = dayMap.get(date);
-    if (!existing || time === '12:00:00') {
-      dayMap.set(date, item);
+    if (!item.main || !Number.isFinite(item.dt)) return;
+    const local = new Date((item.dt + tzOffsetSec) * 1000);
+    const date = local.toISOString().slice(0, 10);
+    const middayDistance = Math.abs(local.getUTCHours() - 13);
+    let day = days.get(date);
+    if (!day) {
+      day = { date, temp_max: -Infinity, temp_min: Infinity, pop: 0, wind: 0, humidity: 0, count: 0, rep: null, repDistance: Infinity };
+      days.set(date, day);
+    }
+    day.temp_max = Math.max(day.temp_max, item.main.temp_max ?? item.main.temp);
+    day.temp_min = Math.min(day.temp_min, item.main.temp_min ?? item.main.temp);
+    day.pop = Math.max(day.pop, item.pop || 0);
+    day.wind = Math.max(day.wind, item.wind?.speed || 0);
+    day.humidity += item.main.humidity || 0;
+    day.count += 1;
+    // Use the reading closest to early afternoon for the icon/description
+    if (middayDistance < day.repDistance) {
+      day.rep = item;
+      day.repDistance = middayDistance;
     }
   });
-  return Array.from(dayMap.entries())
-    .sort(([a], [b]) => a.localeCompare(b))
-    .map(([, item]) => item)
-    .slice(0, 4);
+
+  const sorted = Array.from(days.values()).sort((a, b) => a.date.localeCompare(b.date));
+  // Drop today if only a sliver of it is left in the forecast
+  if (sorted.length > 4 && sorted[0].count < 3) sorted.shift();
+
+  return sorted.slice(0, 4).map((day) => ({
+    date: day.date,
+    temp_max: day.temp_max,
+    temp_min: day.temp_min,
+    pop: day.pop,
+    wind: day.wind,
+    humidity: Math.round(day.humidity / day.count),
+    icon: day.rep?.weather?.[0]?.icon || '',
+    description: day.rep?.weather?.[0]?.description || '',
+  }));
 }
 
 const DEFAULT_COORDS = { lat: 46.7792, lon: -56.1762 };
@@ -69,7 +95,7 @@ exports.handler = async (event) => {
 
     const current = await currentRes.json();
     const forecastData = await forecastRes.json();
-    const forecast = pickDailyForecast(forecastData.list || []);
+    const forecast = dailyForecast(forecastData.list || [], forecastData.city?.timezone || 0);
 
     return {
       statusCode: 200,
