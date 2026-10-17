@@ -1,441 +1,1138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Port brief for Edinburgh and Leith, Scotland — routine, things to do, food, hotels, weather, safety and contacts.">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="theme-color" content="#ffffff">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Edinburgh">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)">
 <title>Edinburgh Port Brief</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&display=swap">
+<script>
+  try { var t = localStorage.getItem('theme_v1'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
 <style>
+/* ===== DESIGN TOKENS ===== */
 :root {
-  --bg: #f5f0eb;
-  --white: #ffffff;
-  --text: #1a1a2e;
-  --text-mid: #4a4a6a;
-  --text-light: #8888a4;
-  --border: #e8e2da;
-  --shadow-sm: 0 2px 8px rgba(30,30,60,0.06);
-  --shadow-md: 0 4px 20px rgba(30,30,60,0.08);
-  --shadow-lg: 0 8px 30px rgba(30,30,60,0.12);
-  --shadow-btn: 0 4px 14px rgba(30,30,60,0.15);
-  --radius: 18px;
-  --radius-sm: 12px;
-  --radius-xs: 8px;
-  --coral: #FF6B6B;
-  --coral-soft: #fff0f0;
-  --teal: #20B2AA;
-  --teal-soft: #e6f7f6;
-  --gold: #F4A623;
-  --gold-soft: #fff6e6;
-  --plum: #9B59B6;
-  --plum-soft: #f5eef8;
-  --ocean: #3498DB;
-  --ocean-soft: #eaf3fb;
-  --green: #2ECC71;
-  --green-soft: #eafaf1;
-  --rose: #E91E63;
-  --rose-soft: #fce4ec;
-  --slate: #546E7A;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, Roboto, sans-serif;
+
+  --bg: #f3f1ec;
+  --surface: #ffffff;
+  --surface-2: #f6f4f0;
+  --text: #13203a;
+  --text-2: #4b5670;
+  --text-3: #858ea3;
+  --border: rgba(19, 32, 58, 0.08);
+  --glass: rgba(243, 241, 236, 0.82);
+
+  --navy: #0b2545;
+  --saltire: #005eb8;
+  --heather: #7a4e9c;
+  --thistle: #b4498b;
+  --gold: #c98a17;
+  --moss: #2e7d5b;
+  --red: #d7263d;
+
+  --saltire-soft: #e6f0fa;
+  --heather-soft: #f1eaf7;
+  --thistle-soft: #f8e8f1;
+  --gold-soft: #fbf1de;
+  --moss-soft: #e5f3ec;
+  --red-soft: #fce8ea;
+
+  --shadow-sm: 0 1px 2px rgba(19, 32, 58, 0.04), 0 2px 8px rgba(19, 32, 58, 0.05);
+  --shadow-md: 0 2px 4px rgba(19, 32, 58, 0.04), 0 8px 24px rgba(19, 32, 58, 0.08);
+  --shadow-lg: 0 12px 40px rgba(11, 37, 69, 0.22);
+
+  --r-sm: 12px;
+  --r-md: 16px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  color-scheme: light;
 }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1020;
+    --surface: #141b2e;
+    --surface-2: #1c2439;
+    --text: #eef1f8;
+    --text-2: #b4bcd0;
+    --text-3: #7e88a0;
+    --border: rgba(255, 255, 255, 0.08);
+    --glass: rgba(11, 16, 32, 0.8);
+    --saltire: #5aaaf2;
+    --heather: #b48bdb;
+    --thistle: #e07bb8;
+    --gold: #f0b952;
+    --moss: #4cc38a;
+    --red: #ff5a6e;
+    --saltire-soft: rgba(90, 170, 242, 0.14);
+    --heather-soft: rgba(180, 139, 219, 0.14);
+    --thistle-soft: rgba(224, 123, 184, 0.14);
+    --gold-soft: rgba(240, 185, 82, 0.14);
+    --moss-soft: rgba(76, 195, 138, 0.14);
+    --red-soft: rgba(255, 90, 110, 0.14);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0b1020;
+  --surface: #141b2e;
+  --surface-2: #1c2439;
+  --text: #eef1f8;
+  --text-2: #b4bcd0;
+  --text-3: #7e88a0;
+  --border: rgba(255, 255, 255, 0.08);
+  --glass: rgba(11, 16, 32, 0.8);
+  --saltire: #5aaaf2;
+  --heather: #b48bdb;
+  --thistle: #e07bb8;
+  --gold: #f0b952;
+  --moss: #4cc38a;
+  --red: #ff5a6e;
+  --saltire-soft: rgba(90, 170, 242, 0.14);
+  --heather-soft: rgba(180, 139, 219, 0.14);
+  --thistle-soft: rgba(224, 123, 184, 0.14);
+  --gold-soft: rgba(240, 185, 82, 0.14);
+  --moss-soft: rgba(76, 195, 138, 0.14);
+  --red-soft: rgba(255, 90, 110, 0.14);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+  color-scheme: dark;
+}
+
+/* Section accent themes */
+.t-saltire { --accent: var(--saltire); --tint: var(--saltire-soft); }
+.t-heather { --accent: var(--heather); --tint: var(--heather-soft); }
+.t-thistle { --accent: var(--thistle); --tint: var(--thistle-soft); }
+.t-gold    { --accent: var(--gold);    --tint: var(--gold-soft); }
+.t-moss    { --accent: var(--moss);    --tint: var(--moss-soft); }
+.t-red     { --accent: var(--red);     --tint: var(--red-soft); }
+
+/* ===== BASE ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { font-size: 16px; scroll-behavior: smooth; }
+html { -webkit-text-size-adjust: 100%; }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+  font-family: var(--font-body);
   background: var(--bg);
   color: var(--text);
+  line-height: 1.5;
   min-height: 100dvh;
-  -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
 }
 a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; }
+strong { font-weight: 700; color: var(--text); }
+:focus-visible { outline: 3px solid var(--saltire); outline-offset: 2px; border-radius: 10px; }
 
-/* ===== HEADER ===== */
-.header {
-position: sticky; top: 0; z-index: 100;
-background: rgba(255,255,255,0.88);
-backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-border-bottom: 1px solid rgba(0,0,0,0.06);
-display: flex; align-items: center; justify-content: space-between;
-padding: 10px 16px;
+@media (min-width: 600px) {
+  body {
+    background-color: var(--bg);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(0, 94, 184, 0.05) 0 18px, transparent 18px 54px),
+      repeating-linear-gradient(90deg, rgba(122, 78, 156, 0.05) 0 18px, transparent 18px 54px);
+  }
+  .app { box-shadow: 0 0 0 1px var(--border), 0 20px 60px rgba(11, 37, 69, 0.12); }
 }
-.header-left { display: flex; align-items: center; gap: 10px; }
-.header-flag {
-width: 38px; height: 38px; border-radius: 12px;
-background: linear-gradient(135deg, var(--ocean), var(--coral));
-display: flex; align-items: center; justify-content: center;
-font-size: 1.2rem; box-shadow: 0 2px 8px rgba(52,152,219,0.3);
-}
-.header-text {}
-.header-title {
-font-size: 1rem; font-weight: 800; letter-spacing: -0.03em;
-background: linear-gradient(135deg, var(--ocean), var(--plum));
--webkit-background-clip: text; -webkit-text-fill-color: transparent;
-background-clip: text;
-}
-.header-sub { font-size: 0.7rem; color: var(--text-light); font-weight: 600; letter-spacing: 0.02em; }
-.header-home {
-background: var(--white); border: 1.5px solid var(--border);
-color: var(--text); font-size: 0.8rem; font-weight: 700;
-padding: 8px 16px; border-radius: 20px; cursor: pointer;
-transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-box-shadow: var(--shadow-sm);
-}
-.header-home:active { transform: scale(0.92); box-shadow: none; }
 
-/* ===== A2HS BANNER ===== */
-.a2hs-banner {
-position: sticky; top: 58px; z-index: 99;
-margin: 10px 16px 0;
-background: rgba(255,255,255,0.92);
-backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
-border: 1.5px solid var(--border);
-border-radius: 16px;
-box-shadow: var(--shadow-sm);
-padding: 10px 12px;
-display: flex; align-items: center; gap: 12px;
+.app { max-width: 560px; margin: 0 auto; min-height: 100dvh; background: var(--bg); position: relative; }
+
+/* ===== TOP BAR ===== */
+.topbar {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; gap: 10px;
+  padding: calc(10px + env(safe-area-inset-top)) 16px 10px;
+  background: var(--glass);
+  backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--border);
 }
-.a2hs-title { font-size: 0.88rem; font-weight: 900; letter-spacing: -0.02em; }
-.a2hs-sub { font-size: 0.78rem; color: var(--text-light); line-height: 1.35; margin-top: 2px; }
-.a2hs-actions { display: flex; align-items: center; gap: 8px; margin-left: auto; }
-.a2hs-btn {
-background: linear-gradient(135deg, var(--ocean), var(--plum));
-color: #fff; border: none;
-font-weight: 900; font-size: 0.78rem;
-padding: 9px 12px; border-radius: 12px;
-box-shadow: var(--shadow-btn); cursor: pointer;
+.icon-btn {
+  width: 38px; height: 38px; flex-shrink: 0;
+  display: grid; place-items: center;
+  border-radius: 12px; border: 1px solid var(--border);
+  background: var(--surface); box-shadow: var(--shadow-sm);
+  cursor: pointer; font-size: 1.05rem;
+  transition: transform 0.2s var(--spring);
 }
-.a2hs-btn:active { transform: scale(0.96); box-shadow: var(--shadow-sm); }
-.a2hs-close {
-width: 34px; height: 34px; border-radius: 12px;
-border: 1.5px solid var(--border); background: var(--white);
-color: var(--text-light); font-weight: 900;
-display: inline-flex; align-items: center; justify-content: center;
-cursor: pointer;
+.icon-btn:active { transform: scale(0.9); }
+.icon-btn svg { width: 20px; height: 20px; }
+.back-btn[hidden] { display: none; }
+.brand { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1; }
+.brand-mark { width: 38px; height: 38px; border-radius: 12px; flex-shrink: 0; overflow: hidden; box-shadow: 0 2px 8px rgba(0, 94, 184, 0.3); }
+.brand-mark svg { display: block; width: 100%; height: 100%; }
+.brand-text { min-width: 0; }
+.brand-title {
+  display: block;
+  font-family: var(--font-display); font-weight: 700; font-size: 1.08rem;
+  letter-spacing: -0.01em; line-height: 1.15;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-.a2hs-close:active { transform: scale(0.92); }
+.brand-sub { display: block; font-size: 0.7rem; font-weight: 600; color: var(--text-3); letter-spacing: 0.02em; }
 
 /* ===== PAGES ===== */
-.page { display: none; padding: 16px 16px 100px; }
-.page.active { display: block; animation: pageIn 0.35s cubic-bezier(0.34, 1.3, 0.64, 1); }
-@keyframes pageIn {
-from { opacity: 0; transform: translateY(12px); }
-to { opacity: 1; transform: translateY(0); }
-}
+.page { display: none; padding: 18px 16px calc(100px + env(safe-area-inset-bottom)); }
+.page.active { display: block; animation: pageIn 0.4s var(--spring); }
+@keyframes pageIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 
-/* ===== BACK BUTTON ===== */
-.back-btn {
-display: inline-flex; align-items: center; gap: 6px;
-background: var(--white); border: 1.5px solid var(--border);
-color: var(--text-mid); font-size: 0.82rem; font-weight: 700;
-padding: 8px 16px; border-radius: 20px; cursor: pointer;
-margin-bottom: 16px; box-shadow: var(--shadow-sm);
-transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+.page-head { display: flex; align-items: center; gap: 14px; margin: 4px 0 18px; }
+.page-emoji {
+  width: 54px; height: 54px; flex-shrink: 0; border-radius: 18px;
+  display: grid; place-items: center; font-size: 1.65rem;
+  background: var(--tint);
+  box-shadow: inset 0 0 0 1px var(--border);
 }
-.back-btn::before { content: "‹"; font-size: 1.2rem; font-weight: 800; line-height: 1; margin-top: -1px; }
-.back-btn:active { transform: scale(0.92); }
+.page-title { font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+.page-subtitle { font-size: 0.88rem; color: var(--text-3); margin-top: 3px; }
 
-/* ===== PAGE TITLE ===== */
-.page-title {
-font-size: 1.6rem; font-weight: 900; letter-spacing: -0.04em;
-margin-bottom: 6px; line-height: 1.15;
+.label {
+  font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-3); margin: 26px 2px 10px;
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
 }
-.page-subtitle { font-size: 0.88rem; color: var(--text-light); font-weight: 500; margin-bottom: 20px; }
+.label:first-child { margin-top: 0; }
+.label-count { letter-spacing: 0; text-transform: none; font-weight: 600; }
 
-/* ===== LANDING HERO ===== */
-.landing-hero { text-align: center; padding: 24px 0 8px; }
-.landing-emoji { font-size: 3rem; margin-bottom: 6px; display: block; animation: float 3s ease-in-out infinite; }
-@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
-.landing-title {
-font-size: 1.8rem; font-weight: 900; letter-spacing: -0.04em;
-background: linear-gradient(135deg, var(--ocean), var(--plum), var(--coral));
--webkit-background-clip: text; -webkit-text-fill-color: transparent;
-background-clip: text; line-height: 1.15; margin-bottom: 4px;
+/* ===== HERO ===== */
+.hero {
+  position: relative; isolation: isolate; overflow: hidden;
+  border-radius: var(--r-xl); color: #fff;
+  padding: 22px 20px calc((min(100vw, 560px) - 32px) * 0.27);
+  background: linear-gradient(180deg, #0b1f3f 0%, #1e2f66 42%, #57408a 76%, #b0578c 100%);
+  box-shadow: var(--shadow-lg);
 }
-.landing-dates { font-size: 0.92rem; color: var(--text-light); font-weight: 600; margin-bottom: 28px; }
+.hero-stars, .hero-skyline, .hero-saltire { position: absolute; z-index: -1; pointer-events: none; }
+.hero-stars { inset: 0; width: 100%; height: 100%; }
+.hero-saltire { inset: 0; width: 100%; height: 100%; opacity: 0.05; }
+.hero-skyline { left: 0; right: 0; bottom: -1px; width: 100%; height: auto; }
+.star { animation: twinkle 3s ease-in-out infinite; }
+.win { animation: twinkle 4s ease-in-out infinite; }
+@keyframes twinkle { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+.ship { animation: bob 4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+@keyframes bob { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-1.5px) rotate(-1deg); } }
 
-/* ===== LANDING BUTTONS ===== */
-.landing-grid { display: flex; flex-direction: column; gap: 10px; }
-.landing-btn {
-display: flex; align-items: center; gap: 14px;
-width: 100%; padding: 16px 18px;
-background: var(--white);
-border: none; border-radius: var(--radius);
-color: var(--text); font-size: 1rem; font-weight: 700;
-cursor: pointer; text-align: left;
-box-shadow: var(--shadow-md);
-transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-position: relative; overflow: hidden;
-letter-spacing: -0.01em;
+.hero-kicker { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.75; }
+.hero-title { font-family: var(--font-display); font-weight: 700; font-size: 2.35rem; line-height: 1.02; letter-spacing: -0.02em; margin-top: 8px; }
+.hero-title em { font-style: italic; color: #f6c869; }
+.hero-gaelic { margin-top: 8px; font-size: 0.95rem; opacity: 0.85; font-style: italic; }
+.hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.hero-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 12px; border-radius: 999px;
+  font-size: 0.8rem; font-weight: 650;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
 }
-.landing-btn:active { transform: scale(0.96); box-shadow: var(--shadow-sm); }
-.landing-btn .icon-wrap {
-width: 44px; height: 44px; border-radius: 14px;
-display: flex; align-items: center; justify-content: center;
-font-size: 1.3rem; flex-shrink: 0;
-transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-.landing-btn:active .icon-wrap { transform: scale(1.15) rotate(-4deg); }
-.landing-btn .btn-arrow {
-margin-left: auto; font-size: 1.1rem; color: var(--text-light);
-transition: transform 0.2s;
-}
-.landing-btn:active .btn-arrow { transform: translateX(3px); }
-.lb-routine .icon-wrap { background: var(--ocean-soft); color: var(--ocean); }
-.lb-map .icon-wrap { background: var(--green-soft); color: var(--green); }
-.lb-todo .icon-wrap { background: var(--gold-soft); color: var(--gold); }
-.lb-food .icon-wrap { background: var(--coral-soft); color: var(--coral); }
-.lb-hotels .icon-wrap { background: var(--plum-soft); color: var(--plum); }
-.lb-safety .icon-wrap { background: var(--teal-soft); color: var(--teal); }
-.lb-contacts .icon-wrap { background: var(--ocean-soft); color: var(--ocean); }
-.lb-rum .icon-wrap { background: var(--gold-soft); color: var(--gold); }
-.lb-weather .icon-wrap { background: var(--ocean-soft); color: var(--ocean); }
-.lb-explore .icon-wrap { background: var(--green-soft); color: var(--green); }
+.hero-chip[hidden] { display: none; }
+button.hero-chip { cursor: pointer; color: #fff; }
 
-.landing-btn { opacity: 0; animation: staggerIn 0.4s cubic-bezier(0.34, 1.3, 0.64, 1) forwards; }
-.landing-btn:nth-child(1) { animation-delay: 0.04s; }
-.landing-btn:nth-child(2) { animation-delay: 0.08s; }
-.landing-btn:nth-child(3) { animation-delay: 0.12s; }
-.landing-btn:nth-child(4) { animation-delay: 0.16s; }
-.landing-btn:nth-child(5) { animation-delay: 0.2s; }
-.landing-btn:nth-child(6) { animation-delay: 0.24s; }
-.landing-btn:nth-child(7) { animation-delay: 0.28s; }
-.landing-btn:nth-child(8) { animation-delay: 0.32s; }
-@keyframes staggerIn {
-from { opacity: 0; transform: translateY(16px) scale(0.97); }
-to { opacity: 1; transform: translateY(0) scale(1); }
+/* ===== QUICK DIAL ===== */
+.quick-dial { display: grid; grid-template-columns: 1.4fr 1fr; gap: 10px; margin-top: 14px; }
+.dial {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 14px; border-radius: var(--r-md);
+  font-weight: 700; font-size: 0.9rem;
+  transition: transform 0.2s var(--spring);
 }
+.dial:active { transform: scale(0.96); }
+.dial-num { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.02em; }
+.dial small { display: block; font-size: 0.72rem; font-weight: 600; opacity: 0.85; }
+.dial-sos { background: linear-gradient(135deg, #e0344b, #a4133c); color: #fff; box-shadow: 0 6px 18px rgba(215, 38, 61, 0.3); }
+.dial-nhs { background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow-sm); color: var(--text); }
+.dial-nhs .dial-num { color: var(--saltire); }
 
-/* ===== ACCORDION ===== */
-.accordion-item {
-background: var(--white); border-radius: var(--radius);
-margin-bottom: 8px; overflow: hidden;
-box-shadow: var(--shadow-sm);
-transition: box-shadow 0.2s;
+/* ===== BENTO TILES ===== */
+.bento { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.tile {
+  position: relative; display: flex; flex-direction: column; justify-content: space-between; gap: 14px;
+  min-height: 132px; padding: 16px;
+  border-radius: var(--r-lg); border: 1px solid var(--border);
+  background: var(--surface); box-shadow: var(--shadow-sm);
+  text-align: left; cursor: pointer;
+  opacity: 0; animation: rise 0.5s var(--spring) forwards;
+  transition: transform 0.2s var(--spring), box-shadow 0.2s;
 }
-.accordion-item.open { box-shadow: var(--shadow-md); }
-.accordion-trigger {
-width: 100%; padding: 16px 18px; background: transparent;
-border: none; color: var(--text); font-size: 0.95rem; font-weight: 700;
-text-align: left; cursor: pointer;
-display: flex; justify-content: space-between; align-items: center;
-transition: background 0.15s;
-letter-spacing: -0.01em;
+.tile:hover { box-shadow: var(--shadow-md); }
+.tile:active { transform: scale(0.96); }
+.tile::after {
+  content: "↗"; position: absolute; top: 14px; right: 16px;
+  font-size: 0.95rem; color: var(--text-3); opacity: 0.6;
 }
-.accordion-trigger:active { background: rgba(0,0,0,0.02); }
-.accordion-icon {
-width: 28px; height: 28px; border-radius: 50%;
-display: flex; align-items: center; justify-content: center;
-font-size: 1.1rem; font-weight: 700; color: var(--text-light);
-background: var(--bg);
-transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+.tile-icon {
+  width: 46px; height: 46px; border-radius: 15px;
+  display: grid; place-items: center; font-size: 1.4rem;
+  background: var(--tint);
+  transition: transform 0.25s var(--spring);
 }
-.accordion-item.open .accordion-icon {
-background: var(--coral); color: #fff;
-transform: rotate(45deg);
-}
-.accordion-body {
-padding: 0 18px; max-height: 0; overflow: hidden;
-transition: max-height 0.3s ease, padding 0.3s ease;
-}
-.accordion-item.open .accordion-body { max-height: 1200px; padding: 0 18px 18px; }
-.accordion-body p, .accordion-body li { font-size: 0.9rem; color: var(--text-mid); line-height: 1.65; }
-.accordion-body ul { padding-left: 18px; }
-.accordion-body li { margin-bottom: 6px; }
+.tile:active .tile-icon { transform: scale(1.12) rotate(-6deg); }
+.tile-title { display: block; font-weight: 750; font-size: 1rem; letter-spacing: -0.01em; line-height: 1.2; }
+.tile-sub { display: block; font-size: 0.78rem; color: var(--text-3); line-height: 1.35; margin-top: 2px; }
+.tile.wide { grid-column: 1 / -1; flex-direction: row; align-items: center; justify-content: flex-start; min-height: 0; }
+.tile.wide::after { top: 50%; transform: translateY(-50%); }
+.tile.feature { min-height: 0; flex-direction: row; align-items: center; justify-content: flex-start; padding: 18px; }
+.tile.feature .tile-icon { width: 58px; height: 58px; font-size: 1.8rem; border-radius: 18px; }
+.tile.feature .tile-title { font-size: 1.1rem; }
+.tile.feature::after { top: 50%; transform: translateY(-50%); }
+.bento > :nth-child(1) { animation-delay: 0.03s; }
+.bento > :nth-child(2) { animation-delay: 0.07s; }
+.bento > :nth-child(3) { animation-delay: 0.11s; }
+.bento > :nth-child(4) { animation-delay: 0.15s; }
+.bento > :nth-child(5) { animation-delay: 0.19s; }
+.bento > :nth-child(6) { animation-delay: 0.23s; }
+.bento > :nth-child(7) { animation-delay: 0.27s; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px) scale(0.98); } to { opacity: 1; transform: none; } }
 
-/* ===== MAP LOCATION BUTTONS ===== */
-.map-btns { display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px; }
-.map-btn {
-display: flex; align-items: center; gap: 12px;
-padding: 14px 16px; background: var(--white);
-border-radius: var(--radius); color: var(--text);
-font-weight: 700; font-size: 0.95rem; cursor: pointer;
-text-decoration: none; box-shadow: var(--shadow-sm);
-transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+/* ===== FACT CARD ===== */
+.fact {
+  display: flex; gap: 14px; align-items: flex-start;
+  padding: 16px; border-radius: var(--r-lg);
+  background: linear-gradient(135deg, var(--gold-soft), var(--thistle-soft));
+  border: 1px solid var(--border);
 }
-.map-btn:active { transform: scale(0.97); box-shadow: var(--shadow-lg); }
-.map-pin {
-width: 38px; height: 38px; border-radius: 12px;
-background: linear-gradient(135deg, var(--green), var(--teal));
-display: flex; align-items: center; justify-content: center;
-font-size: 1rem; color: #fff; flex-shrink: 0;
-box-shadow: 0 3px 10px rgba(46,204,113,0.3);
+.fact-emoji { font-size: 1.6rem; line-height: 1; margin-top: 2px; }
+.fact-body { flex: 1; min-width: 0; }
+.fact-label { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+.fact-text { font-size: 0.92rem; color: var(--text); margin-top: 4px; transition: opacity 0.2s; }
+.fact-text.fading { opacity: 0; }
+.fact-btn {
+  flex-shrink: 0; width: 40px; height: 40px; border-radius: 12px;
+  border: 1px solid var(--border); background: var(--surface);
+  font-size: 1.15rem; cursor: pointer; box-shadow: var(--shadow-sm);
+  transition: transform 0.4s var(--spring);
 }
-.map-btn .chevron { margin-left: auto; color: var(--text-light); font-size: 1.1rem; }
+.fact-btn.spin { transform: rotate(360deg); }
 
-/* ===== FILTER CHIPS ===== */
-.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
-.chip {
-padding: 8px 16px; border-radius: 20px;
-background: var(--white); border: 1.5px solid var(--border);
-color: var(--text-mid); font-size: 0.8rem; font-weight: 700;
-cursor: pointer; font-family: inherit;
--webkit-appearance: none; appearance: none;
-transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-user-select: none; box-shadow: var(--shadow-sm);
+.footnote { text-align: center; font-size: 0.75rem; color: var(--text-3); margin-top: 26px; line-height: 1.5; }
+
+/* ===== CALLOUT ===== */
+.callout {
+  display: flex; gap: 12px; align-items: flex-start;
+  padding: 14px 16px; margin-bottom: 14px;
+  border-radius: var(--r-md);
+  background: var(--surface); border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  font-size: 0.88rem; color: var(--text-2); line-height: 1.6;
+  position: relative; overflow: hidden;
 }
-.chip:active { transform: scale(0.93); }
-.chip.active {
-background: linear-gradient(135deg, var(--ocean), var(--plum));
-color: #fff; border-color: transparent;
-box-shadow: 0 3px 12px rgba(52,152,219,0.3);
-}
+.callout::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--accent, var(--saltire)); }
+.callout-icon { font-size: 1.35rem; line-height: 1.2; }
 
 /* ===== CARDS ===== */
 .card {
-background: var(--white); border-radius: var(--radius);
-padding: 16px 18px; margin-bottom: 10px;
-box-shadow: var(--shadow-sm);
-transition: all 0.2s;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 16px;
+  box-shadow: var(--shadow-sm);
 }
-.card-name { font-weight: 800; font-size: 1rem; margin-bottom: 2px; letter-spacing: -0.02em; }
-.card-note { font-size: 0.84rem; color: var(--text-light); margin-bottom: 10px; line-height: 1.45; }
-.price-badge {
-display: inline-block; font-size: 0.72rem; font-weight: 800; color: var(--green);
-background: var(--green-soft); padding: 2px 8px; border-radius: 6px; letter-spacing: 0.02em;
-white-space: nowrap; flex-shrink: 0;
-}
-.card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
-.card-tag {
-font-size: 0.7rem; font-weight: 700; padding: 3px 10px;
-border-radius: 10px; background: var(--bg); color: var(--text-light);
-letter-spacing: 0.01em;
-}
+.stack > * + * { margin-top: 10px; }
+.prose { font-size: 0.92rem; color: var(--text-2); line-height: 1.7; }
+.prose p + p { margin-top: 10px; }
 
-/* ===== ACTION BUTTONS ===== */
-.card-actions { display: flex; gap: 8px; flex-wrap: wrap; }
-.btn-sm {
-display: inline-flex; align-items: center; gap: 5px;
-padding: 9px 16px; border-radius: 12px;
-font-size: 0.8rem; font-weight: 700; cursor: pointer;
-border: none; text-decoration: none;
-transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-box-shadow: var(--shadow-sm);
+.item { animation: rise 0.4s var(--spring) both; }
+.item-head { display: flex; gap: 12px; align-items: flex-start; }
+.item-emoji {
+  width: 46px; height: 46px; flex-shrink: 0; border-radius: 14px;
+  display: grid; place-items: center; font-size: 1.4rem;
+  background: var(--surface-2);
 }
-.btn-sm:active { transform: scale(0.93); }
-.btn-map { background: var(--green-soft); color: #1a9660; }
-.btn-map:active { box-shadow: 0 3px 12px rgba(46,204,113,0.25); }
-.btn-web { background: var(--ocean-soft); color: #2074a8; }
-.btn-web:active { box-shadow: 0 3px 12px rgba(52,152,219,0.25); }
-.btn-call {
-background: linear-gradient(135deg, var(--coral), #ff8a80);
-color: #fff;
-box-shadow: 0 3px 12px rgba(255,107,107,0.3);
-}
-.btn-call:active { box-shadow: 0 2px 6px rgba(255,107,107,0.2); }
-.btn-text { background: var(--gold-soft); color: #c07b00; }
+.item-main { flex: 1; min-width: 0; }
+.item-name { font-weight: 750; font-size: 1rem; letter-spacing: -0.01em; line-height: 1.3; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.item-note { font-size: 0.86rem; color: var(--text-2); line-height: 1.5; margin-top: 3px; }
+.item-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.tag { font-size: 0.7rem; font-weight: 700; padding: 3px 9px; border-radius: 999px; background: var(--surface-2); color: var(--text-3); }
+.tag-Iconic { background: var(--gold-soft); color: var(--gold); }
+.tag-Outdoors { background: var(--moss-soft); color: var(--moss); }
+.tag-Indoors { background: var(--heather-soft); color: var(--heather); }
+.tag-Food-Drink { background: var(--thistle-soft); color: var(--thistle); }
+.tag-Quick, .tag-Half-day { background: var(--saltire-soft); color: var(--saltire); }
+.price { font-size: 0.72rem; font-weight: 800; padding: 2px 8px; border-radius: 6px; background: var(--moss-soft); color: var(--moss); letter-spacing: 0.04em; }
+.badge-tbc { font-size: 0.68rem; font-weight: 800; padding: 2px 8px; border-radius: 6px; background: var(--gold-soft); color: var(--gold); letter-spacing: 0.04em; text-transform: uppercase; }
 
-/* ===== TABS ===== */
-.tabs {
-display: flex; gap: 4px; margin-bottom: 16px;
-background: var(--white); padding: 4px; border-radius: 16px;
-box-shadow: var(--shadow-sm);
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 9px 14px; border-radius: 12px; border: none;
+  font-size: 0.82rem; font-weight: 700; cursor: pointer;
+  transition: transform 0.2s var(--spring), filter 0.2s;
 }
-.tab {
-flex: 1; padding: 10px 6px; text-align: center;
-background: transparent; border: none; border-radius: 12px;
-color: var(--text-light); font-size: 0.82rem; font-weight: 700;
-cursor: pointer; transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+.btn:active { transform: scale(0.94); }
+.btn-map { background: var(--moss-soft); color: var(--moss); }
+.btn-web { background: var(--saltire-soft); color: var(--saltire); }
+.btn-call { background: var(--saltire); color: #fff; box-shadow: 0 4px 12px rgba(0, 94, 184, 0.25); }
+:root[data-theme="dark"] .btn-call { color: #0b1020; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn-call { color: #0b1020; } }
+
+.empty { text-align: center; padding: 28px 16px; color: var(--text-3); font-size: 0.9rem; }
+.empty-emoji { font-size: 2rem; display: block; margin-bottom: 6px; }
+
+/* ===== LINK LIST (grouped rows) ===== */
+.links { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-sm); overflow: hidden; }
+.link-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 14px; min-height: 60px;
+  transition: background 0.15s;
 }
-.tab.active {
-background: linear-gradient(135deg, var(--ocean), var(--plum));
-color: #fff;
-box-shadow: 0 2px 10px rgba(52,152,219,0.25);
+.link-row + .link-row { border-top: 1px solid var(--border); }
+.link-row:active { background: var(--surface-2); }
+.link-icon { width: 38px; height: 38px; flex-shrink: 0; border-radius: 12px; display: grid; place-items: center; font-size: 1.15rem; background: var(--tint, var(--surface-2)); }
+.link-text { flex: 1; min-width: 0; }
+.link-title { display: block; font-weight: 700; font-size: 0.95rem; }
+.link-sub { font-size: 0.78rem; color: var(--text-3); }
+.link-chev { color: var(--text-3); font-size: 1.2rem; }
+
+/* ===== INFO ROWS (transport etc.) ===== */
+.info { display: flex; gap: 12px; align-items: flex-start; }
+.info + .info { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); }
+.info-icon { width: 38px; height: 38px; flex-shrink: 0; border-radius: 12px; display: grid; place-items: center; font-size: 1.15rem; background: var(--surface-2); }
+.info-title { font-weight: 750; font-size: 0.95rem; }
+.info-text { font-size: 0.86rem; color: var(--text-2); line-height: 1.55; margin-top: 2px; }
+
+/* ===== CHIPS ===== */
+.chips {
+  display: flex; gap: 8px; overflow-x: auto;
+  margin: 0 -16px 14px; padding: 2px 16px 4px;
+  scrollbar-width: none; -webkit-overflow-scrolling: touch;
 }
-.tab:active { transform: scale(0.95); }
+.chips::-webkit-scrollbar { display: none; }
+.chip {
+  flex-shrink: 0; padding: 8px 15px; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--border);
+  color: var(--text-2); font-size: 0.82rem; font-weight: 700;
+  cursor: pointer; box-shadow: var(--shadow-sm);
+  transition: transform 0.2s var(--spring), background 0.2s, color 0.2s;
+}
+.chip:active { transform: scale(0.92); }
+.chip.active { background: var(--navy); color: #fff; border-color: transparent; }
+:root[data-theme="dark"] .chip.active { background: var(--saltire); color: #0b1020; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .chip.active { background: var(--saltire); color: #0b1020; } }
+
+/* ===== SEGMENTED TABS ===== */
+.segmented {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px;
+  padding: 4px; margin-bottom: 14px;
+  background: var(--surface-2); border: 1px solid var(--border); border-radius: 14px;
+}
+.seg {
+  padding: 9px 4px; border: none; border-radius: 10px; background: transparent;
+  color: var(--text-3); font-size: 0.82rem; font-weight: 700; cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.seg.active { background: var(--surface); color: var(--text); box-shadow: var(--shadow-sm); }
 .tab-panel { display: none; }
-.tab-panel.active { display: block; }
+.tab-panel.active { display: block; animation: pageIn 0.3s ease; }
 
 /* ===== SEARCH ===== */
-.search-input {
-width: 100%; padding: 13px 16px; border-radius: 14px;
-background: var(--white); border: 1.5px solid var(--border);
-color: var(--text); font-size: 0.92rem; font-weight: 500;
-margin-bottom: 14px; outline: none;
-box-shadow: var(--shadow-sm);
-transition: border-color 0.2s, box-shadow 0.2s;
+.search { position: relative; margin-bottom: 14px; }
+.search::before { content: "🔍"; position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 0.9rem; opacity: 0.6; pointer-events: none; }
+.search input {
+  width: 100%; padding: 13px 16px 13px 40px;
+  border-radius: 14px; border: 1px solid var(--border);
+  background: var(--surface); color: var(--text);
+  font: inherit; font-size: 0.95rem;
+  box-shadow: var(--shadow-sm); outline: none;
+  -webkit-appearance: none; appearance: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
-.search-input::placeholder { color: var(--text-light); }
-.search-input:focus { border-color: var(--ocean); box-shadow: 0 0 0 3px rgba(52,152,219,0.12); }
+.search input::placeholder { color: var(--text-3); }
+.search input:focus { border-color: var(--saltire); box-shadow: 0 0 0 4px var(--saltire-soft); }
 
-/* ===== EMERGENCY ===== */
-.emergency-box {
-display: flex; align-items: center; justify-content: center; gap: 10px;
-background: linear-gradient(135deg, var(--coral), #ff4757);
-color: #fff; font-weight: 800; font-size: 1.1rem;
-padding: 18px; border-radius: var(--radius);
-margin-bottom: 16px; text-decoration: none;
-box-shadow: 0 4px 16px rgba(255,71,87,0.3);
-transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+/* ===== ACCORDION ===== */
+.acc {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-md); margin-bottom: 8px;
+  box-shadow: var(--shadow-sm); overflow: hidden;
+  transition: box-shadow 0.2s;
 }
-.emergency-box:active { transform: scale(0.97); }
-
-/* ===== CONTACT CARD ===== */
-.contact-card {
-background: var(--white); border-radius: var(--radius);
-padding: 18px; margin-bottom: 10px;
-box-shadow: var(--shadow-sm);
+.acc.open { box-shadow: var(--shadow-md); }
+.acc-trigger {
+  width: 100%; display: flex; align-items: center; gap: 12px;
+  padding: 14px 14px 14px 16px; border: none; background: none;
+  font-weight: 700; font-size: 0.97rem; letter-spacing: -0.01em;
+  text-align: left; cursor: pointer;
 }
-.contact-label { font-weight: 800; font-size: 1rem; margin-bottom: 4px; letter-spacing: -0.02em; }
-.contact-sub { font-size: 0.82rem; color: var(--text-light); margin-bottom: 12px; }
-.contact-actions { display: flex; gap: 8px; flex-wrap: wrap; }
-
-/* ===== SECTION HEADER ===== */
-.section-header {
-font-size: 0.75rem; font-weight: 800; color: var(--text-light);
-text-transform: uppercase; letter-spacing: 0.1em;
-margin: 22px 0 10px; padding-left: 2px;
+.acc-emoji { font-size: 1.2rem; width: 26px; text-align: center; flex-shrink: 0; }
+.acc-icon {
+  margin-left: auto; flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+  display: grid; place-items: center; font-size: 1.1rem; font-weight: 600;
+  background: var(--surface-2); color: var(--text-3);
+  transition: transform 0.3s var(--spring), background 0.2s, color 0.2s;
 }
+.acc.open .acc-icon { transform: rotate(45deg); background: var(--accent, var(--saltire)); color: #fff; }
+.acc-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.3s ease; }
+.acc.open .acc-panel { grid-template-rows: 1fr; }
+.acc-inner { overflow: hidden; }
+.acc-content { padding: 0 16px 16px 54px; font-size: 0.9rem; color: var(--text-2); line-height: 1.65; }
+.acc-content p + p { margin-top: 10px; }
+.acc-content ul { padding-left: 16px; }
+.acc-content li + li { margin-top: 6px; }
+.acc-content li::marker { color: var(--accent, var(--saltire)); }
 
-/* ===== PLACEHOLDER BLOCKS ===== */
-.placeholder-text { color: var(--text-light); font-style: italic; font-size: 0.9rem; line-height: 1.6; }
-.placeholder-block {
-background: var(--white); border: 2px dashed var(--border);
-border-radius: var(--radius); padding: 16px 18px; margin-bottom: 10px;
+.timeline { list-style: none; padding-left: 0 !important; }
+.timeline li { position: relative; padding: 0 0 12px 22px; margin: 0 !important; }
+.timeline li::before { content: ""; position: absolute; left: 0; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px var(--tint); }
+.timeline li::after { content: ""; position: absolute; left: 4px; top: 20px; bottom: 0; width: 2px; background: var(--border); }
+.timeline li:last-child { padding-bottom: 0; }
+.timeline li:last-child::after { display: none; }
+.timeline strong { display: block; font-size: 0.85rem; color: var(--accent); }
+
+/* ===== EMERGENCY PANEL ===== */
+.sos { padding: 16px; border-radius: var(--r-lg); margin-bottom: 16px; color: #fff; background: linear-gradient(135deg, #e0344b, #a4133c); box-shadow: 0 10px 28px rgba(215, 38, 61, 0.28); }
+.sos-title { font-weight: 800; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; }
+.sos-main {
+  display: flex; align-items: center; gap: 14px;
+  margin-top: 12px; padding: 12px 14px; border-radius: 14px;
+  background: rgba(255, 255, 255, 0.16); color: #fff;
+  transition: transform 0.2s var(--spring);
 }
+.sos-main:active { transform: scale(0.97); }
+.sos-main .sos-num { font-size: 2rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+.sos-label { font-weight: 750; font-size: 0.9rem; line-height: 1.3; }
+.sos-main small { display: block; font-size: 0.78rem; opacity: 0.9; font-weight: 600; }
+.sos-main .sos-call { margin-left: auto; font-size: 0.8rem; font-weight: 800; background: #fff; color: #a4133c; padding: 8px 12px; border-radius: 10px; }
+.sos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 8px; }
+.sos-grid a { padding: 10px 6px; border-radius: 12px; text-align: center; background: rgba(255, 255, 255, 0.12); color: #fff; font-weight: 800; font-size: 1.05rem; transition: transform 0.2s var(--spring); }
+.sos-grid a:active { transform: scale(0.94); }
+.sos-grid small { display: block; font-size: 0.68rem; font-weight: 600; opacity: 0.88; line-height: 1.25; margin-top: 2px; }
 
-/* ===== DECORATIVE DOT PATTERN ===== */
-.dot-pattern {
-position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-pointer-events: none; z-index: -1; opacity: 0.35;
-background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
-background-size: 24px 24px;
+/* ===== WEATHER ===== */
+.wx-now {
+  position: relative; overflow: hidden;
+  padding: 18px; border-radius: var(--r-lg); color: #fff;
+  background: linear-gradient(135deg, #1f6fb2, #4b3f8f);
+  box-shadow: var(--shadow-lg);
 }
+.wx-now-top { display: flex; align-items: center; gap: 14px; }
+.wx-emoji { font-size: 3.2rem; line-height: 1; filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2)); }
+.wx-temp { font-family: var(--font-display); font-size: 3rem; font-weight: 700; line-height: 1; letter-spacing: -0.03em; }
+.wx-desc { text-transform: capitalize; opacity: 0.9; font-size: 0.92rem; margin-top: 2px; }
+.wx-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.wx-meta span { background: rgba(255, 255, 255, 0.16); padding: 5px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 650; }
+.wx-updated { font-size: 0.72rem; opacity: 0.75; margin-top: 10px; }
+.wx-days { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.wx-day { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 12px; box-shadow: var(--shadow-sm); text-align: center; }
+.wx-day-name { font-size: 0.78rem; font-weight: 750; color: var(--text-3); }
+.wx-day-emoji { font-size: 1.9rem; margin: 4px 0; }
+.wx-day-temp { font-weight: 800; font-size: 1.1rem; }
+.wx-day-temp span { font-weight: 600; color: var(--text-3); font-size: 0.9rem; }
+.wx-day-desc { font-size: 0.75rem; color: var(--text-2); text-transform: capitalize; margin-top: 2px; }
+.wx-day-meta { display: flex; justify-content: center; gap: 8px; font-size: 0.72rem; color: var(--text-3); margin-top: 6px; }
+.skeleton { border-radius: var(--r-lg); background: linear-gradient(90deg, var(--surface) 25%, var(--surface-2) 50%, var(--surface) 75%); background-size: 200% 100%; animation: shimmer 1.4s infinite; border: 1px solid var(--border); }
+@keyframes shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
 
-/* ===== COLOR BAR on pages ===== */
-.color-bar {
-height: 4px; border-radius: 4px; margin-bottom: 16px;
-background: linear-gradient(90deg, var(--ocean), var(--plum), var(--coral), var(--gold), var(--green));
+/* ===== TAB BAR ===== */
+.tabbar {
+  position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); z-index: 50;
+  width: 100%; max-width: 560px;
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  padding: 6px 6px calc(6px + env(safe-area-inset-bottom));
+  background: var(--glass);
+  backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-top: 1px solid var(--border);
 }
-
-/* ===== INFO BADGE ===== */
-.info-badge {
-display: inline-block; font-size: 0.72rem; font-weight: 800;
-background: var(--ocean-soft); color: var(--ocean);
-padding: 2px 8px; border-radius: 6px; letter-spacing: 0.02em;
-white-space: nowrap; flex-shrink: 0;
+.tab-btn {
+  position: relative;
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  padding: 6px 0 4px; border: none; background: none; border-radius: 12px;
+  color: var(--text-3); font-size: 0.66rem; font-weight: 700; cursor: pointer;
 }
+.tab-ico { font-size: 1.3rem; line-height: 1; filter: grayscale(1); opacity: 0.6; transition: transform 0.25s var(--spring), filter 0.2s, opacity 0.2s; }
+.tab-btn.active { color: var(--saltire); }
+.tab-btn.active .tab-ico { filter: none; opacity: 1; transform: translateY(-2px) scale(1.12); }
+.tab-btn.active::after { content: ""; position: absolute; bottom: 0; width: 4px; height: 4px; border-radius: 50%; background: var(--saltire); }
 
+/* ===== A2HS ===== */
+.a2hs {
+  position: fixed; z-index: 60; left: 50%; transform: translateX(-50%);
+  bottom: calc(76px + env(safe-area-inset-bottom));
+  width: calc(100% - 24px); max-width: 536px;
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 12px 12px 14px; border-radius: var(--r-lg);
+  background: var(--surface); border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  animation: slideUp 0.45s var(--spring);
+}
+.a2hs[hidden] { display: none; }
+@keyframes slideUp { from { opacity: 0; transform: translate(-50%, 20px); } to { opacity: 1; transform: translate(-50%, 0); } }
+.a2hs-icon { width: 40px; height: 40px; border-radius: 12px; overflow: hidden; flex-shrink: 0; }
+.a2hs-icon img { width: 100%; height: 100%; display: block; }
+.a2hs-title { font-size: 0.88rem; font-weight: 800; }
+.a2hs-sub { font-size: 0.76rem; color: var(--text-3); line-height: 1.35; margin-top: 1px; }
+.a2hs-actions { display: flex; align-items: center; gap: 6px; margin-left: auto; }
+.a2hs-btn { padding: 9px 14px; border: none; border-radius: 12px; background: var(--saltire); color: #fff; font-weight: 800; font-size: 0.8rem; cursor: pointer; }
+.a2hs-btn[hidden] { display: none; }
+.a2hs-close { width: 32px; height: 32px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface-2); color: var(--text-3); font-weight: 800; cursor: pointer; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
 </style>
-
 </head>
 <body>
+<div class="app">
 
-<div class="dot-pattern"></div>
+<!-- ===== TOP BAR ===== -->
+<header class="topbar">
+  <button id="back-btn" class="icon-btn back-btn" type="button" aria-label="Back" hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+  <a class="brand" href="#" data-nav="landing" aria-label="Edinburgh Port Brief home">
+    <span class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 40 40"><rect width="40" height="40" fill="#005eb8"/><path d="M0 0L40 40M40 0L0 40" stroke="#fff" stroke-width="7"/></svg>
+    </span>
+    <span class="brand-text">
+      <span class="brand-title" id="topbar-title">Edinburgh</span>
+      <span class="brand-sub" id="topbar-sub">Port Brief · Leith</span>
+    </span>
+  </a>
+  <button id="theme-btn" class="icon-btn" type="button" aria-label="Switch to dark mode">🌙</button>
+</header>
 
-<!-- HEADER -->
+<main>
 
-<div class="header">
-  <div class="header-left">
-    <div class="header-flag">⚓</div>
-    <div class="header-text">
-      <div class="header-title">Edinburgh Port Brief</div>
-      <div class="header-sub">Edinburgh &amp; Leith · Scotland</div>
+<!-- ===== LANDING ===== -->
+<section id="landing" class="page active" aria-label="Home">
+  <div class="hero">
+    <svg class="hero-saltire" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0L100 100M100 0L0 100" stroke="#fff" stroke-width="14"/></svg>
+    <svg class="hero-stars" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <circle cx="350" cy="40" r="16" fill="#f6e7b0" opacity="0.15"/>
+      <circle cx="350" cy="40" r="10" fill="#f6e7b0"/>
+      <circle cx="342" cy="36" r="2.2" fill="#e6d49a"/><circle cx="355" cy="45" r="1.6" fill="#e6d49a"/>
+      <circle class="star" cx="240" cy="22" r="1.4" fill="#fff"/>
+      <circle class="star" cx="290" cy="70" r="1.1" fill="#fff" style="animation-delay:.8s"/>
+      <circle class="star" cx="385" cy="95" r="1.2" fill="#fff" style="animation-delay:1.6s"/>
+      <circle class="star" cx="205" cy="60" r="1" fill="#fff" style="animation-delay:2.2s"/>
+      <circle class="star" cx="310" cy="18" r="1.3" fill="#fff" style="animation-delay:.4s"/>
+      <circle class="star" cx="265" cy="110" r="0.9" fill="#fff" style="animation-delay:1.2s"/>
+      <circle class="star" cx="378" cy="12" r="1" fill="#fff" style="animation-delay:2.6s"/>
+      <circle class="star" cx="225" cy="130" r="0.8" fill="#fff" style="animation-delay:1.9s"/>
+    </svg>
+    <svg class="hero-skyline" viewBox="0 0 400 130" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+      <!-- Arthur's Seat -->
+      <path d="M190 130 L190 98 C220 88 246 72 276 62 C288 50 300 44 312 50 C330 58 352 72 372 82 C386 88 394 90 400 92 L400 130 Z" fill="#0a1830" opacity="0.5"/>
+      <!-- Old Town skyline with St Giles' crown and the Scott Monument -->
+      <path d="M108 130 L108 100 L120 100 L120 92 L132 92 L132 98 L144 98 L144 86 L150 80 L156 86 L156 96 L164 96 L164 74 L168 74 L168 66 L172 59 L176 66 L176 74 L180 74 L180 96 L192 96 L192 88 L204 88 L204 94 L211 94 L214 50 L217 50 L220 94 L232 94 L232 100 L246 100 L246 92 L258 92 L258 104 L272 104 L272 130 Z" fill="#0a1830" opacity="0.75"/>
+      <g fill="#f6c869">
+        <rect class="win" x="124" y="96" width="2" height="2.5"/>
+        <rect class="win" x="136" y="95" width="2" height="2.5" style="animation-delay:1s"/>
+        <rect class="win" x="148" y="89" width="2" height="2.5" style="animation-delay:2s"/>
+        <rect class="win" x="185" y="92" width="2" height="2.5" style="animation-delay:.5s"/>
+        <rect class="win" x="197" y="92" width="2" height="2.5" style="animation-delay:1.5s"/>
+        <rect class="win" x="237" y="97" width="2" height="2.5" style="animation-delay:2.5s"/>
+        <rect class="win" x="250" y="96" width="2" height="2.5" style="animation-delay:.2s"/>
+      </g>
+      <!-- Castle Rock and Edinburgh Castle -->
+      <g fill="#07142c">
+        <path d="M0 130 L0 98 C14 94 24 88 34 80 C44 74 56 72 70 72 C88 72 100 78 110 88 C118 96 124 108 130 130 Z"/>
+        <rect x="30" y="62" width="60" height="14"/>
+        <rect x="34" y="50" width="12" height="14"/>
+        <rect x="34" y="47" width="3" height="3"/><rect x="38.5" y="47" width="3" height="3"/><rect x="43" y="47" width="3" height="3"/>
+        <polygon points="52,62 58,54 76,54 82,62"/>
+        <rect x="82" y="58" width="15" height="16" rx="3"/>
+        <rect x="39.5" y="35" width="1" height="13"/>
+      </g>
+      <polygon points="40.5,35 49,37.5 40.5,40" fill="#fff"/>
+      <g fill="#f6c869">
+        <rect class="win" x="60" y="66" width="2" height="2.5" style="animation-delay:.7s"/>
+        <rect class="win" x="70" y="66" width="2" height="2.5" style="animation-delay:1.7s"/>
+        <rect class="win" x="38" y="55" width="2" height="2.5" style="animation-delay:2.4s"/>
+      </g>
+      <!-- Water and a visiting ship at Leith -->
+      <path d="M0 120 Q25 116 50 120 T100 120 T150 120 T200 120 T250 120 T300 120 T350 120 T400 120 L400 131 L0 131 Z" fill="#07142c"/>
+      <g class="ship" fill="#07142c">
+        <polygon points="318,119 372,119 365,126 325,126"/>
+        <rect x="332" y="111" width="22" height="8" rx="1"/>
+        <rect x="340" y="105" width="8" height="6"/>
+        <rect x="343.5" y="96" width="1" height="9"/>
+      </g>
+    </svg>
+
+    <div class="hero-kicker">Port Brief · Leith, Edinburgh</div>
+    <h1 class="hero-title">Welcome to<br><em>Edinburgh</em></h1>
+    <div class="hero-gaelic">Fàilte gu Dùn Èideann</div>
+    <div class="hero-chips">
+      <span class="hero-chip" id="hero-clock">🕐 --:-- local</span>
+      <button class="hero-chip" id="hero-weather" type="button" data-nav="weather" hidden>🌦️ —</button>
+      <span class="hero-chip">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland</span>
     </div>
   </div>
-  <button class="header-home" onclick="nav('landing')">🏠 Home</button>
-</div>
 
-<div id="a2hs-banner" class="a2hs-banner" hidden>
+  <div class="quick-dial">
+    <a class="dial dial-sos" href="tel:999"><span class="dial-num">999</span><span>Emergency<small>Police · Fire · Ambulance</small></span></a>
+    <a class="dial dial-nhs" href="tel:111"><span class="dial-num">111</span><span>NHS 24<small>Urgent advice</small></span></a>
+  </div>
+
+  <div class="label">Your brief</div>
+  <div class="bento">
+    <button class="tile t-saltire" type="button" data-nav="routine">
+      <span class="tile-icon">⚓</span>
+      <span><span class="tile-title">Ship Routine</span><span class="tile-sub">Port window, leave &amp; money</span></span>
+    </button>
+    <button class="tile t-moss" type="button" data-nav="explore">
+      <span class="tile-icon">🧭</span>
+      <span><span class="tile-title">Explore</span><span class="tile-sub">Sights, food &amp; getting around</span></span>
+    </button>
+    <button class="tile t-heather" type="button" data-nav="hotels">
+      <span class="tile-icon">🏨</span>
+      <span><span class="tile-title">Hotels</span><span class="tile-sub">Leith &amp; city centre stays</span></span>
+    </button>
+    <button class="tile t-gold" type="button" data-nav="weather">
+      <span class="tile-icon">🌦️</span>
+      <span><span class="tile-title">Weather</span><span class="tile-sub">Live forecast &amp; what to pack</span></span>
+    </button>
+    <button class="tile t-red" type="button" data-nav="safety">
+      <span class="tile-icon">🛡️</span>
+      <span><span class="tile-title">Safety</span><span class="tile-sub">Stay sharp ashore</span></span>
+    </button>
+    <button class="tile t-saltire" type="button" data-nav="contacts">
+      <span class="tile-icon">📞</span>
+      <span><span class="tile-title">Contacts</span><span class="tile-sub">Ship &amp; local numbers</span></span>
+    </button>
+    <button class="tile wide t-thistle" type="button" data-nav="history">
+      <span class="tile-icon">🏰</span>
+      <span><span class="tile-title">Edinburgh &amp; Leith History</span><span class="tile-sub">Volcanoes, whisky &amp; a royal yacht</span></span>
+    </button>
+  </div>
+
+  <div class="label">Did you know?</div>
+  <div class="fact">
+    <span class="fact-emoji" aria-hidden="true">💡</span>
+    <div class="fact-body">
+      <div class="fact-label">Edinburgh fact</div>
+      <div class="fact-text" id="fact-text" aria-live="polite"></div>
+    </div>
+    <button class="fact-btn" id="fact-btn" type="button" aria-label="Show another fact">🎲</button>
+  </div>
+
+  <p class="footnote">Details checked October 2026 — always confirm hours and bookings locally.<br>Slàinte mhath! 🥃</p>
+</section>
+
+<!-- ===== SHIP ROUTINE & LEAVE ===== -->
+<section id="routine" class="page t-saltire" aria-label="Ship Routine and Leave">
+  <div class="page-head">
+    <span class="page-emoji">⚓</span>
+    <div><h1 class="page-title">Ship Routine &amp; Leave</h1><div class="page-subtitle">Port of Leith, Edinburgh</div></div>
+  </div>
+
+  <div class="acc" data-group="routine">
+    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">🕰️</span>Port Window<span class="acc-icon">+</span></button>
+    <div class="acc-panel"><div class="acc-inner"><div class="acc-content"><p>Per Routine Orders — Edinburgh. Confirm whether the ship is alongside at Leith or at anchor in the Firth of Forth (with boat transfers) — it changes your return-to-ship timings.</p></div></div></div>
+  </div>
+  <div class="acc" data-group="routine">
+    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">📋</span>Daily Routine<span class="acc-icon">+</span></button>
+    <div class="acc-panel"><div class="acc-inner"><div class="acc-content"><p>Per Routine Orders.</p></div></div></div>
+  </div>
+  <div class="acc" data-group="routine">
+    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">🎟️</span>Leave<span class="acc-icon">+</span></button>
+    <div class="acc-panel"><div class="acc-inner"><div class="acc-content"><p>Per Routine Orders.</p></div></div></div>
+  </div>
+  <div class="acc" data-group="routine">
+    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">💷</span>Money, Phones &amp; Language<span class="acc-icon">+</span></button>
+    <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
+      <ul>
+        <li><strong>Currency:</strong> Pound sterling (£). Scottish banknotes (Bank of Scotland, Royal Bank of Scotland, Clydesdale) are legal tender in Scotland and are accepted alongside Bank of England notes, though some shops in England may refuse them. Contactless card and phone payments are accepted almost everywhere.</li>
+        <li><strong>ATMs:</strong> Widely available across Leith and the city centre, including at Ocean Terminal. Withdrawals are free from most UK machines.</li>
+        <li><strong>Language:</strong> English, with a strong Scots accent and plenty of dialect. Gaelic is only occasionally heard, mostly on signage.</li>
+        <li><strong>Phones:</strong> Check your roaming plan before landing. UK country code is +44; Edinburgh landlines start 0131. Power sockets are Type G (three-pin, 230V) — bring an adaptor.</li>
+        <li><strong>Drinking age:</strong> 18. Scotland has a minimum unit price on alcohol, so drinks are not especially cheap.</li>
+      </ul>
+    </div></div></div>
+  </div>
+  <div class="acc" data-group="routine">
+    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">🛏️</span>Overnight Leave<span class="acc-icon">+</span></button>
+    <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
+      <ul>
+        <li>Have your hotel name, address, and phone number ready before requesting leave.</li>
+        <li>Provide a contact number where you can be reached at all times.</li>
+        <li>Know your leave expiry time and plan return travel accordingly.</li>
+        <li>If your plans change, inform the ship per routine as soon as possible.</li>
+        <li>Keep your military ID and leave pass on your person.</li>
+        <li>Edinburgh is a big, busy city. Leith is about 3–4 km from the centre — allow time for buses or trams on the way back, particularly at night.</li>
+      </ul>
+    </div></div></div>
+  </div>
+</section>
+
+<!-- ===== EXPLORE HUB ===== -->
+<section id="explore" class="page t-moss" aria-label="Explore Edinburgh">
+  <div class="page-head">
+    <span class="page-emoji">🧭</span>
+    <div><h1 class="page-title">Explore Edinburgh</h1><div class="page-subtitle">Castles, closes, and a very good pint</div></div>
+  </div>
+  <div class="bento">
+    <button class="tile feature wide t-saltire" type="button" data-nav="map">
+      <span class="tile-icon">🗺️</span>
+      <span><span class="tile-title">Map &amp; Getting Around</span><span class="tile-sub">Trams, buses, taxis &amp; key spots</span></span>
+    </button>
+    <button class="tile feature wide t-gold" type="button" data-nav="todo">
+      <span class="tile-icon">🎯</span>
+      <span><span class="tile-title">Things To Do</span><span class="tile-sub">17 picks, from castles to closes</span></span>
+    </button>
+    <button class="tile feature wide t-thistle" type="button" data-nav="food">
+      <span class="tile-icon">🍽️</span>
+      <span><span class="tile-title">Food, Coffee &amp; Bars</span><span class="tile-sub">Seafood, whisky &amp; folk pubs</span></span>
+    </button>
+  </div>
+</section>
+
+<!-- ===== WEATHER ===== -->
+<section id="weather" class="page t-gold" aria-label="Weather">
+  <div class="page-head">
+    <span class="page-emoji">🌦️</span>
+    <div><h1 class="page-title">Weather</h1><div class="page-subtitle">Edinburgh &amp; Leith</div></div>
+  </div>
+
+  <div class="callout">
+    <span class="callout-icon">🌫️</span>
+    <div><strong>Four seasons in one day.</strong> Edinburgh weather changes quickly, and the east coast gets haar — cold sea fog off the Forth. Always check a live source before heading out.</div>
+  </div>
+
+  <div id="weather-dynamic"></div>
+
+  <div class="label">What to expect</div>
+  <div class="card prose">
+    Edinburgh has a mild, temperate maritime climate — cool, changeable, and often breezy. Summers (June–August) are comfortable, with highs around 18–19°C, and very long days (sunset after 10 pm at midsummer). Winters are cold and damp, with highs around 6°C, lows near 1°C and frequent night frosts, and the sun sets around 3:40 pm in mid-December. Wind off the Firth of Forth makes it feel colder than the thermometer says, and the haar can roll in on spring and summer mornings. Pack a waterproof and layers year-round.
+  </div>
+
+  <div class="label">Live forecast links</div>
+  <div class="links">
+    <a class="link-row t-saltire" href="https://www.metoffice.gov.uk/weather/forecast/gcvwr3zrw" target="_blank" rel="noopener">
+      <span class="link-icon">🇬🇧</span><span class="link-text"><span class="link-title">Met Office</span><span class="link-sub">UK national weather service</span></span><span class="link-chev">›</span>
+    </a>
+    <a class="link-row t-red" href="https://www.bbc.co.uk/weather/2650225" target="_blank" rel="noopener">
+      <span class="link-icon">🌡️</span><span class="link-text"><span class="link-title">BBC Weather</span><span class="link-sub">Hourly and 14-day outlook</span></span><span class="link-chev">›</span>
+    </a>
+    <a class="link-row t-heather" href="https://www.timeanddate.com/weather/uk/edinburgh/ext" target="_blank" rel="noopener">
+      <span class="link-icon">📅</span><span class="link-text"><span class="link-title">14-Day Forecast</span><span class="link-sub">timeanddate.com</span></span><span class="link-chev">›</span>
+    </a>
+  </div>
+</section>
+
+<!-- ===== MAP & GETTING AROUND ===== -->
+<section id="map" class="page t-saltire" aria-label="Map and Getting Around">
+  <div class="page-head">
+    <span class="page-emoji">🗺️</span>
+    <div><h1 class="page-title">Getting Around</h1><div class="page-subtitle">Tap a place to open it in Google Maps</div></div>
+  </div>
+
+  <div class="callout">
+    <span class="callout-icon">📍</span>
+    <div><strong>The port is in Leith, about 3–4 km from the city centre.</strong> The Old Town and New Town are compact and very walkable once you get there, but hilly and cobbled. Trams and buses link Leith to Princes Street.</div>
+  </div>
+
+  <div class="label">Key places</div>
+  <div class="links">
+    <a class="link-row t-saltire" href="https://www.google.com/maps/search/Port+of+Leith+Edinburgh" target="_blank" rel="noopener"><span class="link-icon">⚓</span><span class="link-text"><span class="link-title">Port of Leith</span><span class="link-sub">The docks</span></span><span class="link-chev">›</span></a>
+    <a class="link-row t-moss" href="https://www.google.com/maps/search/The+Shore+Leith+Edinburgh" target="_blank" rel="noopener"><span class="link-icon">🦞</span><span class="link-text"><span class="link-title">The Shore, Leith</span><span class="link-sub">Old harbour, pubs &amp; seafood</span></span><span class="link-chev">›</span></a>
+    <a class="link-row t-heather" href="https://www.google.com/maps/search/Edinburgh+Waverley+Station" target="_blank" rel="noopener"><span class="link-icon">🚉</span><span class="link-text"><span class="link-title">Waverley Station</span><span class="link-sub">City centre rail hub</span></span><span class="link-chev">›</span></a>
+    <a class="link-row t-gold" href="https://www.google.com/maps/search/Edinburgh+Castle" target="_blank" rel="noopener"><span class="link-icon">🏰</span><span class="link-text"><span class="link-title">Edinburgh Castle</span><span class="link-sub">Top of the Royal Mile</span></span><span class="link-chev">›</span></a>
+    <a class="link-row t-thistle" href="https://www.google.com/maps/search/Royal+Mile+Edinburgh" target="_blank" rel="noopener"><span class="link-icon">🛣️</span><span class="link-text"><span class="link-title">The Royal Mile</span><span class="link-sub">Castle to Holyroodhouse</span></span><span class="link-chev">›</span></a>
+    <a class="link-row t-moss" href="https://www.google.com/maps/search/Arthur's+Seat+Edinburgh" target="_blank" rel="noopener"><span class="link-icon">⛰️</span><span class="link-text"><span class="link-title">Arthur's Seat</span><span class="link-sub">The best view in town</span></span><span class="link-chev">›</span></a>
+  </div>
+
+  <div class="label">Transport</div>
+  <div class="card">
+    <div class="info"><span class="info-icon">🚊</span><div><div class="info-title">Tram</div><div class="info-text">Runs from the Airport through Haymarket, Princes Street and down Leith Walk to Newhaven, about every 7 minutes in the daytime. <strong>The Shore, Port of Leith and Ocean Terminal stops are the closest to the ship.</strong> Check edinburghtrams.com for current fares and last trams.</div></div></div>
+    <div class="info"><span class="info-icon">🚌</span><div><div class="info-title">Bus</div><div class="info-text">Lothian Buses run frequently between Leith and the city centre, with night services too. Pay by contactless card or the Lothian app; daily caps apply. See lothianbuses.com for current fares.</div></div></div>
+    <div class="info"><span class="info-icon">🚕</span><div><div class="info-title">Taxis &amp; rideshare</div><div class="info-text">Black cabs can be hailed or found at ranks, and phone numbers are on the Local Contacts page. Private hire cars must be pre-booked; Uber operates in the city.</div></div></div>
+    <div class="info"><span class="info-icon">🚶</span><div><div class="info-title">Walking</div><div class="info-text">Leith to the Old Town is roughly 45–60 minutes on foot along Leith Walk. Fine in good weather, but hilly at the city end.</div></div></div>
+    <div class="info"><span class="info-icon">🚆</span><div><div class="info-title">Train</div><div class="info-text">Waverley Station is in the heart of the city and has services across Scotland and to London. Haymarket handles west and Fife services.</div></div></div>
+    <div class="info"><span class="info-icon">🚗</span><div><div class="info-title">Drive on the left</div><div class="info-text">If renting a car, note that the UK drives on the left. Parking in the centre is limited and expensive; public transport is easier.</div></div></div>
+    <div class="info"><span class="info-icon">🌉</span><div><div class="info-title">Day trips</div><div class="info-text">South Queensferry (Forth Bridges) is close by train or bus. Stirling, St Andrews, and Glasgow are all within about an hour or so by train.</div></div></div>
+  </div>
+</section>
+
+<!-- ===== THINGS TO DO ===== -->
+<section id="todo" class="page t-gold" aria-label="Things To Do">
+  <div class="page-head">
+    <span class="page-emoji">🎯</span>
+    <div><h1 class="page-title">Things To Do</h1><div class="page-subtitle">Filter by what you're feeling</div></div>
+  </div>
+  <div class="chips" id="todo-chips" role="group" aria-label="Filter activities"></div>
+  <div class="label" style="margin-top:4px"><span>Places</span><span class="label-count" id="todo-count"></span></div>
+  <div id="todo-list" class="stack"></div>
+</section>
+
+<!-- ===== FOOD, COFFEE & BARS ===== -->
+<section id="food" class="page t-thistle" aria-label="Food, Coffee and Bars">
+  <div class="page-head">
+    <span class="page-emoji">🍽️</span>
+    <div><h1 class="page-title">Food &amp; Drink</h1><div class="page-subtitle">Seafood, whisky, and a lot of pubs</div></div>
+  </div>
+
+  <div class="callout">
+    <span class="callout-icon">🍴</span>
+    <div>Edinburgh has an excellent food scene for its size — fresh Scottish seafood, game, and a strong specialty-coffee culture, plus the Michelin-starred restaurants of Leith right by the port. Book dinner ahead, especially at weekends and during the Festival in August. Try a traditional haggis, neeps &amp; tatties at least once.</div>
+  </div>
+
+  <div class="segmented" role="tablist" aria-label="Venue type">
+    <button class="seg active" type="button" role="tab" aria-selected="true" data-tab="tab-food">🍴 Food</button>
+    <button class="seg" type="button" role="tab" aria-selected="false" data-tab="tab-coffee">☕ Coffee</button>
+    <button class="seg" type="button" role="tab" aria-selected="false" data-tab="tab-bars">🍺 Bars</button>
+    <button class="seg" type="button" role="tab" aria-selected="false" data-tab="tab-shop">🛍️ Shop</button>
+  </div>
+
+  <div id="tab-food" class="tab-panel active" role="tabpanel">
+    <div class="search"><input type="search" placeholder="Search restaurants…" aria-label="Search restaurants" oninput="filterVenues('tab-food',this.value)"></div>
+    <div class="venue-list stack"></div>
+  </div>
+  <div id="tab-coffee" class="tab-panel" role="tabpanel">
+    <div class="search"><input type="search" placeholder="Search coffee &amp; cafés…" aria-label="Search coffee and cafés" oninput="filterVenues('tab-coffee',this.value)"></div>
+    <div class="venue-list stack"></div>
+  </div>
+  <div id="tab-bars" class="tab-panel" role="tabpanel">
+    <div class="search"><input type="search" placeholder="Search bars…" aria-label="Search bars" oninput="filterVenues('tab-bars',this.value)"></div>
+    <div class="venue-list stack"></div>
+  </div>
+  <div id="tab-shop" class="tab-panel" role="tabpanel">
+    <div class="search"><input type="search" placeholder="Search shops…" aria-label="Search shops" oninput="filterVenues('tab-shop',this.value)"></div>
+    <div class="venue-list stack"></div>
+  </div>
+</section>
+
+<!-- ===== HOTELS ===== -->
+<section id="hotels" class="page t-heather" aria-label="Hotels">
+  <div class="page-head">
+    <span class="page-emoji">🏨</span>
+    <div><h1 class="page-title">Hotels</h1><div class="page-subtitle">Book early — the city fills up</div></div>
+  </div>
+
+  <div class="callout">
+    <span class="callout-icon">🛏️</span>
+    <div>Edinburgh has hotels at every price point, but demand is high — particularly in August (the Festival Fringe and the Military Tattoo) and at Hogmanay (New Year). Book as early as possible. Staying in Leith keeps you close to the ship; staying in the Old or New Town puts you in the middle of the sights.</div>
+  </div>
+
+  <div class="search"><input type="search" placeholder="Search hotels…" aria-label="Search hotels" oninput="filterHotels(this.value)"></div>
+  <div id="hotel-list" class="stack"></div>
+</section>
+
+<!-- ===== SAFETY ===== -->
+<section id="safety" class="page t-red" aria-label="Safety">
+  <div class="page-head">
+    <span class="page-emoji">🛡️</span>
+    <div><h1 class="page-title">Safety</h1><div class="page-subtitle">Stay sharp, stay safe</div></div>
+  </div>
+
+  <div class="sos">
+    <div class="sos-title">🚨 UK Emergency Numbers</div>
+    <a class="sos-main" href="tel:999"><span class="sos-num">999</span><span class="sos-label">Police · Fire · Ambulance<small>and Coastguard</small></span><span class="sos-call">Call</span></a>
+    <div class="sos-grid">
+      <a href="tel:112">112<small>Also works</small></a>
+      <a href="tel:101">101<small>Police non-emergency</small></a>
+      <a href="tel:111">111<small>NHS 24</small></a>
+    </div>
+  </div>
+
+  <div class="acc" data-group="safety">
+    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">👀</span>General<span class="acc-icon">+</span></button>
+    <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
+      <ul>
+        <li>Edinburgh is one of the safer UK cities, but it is a large, busy capital with a lively nightlife. Normal big-city awareness applies.</li>
+        <li>Pickpockets work crowded areas — the Royal Mile, Princes Street, and Waverley Station, especially during the Festival.</li>
+        <li>Stay aware of your surroundings at night, particularly around the Grassmarket, Cowgate, and Rose Street.</li>
+        <li>Traffic drives on the <strong>left</strong>. Look right first when crossing, and watch for trams and buses.</li>
+        <li>Buddy system, especially at night.</li>
+      </ul>
+    </div></div></div>
+  </div>
+  <div class="acc" data-group="safety">
+    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">⛰️</span>Weather &amp; Terrain<span class="acc-icon">+</span></button>
+    <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
+      <ul>
+        <li>The weather turns quickly. Carry a waterproof and a warm layer even on a sunny morning.</li>
+        <li>Cobbles and steps can be very slippery when wet, especially in the closes off the Royal Mile.</li>
+        <li>Arthur's Seat and Salisbury Crags have steep, loose paths and exposed edges. Wear proper footwear and avoid them in low cloud, high wind, or after dark.</li>
+        <li>Haar (sea fog) can reduce visibility along the waterfront and on the hills.</li>
+        <li>Winter daylight is short — sunset is around 3:40 pm in mid-December.</li>
+      </ul>
+    </div></div></div>
+  </div>
+  <div class="acc" data-group="safety">
+    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">🍺</span>Alcohol &amp; Nights Out<span class="acc-icon">+</span></button>
+    <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
+      <ul>
+        <li>The pubs are good and plentiful. Pace yourself — pints and whisky measures are generous.</li>
+        <li>Know how you're getting back to the ship before you go out. Night buses run, and taxis and Uber are available, but expect delays at closing time.</li>
+        <li>The council has byelaws banning drinking alcohol in designated public places. Keep it to licensed premises.</li>
+        <li>Look out for your shipmates.</li>
+        <li>You're representing the ship — be a good guest.</li>
+      </ul>
+    </div></div></div>
+  </div>
+  <div class="acc" data-group="safety">
+    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">🪪</span>ID &amp; Valuables<span class="acc-icon">+</span></button>
+    <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
+      <ul>
+        <li>Carry your military ID and a second piece of government photo ID. Bars may ask for photo ID.</li>
+        <li>Don't carry more cash than you need — cards and contactless are accepted nearly everywhere.</li>
+        <li>Keep phones and wallets in front pockets or zipped bags in crowds.</li>
+        <li>Leave valuables secured aboard or in your hotel safe.</li>
+      </ul>
+    </div></div></div>
+  </div>
+  <div class="acc" data-group="safety">
+    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">🏥</span>Medical &amp; Emergencies<span class="acc-icon">+</span></button>
+    <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
+      <ul>
+        <li>Call <strong>999</strong> (or <strong>112</strong>) for police, fire, ambulance, or the Coastguard.</li>
+        <li>Call <strong>101</strong> for non-emergency police matters.</li>
+        <li>Call <strong>111</strong> (NHS 24) for urgent but non-life-threatening medical advice.</li>
+        <li>Hospital: Royal Infirmary of Edinburgh, 51 Little France Crescent — Emergency Department open 24 hours, for ages 16 and over. Children go to the Royal Hospital for Children and Young People.</li>
+        <li>Follow your ship's medical and insurance procedures before seeking non-emergency care ashore.</li>
+        <li>Inform the ship of any incidents as soon as practical.</li>
+      </ul>
+    </div></div></div>
+  </div>
+</section>
+
+<!-- ===== CONTACTS ===== -->
+<section id="contacts" class="page t-saltire" aria-label="Contacts">
+  <div class="page-head">
+    <span class="page-emoji">📞</span>
+    <div><h1 class="page-title">Contacts</h1><div class="page-subtitle">Quick access</div></div>
+  </div>
+  <div class="bento">
+    <button class="tile feature wide t-saltire" type="button" data-nav="contacts-ship">
+      <span class="tile-icon">⚓</span>
+      <span><span class="tile-title">Ship Contacts</span><span class="tile-sub">Brow, Cox'n, XO &amp; Duty Medical</span></span>
+    </button>
+    <button class="tile feature wide t-moss" type="button" data-nav="contacts-local">
+      <span class="tile-icon">📍</span>
+      <span><span class="tile-title">Local Contacts</span><span class="tile-sub">Hospital, police, NHS &amp; taxis</span></span>
+    </button>
+  </div>
+</section>
+
+<!-- SHIP CONTACTS -->
+<section id="contacts-ship" class="page t-saltire" aria-label="Ship Contacts">
+  <div class="page-head">
+    <span class="page-emoji">⚓</span>
+    <div><h1 class="page-title">Ship Contacts</h1><div class="page-subtitle">Placeholder numbers — update before sailing</div></div>
+  </div>
+  <div id="ship-contact-list" class="stack"></div>
+</section>
+
+<!-- LOCAL CONTACTS -->
+<section id="contacts-local" class="page t-moss" aria-label="Local Contacts">
+  <div class="page-head">
+    <span class="page-emoji">📍</span>
+    <div><h1 class="page-title">Local Contacts</h1><div class="page-subtitle">Edinburgh &amp; Leith · Scotland</div></div>
+  </div>
+
+  <div class="sos">
+    <div class="sos-title">🚨 Emergency Numbers (UK)</div>
+    <a class="sos-main" href="tel:999"><span class="sos-num">999</span><span class="sos-label">Police · Fire · Ambulance<small>and Coastguard</small></span><span class="sos-call">Call</span></a>
+    <div class="sos-grid">
+      <a href="tel:112">112<small>Also works</small></a>
+      <a href="tel:101">101<small>Police non-emergency</small></a>
+      <a href="tel:111">111<small>NHS 24</small></a>
+    </div>
+  </div>
+
+  <div id="local-contact-list" class="stack"></div>
+</section>
+
+<!-- ===== EDINBURGH & LEITH HISTORY ===== -->
+<section id="history" class="page t-thistle" aria-label="Edinburgh and Leith History">
+  <div class="page-head">
+    <span class="page-emoji">🏰</span>
+    <div><h1 class="page-title">Edinburgh &amp; Leith History</h1><div class="page-subtitle">Castle, Enlightenment, and a very old port</div></div>
+  </div>
+
+  <div class="card" style="margin-bottom:14px">
+    <div class="item-name" style="font-family:var(--font-display);font-size:1.2rem;margin-bottom:6px">A Capital Built on a Volcano 🌋</div>
+    <div class="prose">Edinburgh has been Scotland's capital for over 600 years. Its Old Town sits on a ridge of volcanic rock leading down from the Castle, while the Georgian New Town to the north is a planned masterpiece of neoclassical streets and squares. Together they form a UNESCO World Heritage Site. Leith, where your ship is berthed, was Edinburgh's port for centuries and has its own long and colourful maritime story.</div>
+  </div>
+
+  <div class="acc" data-group="history">
+    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">🏰</span>The Castle &amp; the Old Town<span class="acc-icon">+</span></button>
+    <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
+      <p>Edinburgh Castle stands on Castle Rock, an extinct volcanic plug, and the site has been occupied since the Iron Age. For centuries it was a royal residence and the key fortress in Scotland's wars with England.</p>
+      <p>The Royal Mile runs down the ridge from the Castle to the Palace of Holyroodhouse. Confined by the city walls, the medieval town grew upward — tenements of ten or more storeys, with narrow closes and wynds running between them. Many of those closes are still walkable today.</p>
+      <p>The Castle's One O'Clock Gun has been fired since 1861 — daily at 1 pm except Sundays, Good Friday and Christmas Day. It was added as a sound signal for ships in the Forth, because haar often hid the time ball on Calton Hill.</p>
+    </div></div></div>
+  </div>
+  <div class="acc" data-group="history">
+    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">🧠</span>The Enlightenment &amp; the New Town<span class="acc-icon">+</span></button>
+    <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
+      <p>In the 18th century Edinburgh became one of Europe's great intellectual centres. Philosophers and scientists including David Hume, Adam Smith, and James Hutton worked here, and the period became known as the Scottish Enlightenment.</p>
+      <p>As the Old Town grew overcrowded, the city held a design competition in 1766 and began a new, planned district to the north. The New Town's wide streets, squares, and classical buildings are still among the finest examples of Georgian town planning anywhere. The Old and New Towns were inscribed as a World Heritage Site in 1995.</p>
+    </div></div></div>
+  </div>
+  <div class="acc" data-group="history">
+    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">⚓</span>Leith: Edinburgh's Port<span class="acc-icon">+</span></button>
+    <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
+      <p>Leith appears in records from 1128 and became Edinburgh's official port in 1329. It was an independent burgh from 1833 until it merged with Edinburgh in 1920, against the wishes of many Leithers — some locals still insist it's a separate place.</p>
+      <p>Leith has a long link to France through the Auld Alliance, and in 1560 English and Scottish Protestant forces took the town. Leith later became a major whaling port (from the early 17th century into the 1950s), a shipbuilding centre (until 1984) and a centre for storing wine and whisky. Reminders of that history are still visible around the Shore.</p>
+      <p>The Royal Yacht Britannia, launched in 1953 and decommissioned in 1997, has been permanently moored at Ocean Terminal in Leith since 1998.</p>
+    </div></div></div>
+  </div>
+  <div class="acc" data-group="history">
+    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">🥃</span>Whisky<span class="acc-icon">+</span></button>
+    <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
+      <p>Scotch whisky is legally defined and must be distilled and aged in Scotland for at least three years. Leith was a major centre for storing wine and whisky, and the port shipped it around the world.</p>
+      <p>Whisky is made in several regions, each with its own style — smoky Islay, honeyed Speyside, light Lowland, and more. Edinburgh is a good place to try a range side by side; the Scotch Whisky Experience and the Bow Bar are two popular options. Whisky is usually served neat or with a splash of water — ask the bartender.</p>
+    </div></div></div>
+  </div>
+  <div class="acc" data-group="history">
+    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">🎭</span>Festivals &amp; Modern Edinburgh<span class="acc-icon">+</span></button>
+    <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
+      <p>Every August, Edinburgh hosts the world's largest arts festival — the Fringe — alongside the International Festival, the Book Festival, and the Royal Edinburgh Military Tattoo on the Castle Esplanade. The city gets extremely busy and prices rise accordingly.</p>
+      <p>Hogmanay (New Year's Eve) is the other big event, with street parties and fireworks. Since 1999 the city has also been home to the Scottish Parliament, which sits at Holyrood.</p>
+    </div></div></div>
+  </div>
+  <div class="acc" data-group="history">
+    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">📜</span>Timeline<span class="acc-icon">+</span></button>
+    <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
+      <ul class="timeline">
+        <li><strong>1128</strong>Holyrood Abbey founded by King David I; Leith first appears in its charter.</li>
+        <li><strong>1560</strong>Siege of Leith: the French-held port is taken by English and Scottish Protestant forces.</li>
+        <li><strong>1707</strong>Act of Union joins Scotland and England; the Scottish Parliament is dissolved.</li>
+        <li><strong>1766–67</strong>James Craig wins the New Town design competition and work begins.</li>
+        <li><strong>1861</strong>The One O'Clock Gun is first fired from the Castle.</li>
+        <li><strong>1920</strong>Leith merges with Edinburgh.</li>
+        <li><strong>1947</strong>The first Edinburgh International Festival and Fringe.</li>
+        <li><strong>1995</strong>Old and New Towns become a UNESCO World Heritage Site.</li>
+        <li><strong>1998</strong>Royal Yacht Britannia is moored permanently at Leith.</li>
+        <li><strong>1999</strong>Scottish Parliament reconvenes; the Holyrood building opens in 2004.</li>
+        <li><strong>Today</strong>A living capital: castles, galleries, festivals, and a port that still sees ships from all over the world.</li>
+      </ul>
+    </div></div></div>
+  </div>
+  <div class="acc" data-group="history">
+    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">👣</span>See It Today<span class="acc-icon">+</span></button>
+    <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
+      <p><strong>Edinburgh Castle</strong> — The essential stop. Allow at least two hours; tickets often sell out, so book online.</p>
+      <p><strong>The Shore, Leith</strong> — Walk the old harbour. Several former warehouses are now restaurants and bars.</p>
+      <p><strong>Royal Yacht Britannia</strong> — Pre-book timed tickets. The entrance is on the second floor of Ocean Terminal.</p>
+      <p><strong>National Museum of Scotland</strong> — Free entry, open daily 10 am–5 pm.</p>
+    </div></div></div>
+  </div>
+
+  <div class="actions">
+    <a class="btn btn-map" href="https://www.google.com/maps/search/Edinburgh+Castle" target="_blank" rel="noopener">📍 Edinburgh Castle</a>
+    <a class="btn btn-map" href="https://www.google.com/maps/search/The+Shore+Leith+Edinburgh" target="_blank" rel="noopener">📍 The Shore</a>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== INSTALL BANNER ===== -->
+<div id="a2hs-banner" class="a2hs" role="dialog" aria-label="Add to Home Screen" hidden>
+  <span class="a2hs-icon"><img src="icons/icon-192.png" alt=""></span>
   <div>
     <div class="a2hs-title">Add to Home Screen</div>
     <div id="a2hs-sub" class="a2hs-sub">Save this brief for one‑tap access.</div>
@@ -446,605 +1143,174 @@ white-space: nowrap; flex-shrink: 0;
   </div>
 </div>
 
-<!-- ===== LANDING ===== -->
+<!-- ===== TAB BAR ===== -->
+<nav class="tabbar" aria-label="Main">
+  <button class="tab-btn active" type="button" data-nav="landing" data-tab-for="landing"><span class="tab-ico">🏠</span>Home</button>
+  <button class="tab-btn" type="button" data-nav="explore" data-tab-for="explore"><span class="tab-ico">🧭</span>Explore</button>
+  <button class="tab-btn" type="button" data-nav="weather" data-tab-for="weather"><span class="tab-ico">🌦️</span>Weather</button>
+  <button class="tab-btn" type="button" data-nav="safety" data-tab-for="safety"><span class="tab-ico">🛡️</span>Safety</button>
+  <button class="tab-btn" type="button" data-nav="contacts" data-tab-for="contacts"><span class="tab-ico">📞</span>Contacts</button>
+</nav>
 
-<div id="landing" class="page active">
-  <div class="landing-hero">
-    <span class="landing-emoji">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span>
-    <div class="landing-title">Welcome to<br>Edinburgh</div>
-    <div class="landing-dates">Fàilte gu Dùn Èideann &nbsp;·&nbsp; Edinburgh &amp; Leith, Scotland</div>
-  </div>
-  <div class="landing-grid">
-    <button class="landing-btn lb-routine" onclick="nav('routine')">
-      <span class="icon-wrap">⚓</span>
-      <span>Ship Routine &amp; Leave</span>
-      <span class="btn-arrow">›</span>
-    </button>
-    <button class="landing-btn lb-map" onclick="nav('explore')">
-      <span class="icon-wrap">🧭</span>
-      <span>Explore Edinburgh</span>
-      <span class="btn-arrow">›</span>
-    </button>
-    <button class="landing-btn lb-hotels" onclick="nav('hotels')">
-      <span class="icon-wrap">🏨</span>
-      <span>Hotels</span>
-      <span class="btn-arrow">›</span>
-    </button>
-    <button class="landing-btn lb-todo" onclick="nav('weather')">
-      <span class="icon-wrap">🌦️</span>
-      <span>Weather</span>
-      <span class="btn-arrow">›</span>
-    </button>
-    <button class="landing-btn lb-safety" onclick="nav('safety')">
-      <span class="icon-wrap">🛡️</span>
-      <span>Safety</span>
-      <span class="btn-arrow">›</span>
-    </button>
-    <button class="landing-btn lb-contacts" onclick="nav('contacts')">
-      <span class="icon-wrap">📞</span>
-      <span>Contacts</span>
-      <span class="btn-arrow">›</span>
-    </button>
-    <button class="landing-btn lb-rum" onclick="nav('history')">
-      <span class="icon-wrap">🏰</span>
-      <span>Edinburgh &amp; Leith History</span>
-      <span class="btn-arrow">›</span>
-    </button>
-  </div>
-</div>
-
-<!-- ===== PAGE 1: SHIP ROUTINE & LEAVE ===== -->
-
-<div id="routine" class="page">
-  <button class="back-btn" onclick="nav('landing')">Home</button>
-  <div class="page-title">Ship Routine &amp; Leave</div>
-  <div class="page-subtitle">Port of Leith, Edinburgh</div>
-  <div class="color-bar"></div>
-
-  <div class="accordion-item" data-group="routine">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Port Window <span class="accordion-icon">+</span></button>
-    <div class="accordion-body"><p>Per Routine Orders — Edinburgh. Confirm whether the ship is alongside at Leith or at anchor in the Firth of Forth (with boat transfers) — it changes your return-to-ship timings.</p></div>
-  </div>
-  <div class="accordion-item" data-group="routine">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Daily Routine <span class="accordion-icon">+</span></button>
-    <div class="accordion-body"><p>Per Routine Orders.</p></div>
-  </div>
-  <div class="accordion-item" data-group="routine">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Leave <span class="accordion-icon">+</span></button>
-    <div class="accordion-body"><p>Per Routine Orders.</p></div>
-  </div>
-  <div class="accordion-item" data-group="routine">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Currency &amp; Language <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <ul>
-        <li><strong>Currency:</strong> Pound sterling (£). Scottish banknotes (Bank of Scotland, Royal Bank of Scotland, Clydesdale) are legal tender in Scotland and are accepted alongside Bank of England notes, though some shops in England may refuse them. Contactless card and phone payments are accepted almost everywhere.</li>
-        <li><strong>ATMs:</strong> Widely available across Leith and the city centre, including at Ocean Terminal. Withdrawals are free from most UK machines.</li>
-        <li><strong>Language:</strong> English, with a strong Scots accent and plenty of dialect. Gaelic is only occasionally heard, mostly on signage.</li>
-        <li><strong>Phones:</strong> Check your roaming plan before landing. UK country code is +44; Edinburgh landlines start 0131. Power sockets are Type G (three-pin, 230V) — bring an adaptor.</li>
-        <li><strong>Drinking age:</strong> 18. Scotland has a minimum unit price on alcohol, so drinks are not especially cheap.</li>
-        </ul>
-    </div>
-  </div>
-  <div class="accordion-item" data-group="routine">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Overnight Leave <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <ul>
-        <li>Have your hotel name, address, and phone number ready before requesting leave.</li>
-        <li>Provide a contact number where you can be reached at all times.</li>
-        <li>Know your leave expiry time and plan return travel accordingly.</li>
-        <li>If your plans change, inform the ship per routine as soon as possible.</li>
-        <li>Keep your military ID and leave pass on your person.</li>
-        <li>Edinburgh is a big, busy city. Leith is about 3–4 km from the centre — allow time for buses or trams on the way back, particularly at night.</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<!-- ===== EXPLORE HUB ===== -->
-
-<div id="explore" class="page">
-  <button class="back-btn" onclick="nav('landing')">Home</button>
-  <div class="page-title">Explore Edinburgh</div>
-  <div class="page-subtitle">Castles, closes, and a very good pint</div>
-  <div class="color-bar"></div>
-  <div class="landing-grid">
-    <button class="landing-btn lb-map" onclick="nav('map')">
-      <span class="icon-wrap">🗺️</span>
-      <span>Map &amp; Getting Around</span>
-      <span class="btn-arrow">›</span>
-    </button>
-    <button class="landing-btn lb-todo" onclick="nav('todo')">
-      <span class="icon-wrap">🎯</span>
-      <span>Things To Do</span>
-      <span class="btn-arrow">›</span>
-    </button>
-    <button class="landing-btn lb-food" onclick="nav('food')">
-      <span class="icon-wrap">🍽️</span>
-      <span>Food, Coffee &amp; Bars</span>
-      <span class="btn-arrow">›</span>
-    </button>
-  </div>
-</div>
-
-<!-- ===== WEATHER ===== -->
-
-<div id="weather" class="page">
-  <button class="back-btn" onclick="nav('landing')">Home</button>
-  <div class="page-title">Weather</div>
-  <div class="page-subtitle">Edinburgh &amp; Leith</div>
-  <div class="color-bar"></div>
-
-  <div class="card" style="margin-bottom:10px; padding:14px 16px;">
-    <div style="display:flex;align-items:center;gap:10px;">
-      <span style="font-size:1.6rem;">🌦️</span>
-      <div style="font-size:0.82rem;color:var(--text-mid);line-height:1.5;">
-        <strong>Four seasons in one day.</strong> Edinburgh weather changes quickly, and the east coast gets haar — cold sea fog off the Forth. Always check a live source before heading out.
-      </div>
-    </div>
-  </div>
-
-  <div id="weather-dynamic">
-    <div class="card" style="text-align:center;padding:24px;color:var(--text-light);">Loading weather…</div>
-  </div>
-
-  <div class="section-header">What to Expect</div>
-  <div class="card" style="margin-bottom:16px;">
-    <div class="card-note" style="color:var(--text-mid);line-height:1.7;margin-bottom:0;">
-      Edinburgh has a mild, temperate maritime climate — cool, changeable, and often breezy. Summers (June–August) are comfortable, with highs around 18–19°C, and very long days (sunset after 10 pm at midsummer). Winters are cold and damp, with highs around 6°C, lows near 1°C and frequent night frosts, and the sun sets around 3:40 pm in mid-December. Wind off the Firth of Forth makes it feel colder than the thermometer says, and the haar can roll in on spring and summer mornings. Pack a waterproof and layers year-round. Check the live forecast below before going out.
-    </div>
-  </div>
-
-  <div class="section-header">Live Forecast Links</div>
-  <div class="map-btns">
-    <a class="map-btn" href="https://www.metoffice.gov.uk/weather/forecast/gcvwr3zrw" target="_blank" rel="noopener">
-      <span class="map-pin" style="background:linear-gradient(135deg,var(--ocean),var(--teal));">🇬🇧</span> Met Office <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.bbc.co.uk/weather/2650225" target="_blank" rel="noopener">
-      <span class="map-pin" style="background:linear-gradient(135deg,var(--coral),var(--gold));">🌡️</span> BBC Weather <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.timeanddate.com/weather/uk/edinburgh/ext" target="_blank" rel="noopener">
-      <span class="map-pin" style="background:linear-gradient(135deg,var(--plum),var(--ocean));">📅</span> 14-Day Forecast <span class="chevron">›</span>
-    </a>
-  </div>
-</div>
-
-<!-- ===== PAGE 2: MAP & GETTING AROUND ===== -->
-
-<div id="map" class="page">
-  <button class="back-btn" onclick="nav('explore')">Explore</button>
-  <div class="page-title">Map &amp; Getting Around</div>
-  <div class="page-subtitle">Tap to open in Google Maps</div>
-  <div class="color-bar"></div>
-
-  <div class="card" style="margin-bottom:14px;padding:14px 16px;">
-    <div style="font-size:0.84rem;color:var(--text-mid);line-height:1.6;">
-      <strong>The port is in Leith, about 3–4 km from the city centre.</strong> The Old Town and New Town are compact and very walkable once you get there, but hilly and cobbled. Trams and buses link Leith to Princes Street.
-    </div>
-  </div>
-
-  <div class="map-btns">
-    <a class="map-btn" href="https://www.google.com/maps/search/Port+of+Leith+Edinburgh" target="_blank" rel="noopener">
-      <span class="map-pin">⚓</span> Port of Leith <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/search/The+Shore+Leith+Edinburgh" target="_blank" rel="noopener">
-      <span class="map-pin">📍</span> The Shore, Leith <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/search/Edinburgh+Waverley+Station" target="_blank" rel="noopener">
-      <span class="map-pin">🚉</span> Waverley Station <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/search/Edinburgh+Castle" target="_blank" rel="noopener">
-      <span class="map-pin">🏰</span> Edinburgh Castle <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/search/Royal+Mile+Edinburgh" target="_blank" rel="noopener">
-      <span class="map-pin">🏛️</span> The Royal Mile <span class="chevron">›</span>
-    </a>
-    <a class="map-btn" href="https://www.google.com/maps/search/Arthur's+Seat+Edinburgh" target="_blank" rel="noopener">
-      <span class="map-pin">⛰️</span> Arthur's Seat <span class="chevron">›</span>
-    </a>
-  </div>
-
-  <div class="section-header">Transportation</div>
-  <div class="card" style="margin-bottom:16px;">
-    <div class="card-note" style="color:var(--text-mid);line-height:1.65;margin-bottom:0;">
-      <ul style="padding-left:18px;">
-        <li style="margin-bottom:6px;"><strong>Walking:</strong> Leith to the Old Town is roughly 45–60 minutes on foot along Leith Walk. Fine in good weather, but hilly at the city end.</li>
-        <li style="margin-bottom:6px;"><strong>Bus:</strong> Lothian Buses run frequently between Leith and the city centre, with night services too. Pay by contactless card or the Lothian app; daily caps apply. See lothianbuses.com for current fares.</li>
-        <li style="margin-bottom:6px;"><strong>Tram:</strong> The Edinburgh tram runs from the Airport through Haymarket, Princes Street and down Leith Walk to Newhaven, about every 7 minutes in the daytime. <strong>The Shore, Port of Leith and Ocean Terminal stops are the closest to the ship.</strong> Check edinburghtrams.com for current fares and last trams.</li>
-        <li style="margin-bottom:6px;"><strong>Taxis &amp; rideshare:</strong> Black cabs can be hailed or found at ranks, and phone numbers are on the Local Contacts page. Private hire cars must be pre-booked; Uber operates in the city.</li>
-        <li style="margin-bottom:6px;"><strong>Train:</strong> Waverley Station is in the heart of the city and has services across Scotland and to London. Haymarket handles west and Fife services.</li>
-        <li style="margin-bottom:6px;"><strong>Drive on the left:</strong> If renting a car, note that the UK drives on the left. Parking in the centre is limited and expensive; public transport is easier.</li>
-        <li><strong>Day trips:</strong> South Queensferry (Forth Bridges) is close by train or bus. Stirling, St Andrews, and Glasgow are all within about an hour or so by train.</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<!-- ===== PAGE 3: THINGS TO DO ===== -->
-
-<div id="todo" class="page">
-  <button class="back-btn" onclick="nav('explore')">Explore</button>
-  <div class="page-title">Things To Do</div>
-  <div class="page-subtitle">Filter by what you're feeling</div>
-  <div class="color-bar"></div>
-
-  <div class="chips" id="todo-chips"></div>
-  <div id="todo-list"></div>
-</div>
-
-<!-- ===== PAGE 4: FOOD, COFFEE & BARS ===== -->
-
-<div id="food" class="page">
-  <button class="back-btn" onclick="nav('explore')">Explore</button>
-  <div class="page-title">Food, Coffee &amp; Bars</div>
-  <div class="page-subtitle">Seafood, whisky, and a lot of pubs</div>
-  <div class="color-bar"></div>
-
-  <div class="card" style="margin-bottom:14px;padding:14px 16px;">
-    <div style="font-size:0.84rem;color:var(--text-mid);line-height:1.6;">
-      Edinburgh has an excellent food scene for its size — fresh Scottish seafood, game, and a strong specialty-coffee culture, plus the Michelin-starred restaurants of Leith right by the port. Reservations are recommended for dinner, especially on weekends and during the Festival in August. Try a traditional haggis, neeps &amp; tatties at least once.
-    </div>
-  </div>
-
-  <div class="tabs">
-    <button class="tab active" onclick="switchTab('food','tab-food',this)">🍴 Food</button>
-    <button class="tab" onclick="switchTab('food','tab-coffee',this)">☕ Coffee</button>
-    <button class="tab" onclick="switchTab('food','tab-bars',this)">🍺 Bars</button>
-    <button class="tab" onclick="switchTab('food','tab-shop',this)">🛍️ Shop</button>
-  </div>
-
-  <div id="tab-food" class="tab-panel active">
-    <input type="text" class="search-input" placeholder="Search restaurants…" oninput="filterVenues('tab-food',this.value)">
-    <div class="venue-list"></div>
-  </div>
-  <div id="tab-coffee" class="tab-panel">
-    <input type="text" class="search-input" placeholder="Search coffee &amp; cafés…" oninput="filterVenues('tab-coffee',this.value)">
-    <div class="venue-list"></div>
-  </div>
-  <div id="tab-bars" class="tab-panel">
-    <input type="text" class="search-input" placeholder="Search bars…" oninput="filterVenues('tab-bars',this.value)">
-    <div class="venue-list"></div>
-  </div>
-  <div id="tab-shop" class="tab-panel">
-    <input type="text" class="search-input" placeholder="Search shops…" oninput="filterVenues('tab-shop',this.value)">
-    <div class="venue-list"></div>
-  </div>
-</div>
-
-<!-- ===== PAGE 5: HOTELS ===== -->
-
-<div id="hotels" class="page">
-  <button class="back-btn" onclick="nav('landing')">Home</button>
-  <div class="page-title">Hotels</div>
-  <div class="page-subtitle">Edinburgh &amp; Leith · Book early — the city fills up</div>
-  <div class="color-bar"></div>
-
-  <div class="card" style="margin-bottom:14px;padding:14px 16px;">
-    <div style="font-size:0.84rem;color:var(--text-mid);line-height:1.6;">
-      Edinburgh has hotels at every price point, but demand is high — particularly in August (Festival Fringe and the Military Tattoo), at Hogmanay (New Year). Book as early as possible. Staying in Leith keeps you close to the ship; staying in the Old or New Town puts you in the middle of the sights.
-    </div>
-  </div>
-
-  <input type="text" class="search-input" placeholder="Search hotels…" oninput="filterHotels(this.value)">
-  <div id="hotel-list"></div>
-</div>
-
-<!-- ===== PAGE 6: SAFETY ===== -->
-
-<div id="safety" class="page">
-  <button class="back-btn" onclick="nav('landing')">Home</button>
-  <div class="page-title">Safety</div>
-  <div class="page-subtitle">Stay sharp, stay safe</div>
-  <div class="color-bar"></div>
-
-  <div class="card" style="background:linear-gradient(135deg,var(--coral),#ff4757);margin-bottom:12px;padding:16px 18px;">
-    <div style="color:#fff;font-weight:800;font-size:1rem;margin-bottom:8px;">🚨 UK Emergency Numbers</div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;">
-      <a href="tel:999" style="background:rgba(255,255,255,0.25);color:#fff;font-weight:800;font-size:0.88rem;padding:8px 14px;border-radius:10px;text-decoration:none;">999 · Police / Fire / Ambulance</a>
-      <a href="tel:112" style="background:rgba(255,255,255,0.2);color:#fff;font-weight:800;font-size:0.88rem;padding:8px 14px;border-radius:10px;text-decoration:none;">112 · Also Works</a>
-      <a href="tel:101" style="background:rgba(255,255,255,0.2);color:#fff;font-weight:800;font-size:0.88rem;padding:8px 14px;border-radius:10px;text-decoration:none;">101 · Police (Non-Emergency)</a>
-      <a href="tel:111" style="background:rgba(255,255,255,0.2);color:#fff;font-weight:800;font-size:0.88rem;padding:8px 14px;border-radius:10px;text-decoration:none;">111 · NHS 24</a>
-    </div>
-  </div>
-
-  <div class="accordion-item" data-group="safety">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">General <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <ul>
-        <li>Edinburgh is one of the safer UK cities, but it is a large, busy capital with a lively nightlife. Normal big-city awareness applies.</li>
-        <li>Pickpockets work crowded areas — the Royal Mile, Princes Street, and Waverley Station, especially during the Festival.</li>
-        <li>Stay aware of your surroundings at night, particularly around the Grassmarket, Cowgate, and Rose Street.</li>
-        <li>Traffic drives on the <strong>left</strong>. Look right first when crossing, and watch for trams and buses.</li>
-        <li>Buddy system, especially at night.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="accordion-item" data-group="safety">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Weather &amp; Terrain <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <ul>
-        <li>The weather turns quickly. Carry a waterproof and a warm layer even on a sunny morning.</li>
-        <li>Cobbles and steps can be very slippery when wet, especially in the closes off the Royal Mile.</li>
-        <li>Arthur's Seat and Salisbury Crags have steep, loose paths and exposed edges. Wear proper footwear and avoid them in low cloud, high wind, or after dark.</li>
-        <li>Haar (sea fog) can reduce visibility along the waterfront and on the hills.</li>
-        <li>Winter daylight is short — sunset is around 3:40 pm in mid-December.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="accordion-item" data-group="safety">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Alcohol / Nights Out <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <ul>
-        <li>The pubs are good and plentiful. Pace yourself — pints and whisky measures are generous.</li>
-        <li>Know how you're getting back to the ship before you go out. Night buses run, and taxis and Uber are available, but expect delays at closing time.</li>
-        <li>The council has byelaws banning drinking alcohol in designated public places. Keep it to licensed premises.</li>
-        <li>Look out for your shipmates.</li>
-        <li>You're representing the ship — be a good guest.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="accordion-item" data-group="safety">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">ID / Valuables <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <ul>
-        <li>Carry your military ID and a second piece of government photo ID. Bars may ask for photo ID.</li>
-        <li>Don't carry more cash than you need — cards and contactless are accepted nearly everywhere.</li>
-        <li>Keep phones and wallets in front pockets or zipped bags in crowds.</li>
-        <li>Leave valuables secured aboard or in your hotel safe.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="accordion-item" data-group="safety">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Medical &amp; Emergencies <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <ul>
-        <li>Call <strong>999</strong> (or <strong>112</strong>) for police, fire, ambulance, or the Coastguard.</li>
-        <li>Call <strong>101</strong> for non-emergency police matters.</li>
-        <li>Call <strong>111</strong> (NHS 24) for urgent but non-life-threatening medical advice.</li>
-        <li>Hospital: Royal Infirmary of Edinburgh, 51 Little France Crescent — Emergency Department open 24 hours, for ages 16 and over. Children go to the Royal Hospital for Children and Young People.</li>
-        <li>Follow your ship's medical and insurance procedures before seeking non-emergency care ashore.</li>
-        <li>Inform the ship of any incidents as soon as practical.</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<!-- ===== PAGE 7: CONTACTS ===== -->
-
-<div id="contacts" class="page">
-  <button class="back-btn" onclick="nav('landing')">Home</button>
-  <div class="page-title">Contacts</div>
-  <div class="page-subtitle">Quick access</div>
-  <div class="color-bar"></div>
-  <div class="landing-grid">
-    <button class="landing-btn lb-routine" onclick="nav('contacts-ship')">
-      <span class="icon-wrap">⚓</span>
-      <span>Ship Contacts</span>
-      <span class="btn-arrow">›</span>
-    </button>
-    <button class="landing-btn lb-map" onclick="nav('contacts-local')">
-      <span class="icon-wrap">📍</span>
-      <span>Local Contacts</span>
-      <span class="btn-arrow">›</span>
-    </button>
-  </div>
-</div>
-
-<!-- SHIP CONTACTS -->
-
-<div id="contacts-ship" class="page">
-  <button class="back-btn" onclick="nav('contacts')">Contacts</button>
-  <div class="page-title">Ship Contacts</div>
-  <div class="page-subtitle">Placeholder numbers — update before sailing</div>
-  <div class="color-bar"></div>
-
-  <div id="ship-contact-list"></div>
-</div>
-
-<!-- LOCAL CONTACTS -->
-
-<div id="contacts-local" class="page">
-  <button class="back-btn" onclick="nav('contacts')">Contacts</button>
-  <div class="page-title">Local Contacts</div>
-  <div class="page-subtitle">Edinburgh &amp; Leith · Scotland</div>
-  <div class="color-bar"></div>
-
-  <div class="card" style="background:linear-gradient(135deg,var(--coral),#ff4757);margin-bottom:12px;padding:16px 18px;">
-    <div style="color:#fff;font-weight:800;font-size:1rem;margin-bottom:8px;">🚨 Emergency Numbers (UK)</div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;">
-      <a href="tel:999" style="background:rgba(255,255,255,0.25);color:#fff;font-weight:800;font-size:0.88rem;padding:8px 14px;border-radius:10px;text-decoration:none;">999 · Police / Fire / Ambulance</a>
-      <a href="tel:112" style="background:rgba(255,255,255,0.2);color:#fff;font-weight:800;font-size:0.88rem;padding:8px 14px;border-radius:10px;text-decoration:none;">112 · Also Works</a>
-      <a href="tel:101" style="background:rgba(255,255,255,0.2);color:#fff;font-weight:800;font-size:0.88rem;padding:8px 14px;border-radius:10px;text-decoration:none;">101 · Police (Non-Emergency)</a>
-      <a href="tel:111" style="background:rgba(255,255,255,0.2);color:#fff;font-weight:800;font-size:0.88rem;padding:8px 14px;border-radius:10px;text-decoration:none;">111 · NHS 24</a>
-    </div>
-  </div>
-
-  <div id="local-contact-list"></div>
-</div>
-
-<!-- ===== PAGE 8: EDINBURGH & LEITH HISTORY ===== -->
-
-<div id="history" class="page">
-  <button class="back-btn" onclick="nav('landing')">Home</button>
-  <div class="page-title">Edinburgh &amp; Leith History</div>
-  <div class="page-subtitle">Castle, Enlightenment, and a very old port</div>
-  <div class="color-bar"></div>
-
-  <div class="card" style="margin-bottom:16px;">
-    <div class="card-name" style="font-size:1.05rem; margin-bottom:6px;">A Capital Built on a Volcano</div>
-    <div class="card-note" style="color:var(--text-mid); line-height:1.7; font-size:0.88rem;">
-      Edinburgh has been Scotland's capital for over 600 years. Its Old Town sits on a ridge of volcanic rock leading down from the Castle, while the Georgian New Town to the north is a planned masterpiece of neoclassical streets and squares. Together they form a UNESCO World Heritage Site. Leith, where your ship is berthed, was Edinburgh's port for centuries and has its own long and colourful maritime story.
-    </div>
-  </div>
-
-  <div class="accordion-item" data-group="history">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">The Castle &amp; the Old Town <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <p>Edinburgh Castle stands on Castle Rock, an extinct volcanic plug, and the site has been occupied since the Iron Age. For centuries it was a royal residence and the key fortress in Scotland's wars with England.</p>
-      <p style="margin-top:10px;">The Royal Mile runs down the ridge from the Castle to the Palace of Holyroodhouse. Confined by the city walls, the medieval town grew upward — tenements of ten or more storeys, with narrow closes and wynds running between them. Many of those closes are still walkable today.</p>
-      <p style="margin-top:10px;">The Castle's One O'Clock Gun has been fired since 1861 — daily at 1 pm except Sundays, Good Friday and Christmas Day. It was added as a sound signal for ships in the Forth, because haar often hid the time ball on Calton Hill.</p>
-    </div>
-  </div>
-
-  <div class="accordion-item" data-group="history">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">The Enlightenment &amp; the New Town <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <p>In the 18th century Edinburgh became one of Europe's great intellectual centres. Philosophers and scientists including David Hume, Adam Smith, and James Hutton worked here, and the period became known as the Scottish Enlightenment.</p>
-      <p style="margin-top:10px;">As the Old Town grew overcrowded, the city held a design competition in 1766 and began a new, planned district to the north. The New Town's wide streets, squares, and classical buildings are still among the finest examples of Georgian town planning anywhere. The Old and New Towns were inscribed as a World Heritage Site in 1995.</p>
-    </div>
-  </div>
-
-  <div class="accordion-item" data-group="history">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Leith: Edinburgh's Port <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <p>Leith appears in records from 1128 and became Edinburgh's official port in 1329. It was an independent burgh from 1833 until it merged with Edinburgh in 1920, against the wishes of many Leithers — some locals still insist it's a separate place.</p>
-      <p style="margin-top:10px;">Leith has a long link to France through the Auld Alliance, and in 1560 English and Scottish Protestant forces took the town. Leith later became a major whaling port (from the early 17th century into the 1950s), a shipbuilding centre (until 1984) and a centre for storing wine and whisky. Reminders of that history are still visible around the Shore.</p>
-      <p style="margin-top:10px;">The Royal Yacht Britannia, launched in 1953 and decommissioned in 1997, has been permanently moored at Ocean Terminal in Leith since 1998.</p>
-    </div>
-  </div>
-
-  <div class="accordion-item" data-group="history">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Whisky <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <p>Scotch whisky is legally defined and must be distilled and aged in Scotland for at least three years. Leith was a major centre for storing wine and whisky, and the port shipped it around the world.</p>
-      <p style="margin-top:10px;">Whisky is made in several regions, each with its own style — smoky Islay, honeyed Speyside, light Lowland, and more. Edinburgh is a good place to try a range side by side; the Scotch Whisky Experience and the Bow Bar are two popular options. Whisky is usually served neat or with a splash of water — ask the bartender.</p>
-    </div>
-  </div>
-
-  <div class="accordion-item" data-group="history">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Festivals &amp; Modern Edinburgh <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <p>Every August, Edinburgh hosts the world's largest arts festival — the Fringe — alongside the International Festival, the Book Festival, and the Royal Edinburgh Military Tattoo on the Castle Esplanade. The city gets extremely busy and prices rise accordingly.</p>
-      <p style="margin-top:10px;">Hogmanay (New Year's Eve) is the other big event, with street parties and fireworks. Since 1999 the city has also been home to the Scottish Parliament, which sits at Holyrood.</p>
-    </div>
-  </div>
-
-  <div class="accordion-item" data-group="history">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">Timeline <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <ul>
-        <li><strong>1128</strong> — Holyrood Abbey founded by King David I; Leith first appears in its charter.</li>
-        <li><strong>1560</strong> — Siege of Leith: the French-held port is taken by English and Scottish Protestant forces.</li>
-        <li><strong>1707</strong> — Act of Union joins Scotland and England; the Scottish Parliament is dissolved.</li>
-        <li><strong>1766–67</strong> — James Craig wins the New Town design competition and work begins.</li>
-        <li><strong>1861</strong> — The One O'Clock Gun is first fired from the Castle.</li>
-        <li><strong>1920</strong> — Leith merges with Edinburgh.</li>
-        <li><strong>1998</strong> — Royal Yacht Britannia is moored permanently at Leith.</li>
-        <li><strong>1947</strong> — The first Edinburgh International Festival and Fringe.</li>
-        <li><strong>1995</strong> — Old and New Towns become a UNESCO World Heritage Site.</li>
-        <li><strong>1999</strong> — Scottish Parliament reconvenes; the Holyrood building opens in 2004.</li>
-        <li><strong>Today</strong> — A living capital: castles, galleries, festivals, and a port that still sees ships from all over the world.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="accordion-item" data-group="history">
-    <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">See It Today <span class="accordion-icon">+</span></button>
-    <div class="accordion-body">
-      <p><strong>Edinburgh Castle</strong> — The essential stop. Allow at least two hours; tickets often sell out, so book online.</p>
-      <p style="margin-top:8px;"><strong>The Shore, Leith</strong> — Walk the old harbour. Several former warehouses are now restaurants and bars.</p>
-      <p style="margin-top:8px;"><strong>Royal Yacht Britannia</strong> — Pre-book timed tickets. The entrance is on the second floor of Ocean Terminal.</p>
-      <p style="margin-top:8px;"><strong>National Museum of Scotland</strong> — Free entry, open daily 10 am–5 pm.</p>
-    </div>
-  </div>
-
-  <div style="margin-top:16px;" class="card-actions">
-    <a class="btn-sm btn-map" href="https://www.google.com/maps/search/Edinburgh+Castle" target="_blank" rel="noopener">📍 Edinburgh Castle</a>
-    <a class="btn-sm btn-map" href="https://www.google.com/maps/search/The+Shore+Leith+Edinburgh" target="_blank" rel="noopener">📍 The Shore</a>
-  </div>
 </div>
 
 <script src="data.js"></script>
 <script>
-/* ===== A2HS ===== */
-const A2HS_DISMISSED_KEY = 'a2hs_dismissed_v1';
-let deferredInstallPrompt = null;
-
-function isStandaloneMode() {
-  return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
-}
-
-function shouldShowA2HSBanner() {
-  if (isStandaloneMode()) return false;
-  try { return !localStorage.getItem(A2HS_DISMISSED_KEY); } catch { return true; }
-}
-
-function dismissA2HSBanner() {
-  const banner = document.getElementById('a2hs-banner');
-  if (banner) banner.hidden = true;
-  try { localStorage.setItem(A2HS_DISMISSED_KEY, '1'); } catch {}
-}
-
-function setupA2HSBanner() {
-  const banner = document.getElementById('a2hs-banner');
-  const sub = document.getElementById('a2hs-sub');
-  const actionBtn = document.getElementById('a2hs-action');
-  const dismissBtn = document.getElementById('a2hs-dismiss');
-  if (!banner || !sub || !actionBtn || !dismissBtn) return;
-
-  if (!shouldShowA2HSBanner()) { banner.hidden = true; return; }
-
-  const ua = navigator.userAgent || '';
-  const isIOS = /iPad|iPhone|iPod/.test(ua);
-
-  if (deferredInstallPrompt) {
-    sub.textContent = 'Install this brief for one‑tap access.';
-    actionBtn.hidden = false;
-    actionBtn.textContent = 'Install';
-  } else if (isIOS) {
-    sub.textContent = 'On iPhone/iPad: tap Share → “Add to Home Screen”.';
-    actionBtn.hidden = true;
-  } else {
-    sub.textContent = 'Save this brief for one‑tap access (when install is available).';
-    actionBtn.hidden = true;
-  }
-
-  banner.hidden = false;
-
-  dismissBtn.onclick = dismissA2HSBanner;
-  actionBtn.onclick = async () => {
-    if (!deferredInstallPrompt) return;
-    deferredInstallPrompt.prompt();
-    try { await deferredInstallPrompt.userChoice; } catch {}
-    deferredInstallPrompt = null;
-    dismissA2HSBanner();
-  };
-}
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredInstallPrompt = e;
-  setupA2HSBanner();
-});
-
-setupA2HSBanner();
+/* ===== PAGE REGISTRY ===== */
+const PAGES = {
+  landing:          { title: 'Edinburgh',        parent: null,       tab: 'landing' },
+  routine:          { title: 'Ship Routine',     parent: 'landing',  tab: 'landing' },
+  explore:          { title: 'Explore',          parent: 'landing',  tab: 'explore' },
+  map:              { title: 'Getting Around',   parent: 'explore',  tab: 'explore' },
+  todo:             { title: 'Things To Do',     parent: 'explore',  tab: 'explore' },
+  food:             { title: 'Food & Drink',     parent: 'explore',  tab: 'explore' },
+  hotels:           { title: 'Hotels',           parent: 'landing',  tab: 'landing' },
+  weather:          { title: 'Weather',          parent: 'landing',  tab: 'weather' },
+  safety:           { title: 'Safety',           parent: 'landing',  tab: 'safety' },
+  contacts:         { title: 'Contacts',         parent: 'landing',  tab: 'contacts' },
+  'contacts-ship':  { title: 'Ship Contacts',    parent: 'contacts', tab: 'contacts' },
+  'contacts-local': { title: 'Local Contacts',   parent: 'contacts', tab: 'contacts' },
+  history:          { title: 'History',          parent: 'landing',  tab: 'landing' }
+};
+let currentPage = 'landing';
 
 /* ===== NAVIGATION ===== */
 function nav(pageId, pushHistory = true) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  const el = document.getElementById(pageId);
-  if (el) { el.classList.add('active'); window.scrollTo({top:0,behavior:'instant'}); }
-  if (pageId === 'weather') loadWeather();
-  if (pushHistory) history.pushState(null, '', '#' + pageId);
+  if (!PAGES[pageId]) pageId = 'landing';
+  const meta = PAGES[pageId];
+  currentPage = pageId;
+
+  document.querySelectorAll('.page').forEach(p => p.classList.toggle('active', p.id === pageId));
+  document.getElementById('back-btn').hidden = !meta.parent;
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    const on = b.dataset.tabFor === meta.tab;
+    b.classList.toggle('active', on);
+    if (on) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current');
+  });
+  document.title = pageId === 'landing' ? 'Edinburgh Port Brief' : `${meta.title} · Edinburgh Port Brief`;
+  window.scrollTo({ top: 0, behavior: 'instant' });
+  updateTopbarTitle();
+
+  if (pageId === 'weather') renderWeatherPage();
+  updateA2HSVisibility();
+
+  if (pushHistory) {
+    const url = pageId === 'landing' ? location.pathname + location.search : '#' + pageId;
+    history.pushState({ page: pageId }, '', url);
+  }
 }
 
+function updateTopbarTitle() {
+  const head = document.querySelector('.page.active .page-head');
+  const scrolledPast = currentPage !== 'landing' && head && head.getBoundingClientRect().bottom < 64;
+  const title = document.getElementById('topbar-title');
+  const next = scrolledPast ? PAGES[currentPage].title : 'Edinburgh';
+  if (title.textContent !== next) title.textContent = next;
+  document.getElementById('topbar-sub').textContent = scrolledPast ? 'Edinburgh Port Brief' : 'Port Brief · Leith';
+}
+window.addEventListener('scroll', updateTopbarTitle, { passive: true });
+
+document.addEventListener('click', (e) => {
+  const target = e.target.closest('[data-nav]');
+  if (!target) return;
+  e.preventDefault();
+  nav(target.dataset.nav);
+});
+document.getElementById('back-btn').addEventListener('click', () => {
+  const parent = PAGES[currentPage] && PAGES[currentPage].parent;
+  nav(parent || 'landing');
+});
+window.addEventListener('popstate', () => nav(location.hash.slice(1) || 'landing', false));
+
+/* ===== THEME ===== */
+const THEME_KEY = 'theme_v1';
+const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+function effectiveTheme() {
+  return document.documentElement.dataset.theme || (darkQuery.matches ? 'dark' : 'light');
+}
+function syncThemeButton() {
+  const btn = document.getElementById('theme-btn');
+  const dark = effectiveTheme() === 'dark';
+  btn.textContent = dark ? '☀️' : '🌙';
+  btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+}
+document.getElementById('theme-btn').addEventListener('click', () => {
+  const next = effectiveTheme() === 'dark' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = next;
+  try { localStorage.setItem(THEME_KEY, next); } catch {}
+  syncThemeButton();
+});
+darkQuery.addEventListener('change', syncThemeButton);
+syncThemeButton();
+
 /* ===== ACCORDION ===== */
-function toggleAccordion(trigger) {
-  const item = trigger.parentElement;
-  const group = item.dataset.group;
+document.addEventListener('click', (e) => {
+  const trigger = e.target.closest('.acc-trigger');
+  if (!trigger) return;
+  const item = trigger.closest('.acc');
   const isOpen = item.classList.contains('open');
+  const group = item.dataset.group;
   if (group) {
-    document.querySelectorAll(`.accordion-item[data-group="${group}"]`).forEach(a => {
+    document.querySelectorAll(`.acc[data-group="${group}"]`).forEach(a => {
       a.classList.remove('open');
-      a.querySelector('.accordion-trigger').setAttribute('aria-expanded', 'false');
+      a.querySelector('.acc-trigger').setAttribute('aria-expanded', 'false');
     });
   }
   if (!isOpen) {
     item.classList.add('open');
     trigger.setAttribute('aria-expanded', 'true');
   }
+});
+
+/* ===== LOCAL CLOCK ===== */
+const clockFmt = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/London' });
+function tickClock() {
+  document.getElementById('hero-clock').textContent = `🕐 ${clockFmt.format(new Date())} local`;
 }
+tickClock();
+setInterval(tickClock, 20000);
+
+/* ===== FACTS ===== */
+const FACTS = [
+  "The One O'Clock Gun has been fired from the Castle since 1861 — so ships in the Forth could check their time when haar hid the time ball on Calton Hill.",
+  "Edinburgh Castle sits on Castle Rock, the plug of an extinct volcano. Arthur's Seat is another one.",
+  "Leith only became part of Edinburgh in 1920 — against the wishes of many Leithers.",
+  "The Royal Yacht Britannia sailed more than a million nautical miles before retiring to Leith in 1998.",
+  "To be called Scotch, whisky must be distilled and aged in Scotland for at least three years.",
+  "The New Town was designed by James Craig, who won the design competition in 1766 at just 22.",
+  "Leith was a major whaling port from the early 17th century into the 1950s.",
+  "At midsummer the sun sets after 10 pm — in mid-December it's gone by about 3:40 pm.",
+  "Every August the Fringe turns Edinburgh into the world's largest arts festival.",
+  "The Old and New Towns of Edinburgh became a UNESCO World Heritage Site in 1995."
+];
+let factIdx = Math.floor(Math.random() * FACTS.length);
+const factText = document.getElementById('fact-text');
+factText.textContent = FACTS[factIdx];
+document.getElementById('fact-btn').addEventListener('click', (e) => {
+  const btn = e.currentTarget;
+  btn.classList.toggle('spin');
+  factText.classList.add('fading');
+  setTimeout(() => {
+    factIdx = (factIdx + 1 + Math.floor(Math.random() * (FACTS.length - 1))) % FACTS.length;
+    factText.textContent = FACTS[factIdx];
+    factText.classList.remove('fading');
+  }, 180);
+});
 
 /* ===== LIVE WEATHER ===== */
+const WEATHER_URL = '/.netlify/functions/weather?lat=55.9764&lon=-3.1722';
+let weatherPromise = null;
+
+function fetchWeather() {
+  if (!weatherPromise) {
+    weatherPromise = fetch(WEATHER_URL)
+      .then(res => { if (!res.ok) throw new Error('fetch failed'); return res.json(); })
+      .catch(err => { weatherPromise = null; throw err; });
+  }
+  return weatherPromise;
+}
+
 function weatherEmoji(iconCode) {
   if (!iconCode) return '🌡️';
   const code = iconCode.substring(0, 2);
@@ -1055,190 +1321,206 @@ function weatherEmoji(iconCode) {
 
 function formatForecastDay(dtTxt) {
   const d = new Date(dtTxt.replace(' ', 'T') + '+00:00');
-  return d.toLocaleDateString('en-GB', { weekday: 'short', month: 'short', day: 'numeric', timeZone: 'Europe/London' });
+  return d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'Europe/London' });
 }
 
-let weatherLoaded = false;
+function weatherSkeleton() {
+  return `<div class="skeleton" style="height:150px"></div>
+    <div class="label">Next 4 days</div>
+    <div class="wx-days">${'<div class="skeleton" style="height:130px"></div>'.repeat(4)}</div>`;
+}
 
-async function loadWeather() {
-  if (weatherLoaded) return;
+function renderWeatherPage() {
   const container = document.getElementById('weather-dynamic');
-  try {
-    const res = await fetch('/.netlify/functions/weather?lat=55.9764&lon=-3.1722');
-    if (!res.ok) throw new Error('fetch failed');
-    const data = await res.json();
+  if (container.dataset.loaded === '1') return;
+  container.innerHTML = weatherSkeleton();
+  fetchWeather().then(data => {
     let html = '';
-
     if (data.current) {
       const c = data.current;
-      const temp = Math.round(c.main.temp);
-      const feels = Math.round(c.main.feels_like);
-      const wind = Math.round((c.wind.speed || 0) * 3.6);
-      const desc = c.weather[0].description;
-      const icon = weatherEmoji(c.weather[0].icon);
-      const humidity = c.main.humidity;
       const updatedTime = new Date(data.updated).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/London' });
-
-      html += `<div class="section-header">Current Conditions · ${updatedTime} local time</div>
-      <div class="card" style="margin-bottom:10px;">
-        <div style="display:flex;align-items:center;gap:12px;">
-          <span style="font-size:2.4rem;">${icon}</span>
-          <div style="flex:1;">
-            <div style="font-size:1.6rem;font-weight:900;color:var(--ocean);letter-spacing:-0.03em;">${temp}°C</div>
-            <div style="font-size:0.84rem;color:var(--text-light);text-transform:capitalize;">${desc}</div>
-          </div>
-          <div style="text-align:right;font-size:0.8rem;color:var(--text-light);line-height:1.8;">
-            <div>Feels ${feels}°</div>
-            <div>💨 ${wind} km/h</div>
-            <div>💧 ${humidity}%</div>
+      html += `<div class="wx-now">
+        <div class="wx-now-top">
+          <span class="wx-emoji">${weatherEmoji(c.weather[0].icon)}</span>
+          <div>
+            <div class="wx-temp">${Math.round(c.main.temp)}°C</div>
+            <div class="wx-desc">${c.weather[0].description}</div>
           </div>
         </div>
+        <div class="wx-meta">
+          <span>🤔 Feels ${Math.round(c.main.feels_like)}°</span>
+          <span>💨 ${Math.round((c.wind.speed || 0) * 3.6)} km/h</span>
+          <span>💧 ${c.main.humidity}%</span>
+        </div>
+        <div class="wx-updated">Updated ${updatedTime} local time</div>
       </div>`;
     }
-
-    if (data.forecast && data.forecast.length > 0) {
-      html += '<div class="section-header">4-Day Forecast</div>';
+    if (data.forecast && data.forecast.length) {
+      html += '<div class="label">Next 4 days</div><div class="wx-days">';
       data.forecast.forEach(item => {
-        const tMax = Math.round(item.main.temp_max);
-        const tMin = Math.round(item.main.temp_min);
-        const desc = item.weather[0].description;
-        const icon = weatherEmoji(item.weather[0].icon);
-        const wind = Math.round((item.wind.speed || 0) * 3.6);
-        const humidity = item.main.humidity;
-        const pop = Math.round((item.pop || 0) * 100);
-        const day = formatForecastDay(item.dt_txt);
-        html += `<div class="card" style="margin-bottom:8px;">
-          <div style="display:flex;align-items:center;gap:12px;">
-            <span style="font-size:1.8rem;">${icon}</span>
-            <div style="flex:1;">
-              <div class="card-name">${day}</div>
-              <div class="card-note" style="margin-bottom:0;text-transform:capitalize;">${desc}</div>
-            </div>
-            <div style="text-align:right;">
-              <div style="font-size:1.2rem;font-weight:800;color:var(--ocean);">${tMax}°</div>
-              <div style="font-size:0.78rem;color:var(--text-light);">${tMin}° low</div>
-            </div>
-          </div>
-          <div style="display:flex;gap:14px;margin-top:8px;font-size:0.78rem;color:var(--text-light);flex-wrap:wrap;">
-            <span>💨 ${wind} km/h</span><span>💧 ${humidity}%</span><span>🌧️ ${pop}%</span>
-          </div>
+        html += `<div class="wx-day">
+          <div class="wx-day-name">${formatForecastDay(item.dt_txt)}</div>
+          <div class="wx-day-emoji">${weatherEmoji(item.weather[0].icon)}</div>
+          <div class="wx-day-temp">${Math.round(item.main.temp_max)}° <span>${Math.round(item.main.temp_min)}°</span></div>
+          <div class="wx-day-desc">${item.weather[0].description}</div>
+          <div class="wx-day-meta"><span>💨 ${Math.round((item.wind.speed || 0) * 3.6)}</span><span>🌧️ ${Math.round((item.pop || 0) * 100)}%</span></div>
         </div>`;
       });
+      html += '</div>';
     }
-
     if (!html) throw new Error('empty');
     container.innerHTML = html;
-    weatherLoaded = true;
-  } catch (e) {
-    container.innerHTML = '<div class="card"><div class="card-note" style="margin:0;">Live weather unavailable — use the links below for a current forecast.</div></div>';
-  }
+    container.dataset.loaded = '1';
+  }).catch(() => {
+    container.innerHTML = `<div class="card empty"><span class="empty-emoji">🌫️</span>Live weather is unavailable right now — the haar got into the wires.<div class="actions" style="justify-content:center"><button class="btn btn-web" type="button" id="weather-retry">↻ Try again</button></div></div>`;
+    document.getElementById('weather-retry').addEventListener('click', renderWeatherPage);
+  });
+}
+
+fetchWeather().then(data => {
+  if (!data.current) return;
+  const chip = document.getElementById('hero-weather');
+  chip.textContent = `${weatherEmoji(data.current.weather[0].icon)} ${Math.round(data.current.main.temp)}°C`;
+  chip.hidden = false;
+}).catch(() => {});
+
+/* ===== SHARED RENDER HELPERS ===== */
+function phoneToTelHref(phone) {
+  return 'tel:' + String(phone || '').trim().replace(/[^0-9+*#]/g, '');
+}
+function mapHref(query) {
+  return 'https://www.google.com/maps/search/' + encodeURIComponent(query);
+}
+function emptyState(emoji, text) {
+  return `<div class="empty"><span class="empty-emoji">${emoji}</span>${text}</div>`;
 }
 
 /* ===== THINGS TO DO ===== */
 const activities = window.PORT_DATA.activities;
-
 const todoChips = window.PORT_DATA.todoChips;
-let activeFilters = new Set();
+const activeFilters = new Set();
 
 function renderTodoChips() {
-  document.getElementById('todo-chips').innerHTML = todoChips.map(c =>
-    `<button class="chip${activeFilters.has(c)?' active':''}" aria-pressed="${activeFilters.has(c)}" onclick="toggleChip('${c}')">${c}</button>`
+  const all = `<button class="chip${activeFilters.size === 0 ? ' active' : ''}" type="button" aria-pressed="${activeFilters.size === 0}" data-chip="">✨ All</button>`;
+  document.getElementById('todo-chips').innerHTML = all + todoChips.map(c =>
+    `<button class="chip${activeFilters.has(c) ? ' active' : ''}" type="button" aria-pressed="${activeFilters.has(c)}" data-chip="${c}">${c.replace('-', ' & ')}</button>`
   ).join('');
 }
 
-function toggleChip(tag) {
-  if (activeFilters.has(tag)) activeFilters.delete(tag); else activeFilters.add(tag);
-  renderTodoChips(); renderTodoList();
-}
+document.getElementById('todo-chips').addEventListener('click', (e) => {
+  const chip = e.target.closest('[data-chip]');
+  if (!chip) return;
+  const tag = chip.dataset.chip;
+  if (!tag) activeFilters.clear();
+  else if (activeFilters.has(tag)) activeFilters.delete(tag);
+  else activeFilters.add(tag);
+  renderTodoChips();
+  renderTodoList();
+});
 
 function renderTodoList() {
-  const filtered = activeFilters.size === 0 ? activities :
-    activities.filter(a => a.tags.some(t => activeFilters.has(t)));
-  document.getElementById('todo-list').innerHTML = filtered.map(a => `
-    <div class="card">
-      <div class="card-name">${a.name}</div>
-      <div class="card-note">${a.desc}</div>
-      <div class="card-tags">${a.tags.map(t => `<span class="card-tag">${t}</span>`).join('')}</div>
-      <div class="card-actions">
-        <a class="btn-sm btn-map" href="https://www.google.com/maps/search/${encodeURIComponent(a.map)}" target="_blank" rel="noopener">📍 Map</a>
-        ${a.web ? `<a class="btn-sm btn-web" href="${a.web}" target="_blank" rel="noopener">🌐 Website</a>` : ''}
+  const filtered = activeFilters.size === 0 ? activities : activities.filter(a => a.tags.some(t => activeFilters.has(t)));
+  document.getElementById('todo-count').textContent = `${filtered.length} of ${activities.length}`;
+  document.getElementById('todo-list').innerHTML = filtered.length ? filtered.map((a, i) => `
+    <div class="card item" style="animation-delay:${Math.min(i, 8) * 0.03}s">
+      <div class="item-head">
+        <span class="item-emoji">${a.emoji || '📍'}</span>
+        <div class="item-main">
+          <div class="item-name">${a.name}</div>
+          <div class="item-note">${a.desc}</div>
+        </div>
+      </div>
+      <div class="item-tags">${a.tags.map(t => `<span class="tag tag-${t}">${t.replace('-', ' & ')}</span>`).join('')}</div>
+      <div class="actions">
+        <a class="btn btn-map" href="${mapHref(a.map)}" target="_blank" rel="noopener">📍 Map</a>
+        ${a.web ? `<a class="btn btn-web" href="${a.web}" target="_blank" rel="noopener">🌐 Website</a>` : ''}
+      </div>
+    </div>`).join('') : emptyState('🤷', 'Nothing matches those filters.');
+}
+renderTodoChips();
+renderTodoList();
+
+/* ===== VENUES ===== */
+const venueData = window.PORT_DATA.venueData;
+
+function venueCard(v) {
+  return `<div class="card item venue-card">
+    <div class="item-head">
+      <span class="item-emoji">${v.emoji || '📍'}</span>
+      <div class="item-main">
+        <div class="item-name">${v.name}${v.price ? ` <span class="price">${v.price}</span>` : ''}</div>
+        ${v.note ? `<div class="item-note">${v.note}</div>` : ''}
       </div>
     </div>
-  `).join('');
-}
-renderTodoChips(); renderTodoList();
-
-/* ===== VENUE DATA ===== */
-const venueData = window.PORT_DATA.venueData;
-const shipContacts = window.PORT_DATA.shipContacts || [];
-const localContacts = window.PORT_DATA.localContacts || [];
-
-function phoneToTelHref(phone) {
-  return 'tel:' + String(phone || '').trim().replace(/[^0-9+*#]/g, '');
+    <div class="actions">
+      <a class="btn btn-map" href="${mapHref(v.map)}" target="_blank" rel="noopener">📍 Map</a>
+      ${v.web ? `<a class="btn btn-web" href="${v.web}" target="_blank" rel="noopener">🌐 Website</a>` : ''}
+    </div>
+  </div>`;
 }
 
 function renderVenues(tabId) {
-  const panel = document.getElementById(tabId);
-  const list = panel.querySelector('.venue-list');
-  const data = venueData[tabId] || [];
-  list.innerHTML = data.map((v, i) => `
-    <div class="card venue-card" data-idx="${i}">
-      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-        <div class="card-name">${v.name}</div>
-        ${v.price ? `<span class="price-badge">${v.price}</span>` : ''}
-      </div>
-      ${v.note ? `<div class="card-note">${v.note}</div>` : ''}
-      <div class="card-actions">
-        <a class="btn-sm btn-map" href="https://www.google.com/maps/search/${encodeURIComponent(v.map)}" target="_blank" rel="noopener">📍 Map</a>
-        ${v.web ? `<a class="btn-sm btn-web" href="${v.web}" target="_blank" rel="noopener">🌐 Website</a>` : ''}
-      </div>
-    </div>
-  `).join('');
+  const list = document.getElementById(tabId).querySelector('.venue-list');
+  list.innerHTML = (venueData[tabId] || []).map(venueCard).join('') +
+    `<div class="empty" hidden><span class="empty-emoji">🔍</span>No matches — try another word.</div>`;
+}
+
+function matches(item, q) {
+  return item.name.toLowerCase().includes(q) || (item.note && item.note.toLowerCase().includes(q));
 }
 
 function filterVenues(tabId, query) {
-  const q = query.toLowerCase();
+  const q = query.trim().toLowerCase();
   const panel = document.getElementById(tabId);
+  let shown = 0;
   panel.querySelectorAll('.venue-card').forEach((card, i) => {
-    const v = venueData[tabId][i];
-    const match = v.name.toLowerCase().includes(q) || (v.note && v.note.toLowerCase().includes(q));
-    card.style.display = match ? '' : 'none';
+    const ok = matches(venueData[tabId][i], q);
+    card.style.display = ok ? '' : 'none';
+    if (ok) shown++;
   });
+  panel.querySelector('.empty').hidden = shown > 0;
 }
 Object.keys(venueData).forEach(renderVenues);
 
 /* ===== TABS ===== */
-function switchTab(pageId, tabId, btn) {
-  const page = document.getElementById(pageId);
-  page.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  page.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById(tabId).classList.add('active');
-}
+document.querySelector('#food .segmented').addEventListener('click', (e) => {
+  const btn = e.target.closest('.seg');
+  if (!btn) return;
+  const page = document.getElementById('food');
+  page.querySelectorAll('.seg').forEach(t => { t.classList.toggle('active', t === btn); t.setAttribute('aria-selected', t === btn); });
+  page.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.id === btn.dataset.tab));
+});
 
 /* ===== HOTELS ===== */
 const hotelData = window.PORT_DATA.hotelData;
 
 function renderHotels() {
-  document.getElementById('hotel-list').innerHTML = hotelData.map((h, i) => `
-    <div class="card hotel-card" data-idx="${i}">
-      <div class="card-name">${h.name}</div>
-      ${h.note ? `<div class="card-note">${h.note}</div>` : ''}
-      <div class="card-actions">
-        ${h.phone ? `<a class="btn-sm btn-call" href="${phoneToTelHref(h.phone)}">📞 Call</a>` : ''}
-        <a class="btn-sm btn-map" href="https://www.google.com/maps/search/${encodeURIComponent(h.map)}" target="_blank" rel="noopener">📍 Map</a>
-        ${h.web ? `<a class="btn-sm btn-web" href="${h.web}" target="_blank" rel="noopener">🌐 Website</a>` : ''}
+  document.getElementById('hotel-list').innerHTML = hotelData.map(h => `
+    <div class="card item hotel-card">
+      <div class="item-head">
+        <span class="item-emoji">${h.emoji || '🏨'}</span>
+        <div class="item-main">
+          <div class="item-name">${h.name}</div>
+          ${h.note ? `<div class="item-note">${h.note}</div>` : ''}
+        </div>
       </div>
-    </div>
-  `).join('');
+      <div class="actions">
+        ${h.phone ? `<a class="btn btn-call" href="${phoneToTelHref(h.phone)}">📞 Call</a>` : ''}
+        <a class="btn btn-map" href="${mapHref(h.map)}" target="_blank" rel="noopener">📍 Map</a>
+        ${h.web ? `<a class="btn btn-web" href="${h.web}" target="_blank" rel="noopener">🌐 Website</a>` : ''}
+      </div>
+    </div>`).join('') + `<div class="empty" hidden><span class="empty-emoji">🔍</span>No matches — try another word.</div>`;
 }
 
 function filterHotels(query) {
-  const q = query.toLowerCase();
+  const q = query.trim().toLowerCase();
+  let shown = 0;
   document.querySelectorAll('.hotel-card').forEach((card, i) => {
-    const h = hotelData[i];
-    card.style.display = (h.name.toLowerCase().includes(q) || (h.note && h.note.toLowerCase().includes(q))) ? '' : 'none';
+    const ok = matches(hotelData[i], q);
+    card.style.display = ok ? '' : 'none';
+    if (ok) shown++;
   });
+  document.querySelector('#hotel-list .empty').hidden = shown > 0;
 }
 renderHotels();
 
@@ -1247,29 +1529,87 @@ function renderContactCards(containerId, contacts) {
   const container = document.getElementById(containerId);
   if (!container) return;
   container.innerHTML = contacts.map(c => `
-    <div class="contact-card">
-      <div class="contact-label">${c.name}</div>
-      ${c.sub ? `<div class="contact-sub">${c.sub}</div>` : ''}
-      ${(c.phone || c.map) ? `<div class="contact-actions">
-        ${c.phone ? `<a href="${phoneToTelHref(c.phone)}" class="btn-sm btn-call">📞 ${c.phoneLabel || c.phone}</a>` : ''}
-        ${c.map ? `<a href="https://www.google.com/maps/search/${encodeURIComponent(c.map)}" target="_blank" rel="noopener" class="btn-sm btn-map">📍 ${c.mapLabel || 'Map'}</a>` : ''}
+    <div class="card item">
+      <div class="item-head">
+        <span class="item-emoji">${c.emoji || '📞'}</span>
+        <div class="item-main">
+          <div class="item-name">${c.name}${!c.phone && !c.map ? ' <span class="badge-tbc">TBC</span>' : ''}</div>
+          ${c.sub ? `<div class="item-note">${c.sub}</div>` : ''}
+        </div>
+      </div>
+      ${(c.phone || c.map) ? `<div class="actions">
+        ${c.phone ? `<a class="btn btn-call" href="${phoneToTelHref(c.phone)}">📞 ${c.phoneLabel || c.phone}</a>` : ''}
+        ${c.map ? `<a class="btn btn-map" href="${mapHref(c.map)}" target="_blank" rel="noopener">📍 ${c.mapLabel || 'Map'}</a>` : ''}
       </div>` : ''}
-    </div>
-  `).join('');
+    </div>`).join('');
+}
+renderContactCards('ship-contact-list', window.PORT_DATA.shipContacts || []);
+renderContactCards('local-contact-list', window.PORT_DATA.localContacts || []);
+
+/* ===== INSTALL (A2HS) ===== */
+const A2HS_DISMISSED_KEY = 'a2hs_dismissed_v1';
+let deferredInstallPrompt = null;
+let a2hsReady = false;
+
+function isStandaloneMode() {
+  return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+}
+function shouldShowA2HSBanner() {
+  if (isStandaloneMode()) return false;
+  try { return !localStorage.getItem(A2HS_DISMISSED_KEY); } catch { return true; }
+}
+function updateA2HSVisibility() {
+  const banner = document.getElementById('a2hs-banner');
+  banner.hidden = !(a2hsReady && currentPage === 'landing' && shouldShowA2HSBanner());
+}
+function dismissA2HSBanner() {
+  try { localStorage.setItem(A2HS_DISMISSED_KEY, '1'); } catch {}
+  a2hsReady = false;
+  updateA2HSVisibility();
+}
+function setupA2HSBanner() {
+  const sub = document.getElementById('a2hs-sub');
+  const actionBtn = document.getElementById('a2hs-action');
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent || '');
+  if (deferredInstallPrompt) {
+    sub.textContent = 'Install this brief for one‑tap access.';
+    actionBtn.hidden = false;
+  } else if (isIOS) {
+    sub.textContent = 'Tap Share, then “Add to Home Screen”.';
+    actionBtn.hidden = true;
+  } else {
+    a2hsReady = false;
+    updateA2HSVisibility();
+    return;
+  }
+  a2hsReady = true;
+  updateA2HSVisibility();
+}
+document.getElementById('a2hs-dismiss').addEventListener('click', dismissA2HSBanner);
+document.getElementById('a2hs-action').addEventListener('click', async () => {
+  if (!deferredInstallPrompt) return;
+  deferredInstallPrompt.prompt();
+  try { await deferredInstallPrompt.userChoice; } catch {}
+  deferredInstallPrompt = null;
+  dismissA2HSBanner();
+});
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredInstallPrompt = e;
+  setupA2HSBanner();
+});
+window.addEventListener('appinstalled', dismissA2HSBanner);
+setTimeout(setupA2HSBanner, 1500);
+
+/* ===== OFFLINE SUPPORT ===== */
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
 }
 
-renderContactCards('ship-contact-list', shipContacts);
-renderContactCards('local-contact-list', localContacts);
-
-/* ===== HASH ROUTING ===== */
-function checkHash() {
-  const hash = location.hash.replace('#','');
-  if (hash && document.getElementById(hash)) nav(hash, false);
-}
-window.addEventListener('hashchange', checkHash);
-window.addEventListener('popstate', checkHash);
-checkHash();
+/* ===== INITIAL ROUTE ===== */
+const initialPage = PAGES[location.hash.slice(1)] ? location.hash.slice(1) : 'landing';
+nav(initialPage, false);
+history.replaceState({ page: initialPage }, '');
 </script>
-
 </body>
 </html>
