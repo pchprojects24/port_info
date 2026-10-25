@@ -1,5 +1,5 @@
 // Network-first service worker: always tries for fresh content, falls back to cache when offline.
-const CACHE = 'port-brief-v1';
+const CACHE = 'port-brief-v2';
 const ASSETS = [
   './',
   'index.html',

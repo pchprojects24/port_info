@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="description" content="Port brief for Edinburgh and Leith, Scotland — routine, things to do, food, hotels, weather, safety and contacts.">
+<meta name="description" content="Port brief for Cancún, Mexico — routine, things to do, food, hotels, weather, safety and contacts.">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Edinburgh">
+<meta name="apple-mobile-web-app-title" content="Cancún">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)">
-<title>Edinburgh Port Brief</title>
+<meta name="theme-color" content="#f7f3ea" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#061620" media="(prefers-color-scheme: dark)">
+<title>Cancún Port Brief</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -26,33 +26,33 @@
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
   --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, Roboto, sans-serif;
 
-  --bg: #f3f1ec;
+  --bg: #f7f3ea;
   --surface: #ffffff;
-  --surface-2: #f6f4f0;
-  --text: #13203a;
+  --surface-2: #f7f4ee;
+  --text: #10283a;
   --text-2: #4b5670;
   --text-3: #858ea3;
   --border: rgba(19, 32, 58, 0.08);
-  --glass: rgba(243, 241, 236, 0.82);
+  --glass: rgba(247, 243, 234, 0.82);
 
-  --navy: #0b2545;
-  --saltire: #005eb8;
-  --heather: #7a4e9c;
-  --thistle: #b4498b;
-  --gold: #c98a17;
-  --moss: #2e7d5b;
+  --deep: #073b4c;
+  --ocean: #0a7ea4;
+  --violet: #6d4fc2;
+  --pink: #d6457f;
+  --sun: #c27c00;
+  --jungle: #1f8a5b;
   --red: #d7263d;
 
-  --saltire-soft: #e6f0fa;
-  --heather-soft: #f1eaf7;
-  --thistle-soft: #f8e8f1;
-  --gold-soft: #fbf1de;
-  --moss-soft: #e5f3ec;
+  --ocean-soft: #e2f4f8;
+  --violet-soft: #efeafb;
+  --pink-soft: #fbe7ef;
+  --sun-soft: #fdf1d8;
+  --jungle-soft: #e3f4ea;
   --red-soft: #fce8ea;
 
   --shadow-sm: 0 1px 2px rgba(19, 32, 58, 0.04), 0 2px 8px rgba(19, 32, 58, 0.05);
   --shadow-md: 0 2px 4px rgba(19, 32, 58, 0.04), 0 8px 24px rgba(19, 32, 58, 0.08);
-  --shadow-lg: 0 12px 40px rgba(11, 37, 69, 0.22);
+  --shadow-lg: 0 12px 40px rgba(7, 59, 76, 0.22);
 
   --r-sm: 12px;
   --r-md: 16px;
@@ -64,25 +64,25 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #0b1020;
-    --surface: #141b2e;
-    --surface-2: #1c2439;
+    --bg: #061620;
+    --surface: #0e2230;
+    --surface-2: #15303f;
     --text: #eef1f8;
     --text-2: #b4bcd0;
     --text-3: #7e88a0;
     --border: rgba(255, 255, 255, 0.08);
-    --glass: rgba(11, 16, 32, 0.8);
-    --saltire: #5aaaf2;
-    --heather: #b48bdb;
-    --thistle: #e07bb8;
-    --gold: #f0b952;
-    --moss: #4cc38a;
+    --glass: rgba(6, 22, 32, 0.82);
+    --ocean: #4fc3e0;
+    --violet: #a78bfa;
+    --pink: #f07aa8;
+    --sun: #f5b942;
+    --jungle: #4cc38a;
     --red: #ff5a6e;
-    --saltire-soft: rgba(90, 170, 242, 0.14);
-    --heather-soft: rgba(180, 139, 219, 0.14);
-    --thistle-soft: rgba(224, 123, 184, 0.14);
-    --gold-soft: rgba(240, 185, 82, 0.14);
-    --moss-soft: rgba(76, 195, 138, 0.14);
+    --ocean-soft: rgba(79, 195, 224, 0.14);
+    --violet-soft: rgba(167, 139, 250, 0.14);
+    --pink-soft: rgba(240, 122, 168, 0.14);
+    --sun-soft: rgba(245, 185, 66, 0.14);
+    --jungle-soft: rgba(76, 195, 138, 0.14);
     --red-soft: rgba(255, 90, 110, 0.14);
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
@@ -90,25 +90,25 @@
   }
 }
 :root[data-theme="dark"] {
-  --bg: #0b1020;
-  --surface: #141b2e;
-  --surface-2: #1c2439;
+  --bg: #061620;
+  --surface: #0e2230;
+  --surface-2: #15303f;
   --text: #eef1f8;
   --text-2: #b4bcd0;
   --text-3: #7e88a0;
   --border: rgba(255, 255, 255, 0.08);
-  --glass: rgba(11, 16, 32, 0.8);
-  --saltire: #5aaaf2;
-  --heather: #b48bdb;
-  --thistle: #e07bb8;
-  --gold: #f0b952;
-  --moss: #4cc38a;
+  --glass: rgba(6, 22, 32, 0.82);
+  --ocean: #4fc3e0;
+  --violet: #a78bfa;
+  --pink: #f07aa8;
+  --sun: #f5b942;
+  --jungle: #4cc38a;
   --red: #ff5a6e;
-  --saltire-soft: rgba(90, 170, 242, 0.14);
-  --heather-soft: rgba(180, 139, 219, 0.14);
-  --thistle-soft: rgba(224, 123, 184, 0.14);
-  --gold-soft: rgba(240, 185, 82, 0.14);
-  --moss-soft: rgba(76, 195, 138, 0.14);
+  --ocean-soft: rgba(79, 195, 224, 0.14);
+  --violet-soft: rgba(167, 139, 250, 0.14);
+  --pink-soft: rgba(240, 122, 168, 0.14);
+  --sun-soft: rgba(245, 185, 66, 0.14);
+  --jungle-soft: rgba(76, 195, 138, 0.14);
   --red-soft: rgba(255, 90, 110, 0.14);
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
@@ -116,11 +116,11 @@
 }
 
 /* Section accent themes */
-.t-saltire { --accent: var(--saltire); --tint: var(--saltire-soft); }
-.t-heather { --accent: var(--heather); --tint: var(--heather-soft); }
-.t-thistle { --accent: var(--thistle); --tint: var(--thistle-soft); }
-.t-gold    { --accent: var(--gold);    --tint: var(--gold-soft); }
-.t-moss    { --accent: var(--moss);    --tint: var(--moss-soft); }
+.t-ocean { --accent: var(--ocean); --tint: var(--ocean-soft); }
+.t-violet { --accent: var(--violet); --tint: var(--violet-soft); }
+.t-pink { --accent: var(--pink); --tint: var(--pink-soft); }
+.t-sun    { --accent: var(--sun);    --tint: var(--sun-soft); }
+.t-jungle    { --accent: var(--jungle);    --tint: var(--jungle-soft); }
 .t-red     { --accent: var(--red);     --tint: var(--red-soft); }
 
 /* ===== BASE ===== */
@@ -138,16 +138,17 @@ body {
 a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; }
 strong { font-weight: 700; color: var(--text); }
-:focus-visible { outline: 3px solid var(--saltire); outline-offset: 2px; border-radius: 10px; }
+:focus-visible { outline: 3px solid var(--ocean); outline-offset: 2px; border-radius: 10px; }
 
 @media (min-width: 600px) {
   body {
     background-color: var(--bg);
     background-image:
-      repeating-linear-gradient(0deg, rgba(0, 94, 184, 0.05) 0 18px, transparent 18px 54px),
-      repeating-linear-gradient(90deg, rgba(122, 78, 156, 0.05) 0 18px, transparent 18px 54px);
+      radial-gradient(circle at 14px 14px, rgba(10, 126, 164, 0.10) 2px, transparent 2.5px),
+      radial-gradient(circle at 42px 42px, rgba(214, 69, 127, 0.08) 2px, transparent 2.5px);
+    background-size: 56px 56px;
   }
-  .app { box-shadow: 0 0 0 1px var(--border), 0 20px 60px rgba(11, 37, 69, 0.12); }
+  .app { box-shadow: 0 0 0 1px var(--border), 0 20px 60px rgba(7, 59, 76, 0.14); }
 }
 
 .app { max-width: 560px; margin: 0 auto; min-height: 100dvh; background: var(--bg); position: relative; }
@@ -173,7 +174,7 @@ strong { font-weight: 700; color: var(--text); }
 .icon-btn svg { width: 20px; height: 20px; }
 .back-btn[hidden] { display: none; }
 .brand { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1; }
-.brand-mark { width: 38px; height: 38px; border-radius: 12px; flex-shrink: 0; overflow: hidden; box-shadow: 0 2px 8px rgba(0, 94, 184, 0.3); }
+.brand-mark { width: 38px; height: 38px; border-radius: 12px; flex-shrink: 0; overflow: hidden; box-shadow: 0 2px 8px rgba(10, 126, 164, 0.35); }
 .brand-mark svg { display: block; width: 100%; height: 100%; }
 .brand-text { min-width: 0; }
 .brand-title {
@@ -211,24 +212,31 @@ strong { font-weight: 700; color: var(--text); }
 .hero {
   position: relative; isolation: isolate; overflow: hidden;
   border-radius: var(--r-xl); color: #fff;
-  padding: 22px 20px calc((min(100vw, 560px) - 32px) * 0.27);
-  background: linear-gradient(180deg, #0b1f3f 0%, #1e2f66 42%, #57408a 76%, #b0578c 100%);
+  padding: 40px 20px calc((min(100vw, 560px) - 32px) * 0.27);
+  background: linear-gradient(180deg, #0b3c5d 0%, #16708f 40%, #f2885b 80%, #ffc76e 100%);
   box-shadow: var(--shadow-lg);
 }
-.hero-stars, .hero-skyline, .hero-saltire { position: absolute; z-index: -1; pointer-events: none; }
-.hero-stars { inset: 0; width: 100%; height: 100%; }
-.hero-saltire { inset: 0; width: 100%; height: 100%; opacity: 0.05; }
+.hero-bunting, .hero-skyline { position: absolute; z-index: -1; pointer-events: none; }
+.hero-bunting { top: 0; left: 0; width: 100%; height: auto; }
 .hero-skyline { left: 0; right: 0; bottom: -1px; width: 100%; height: auto; }
-.star { animation: twinkle 3s ease-in-out infinite; }
+.flag { animation: sway 3s ease-in-out infinite; transform-origin: top center; transform-box: fill-box; }
+@keyframes sway { 0%, 100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
 .win { animation: twinkle 4s ease-in-out infinite; }
 @keyframes twinkle { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+.sun { animation: pulse 5s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+.waves { animation: drift 6s linear infinite; }
+@keyframes drift { from { transform: translateX(0); } to { transform: translateX(20px); } }
+.birds { animation: fly 9s ease-in-out infinite alternate; }
+@keyframes fly { from { transform: translate(0, 0); } to { transform: translate(-24px, -6px); } }
 .ship { animation: bob 4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
 @keyframes bob { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-1.5px) rotate(-1deg); } }
 
 .hero-kicker { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.75; }
 .hero-title { font-family: var(--font-display); font-weight: 700; font-size: 2.35rem; line-height: 1.02; letter-spacing: -0.02em; margin-top: 8px; }
-.hero-title em { font-style: italic; color: #f6c869; }
-.hero-gaelic { margin-top: 8px; font-size: 0.95rem; opacity: 0.85; font-style: italic; }
+.hero-title em { font-style: italic; color: #ffe08a; }
+.hero-title, .hero-gaelic, .hero-kicker { text-shadow: 0 2px 12px rgba(7, 40, 60, 0.35); }
+.hero-gaelic { margin-top: 8px; font-size: 0.95rem; opacity: 0.9; font-style: italic; }
 .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
 .hero-chip {
   display: inline-flex; align-items: center; gap: 6px;
@@ -242,7 +250,7 @@ strong { font-weight: 700; color: var(--text); }
 button.hero-chip { cursor: pointer; color: #fff; }
 
 /* ===== QUICK DIAL ===== */
-.quick-dial { display: grid; grid-template-columns: 1.4fr 1fr; gap: 10px; margin-top: 14px; }
+.quick-dial { display: grid; grid-template-columns: 1.25fr 1fr; gap: 10px; margin-top: 14px; }
 .dial {
   display: flex; align-items: center; gap: 10px;
   padding: 12px 14px; border-radius: var(--r-md);
@@ -254,7 +262,7 @@ button.hero-chip { cursor: pointer; color: #fff; }
 .dial small { display: block; font-size: 0.72rem; font-weight: 600; opacity: 0.85; }
 .dial-sos { background: linear-gradient(135deg, #e0344b, #a4133c); color: #fff; box-shadow: 0 6px 18px rgba(215, 38, 61, 0.3); }
 .dial-nhs { background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow-sm); color: var(--text); }
-.dial-nhs .dial-num { color: var(--saltire); }
+.dial-nhs .dial-num { color: var(--ocean); }
 
 /* ===== BENTO TILES ===== */
 .bento { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -301,12 +309,12 @@ button.hero-chip { cursor: pointer; color: #fff; }
 .fact {
   display: flex; gap: 14px; align-items: flex-start;
   padding: 16px; border-radius: var(--r-lg);
-  background: linear-gradient(135deg, var(--gold-soft), var(--thistle-soft));
+  background: linear-gradient(135deg, var(--sun-soft), var(--pink-soft));
   border: 1px solid var(--border);
 }
 .fact-emoji { font-size: 1.6rem; line-height: 1; margin-top: 2px; }
 .fact-body { flex: 1; min-width: 0; }
-.fact-label { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+.fact-label { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sun); }
 .fact-text { font-size: 0.92rem; color: var(--text); margin-top: 4px; transition: opacity 0.2s; }
 .fact-text.fading { opacity: 0; }
 .fact-btn {
@@ -329,7 +337,7 @@ button.hero-chip { cursor: pointer; color: #fff; }
   font-size: 0.88rem; color: var(--text-2); line-height: 1.6;
   position: relative; overflow: hidden;
 }
-.callout::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--accent, var(--saltire)); }
+.callout::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--accent, var(--ocean)); }
 .callout-icon { font-size: 1.35rem; line-height: 1.2; }
 
 /* ===== CARDS ===== */
@@ -354,13 +362,13 @@ button.hero-chip { cursor: pointer; color: #fff; }
 .item-note { font-size: 0.86rem; color: var(--text-2); line-height: 1.5; margin-top: 3px; }
 .item-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
 .tag { font-size: 0.7rem; font-weight: 700; padding: 3px 9px; border-radius: 999px; background: var(--surface-2); color: var(--text-3); }
-.tag-Iconic { background: var(--gold-soft); color: var(--gold); }
-.tag-Outdoors { background: var(--moss-soft); color: var(--moss); }
-.tag-Indoors { background: var(--heather-soft); color: var(--heather); }
-.tag-Food-Drink { background: var(--thistle-soft); color: var(--thistle); }
-.tag-Quick, .tag-Half-day { background: var(--saltire-soft); color: var(--saltire); }
-.price { font-size: 0.72rem; font-weight: 800; padding: 2px 8px; border-radius: 6px; background: var(--moss-soft); color: var(--moss); letter-spacing: 0.04em; }
-.badge-tbc { font-size: 0.68rem; font-weight: 800; padding: 2px 8px; border-radius: 6px; background: var(--gold-soft); color: var(--gold); letter-spacing: 0.04em; text-transform: uppercase; }
+.tag-Iconic { background: var(--sun-soft); color: var(--sun); }
+.tag-Beach { background: var(--ocean-soft); color: var(--ocean); }
+.tag-Outdoors { background: var(--jungle-soft); color: var(--jungle); }
+.tag-Food-Drink { background: var(--pink-soft); color: var(--pink); }
+.tag-Day-trip { background: var(--violet-soft); color: var(--violet); }
+.price { font-size: 0.72rem; font-weight: 800; padding: 2px 8px; border-radius: 6px; background: var(--jungle-soft); color: var(--jungle); letter-spacing: 0.04em; }
+.badge-tbc { font-size: 0.68rem; font-weight: 800; padding: 2px 8px; border-radius: 6px; background: var(--sun-soft); color: var(--sun); letter-spacing: 0.04em; text-transform: uppercase; }
 
 .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 .btn {
@@ -370,11 +378,11 @@ button.hero-chip { cursor: pointer; color: #fff; }
   transition: transform 0.2s var(--spring), filter 0.2s;
 }
 .btn:active { transform: scale(0.94); }
-.btn-map { background: var(--moss-soft); color: var(--moss); }
-.btn-web { background: var(--saltire-soft); color: var(--saltire); }
-.btn-call { background: var(--saltire); color: #fff; box-shadow: 0 4px 12px rgba(0, 94, 184, 0.25); }
-:root[data-theme="dark"] .btn-call { color: #0b1020; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn-call { color: #0b1020; } }
+.btn-map { background: var(--jungle-soft); color: var(--jungle); }
+.btn-web { background: var(--ocean-soft); color: var(--ocean); }
+.btn-call { background: var(--ocean); color: #fff; box-shadow: 0 4px 12px rgba(10, 126, 164, 0.28); }
+:root[data-theme="dark"] .btn-call { color: #061620; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn-call { color: #061620; } }
 
 .empty { text-align: center; padding: 28px 16px; color: var(--text-3); font-size: 0.9rem; }
 .empty-emoji { font-size: 2rem; display: block; margin-bottom: 6px; }
@@ -416,9 +424,9 @@ button.hero-chip { cursor: pointer; color: #fff; }
   transition: transform 0.2s var(--spring), background 0.2s, color 0.2s;
 }
 .chip:active { transform: scale(0.92); }
-.chip.active { background: var(--navy); color: #fff; border-color: transparent; }
-:root[data-theme="dark"] .chip.active { background: var(--saltire); color: #0b1020; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .chip.active { background: var(--saltire); color: #0b1020; } }
+.chip.active { background: var(--deep); color: #fff; border-color: transparent; }
+:root[data-theme="dark"] .chip.active { background: var(--ocean); color: #061620; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .chip.active { background: var(--ocean); color: #061620; } }
 
 /* ===== SEGMENTED TABS ===== */
 .segmented {
@@ -448,7 +456,7 @@ button.hero-chip { cursor: pointer; color: #fff; }
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 .search input::placeholder { color: var(--text-3); }
-.search input:focus { border-color: var(--saltire); box-shadow: 0 0 0 4px var(--saltire-soft); }
+.search input:focus { border-color: var(--ocean); box-shadow: 0 0 0 4px var(--ocean-soft); }
 
 /* ===== ACCORDION ===== */
 .acc {
@@ -471,7 +479,7 @@ button.hero-chip { cursor: pointer; color: #fff; }
   background: var(--surface-2); color: var(--text-3);
   transition: transform 0.3s var(--spring), background 0.2s, color 0.2s;
 }
-.acc.open .acc-icon { transform: rotate(45deg); background: var(--accent, var(--saltire)); color: #fff; }
+.acc.open .acc-icon { transform: rotate(45deg); background: var(--accent, var(--ocean)); color: #fff; }
 .acc-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.3s ease; }
 .acc.open .acc-panel { grid-template-rows: 1fr; }
 .acc-inner { overflow: hidden; }
@@ -479,7 +487,7 @@ button.hero-chip { cursor: pointer; color: #fff; }
 .acc-content p + p { margin-top: 10px; }
 .acc-content ul { padding-left: 16px; }
 .acc-content li + li { margin-top: 6px; }
-.acc-content li::marker { color: var(--accent, var(--saltire)); }
+.acc-content li::marker { color: var(--accent, var(--ocean)); }
 
 .timeline { list-style: none; padding-left: 0 !important; }
 .timeline li { position: relative; padding: 0 0 12px 22px; margin: 0 !important; }
@@ -550,9 +558,9 @@ button.hero-chip { cursor: pointer; color: #fff; }
   color: var(--text-3); font-size: 0.66rem; font-weight: 700; cursor: pointer;
 }
 .tab-ico { font-size: 1.3rem; line-height: 1; filter: grayscale(1); opacity: 0.6; transition: transform 0.25s var(--spring), filter 0.2s, opacity 0.2s; }
-.tab-btn.active { color: var(--saltire); }
+.tab-btn.active { color: var(--ocean); }
 .tab-btn.active .tab-ico { filter: none; opacity: 1; transform: translateY(-2px) scale(1.12); }
-.tab-btn.active::after { content: ""; position: absolute; bottom: 0; width: 4px; height: 4px; border-radius: 50%; background: var(--saltire); }
+.tab-btn.active::after { content: ""; position: absolute; bottom: 0; width: 4px; height: 4px; border-radius: 50%; background: var(--ocean); }
 
 /* ===== A2HS ===== */
 .a2hs {
@@ -572,7 +580,7 @@ button.hero-chip { cursor: pointer; color: #fff; }
 .a2hs-title { font-size: 0.88rem; font-weight: 800; }
 .a2hs-sub { font-size: 0.76rem; color: var(--text-3); line-height: 1.35; margin-top: 1px; }
 .a2hs-actions { display: flex; align-items: center; gap: 6px; margin-left: auto; }
-.a2hs-btn { padding: 9px 14px; border: none; border-radius: 12px; background: var(--saltire); color: #fff; font-weight: 800; font-size: 0.8rem; cursor: pointer; }
+.a2hs-btn { padding: 9px 14px; border: none; border-radius: 12px; background: var(--ocean); color: #fff; font-weight: 800; font-size: 0.8rem; cursor: pointer; }
 .a2hs-btn[hidden] { display: none; }
 .a2hs-close { width: 32px; height: 32px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface-2); color: var(--text-3); font-weight: 800; cursor: pointer; }
 
@@ -589,13 +597,13 @@ button.hero-chip { cursor: pointer; color: #fff; }
   <button id="back-btn" class="icon-btn back-btn" type="button" aria-label="Back" hidden>
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
   </button>
-  <a class="brand" href="#" data-nav="landing" aria-label="Edinburgh Port Brief home">
+  <a class="brand" href="#" data-nav="landing" aria-label="Cancún Port Brief home">
     <span class="brand-mark" aria-hidden="true">
-      <svg viewBox="0 0 40 40"><rect width="40" height="40" fill="#005eb8"/><path d="M0 0L40 40M40 0L0 40" stroke="#fff" stroke-width="7"/></svg>
+      <svg viewBox="0 0 40 40"><defs><linearGradient id="bm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16708f"/><stop offset="1" stop-color="#0a7ea4"/></linearGradient></defs><rect width="40" height="40" fill="url(#bm)"/><circle cx="20" cy="19" r="8" fill="#ffd56b"/><path d="M0 26 q5 -3 10 0 t10 0 t10 0 t10 0 V40 H0Z" fill="#2ec4b6"/><path d="M0 31 q5 -3 10 0 t10 0 t10 0 t10 0" stroke="#fff" stroke-width="1.6" fill="none" opacity="0.8"/></svg>
     </span>
     <span class="brand-text">
-      <span class="brand-title" id="topbar-title">Edinburgh</span>
-      <span class="brand-sub" id="topbar-sub">Port Brief · Leith</span>
+      <span class="brand-title" id="topbar-title">Cancún</span>
+      <span class="brand-sub" id="topbar-sub">Port Brief · Mexico</span>
     </span>
   </a>
   <button id="theme-btn" class="icon-btn" type="button" aria-label="Switch to dark mode">🌙</button>
@@ -606,130 +614,170 @@ button.hero-chip { cursor: pointer; color: #fff; }
 <!-- ===== LANDING ===== -->
 <section id="landing" class="page active" aria-label="Home">
   <div class="hero">
-    <svg class="hero-saltire" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0L100 100M100 0L0 100" stroke="#fff" stroke-width="14"/></svg>
-    <svg class="hero-stars" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <circle cx="350" cy="40" r="16" fill="#f6e7b0" opacity="0.15"/>
-      <circle cx="350" cy="40" r="10" fill="#f6e7b0"/>
-      <circle cx="342" cy="36" r="2.2" fill="#e6d49a"/><circle cx="355" cy="45" r="1.6" fill="#e6d49a"/>
-      <circle class="star" cx="240" cy="22" r="1.4" fill="#fff"/>
-      <circle class="star" cx="290" cy="70" r="1.1" fill="#fff" style="animation-delay:.8s"/>
-      <circle class="star" cx="385" cy="95" r="1.2" fill="#fff" style="animation-delay:1.6s"/>
-      <circle class="star" cx="205" cy="60" r="1" fill="#fff" style="animation-delay:2.2s"/>
-      <circle class="star" cx="310" cy="18" r="1.3" fill="#fff" style="animation-delay:.4s"/>
-      <circle class="star" cx="265" cy="110" r="0.9" fill="#fff" style="animation-delay:1.2s"/>
-      <circle class="star" cx="378" cy="12" r="1" fill="#fff" style="animation-delay:2.6s"/>
-      <circle class="star" cx="225" cy="130" r="0.8" fill="#fff" style="animation-delay:1.9s"/>
+    <svg class="hero-bunting" viewBox="0 0 400 30" preserveAspectRatio="xMidYMin meet" aria-hidden="true">
+      <path d="M0 3 Q200 12 400 3" stroke="rgba(255,255,255,0.5)" stroke-width="1" fill="none"/>
+      <g class="flag" style="animation-delay:0s"><polygon points="8,4 32,5 32,20 26,24 20,20 14,24 8,20" fill="#ff5d8f"/></g>
+      <g class="flag" style="animation-delay:.3s"><polygon points="42,6 66,7 66,22 60,26 54,22 48,26 42,22" fill="#ffc145"/></g>
+      <g class="flag" style="animation-delay:.6s"><polygon points="76,7 100,8 100,23 94,27 88,23 82,27 76,23" fill="#2ec4b6"/></g>
+      <g class="flag" style="animation-delay:.9s"><polygon points="110,8 134,9 134,24 128,28 122,24 116,28 110,24" fill="#9b5de5"/></g>
+      <g class="flag" style="animation-delay:1.2s"><polygon points="144,9 168,9 168,24 162,28 156,24 150,28 144,24" fill="#ff8c42"/></g>
+      <g class="flag" style="animation-delay:1.5s"><polygon points="178,9 202,9 202,24 196,28 190,24 184,28 178,24" fill="#ff5d8f"/></g>
+      <g class="flag" style="animation-delay:.2s"><polygon points="212,9 236,9 236,24 230,28 224,24 218,28 212,24" fill="#ffc145"/></g>
+      <g class="flag" style="animation-delay:.5s"><polygon points="246,9 270,8 270,23 264,27 258,23 252,27 246,23" fill="#2ec4b6"/></g>
+      <g class="flag" style="animation-delay:.8s"><polygon points="280,8 304,7 304,22 298,26 292,22 286,26 280,22" fill="#9b5de5"/></g>
+      <g class="flag" style="animation-delay:1.1s"><polygon points="314,7 338,6 338,21 332,25 326,21 320,25 314,21" fill="#ff8c42"/></g>
+      <g class="flag" style="animation-delay:1.4s"><polygon points="348,6 372,5 372,20 366,24 360,20 354,24 348,20" fill="#ff5d8f"/></g>
+      <g class="flag" style="animation-delay:1.7s"><polygon points="382,4 400,4 400,19 394,23 388,19 382,19" fill="#ffc145"/></g>
     </svg>
     <svg class="hero-skyline" viewBox="0 0 400 130" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
-      <!-- Arthur's Seat -->
-      <path d="M190 130 L190 98 C220 88 246 72 276 62 C288 50 300 44 312 50 C330 58 352 72 372 82 C386 88 394 90 400 92 L400 130 Z" fill="#0a1830" opacity="0.5"/>
-      <!-- Old Town skyline with St Giles' crown and the Scott Monument -->
-      <path d="M108 130 L108 100 L120 100 L120 92 L132 92 L132 98 L144 98 L144 86 L150 80 L156 86 L156 96 L164 96 L164 74 L168 74 L168 66 L172 59 L176 66 L176 74 L180 74 L180 96 L192 96 L192 88 L204 88 L204 94 L211 94 L214 50 L217 50 L220 94 L232 94 L232 100 L246 100 L246 92 L258 92 L258 104 L272 104 L272 130 Z" fill="#0a1830" opacity="0.75"/>
-      <g fill="#f6c869">
-        <rect class="win" x="124" y="96" width="2" height="2.5"/>
-        <rect class="win" x="136" y="95" width="2" height="2.5" style="animation-delay:1s"/>
-        <rect class="win" x="148" y="89" width="2" height="2.5" style="animation-delay:2s"/>
-        <rect class="win" x="185" y="92" width="2" height="2.5" style="animation-delay:.5s"/>
-        <rect class="win" x="197" y="92" width="2" height="2.5" style="animation-delay:1.5s"/>
-        <rect class="win" x="237" y="97" width="2" height="2.5" style="animation-delay:2.5s"/>
-        <rect class="win" x="250" y="96" width="2" height="2.5" style="animation-delay:.2s"/>
+      <defs>
+        <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1aa3b8"/><stop offset="1" stop-color="#075a73"/></linearGradient>
+        <radialGradient id="glow"><stop offset="0" stop-color="#fff3c4" stop-opacity="0.9"/><stop offset="1" stop-color="#ffcf70" stop-opacity="0"/></radialGradient>
+      </defs>
+      <!-- Sunrise over the Caribbean -->
+      <circle cx="290" cy="104" r="58" fill="url(#glow)"/>
+      <circle class="sun" cx="290" cy="104" r="22" fill="#ffd56b"/>
+      <!-- Birds -->
+      <g class="birds" fill="none" stroke="#fff" stroke-width="1.3" stroke-linecap="round" opacity="0.85">
+        <path d="M200 40 q4 -4 8 0 q4 -4 8 0"/>
+        <path d="M222 30 q3 -3 6 0 q3 -3 6 0"/>
+        <path d="M244 46 q3 -3 6 0 q3 -3 6 0"/>
       </g>
-      <!-- Castle Rock and Edinburgh Castle -->
-      <g fill="#07142c">
-        <path d="M0 130 L0 98 C14 94 24 88 34 80 C44 74 56 72 70 72 C88 72 100 78 110 88 C118 96 124 108 130 130 Z"/>
-        <rect x="30" y="62" width="60" height="14"/>
-        <rect x="34" y="50" width="12" height="14"/>
-        <rect x="34" y="47" width="3" height="3"/><rect x="38.5" y="47" width="3" height="3"/><rect x="43" y="47" width="3" height="3"/>
-        <polygon points="52,62 58,54 76,54 82,62"/>
-        <rect x="82" y="58" width="15" height="16" rx="3"/>
-        <rect x="39.5" y="35" width="1" height="13"/>
+      <!-- Sea -->
+      <rect x="0" y="104" width="400" height="27" fill="url(#sea)"/>
+      <g class="waves" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.35">
+        <path d="M-40 112 q10 -3 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0"/>
+        <path d="M-30 121 q10 -3 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0"/>
       </g>
-      <polygon points="40.5,35 49,37.5 40.5,40" fill="#fff"/>
-      <g fill="#f6c869">
-        <rect class="win" x="60" y="66" width="2" height="2.5" style="animation-delay:.7s"/>
-        <rect class="win" x="70" y="66" width="2" height="2.5" style="animation-delay:1.7s"/>
-        <rect class="win" x="38" y="55" width="2" height="2.5" style="animation-delay:2.4s"/>
+      <!-- Sun reflection -->
+      <g fill="#ffe7a3" opacity="0.6">
+        <rect x="270" y="108" width="40" height="1.6" rx="0.8"/>
+        <rect x="276" y="114" width="28" height="1.4" rx="0.7"/>
+        <rect x="282" y="120" width="16" height="1.2" rx="0.6"/>
       </g>
-      <!-- Water and a visiting ship at Leith -->
-      <path d="M0 120 Q25 116 50 120 T100 120 T150 120 T200 120 T250 120 T300 120 T350 120 T400 120 L400 131 L0 131 Z" fill="#07142c"/>
-      <g class="ship" fill="#07142c">
-        <polygon points="318,119 372,119 365,126 325,126"/>
-        <rect x="332" y="111" width="22" height="8" rx="1"/>
-        <rect x="340" y="105" width="8" height="6"/>
-        <rect x="343.5" y="96" width="1" height="9"/>
+      <!-- Maya pyramid -->
+      <g fill="#0b2e3b">
+        <rect x="8" y="94" width="96" height="11"/>
+        <rect x="18" y="83" width="76" height="11"/>
+        <rect x="28" y="72" width="56" height="11"/>
+        <rect x="38" y="61" width="36" height="11"/>
+        <rect x="45" y="48" width="22" height="13"/>
+        <rect x="43" y="46" width="26" height="3"/>
       </g>
+      <rect x="53" y="52" width="6" height="9" fill="#ffd56b" opacity="0.7"/>
+      <polygon points="50,105 62,105 59,61 53,61" fill="#123d4d"/>
+      <!-- Hotel Zone towers along the strip -->
+      <g fill="#0b2e3b" opacity="0.8">
+        <rect x="120" y="88" width="10" height="17"/>
+        <rect x="133" y="80" width="12" height="25"/>
+        <rect x="148" y="90" width="9" height="15"/>
+        <rect x="160" y="76" width="14" height="29"/>
+        <rect x="177" y="86" width="10" height="19"/>
+        <rect x="190" y="92" width="16" height="13"/>
+        <rect x="210" y="84" width="11" height="21"/>
+        <rect x="114" y="100" width="120" height="5"/>
+      </g>
+      <g fill="#ffd56b">
+        <rect class="win" x="136" y="84" width="2" height="2"/>
+        <rect class="win" x="140" y="92" width="2" height="2" style="animation-delay:1s"/>
+        <rect class="win" x="164" y="80" width="2" height="2" style="animation-delay:2s"/>
+        <rect class="win" x="168" y="90" width="2" height="2" style="animation-delay:.5s"/>
+        <rect class="win" x="213" y="88" width="2" height="2" style="animation-delay:1.5s"/>
+      </g>
+      <!-- Ship at anchor -->
+      <g class="ship" fill="#0b2e3b">
+        <polygon points="232,109 266,109 261,114 237,114"/>
+        <rect x="241" y="104" width="15" height="5" rx="1"/>
+        <rect x="246" y="100" width="6" height="4"/>
+        <rect x="248.5" y="93" width="1" height="7"/>
+      </g>
+      <!-- Palms -->
+      <g fill="none" stroke="#0b2e3b" stroke-linecap="round">
+        <path d="M352 105 C350 90 352 76 358 64" stroke-width="3.2"/>
+        <path d="M358 64 C350 58 340 60 334 66" stroke-width="2.4"/>
+        <path d="M358 64 C352 54 344 52 338 54" stroke-width="2.4"/>
+        <path d="M358 64 C364 54 372 52 380 56" stroke-width="2.4"/>
+        <path d="M358 64 C368 60 378 64 382 72" stroke-width="2.4"/>
+        <path d="M358 64 C358 56 362 50 366 48" stroke-width="2.4"/>
+        <path d="M384 105 C383 96 385 88 389 80" stroke-width="2.6"/>
+        <path d="M389 80 C383 75 376 77 372 82" stroke-width="2"/>
+        <path d="M389 80 C394 73 400 73 404 76" stroke-width="2"/>
+        <path d="M389 80 C385 72 380 70 376 71" stroke-width="2"/>
+        <path d="M389 80 C396 78 402 82 404 88" stroke-width="2"/>
+      </g>
+      <path d="M330 105 Q360 99 400 101 L400 106 L330 106 Z" fill="#0b2e3b"/>
     </svg>
 
-    <div class="hero-kicker">Port Brief · Leith, Edinburgh</div>
-    <h1 class="hero-title">Welcome to<br><em>Edinburgh</em></h1>
-    <div class="hero-gaelic">Fàilte gu Dùn Èideann</div>
+    <div class="hero-kicker">Port Brief · Quintana Roo, Mexico</div>
+    <h1 class="hero-title">¡Bienvenidos a<br><em>Cancún!</em></h1>
+    <div class="hero-gaelic">Welcome to the Mexican Caribbean</div>
     <div class="hero-chips">
       <span class="hero-chip" id="hero-clock">🕐 --:-- local</span>
-      <button class="hero-chip" id="hero-weather" type="button" data-nav="weather" hidden>🌦️ —</button>
-      <span class="hero-chip">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland</span>
+      <button class="hero-chip" id="hero-weather" type="button" data-nav="weather" hidden>🌤️ —</button>
+      <span class="hero-chip">🇲🇽 México</span>
     </div>
   </div>
 
   <div class="quick-dial">
-    <a class="dial dial-sos" href="tel:999"><span class="dial-num">999</span><span>Emergency<small>Police · Fire · Ambulance</small></span></a>
-    <a class="dial dial-nhs" href="tel:111"><span class="dial-num">111</span><span>NHS 24<small>Urgent advice</small></span></a>
+    <a class="dial dial-sos" href="tel:911"><span class="dial-num">911</span><span>Emergency<small>Police · Fire · Ambulance</small></span></a>
+    <a class="dial dial-nhs" href="tel:078"><span class="dial-num">078</span><span>Tourist help<small>Tourism hotline</small></span></a>
   </div>
 
   <div class="label">Your brief</div>
   <div class="bento">
-    <button class="tile t-saltire" type="button" data-nav="routine">
+    <button class="tile t-ocean" type="button" data-nav="routine">
       <span class="tile-icon">⚓</span>
       <span><span class="tile-title">Ship Routine</span><span class="tile-sub">Port window, leave &amp; money</span></span>
     </button>
-    <button class="tile t-moss" type="button" data-nav="explore">
+    <button class="tile t-jungle" type="button" data-nav="explore">
       <span class="tile-icon">🧭</span>
-      <span><span class="tile-title">Explore</span><span class="tile-sub">Sights, food &amp; getting around</span></span>
+      <span><span class="tile-title">Explore</span><span class="tile-sub">Beaches, ruins &amp; getting around</span></span>
     </button>
-    <button class="tile t-heather" type="button" data-nav="hotels">
+    <button class="tile t-violet" type="button" data-nav="hotels">
       <span class="tile-icon">🏨</span>
-      <span><span class="tile-title">Hotels</span><span class="tile-sub">Leith &amp; city centre stays</span></span>
+      <span><span class="tile-title">Hotels</span><span class="tile-sub">Hotel Zone &amp; downtown stays</span></span>
     </button>
-    <button class="tile t-gold" type="button" data-nav="weather">
-      <span class="tile-icon">🌦️</span>
-      <span><span class="tile-title">Weather</span><span class="tile-sub">Live forecast &amp; what to pack</span></span>
+    <button class="tile t-sun" type="button" data-nav="weather">
+      <span class="tile-icon">🌤️</span>
+      <span><span class="tile-title">Weather</span><span class="tile-sub">Forecast &amp; hurricane watch</span></span>
     </button>
     <button class="tile t-red" type="button" data-nav="safety">
       <span class="tile-icon">🛡️</span>
-      <span><span class="tile-title">Safety</span><span class="tile-sub">Stay sharp ashore</span></span>
+      <span><span class="tile-title">Safety</span><span class="tile-sub">Sea flags, water &amp; nights out</span></span>
     </button>
-    <button class="tile t-saltire" type="button" data-nav="contacts">
+    <button class="tile t-ocean" type="button" data-nav="contacts">
       <span class="tile-icon">📞</span>
-      <span><span class="tile-title">Contacts</span><span class="tile-sub">Ship &amp; local numbers</span></span>
+      <span><span class="tile-title">Contacts</span><span class="tile-sub">Ship, hospitals &amp; consulate</span></span>
     </button>
-    <button class="tile wide t-thistle" type="button" data-nav="history">
-      <span class="tile-icon">🏰</span>
-      <span><span class="tile-title">Edinburgh &amp; Leith History</span><span class="tile-sub">Volcanoes, whisky &amp; a royal yacht</span></span>
+    <button class="tile wide t-pink" type="button" data-nav="history">
+      <span class="tile-icon">🛕</span>
+      <span><span class="tile-title">Cancún &amp; Maya History</span><span class="tile-sub">Ancient ruins, a planned resort &amp; two hurricanes</span></span>
     </button>
   </div>
 
-  <div class="label">Did you know?</div>
+  <div class="label">¿Sabías que…? Did you know?</div>
   <div class="fact">
     <span class="fact-emoji" aria-hidden="true">💡</span>
     <div class="fact-body">
-      <div class="fact-label">Edinburgh fact</div>
+      <div class="fact-label">Cancún fact</div>
       <div class="fact-text" id="fact-text" aria-live="polite"></div>
     </div>
     <button class="fact-btn" id="fact-btn" type="button" aria-label="Show another fact">🎲</button>
   </div>
 
-  <p class="footnote">Details checked October 2026 — always confirm hours and bookings locally.<br>Slàinte mhath! 🥃</p>
+  <p class="footnote">Details checked October 2026 — always confirm hours, prices and bookings locally.<br>¡Salud! 🍹</p>
 </section>
 
 <!-- ===== SHIP ROUTINE & LEAVE ===== -->
-<section id="routine" class="page t-saltire" aria-label="Ship Routine and Leave">
+<section id="routine" class="page t-ocean" aria-label="Ship Routine and Leave">
   <div class="page-head">
     <span class="page-emoji">⚓</span>
-    <div><h1 class="page-title">Ship Routine &amp; Leave</h1><div class="page-subtitle">Port of Leith, Edinburgh</div></div>
+    <div><h1 class="page-title">Ship Routine &amp; Leave</h1><div class="page-subtitle">Cancún, Quintana Roo</div></div>
   </div>
 
   <div class="acc" data-group="routine">
     <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">🕰️</span>Port Window<span class="acc-icon">+</span></button>
-    <div class="acc-panel"><div class="acc-inner"><div class="acc-content"><p>Per Routine Orders — Edinburgh. Confirm whether the ship is alongside at Leith or at anchor in the Firth of Forth (with boat transfers) — it changes your return-to-ship timings.</p></div></div></div>
+    <div class="acc-panel"><div class="acc-inner"><div class="acc-content"><p>Per Routine Orders — Cancún. Confirm whether the ship will be alongside or at anchor with boat transfers, and where the landing point is. It changes your return-to-ship timings, and boat transfers stop when the port is closed for weather.</p></div></div></div>
   </div>
   <div class="acc" data-group="routine">
     <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">📋</span>Daily Routine<span class="acc-icon">+</span></button>
@@ -740,14 +788,16 @@ button.hero-chip { cursor: pointer; color: #fff; }
     <div class="acc-panel"><div class="acc-inner"><div class="acc-content"><p>Per Routine Orders.</p></div></div></div>
   </div>
   <div class="acc" data-group="routine">
-    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">💷</span>Money, Phones &amp; Language<span class="acc-icon">+</span></button>
+    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">💵</span>Money, Phones &amp; Language<span class="acc-icon">+</span></button>
     <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
       <ul>
-        <li><strong>Currency:</strong> Pound sterling (£). Scottish banknotes (Bank of Scotland, Royal Bank of Scotland, Clydesdale) are legal tender in Scotland and are accepted alongside Bank of England notes, though some shops in England may refuse them. Contactless card and phone payments are accepted almost everywhere.</li>
-        <li><strong>ATMs:</strong> Widely available across Leith and the city centre, including at Ocean Terminal. Withdrawals are free from most UK machines.</li>
-        <li><strong>Language:</strong> English, with a strong Scots accent and plenty of dialect. Gaelic is only occasionally heard, mostly on signage.</li>
-        <li><strong>Phones:</strong> Check your roaming plan before landing. UK country code is +44; Edinburgh landlines start 0131. Power sockets are Type G (three-pin, 230V) — bring an adaptor.</li>
-        <li><strong>Drinking age:</strong> 18. Scotland has a minimum unit price on alcohol, so drinks are not especially cheap.</li>
+        <li><strong>Currency:</strong> Mexican peso (MXN). US dollars are taken in tourist areas, often at a poor rate — pesos usually work out cheaper, especially for taxis and off-resort spending.</li>
+        <li><strong>ATMs:</strong> Use bank-owned machines (Banorte, BBVA, Santander, Banamex) rather than airport exchange counters or standalone ATMs in tourist zones.</li>
+        <li><strong>Tipping:</strong> Expected. Around 10–15% in restaurants and on tours; small amounts in pesos for other service staff.</li>
+        <li><strong>Language:</strong> Spanish. English is widely spoken in the Hotel Zone; a few words of Spanish go a long way downtown.</li>
+        <li><strong>Phones:</strong> Check your roaming plan before arriving. Mexico's country code is +52.</li>
+        <li><strong>Power:</strong> 127 V with Type A/B plugs — the same as Canada, so no adaptor needed.</li>
+        <li><strong>Time zone:</strong> UTC−5 all year (Quintana Roo has not used daylight saving time since 2015).</li>
       </ul>
     </div></div></div>
   </div>
@@ -757,72 +807,72 @@ button.hero-chip { cursor: pointer; color: #fff; }
       <ul>
         <li>Have your hotel name, address, and phone number ready before requesting leave.</li>
         <li>Provide a contact number where you can be reached at all times.</li>
-        <li>Know your leave expiry time and plan return travel accordingly.</li>
+        <li>Know your leave expiry time and plan return travel accordingly — including boat transfers, which stop in bad weather.</li>
         <li>If your plans change, inform the ship per routine as soon as possible.</li>
         <li>Keep your military ID and leave pass on your person.</li>
-        <li>Edinburgh is a big, busy city. Leith is about 3–4 km from the centre — allow time for buses or trams on the way back, particularly at night.</li>
+        <li>The Hotel Zone is a long, narrow strip. Allow plenty of time to get back from the far end, especially at night.</li>
       </ul>
     </div></div></div>
   </div>
 </section>
 
 <!-- ===== EXPLORE HUB ===== -->
-<section id="explore" class="page t-moss" aria-label="Explore Edinburgh">
+<section id="explore" class="page t-jungle" aria-label="Explore Cancún">
   <div class="page-head">
     <span class="page-emoji">🧭</span>
-    <div><h1 class="page-title">Explore Edinburgh</h1><div class="page-subtitle">Castles, closes, and a very good pint</div></div>
+    <div><h1 class="page-title">Explore Cancún</h1><div class="page-subtitle">Reefs, ruins, and very good tacos</div></div>
   </div>
   <div class="bento">
-    <button class="tile feature wide t-saltire" type="button" data-nav="map">
+    <button class="tile feature wide t-ocean" type="button" data-nav="map">
       <span class="tile-icon">🗺️</span>
-      <span><span class="tile-title">Map &amp; Getting Around</span><span class="tile-sub">Trams, buses, taxis &amp; key spots</span></span>
+      <span><span class="tile-title">Map &amp; Getting Around</span><span class="tile-sub">Buses, taxis, ferries &amp; key spots</span></span>
     </button>
-    <button class="tile feature wide t-gold" type="button" data-nav="todo">
+    <button class="tile feature wide t-sun" type="button" data-nav="todo">
       <span class="tile-icon">🎯</span>
-      <span><span class="tile-title">Things To Do</span><span class="tile-sub">17 picks, from castles to closes</span></span>
+      <span><span class="tile-title">Things To Do</span><span class="tile-sub" id="explore-todo-sub">Beaches, reefs &amp; Maya ruins</span></span>
     </button>
-    <button class="tile feature wide t-thistle" type="button" data-nav="food">
-      <span class="tile-icon">🍽️</span>
-      <span><span class="tile-title">Food, Coffee &amp; Bars</span><span class="tile-sub">Seafood, whisky &amp; folk pubs</span></span>
+    <button class="tile feature wide t-pink" type="button" data-nav="food">
+      <span class="tile-icon">🌮</span>
+      <span><span class="tile-title">Food, Coffee &amp; Bars</span><span class="tile-sub">Seafood, tacos &amp; the Party Center</span></span>
     </button>
   </div>
 </section>
 
 <!-- ===== WEATHER ===== -->
-<section id="weather" class="page t-gold" aria-label="Weather">
+<section id="weather" class="page t-sun" aria-label="Weather">
   <div class="page-head">
-    <span class="page-emoji">🌦️</span>
-    <div><h1 class="page-title">Weather</h1><div class="page-subtitle">Edinburgh &amp; Leith</div></div>
+    <span class="page-emoji">🌤️</span>
+    <div><h1 class="page-title">Weather</h1><div class="page-subtitle">Cancún &amp; the Hotel Zone</div></div>
   </div>
 
   <div class="callout">
-    <span class="callout-icon">🌫️</span>
-    <div><strong>Four seasons in one day.</strong> Edinburgh weather changes quickly, and the east coast gets haar — cold sea fog off the Forth. Always check a live source before heading out.</div>
+    <span class="callout-icon">🌀</span>
+    <div><strong>Hurricane season runs June to November</strong>, with the highest risk in September and October. Watch the National Hurricane Center and follow ship, hotel and civil-protection instructions if a storm is forecast.</div>
   </div>
 
   <div id="weather-dynamic"></div>
 
   <div class="label">What to expect</div>
   <div class="card prose">
-    Edinburgh has a mild, temperate maritime climate — cool, changeable, and often breezy. Summers (June–August) are comfortable, with highs around 18–19°C, and very long days (sunset after 10 pm at midsummer). Winters are cold and damp, with highs around 6°C, lows near 1°C and frequent night frosts, and the sun sets around 3:40 pm in mid-December. Wind off the Firth of Forth makes it feel colder than the thermometer says, and the haar can roll in on spring and summer mornings. Pack a waterproof and layers year-round.
+    Cancún is hot and humid all year. The rainy season runs roughly May to October, often with short, heavy downpours followed by sunshine; November to April is the drier, more comfortable season. In October expect highs around 29–30°C and lows in the mid-20s, with the sea at its warmest. Sargassum seaweed can pile up on beaches, mainly in spring and summer — 2026 was forecast to be a record year. Pack light clothes, a hat, reef-safe sunscreen and a light rain jacket.
   </div>
 
   <div class="label">Live forecast links</div>
   <div class="links">
-    <a class="link-row t-saltire" href="https://www.metoffice.gov.uk/weather/forecast/gcvwr3zrw" target="_blank" rel="noopener">
-      <span class="link-icon">🇬🇧</span><span class="link-text"><span class="link-title">Met Office</span><span class="link-sub">UK national weather service</span></span><span class="link-chev">›</span>
+    <a class="link-row t-red" href="https://www.nhc.noaa.gov/" target="_blank" rel="noopener">
+      <span class="link-icon">🌀</span><span class="link-text"><span class="link-title">National Hurricane Center</span><span class="link-sub">Atlantic storm tracking (NOAA)</span></span><span class="link-chev">›</span>
     </a>
-    <a class="link-row t-red" href="https://www.bbc.co.uk/weather/2650225" target="_blank" rel="noopener">
-      <span class="link-icon">🌡️</span><span class="link-text"><span class="link-title">BBC Weather</span><span class="link-sub">Hourly and 14-day outlook</span></span><span class="link-chev">›</span>
+    <a class="link-row t-jungle" href="https://smn.conagua.gob.mx/" target="_blank" rel="noopener">
+      <span class="link-icon">🇲🇽</span><span class="link-text"><span class="link-title">Servicio Meteorológico Nacional</span><span class="link-sub">Mexico's national weather service</span></span><span class="link-chev">›</span>
     </a>
-    <a class="link-row t-heather" href="https://www.timeanddate.com/weather/uk/edinburgh/ext" target="_blank" rel="noopener">
+    <a class="link-row t-violet" href="https://www.timeanddate.com/weather/mexico/cancun/ext" target="_blank" rel="noopener">
       <span class="link-icon">📅</span><span class="link-text"><span class="link-title">14-Day Forecast</span><span class="link-sub">timeanddate.com</span></span><span class="link-chev">›</span>
     </a>
   </div>
 </section>
 
 <!-- ===== MAP & GETTING AROUND ===== -->
-<section id="map" class="page t-saltire" aria-label="Map and Getting Around">
+<section id="map" class="page t-ocean" aria-label="Map and Getting Around">
   <div class="page-head">
     <span class="page-emoji">🗺️</span>
     <div><h1 class="page-title">Getting Around</h1><div class="page-subtitle">Tap a place to open it in Google Maps</div></div>
@@ -830,33 +880,33 @@ button.hero-chip { cursor: pointer; color: #fff; }
 
   <div class="callout">
     <span class="callout-icon">📍</span>
-    <div><strong>The port is in Leith, about 3–4 km from the city centre.</strong> The Old Town and New Town are compact and very walkable once you get there, but hilly and cobbled. Trams and buses link Leith to Princes Street.</div>
+    <div><strong>Cancún has two halves.</strong> The Hotel Zone is a long, narrow island strip of beaches and resorts along the Boulevard Kukulcán. Downtown (El Centro) is on the mainland, with markets, local food and lower prices. Buses run between the two all day.</div>
   </div>
 
   <div class="label">Key places</div>
   <div class="links">
-    <a class="link-row t-saltire" href="https://www.google.com/maps/search/Port+of+Leith+Edinburgh" target="_blank" rel="noopener"><span class="link-icon">⚓</span><span class="link-text"><span class="link-title">Port of Leith</span><span class="link-sub">The docks</span></span><span class="link-chev">›</span></a>
-    <a class="link-row t-moss" href="https://www.google.com/maps/search/The+Shore+Leith+Edinburgh" target="_blank" rel="noopener"><span class="link-icon">🦞</span><span class="link-text"><span class="link-title">The Shore, Leith</span><span class="link-sub">Old harbour, pubs &amp; seafood</span></span><span class="link-chev">›</span></a>
-    <a class="link-row t-heather" href="https://www.google.com/maps/search/Edinburgh+Waverley+Station" target="_blank" rel="noopener"><span class="link-icon">🚉</span><span class="link-text"><span class="link-title">Waverley Station</span><span class="link-sub">City centre rail hub</span></span><span class="link-chev">›</span></a>
-    <a class="link-row t-gold" href="https://www.google.com/maps/search/Edinburgh+Castle" target="_blank" rel="noopener"><span class="link-icon">🏰</span><span class="link-text"><span class="link-title">Edinburgh Castle</span><span class="link-sub">Top of the Royal Mile</span></span><span class="link-chev">›</span></a>
-    <a class="link-row t-thistle" href="https://www.google.com/maps/search/Royal+Mile+Edinburgh" target="_blank" rel="noopener"><span class="link-icon">🛣️</span><span class="link-text"><span class="link-title">The Royal Mile</span><span class="link-sub">Castle to Holyroodhouse</span></span><span class="link-chev">›</span></a>
-    <a class="link-row t-moss" href="https://www.google.com/maps/search/Arthur's+Seat+Edinburgh" target="_blank" rel="noopener"><span class="link-icon">⛰️</span><span class="link-text"><span class="link-title">Arthur's Seat</span><span class="link-sub">The best view in town</span></span><span class="link-chev">›</span></a>
+    <a class="link-row t-ocean" href="https://www.google.com/maps/search/Zona+Hotelera+Cancun" target="_blank" rel="noopener"><span class="link-icon">🏖️</span><span class="link-text"><span class="link-title">Hotel Zone</span><span class="link-sub">Beaches, resorts &amp; the Party Center</span></span><span class="link-chev">›</span></a>
+    <a class="link-row t-sun" href="https://www.google.com/maps/search/Parque+de+las+Palapas+Cancun" target="_blank" rel="noopener"><span class="link-icon">🌽</span><span class="link-text"><span class="link-title">Downtown — Parque de las Palapas</span><span class="link-sub">Main square &amp; street food</span></span><span class="link-chev">›</span></a>
+    <a class="link-row t-pink" href="https://www.google.com/maps/search/Mercado+28+Cancun" target="_blank" rel="noopener"><span class="link-icon">🪅</span><span class="link-text"><span class="link-title">Mercado 28</span><span class="link-sub">Craft market</span></span><span class="link-chev">›</span></a>
+    <a class="link-row t-jungle" href="https://www.google.com/maps/search/Puerto+Juarez+Ultramar+Cancun" target="_blank" rel="noopener"><span class="link-icon">⛴️</span><span class="link-text"><span class="link-title">Puerto Juárez Ferry</span><span class="link-sub">Boats to Isla Mujeres</span></span><span class="link-chev">›</span></a>
+    <a class="link-row t-violet" href="https://www.google.com/maps/search/Playa+Delfines+Cancun" target="_blank" rel="noopener"><span class="link-icon">📸</span><span class="link-text"><span class="link-title">Playa Delfines</span><span class="link-sub">Lookout &amp; the Cancún sign</span></span><span class="link-chev">›</span></a>
+    <a class="link-row t-red" href="https://www.google.com/maps/search/Hospiten+Cancun" target="_blank" rel="noopener"><span class="link-icon">🏥</span><span class="link-text"><span class="link-title">Hospiten Cancún</span><span class="link-sub">24-hour emergency department</span></span><span class="link-chev">›</span></a>
   </div>
 
   <div class="label">Transport</div>
   <div class="card">
-    <div class="info"><span class="info-icon">🚊</span><div><div class="info-title">Tram</div><div class="info-text">Runs from the Airport through Haymarket, Princes Street and down Leith Walk to Newhaven, about every 7 minutes in the daytime. <strong>The Shore, Port of Leith and Ocean Terminal stops are the closest to the ship.</strong> Check edinburghtrams.com for current fares and last trams.</div></div></div>
-    <div class="info"><span class="info-icon">🚌</span><div><div class="info-title">Bus</div><div class="info-text">Lothian Buses run frequently between Leith and the city centre, with night services too. Pay by contactless card or the Lothian app; daily caps apply. See lothianbuses.com for current fares.</div></div></div>
-    <div class="info"><span class="info-icon">🚕</span><div><div class="info-title">Taxis &amp; rideshare</div><div class="info-text">Black cabs can be hailed or found at ranks, and phone numbers are on the Local Contacts page. Private hire cars must be pre-booked; Uber operates in the city.</div></div></div>
-    <div class="info"><span class="info-icon">🚶</span><div><div class="info-title">Walking</div><div class="info-text">Leith to the Old Town is roughly 45–60 minutes on foot along Leith Walk. Fine in good weather, but hilly at the city end.</div></div></div>
-    <div class="info"><span class="info-icon">🚆</span><div><div class="info-title">Train</div><div class="info-text">Waverley Station is in the heart of the city and has services across Scotland and to London. Haymarket handles west and Fife services.</div></div></div>
-    <div class="info"><span class="info-icon">🚗</span><div><div class="info-title">Drive on the left</div><div class="info-text">If renting a car, note that the UK drives on the left. Parking in the centre is limited and expensive; public transport is easier.</div></div></div>
-    <div class="info"><span class="info-icon">🌉</span><div><div class="info-title">Day trips</div><div class="info-text">South Queensferry (Forth Bridges) is close by train or bus. Stirling, St Andrews, and Glasgow are all within about an hour or so by train.</div></div></div>
+    <div class="info"><span class="info-icon">🚌</span><div><div class="info-title">City buses (R-1, R-2, R-27)</div><div class="info-text">Run about every 10 minutes between downtown and the Hotel Zone, roughly 5 am to midnight. Fares are only a few pesos — carry small change, as drivers prefer exact fare.</div></div></div>
+    <div class="info"><span class="info-icon">🚕</span><div><div class="info-title">Taxis</div><div class="info-text">No meters: fares are set by zone, so <strong>agree the price before you get in</strong>. Fares often rise at night. Use official taxis from hotel ranks.</div></div></div>
+    <div class="info"><span class="info-icon">📱</span><div><div class="info-title">Uber &amp; DiDi</div><div class="info-text">Uber has operated legally in Quintana Roo since a 2023 court ruling, but there have been tense, sometimes violent disputes with taxi drivers. Airport pickups in particular can be unreliable.</div></div></div>
+    <div class="info"><span class="info-icon">⛴️</span><div><div class="info-title">Ferry to Isla Mujeres</div><div class="info-text">Ultramar sails from Puerto Juárez (downtown, usually cheapest) and from Hotel Zone piers such as Playa Tortugas. The crossing takes about 20–30 minutes. Check the timetable, as there are fewer sailings off-season.</div></div></div>
+    <div class="info"><span class="info-icon">🚍</span><div><div class="info-title">ADO coaches</div><div class="info-text">Comfortable long-distance buses from the downtown terminal and the airport to Playa del Carmen, Tulum and beyond.</div></div></div>
+    <div class="info"><span class="info-icon">🚆</span><div><div class="info-title">Tren Maya</div><div class="info-text">The new Maya Train runs from the Cancún Aeropuerto station, including a route to Mérida via Chichén Itzá (about 3½ hours). Timetables change by season — check before you travel.</div></div></div>
+    <div class="info"><span class="info-icon">🚗</span><div><div class="info-title">Driving</div><div class="info-text">Mexico drives on the right. Watch for speed bumps (topes), and get full insurance if renting.</div></div></div>
   </div>
 </section>
 
 <!-- ===== THINGS TO DO ===== -->
-<section id="todo" class="page t-gold" aria-label="Things To Do">
+<section id="todo" class="page t-sun" aria-label="Things To Do">
   <div class="page-head">
     <span class="page-emoji">🎯</span>
     <div><h1 class="page-title">Things To Do</h1><div class="page-subtitle">Filter by what you're feeling</div></div>
@@ -867,21 +917,21 @@ button.hero-chip { cursor: pointer; color: #fff; }
 </section>
 
 <!-- ===== FOOD, COFFEE & BARS ===== -->
-<section id="food" class="page t-thistle" aria-label="Food, Coffee and Bars">
+<section id="food" class="page t-pink" aria-label="Food, Coffee and Bars">
   <div class="page-head">
-    <span class="page-emoji">🍽️</span>
-    <div><h1 class="page-title">Food &amp; Drink</h1><div class="page-subtitle">Seafood, whisky, and a lot of pubs</div></div>
+    <span class="page-emoji">🌮</span>
+    <div><h1 class="page-title">Food &amp; Drink</h1><div class="page-subtitle">Seafood, tacos, and a lot of nightlife</div></div>
   </div>
 
   <div class="callout">
     <span class="callout-icon">🍴</span>
-    <div>Edinburgh has an excellent food scene for its size — fresh Scottish seafood, game, and a strong specialty-coffee culture, plus the Michelin-starred restaurants of Leith right by the port. Book dinner ahead, especially at weekends and during the Festival in August. Try a traditional haggis, neeps &amp; tatties at least once.</div>
+    <div>For the most authentic Yucatecan and Mexican food at the best prices, head downtown — around Parque de las Palapas, Avenida Yaxchilán and the markets. The Hotel Zone has the lagoon-view restaurants and the big nights out. Try cochinita pibil, ceviche and fish tacos. Avoid ice and salads where you're unsure of the water.</div>
   </div>
 
   <div class="segmented" role="tablist" aria-label="Venue type">
     <button class="seg active" type="button" role="tab" aria-selected="true" data-tab="tab-food">🍴 Food</button>
     <button class="seg" type="button" role="tab" aria-selected="false" data-tab="tab-coffee">☕ Coffee</button>
-    <button class="seg" type="button" role="tab" aria-selected="false" data-tab="tab-bars">🍺 Bars</button>
+    <button class="seg" type="button" role="tab" aria-selected="false" data-tab="tab-bars">🍹 Bars</button>
     <button class="seg" type="button" role="tab" aria-selected="false" data-tab="tab-shop">🛍️ Shop</button>
   </div>
 
@@ -894,7 +944,7 @@ button.hero-chip { cursor: pointer; color: #fff; }
     <div class="venue-list stack"></div>
   </div>
   <div id="tab-bars" class="tab-panel" role="tabpanel">
-    <div class="search"><input type="search" placeholder="Search bars…" aria-label="Search bars" oninput="filterVenues('tab-bars',this.value)"></div>
+    <div class="search"><input type="search" placeholder="Search bars &amp; clubs…" aria-label="Search bars and clubs" oninput="filterVenues('tab-bars',this.value)"></div>
     <div class="venue-list stack"></div>
   </div>
   <div id="tab-shop" class="tab-panel" role="tabpanel">
@@ -904,15 +954,15 @@ button.hero-chip { cursor: pointer; color: #fff; }
 </section>
 
 <!-- ===== HOTELS ===== -->
-<section id="hotels" class="page t-heather" aria-label="Hotels">
+<section id="hotels" class="page t-violet" aria-label="Hotels">
   <div class="page-head">
     <span class="page-emoji">🏨</span>
-    <div><h1 class="page-title">Hotels</h1><div class="page-subtitle">Book early — the city fills up</div></div>
+    <div><h1 class="page-title">Hotels</h1><div class="page-subtitle">Hotel Zone or downtown?</div></div>
   </div>
 
   <div class="callout">
     <span class="callout-icon">🛏️</span>
-    <div>Edinburgh has hotels at every price point, but demand is high — particularly in August (the Festival Fringe and the Military Tattoo) and at Hogmanay (New Year). Book as early as possible. Staying in Leith keeps you close to the ship; staying in the Old or New Town puts you in the middle of the sights.</div>
+    <div>The <strong>Hotel Zone</strong> is the easiest beach base. The northern stretch (about Km 4–12) has calmer water and keeps restaurants, ferries and nightlife close. <strong>Downtown</strong> is cheaper and better for local food, with buses to the beach. Many Hotel Zone resorts are all-inclusive, so check what's covered.</div>
   </div>
 
   <div class="search"><input type="search" placeholder="Search hotels…" aria-label="Search hotels" oninput="filterHotels(this.value)"></div>
@@ -923,52 +973,60 @@ button.hero-chip { cursor: pointer; color: #fff; }
 <section id="safety" class="page t-red" aria-label="Safety">
   <div class="page-head">
     <span class="page-emoji">🛡️</span>
-    <div><h1 class="page-title">Safety</h1><div class="page-subtitle">Stay sharp, stay safe</div></div>
+    <div><h1 class="page-title">Safety</h1><div class="page-subtitle">Sun, sea, and street smarts</div></div>
   </div>
 
   <div class="sos">
-    <div class="sos-title">🚨 UK Emergency Numbers</div>
-    <a class="sos-main" href="tel:999"><span class="sos-num">999</span><span class="sos-label">Police · Fire · Ambulance<small>and Coastguard</small></span><span class="sos-call">Call</span></a>
+    <div class="sos-title">🚨 Mexico Emergency Numbers</div>
+    <a class="sos-main" href="tel:911"><span class="sos-num">911</span><span class="sos-label">Police · Fire · Ambulance<small>Free from any phone, 24/7</small></span><span class="sos-call">Call</span></a>
     <div class="sos-grid">
-      <a href="tel:112">112<small>Also works</small></a>
-      <a href="tel:101">101<small>Police non-emergency</small></a>
-      <a href="tel:111">111<small>NHS 24</small></a>
+      <a href="tel:078">078<small>Tourist help</small></a>
+      <a href="tel:+529988833360">🇨🇦<small>Canada consulate</small></a>
+      <a href="tel:+529988813700">🏥<small>Hospiten 24h</small></a>
     </div>
   </div>
 
   <div class="acc" data-group="safety">
-    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">👀</span>General<span class="acc-icon">+</span></button>
+    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">📢</span>Travel Advisories<span class="acc-icon">+</span></button>
     <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
       <ul>
-        <li>Edinburgh is one of the safer UK cities, but it is a large, busy capital with a lively nightlife. Normal big-city awareness applies.</li>
-        <li>Pickpockets work crowded areas — the Royal Mile, Princes Street, and Waverley Station, especially during the Festival.</li>
-        <li>Stay aware of your surroundings at night, particularly around the Grassmarket, Cowgate, and Rose Street.</li>
-        <li>Traffic drives on the <strong>left</strong>. Look right first when crossing, and watch for trams and buses.</li>
-        <li>Buddy system, especially at night.</li>
+        <li><strong>Canada</strong> advises a <strong>high degree of caution</strong> for Mexico because of crime and kidnapping. Check travel.gc.ca for the current wording and any regional warnings.</li>
+        <li><strong>United States:</strong> Quintana Roo is rated "exercise increased caution" (May 2026).</li>
+        <li>Most reported incidents affecting tourists happen downtown or in nightlife areas after dark.</li>
       </ul>
     </div></div></div>
   </div>
   <div class="acc" data-group="safety">
-    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">⛰️</span>Weather &amp; Terrain<span class="acc-icon">+</span></button>
+    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">🚩</span>Beach Flags &amp; Rip Currents<span class="acc-icon">+</span></button>
     <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
       <ul>
-        <li>The weather turns quickly. Carry a waterproof and a warm layer even on a sunny morning.</li>
-        <li>Cobbles and steps can be very slippery when wet, especially in the closes off the Royal Mile.</li>
-        <li>Arthur's Seat and Salisbury Crags have steep, loose paths and exposed edges. Wear proper footwear and avoid them in low cloud, high wind, or after dark.</li>
-        <li>Haar (sea fog) can reduce visibility along the waterfront and on the hills.</li>
-        <li>Winter daylight is short — sunset is around 3:40 pm in mid-December.</li>
+        <li><strong>Green</strong> = safe · <strong>Yellow</strong> = caution · <strong>Red</strong> = no swimming. Red flags are common, and swimmers who ignore them get into trouble — on one day, 18 people had to be rescued.</li>
+        <li>Open-sea beaches such as Delfines, Ballenas and Marlín have the strongest surf. Bay-side beaches (Tortugas, Langosta, Caracol) are calmer.</li>
+        <li>Caught in a rip current? Stay calm. It pulls you out, not under — swim parallel to the shore, then back in.</li>
+        <li>Sargassum seaweed can make some beaches unpleasant and change the currents. Check the local sargassum alerts.</li>
       </ul>
     </div></div></div>
   </div>
   <div class="acc" data-group="safety">
-    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">🍺</span>Alcohol &amp; Nights Out<span class="acc-icon">+</span></button>
+    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">💧</span>Water, Food &amp; Sun<span class="acc-icon">+</span></button>
     <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
       <ul>
-        <li>The pubs are good and plentiful. Pace yourself — pints and whisky measures are generous.</li>
-        <li>Know how you're getting back to the ship before you go out. Night buses run, and taxis and Uber are available, but expect delays at closing time.</li>
-        <li>The council has byelaws banning drinking alcohol in designated public places. Keep it to licensed premises.</li>
-        <li>Look out for your shipmates.</li>
-        <li>You're representing the ship — be a good guest.</li>
+        <li><strong>Don't drink the tap water.</strong> Use bottled or filtered water, and be wary of ice unless you know it is filtered.</li>
+        <li>The sun is intense. Hat, shade and plenty of water — heat exhaustion comes on quickly.</li>
+        <li>Use reef-safe sunscreen. In protected areas such as Puerto Morelos Reef National Park, only sunscreen free of oxybenzone and octinoxate is allowed.</li>
+      </ul>
+    </div></div></div>
+  </div>
+  <div class="acc" data-group="safety">
+    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">🌙</span>Nights Out<span class="acc-icon">+</span></button>
+    <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
+      <ul>
+        <li>Open bars are everywhere — pace yourself. Never leave a drink unattended.</li>
+        <li>Pickpocketing is the main risk in busy clubs. Carry only what you need.</li>
+        <li>Stick to well-lit, busy streets after dark, and avoid isolated areas.</li>
+        <li>Never buy drugs. It's illegal, and the drug trade is behind the violence that shapes the travel advisories.</li>
+        <li>Know how you're getting back to the ship before you go out, and agree any taxi fare up front.</li>
+        <li>Buddy system — look out for your shipmates. You're representing the ship.</li>
       </ul>
     </div></div></div>
   </div>
@@ -976,10 +1034,9 @@ button.hero-chip { cursor: pointer; color: #fff; }
     <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">🪪</span>ID &amp; Valuables<span class="acc-icon">+</span></button>
     <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
       <ul>
-        <li>Carry your military ID and a second piece of government photo ID. Bars may ask for photo ID.</li>
-        <li>Don't carry more cash than you need — cards and contactless are accepted nearly everywhere.</li>
-        <li>Keep phones and wallets in front pockets or zipped bags in crowds.</li>
+        <li>Carry your military ID and a second piece of government photo ID; keep a photo of your passport on your phone.</li>
         <li>Leave valuables secured aboard or in your hotel safe.</li>
+        <li>Use bank ATMs inside branches or malls, ideally in daylight.</li>
       </ul>
     </div></div></div>
   </div>
@@ -987,37 +1044,36 @@ button.hero-chip { cursor: pointer; color: #fff; }
     <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">🏥</span>Medical &amp; Emergencies<span class="acc-icon">+</span></button>
     <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
       <ul>
-        <li>Call <strong>999</strong> (or <strong>112</strong>) for police, fire, ambulance, or the Coastguard.</li>
-        <li>Call <strong>101</strong> for non-emergency police matters.</li>
-        <li>Call <strong>111</strong> (NHS 24) for urgent but non-life-threatening medical advice.</li>
-        <li>Hospital: Royal Infirmary of Edinburgh, 51 Little France Crescent — Emergency Department open 24 hours, for ages 16 and over. Children go to the Royal Hospital for Children and Young People.</li>
+        <li>Call <strong>911</strong> for police, fire or ambulance. Ask for an English-speaking operator if needed.</li>
+        <li>Private hospitals with 24-hour emergency care include <strong>Hospiten</strong> (998 881 3700), <strong>Galenia</strong> (998 891 5200) and <strong>AmeriMed</strong> (998 881 3400).</li>
+        <li>Private hospitals expect payment or insurance up front — bring ID, your insurance card and any prior authorization.</li>
         <li>Follow your ship's medical and insurance procedures before seeking non-emergency care ashore.</li>
-        <li>Inform the ship of any incidents as soon as practical.</li>
+        <li>Inform the ship of any incidents as soon as practical. For consular help, contact the Consular Agency of Canada (998 883 3360).</li>
       </ul>
     </div></div></div>
   </div>
 </section>
 
 <!-- ===== CONTACTS ===== -->
-<section id="contacts" class="page t-saltire" aria-label="Contacts">
+<section id="contacts" class="page t-ocean" aria-label="Contacts">
   <div class="page-head">
     <span class="page-emoji">📞</span>
     <div><h1 class="page-title">Contacts</h1><div class="page-subtitle">Quick access</div></div>
   </div>
   <div class="bento">
-    <button class="tile feature wide t-saltire" type="button" data-nav="contacts-ship">
+    <button class="tile feature wide t-ocean" type="button" data-nav="contacts-ship">
       <span class="tile-icon">⚓</span>
       <span><span class="tile-title">Ship Contacts</span><span class="tile-sub">Brow, Cox'n, XO &amp; Duty Medical</span></span>
     </button>
-    <button class="tile feature wide t-moss" type="button" data-nav="contacts-local">
+    <button class="tile feature wide t-jungle" type="button" data-nav="contacts-local">
       <span class="tile-icon">📍</span>
-      <span><span class="tile-title">Local Contacts</span><span class="tile-sub">Hospital, police, NHS &amp; taxis</span></span>
+      <span><span class="tile-title">Local Contacts</span><span class="tile-sub">Emergency, hospitals &amp; the Canadian consulate</span></span>
     </button>
   </div>
 </section>
 
 <!-- SHIP CONTACTS -->
-<section id="contacts-ship" class="page t-saltire" aria-label="Ship Contacts">
+<section id="contacts-ship" class="page t-ocean" aria-label="Ship Contacts">
   <div class="page-head">
     <span class="page-emoji">⚓</span>
     <div><h1 class="page-title">Ship Contacts</h1><div class="page-subtitle">Placeholder numbers — update before sailing</div></div>
@@ -1026,105 +1082,91 @@ button.hero-chip { cursor: pointer; color: #fff; }
 </section>
 
 <!-- LOCAL CONTACTS -->
-<section id="contacts-local" class="page t-moss" aria-label="Local Contacts">
+<section id="contacts-local" class="page t-jungle" aria-label="Local Contacts">
   <div class="page-head">
     <span class="page-emoji">📍</span>
-    <div><h1 class="page-title">Local Contacts</h1><div class="page-subtitle">Edinburgh &amp; Leith · Scotland</div></div>
+    <div><h1 class="page-title">Local Contacts</h1><div class="page-subtitle">Cancún · Quintana Roo · Mexico</div></div>
   </div>
-
-  <div class="sos">
-    <div class="sos-title">🚨 Emergency Numbers (UK)</div>
-    <a class="sos-main" href="tel:999"><span class="sos-num">999</span><span class="sos-label">Police · Fire · Ambulance<small>and Coastguard</small></span><span class="sos-call">Call</span></a>
-    <div class="sos-grid">
-      <a href="tel:112">112<small>Also works</small></a>
-      <a href="tel:101">101<small>Police non-emergency</small></a>
-      <a href="tel:111">111<small>NHS 24</small></a>
-    </div>
-  </div>
-
   <div id="local-contact-list" class="stack"></div>
 </section>
 
-<!-- ===== EDINBURGH & LEITH HISTORY ===== -->
-<section id="history" class="page t-thistle" aria-label="Edinburgh and Leith History">
+<!-- ===== CANCÚN & MAYA HISTORY ===== -->
+<section id="history" class="page t-pink" aria-label="Cancún and Maya History">
   <div class="page-head">
-    <span class="page-emoji">🏰</span>
-    <div><h1 class="page-title">Edinburgh &amp; Leith History</h1><div class="page-subtitle">Castle, Enlightenment, and a very old port</div></div>
+    <span class="page-emoji">🛕</span>
+    <div><h1 class="page-title">Cancún &amp; Maya History</h1><div class="page-subtitle">From Maya coast to planned resort</div></div>
   </div>
 
   <div class="card" style="margin-bottom:14px">
-    <div class="item-name" style="font-family:var(--font-display);font-size:1.2rem;margin-bottom:6px">A Capital Built on a Volcano 🌋</div>
-    <div class="prose">Edinburgh has been Scotland's capital for over 600 years. Its Old Town sits on a ridge of volcanic rock leading down from the Castle, while the Georgian New Town to the north is a planned masterpiece of neoclassical streets and squares. Together they form a UNESCO World Heritage Site. Leith, where your ship is berthed, was Edinburgh's port for centuries and has its own long and colourful maritime story.</div>
+    <div class="item-name" style="font-family:var(--font-display);font-size:1.2rem;margin-bottom:6px">A Resort Built From Scratch 🏗️</div>
+    <div class="prose">Few big tourist cities are as young as Cancún. In the late 1960s the long sandy island that is now the Hotel Zone was home to just three caretakers of a coconut plantation, and the nearest settlement, Puerto Juárez, had little more than 100 people. Mexico's government picked the site for a planned resort, and within a few decades it became a major international holiday destination — on a coast the Maya had sailed and fished for centuries.</div>
   </div>
 
   <div class="acc" data-group="history">
-    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">🏰</span>The Castle &amp; the Old Town<span class="acc-icon">+</span></button>
+    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">🛕</span>The Maya Coast<span class="acc-icon">+</span></button>
     <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
-      <p>Edinburgh Castle stands on Castle Rock, an extinct volcanic plug, and the site has been occupied since the Iron Age. For centuries it was a royal residence and the key fortress in Scotland's wars with England.</p>
-      <p>The Royal Mile runs down the ridge from the Castle to the Palace of Holyroodhouse. Confined by the city walls, the medieval town grew upward — tenements of ten or more storeys, with narrow closes and wynds running between them. Many of those closes are still walkable today.</p>
-      <p>The Castle's One O'Clock Gun has been fired since 1861 — daily at 1 pm except Sundays, Good Friday and Christmas Day. It was added as a sound signal for ships in the Forth, because haar often hid the time ball on Calton Hill.</p>
+      <p>Long before the resorts, the Maya used this coast for fishing and maritime trade. You can still see their settlements in the middle of the Hotel Zone, at El Rey and at San Miguelito beside the Museo Maya de Cancún.</p>
+      <p>Further afield are the great Maya cities: Chichén Itzá inland in Yucatán, and Tulum on its cliff above the Caribbean.</p>
     </div></div></div>
   </div>
   <div class="acc" data-group="history">
-    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">🧠</span>The Enlightenment &amp; the New Town<span class="acc-icon">+</span></button>
+    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">🐍</span>What's in a Name?<span class="acc-icon">+</span></button>
     <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
-      <p>In the 18th century Edinburgh became one of Europe's great intellectual centres. Philosophers and scientists including David Hume, Adam Smith, and James Hutton worked here, and the period became known as the Scottish Enlightenment.</p>
-      <p>As the Old Town grew overcrowded, the city held a design competition in 1766 and began a new, planned district to the north. The New Town's wide streets, squares, and classical buildings are still among the finest examples of Georgian town planning anywhere. The Old and New Towns were inscribed as a World Heritage Site in 1995.</p>
+      <p>The name is usually traced to the Maya <em>kàan kun</em>. The most accepted translation is "nest of snakes", while "place of the golden snake" is a less accepted alternative — and some scholars question whether the name is Maya at all.</p>
+      <p>Before that, the island was known as <em>Nizuc</em>, meaning "promontory" or "point of grass". The name survives today at Punta Nizuc, at the southern end of the Hotel Zone.</p>
     </div></div></div>
   </div>
   <div class="acc" data-group="history">
-    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">⚓</span>Leith: Edinburgh's Port<span class="acc-icon">+</span></button>
+    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">🏗️</span>The Planned Resort<span class="acc-icon">+</span></button>
     <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
-      <p>Leith appears in records from 1128 and became Edinburgh's official port in 1329. It was an independent burgh from 1833 until it merged with Edinburgh in 1920, against the wishes of many Leithers — some locals still insist it's a separate place.</p>
-      <p>Leith has a long link to France through the Auld Alliance, and in 1560 English and Scottish Protestant forces took the town. Leith later became a major whaling port (from the early 17th century into the 1950s), a shipbuilding centre (until 1984) and a centre for storing wine and whisky. Reminders of that history are still visible around the Shore.</p>
-      <p>The Royal Yacht Britannia, launched in 1953 and decommissioned in 1997, has been permanently moored at Ocean Terminal in Leith since 1998.</p>
+      <p>In 1969 FONATUR, Mexico's national tourism fund, chose this stretch of coast for a new resort. Construction began on 20 April 1970 — still celebrated as Cancún's founding day — and the city was formally established in August 1971.</p>
+      <p>The first hotels and the airport opened in 1974, when the project was still a considerable gamble. Today the Hotel Zone stretches along the Boulevard Kukulcán between the Caribbean and the Nichupté Lagoon.</p>
     </div></div></div>
   </div>
   <div class="acc" data-group="history">
-    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">🥃</span>Whisky<span class="acc-icon">+</span></button>
+    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">🌀</span>Hurricanes Gilbert &amp; Wilma<span class="acc-icon">+</span></button>
     <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
-      <p>Scotch whisky is legally defined and must be distilled and aged in Scotland for at least three years. Leith was a major centre for storing wine and whisky, and the port shipped it around the world.</p>
-      <p>Whisky is made in several regions, each with its own style — smoky Islay, honeyed Speyside, light Lowland, and more. Edinburgh is a good place to try a range side by side; the Scotch Whisky Experience and the Bow Bar are two popular options. Whisky is usually served neat or with a splash of water — ask the bartender.</p>
+      <p>Sitting on a thin strip of sand, the Hotel Zone is exposed to hurricanes. <strong>Gilbert</strong> struck on 14 September 1988 as a Category 5 storm, and the damage led to large-scale rebuilding and modernization.</p>
+      <p><strong>Wilma</strong> hit on 21 October 2005 and stalled over Cancún, causing widespread destruction. Federal funding of about US$253 million followed, and FONATUR's director later called the rebuilt resort the best Cancún in its history.</p>
     </div></div></div>
   </div>
   <div class="acc" data-group="history">
-    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">🎭</span>Festivals &amp; Modern Edinburgh<span class="acc-icon">+</span></button>
+    <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">🪸</span>The Reef<span class="acc-icon">+</span></button>
     <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
-      <p>Every August, Edinburgh hosts the world's largest arts festival — the Fringe — alongside the International Festival, the Book Festival, and the Royal Edinburgh Military Tattoo on the Castle Esplanade. The city gets extremely busy and prices rise accordingly.</p>
-      <p>Hogmanay (New Year's Eve) is the other big event, with street parties and fireworks. Since 1999 the city has also been home to the Scottish Parliament, which sits at Holyrood.</p>
+      <p>The Mexican Caribbean is part of the Mesoamerican Barrier Reef System, considered the second-largest reef system in the world. It stretches more than 1,000 km from the tip of the Yucatán Peninsula past Belize and Guatemala to Honduras.</p>
+      <p>MUSA, the underwater museum off Cancún and Isla Mujeres, was created to take pressure off the natural reef: its sculptures act as artificial reefs that corals and fish colonize over time.</p>
     </div></div></div>
   </div>
   <div class="acc" data-group="history">
     <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">📜</span>Timeline<span class="acc-icon">+</span></button>
     <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
       <ul class="timeline">
-        <li><strong>1128</strong>Holyrood Abbey founded by King David I; Leith first appears in its charter.</li>
-        <li><strong>1560</strong>Siege of Leith: the French-held port is taken by English and Scottish Protestant forces.</li>
-        <li><strong>1707</strong>Act of Union joins Scotland and England; the Scottish Parliament is dissolved.</li>
-        <li><strong>1766–67</strong>James Craig wins the New Town design competition and work begins.</li>
-        <li><strong>1861</strong>The One O'Clock Gun is first fired from the Castle.</li>
-        <li><strong>1920</strong>Leith merges with Edinburgh.</li>
-        <li><strong>1947</strong>The first Edinburgh International Festival and Fringe.</li>
-        <li><strong>1995</strong>Old and New Towns become a UNESCO World Heritage Site.</li>
-        <li><strong>1998</strong>Royal Yacht Britannia is moored permanently at Leith.</li>
-        <li><strong>1999</strong>Scottish Parliament reconvenes; the Holyrood building opens in 2004.</li>
-        <li><strong>Today</strong>A living capital: castles, galleries, festivals, and a port that still sees ships from all over the world.</li>
+        <li><strong>Pre-Hispanic era</strong>The Maya fish and trade along this coast; settlements include El Rey and San Miguelito.</li>
+        <li><strong>1969</strong>FONATUR selects the coast for a planned resort.</li>
+        <li><strong>20 Apr 1970</strong>Construction begins — Cancún's founding day.</li>
+        <li><strong>Aug 1971</strong>The city is formally established.</li>
+        <li><strong>1974</strong>The first hotels and the airport open.</li>
+        <li><strong>14 Sep 1988</strong>Hurricane Gilbert, a Category 5 storm, strikes.</li>
+        <li><strong>21 Oct 2005</strong>Hurricane Wilma stalls over Cancún.</li>
+        <li><strong>2015</strong>Quintana Roo moves permanently to UTC−5.</li>
+        <li><strong>2023</strong>The Tren Maya opens its Cancún–Campeche section.</li>
+        <li><strong>Today</strong>A major international resort, still on the doorstep of the Maya world.</li>
       </ul>
     </div></div></div>
   </div>
   <div class="acc" data-group="history">
     <button class="acc-trigger" type="button" aria-expanded="false"><span class="acc-emoji">👣</span>See It Today<span class="acc-icon">+</span></button>
     <div class="acc-panel"><div class="acc-inner"><div class="acc-content">
-      <p><strong>Edinburgh Castle</strong> — The essential stop. Allow at least two hours; tickets often sell out, so book online.</p>
-      <p><strong>The Shore, Leith</strong> — Walk the old harbour. Several former warehouses are now restaurants and bars.</p>
-      <p><strong>Royal Yacht Britannia</strong> — Pre-book timed tickets. The entrance is on the second floor of Ocean Terminal.</p>
-      <p><strong>National Museum of Scotland</strong> — Free entry, open daily 10 am–5 pm.</p>
+      <p><strong>Museo Maya de Cancún</strong> — Tuesday to Sunday, 9 am–5 pm; the ticket includes the San Miguelito ruins.</p>
+      <p><strong>El Rey</strong> — A quick 30–50 minute visit in the Hotel Zone.</p>
+      <p><strong>Chichén Itzá</strong> — Leave early to beat the tour buses; open 8 am–5 pm.</p>
+      <p><strong>MUSA</strong> — Snorkel the underwater sculptures on a licensed tour.</p>
     </div></div></div>
   </div>
 
   <div class="actions">
-    <a class="btn btn-map" href="https://www.google.com/maps/search/Edinburgh+Castle" target="_blank" rel="noopener">📍 Edinburgh Castle</a>
-    <a class="btn btn-map" href="https://www.google.com/maps/search/The+Shore+Leith+Edinburgh" target="_blank" rel="noopener">📍 The Shore</a>
+    <a class="btn btn-map" href="https://www.google.com/maps/search/Museo+Maya+de+Cancun" target="_blank" rel="noopener">📍 Museo Maya</a>
+    <a class="btn btn-map" href="https://www.google.com/maps/search/Zona+Arqueologica+El+Rey+Cancun" target="_blank" rel="noopener">📍 El Rey</a>
   </div>
 </section>
 
@@ -1147,7 +1189,7 @@ button.hero-chip { cursor: pointer; color: #fff; }
 <nav class="tabbar" aria-label="Main">
   <button class="tab-btn active" type="button" data-nav="landing" data-tab-for="landing"><span class="tab-ico">🏠</span>Home</button>
   <button class="tab-btn" type="button" data-nav="explore" data-tab-for="explore"><span class="tab-ico">🧭</span>Explore</button>
-  <button class="tab-btn" type="button" data-nav="weather" data-tab-for="weather"><span class="tab-ico">🌦️</span>Weather</button>
+  <button class="tab-btn" type="button" data-nav="weather" data-tab-for="weather"><span class="tab-ico">🌤️</span>Weather</button>
   <button class="tab-btn" type="button" data-nav="safety" data-tab-for="safety"><span class="tab-ico">🛡️</span>Safety</button>
   <button class="tab-btn" type="button" data-nav="contacts" data-tab-for="contacts"><span class="tab-ico">📞</span>Contacts</button>
 </nav>
@@ -1158,7 +1200,7 @@ button.hero-chip { cursor: pointer; color: #fff; }
 <script>
 /* ===== PAGE REGISTRY ===== */
 const PAGES = {
-  landing:          { title: 'Edinburgh',        parent: null,       tab: 'landing' },
+  landing:          { title: 'Cancún',        parent: null,       tab: 'landing' },
   routine:          { title: 'Ship Routine',     parent: 'landing',  tab: 'landing' },
   explore:          { title: 'Explore',          parent: 'landing',  tab: 'explore' },
   map:              { title: 'Getting Around',   parent: 'explore',  tab: 'explore' },
@@ -1187,7 +1229,7 @@ function nav(pageId, pushHistory = true) {
     b.classList.toggle('active', on);
     if (on) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current');
   });
-  document.title = pageId === 'landing' ? 'Edinburgh Port Brief' : `${meta.title} · Edinburgh Port Brief`;
+  document.title = pageId === 'landing' ? 'Cancún Port Brief' : `${meta.title} · Cancún Port Brief`;
   window.scrollTo({ top: 0, behavior: 'instant' });
   updateTopbarTitle();
 
@@ -1204,9 +1246,9 @@ function updateTopbarTitle() {
   const head = document.querySelector('.page.active .page-head');
   const scrolledPast = currentPage !== 'landing' && head && head.getBoundingClientRect().bottom < 64;
   const title = document.getElementById('topbar-title');
-  const next = scrolledPast ? PAGES[currentPage].title : 'Edinburgh';
+  const next = scrolledPast ? PAGES[currentPage].title : 'Cancún';
   if (title.textContent !== next) title.textContent = next;
-  document.getElementById('topbar-sub').textContent = scrolledPast ? 'Edinburgh Port Brief' : 'Port Brief · Leith';
+  document.getElementById('topbar-sub').textContent = scrolledPast ? 'Cancún Port Brief' : 'Port Brief · Mexico';
 }
 window.addEventListener('scroll', updateTopbarTitle, { passive: true });
 
@@ -1264,7 +1306,7 @@ document.addEventListener('click', (e) => {
 });
 
 /* ===== LOCAL CLOCK ===== */
-const clockFmt = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/London' });
+const clockFmt = new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/Cancun' });
 function tickClock() {
   document.getElementById('hero-clock').textContent = `🕐 ${clockFmt.format(new Date())} local`;
 }
@@ -1273,16 +1315,16 @@ setInterval(tickClock, 20000);
 
 /* ===== FACTS ===== */
 const FACTS = [
-  "The One O'Clock Gun has been fired from the Castle since 1861 — so ships in the Forth could check their time when haar hid the time ball on Calton Hill.",
-  "Edinburgh Castle sits on Castle Rock, the plug of an extinct volcano. Arthur's Seat is another one.",
-  "Leith only became part of Edinburgh in 1920 — against the wishes of many Leithers.",
-  "The Royal Yacht Britannia sailed more than a million nautical miles before retiring to Leith in 1998.",
-  "To be called Scotch, whisky must be distilled and aged in Scotland for at least three years.",
-  "The New Town was designed by James Craig, who won the design competition in 1766 at just 22.",
-  "Leith was a major whaling port from the early 17th century into the 1950s.",
-  "At midsummer the sun sets after 10 pm — in mid-December it's gone by about 3:40 pm.",
-  "Every August the Fringe turns Edinburgh into the world's largest arts festival.",
-  "The Old and New Towns of Edinburgh became a UNESCO World Heritage Site in 1995."
+  "The name Cancún is usually traced to the Maya \"kàan kun\" — most often translated as \"nest of snakes\".",
+  "In the late 1960s, the island that is now the Hotel Zone was home to just three caretakers of a coconut plantation.",
+  "Construction of modern Cancún began on 20 April 1970, still celebrated as the city's founding day.",
+  "Cancún's first hotels and its airport opened in 1974.",
+  "Hurricane Wilma stalled over Cancún on 21 October 2005, and the resort was rebuilt with about US$253 million in federal funding.",
+  "The Mexican Caribbean is part of the Mesoamerican Reef, the second-largest reef system in the world.",
+  "MUSA's underwater sculptures are designed to become artificial reefs for corals and fish.",
+  "Whale sharks, the world's biggest fish, gather off Isla Mujeres and Holbox from about June to mid-September.",
+  "Quintana Roo keeps the same clock all year: UTC−5, with no daylight saving time since 2015.",
+  "The island's earlier Maya name was Nizuc, meaning \"promontory\" or \"point of grass\"."
 ];
 let factIdx = Math.floor(Math.random() * FACTS.length);
 const factText = document.getElementById('fact-text');
@@ -1299,7 +1341,7 @@ document.getElementById('fact-btn').addEventListener('click', (e) => {
 });
 
 /* ===== LIVE WEATHER ===== */
-const WEATHER_URL = '/.netlify/functions/weather?lat=55.9764&lon=-3.1722';
+const WEATHER_URL = '/.netlify/functions/weather?lat=21.1619&lon=-86.8515';
 let weatherPromise = null;
 
 function fetchWeather() {
@@ -1321,7 +1363,7 @@ function weatherEmoji(iconCode) {
 
 function formatForecastDay(dtTxt) {
   const d = new Date(dtTxt.replace(' ', 'T') + '+00:00');
-  return d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'Europe/London' });
+  return d.toLocaleDateString('en-CA', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'America/Cancun' });
 }
 
 function weatherSkeleton() {
@@ -1338,7 +1380,7 @@ function renderWeatherPage() {
     let html = '';
     if (data.current) {
       const c = data.current;
-      const updatedTime = new Date(data.updated).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/London' });
+      const updatedTime = new Date(data.updated).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/Cancun' });
       html += `<div class="wx-now">
         <div class="wx-now-top">
           <span class="wx-emoji">${weatherEmoji(c.weather[0].icon)}</span>
@@ -1372,7 +1414,7 @@ function renderWeatherPage() {
     container.innerHTML = html;
     container.dataset.loaded = '1';
   }).catch(() => {
-    container.innerHTML = `<div class="card empty"><span class="empty-emoji">🌫️</span>Live weather is unavailable right now — the haar got into the wires.<div class="actions" style="justify-content:center"><button class="btn btn-web" type="button" id="weather-retry">↻ Try again</button></div></div>`;
+    container.innerHTML = `<div class="card empty"><span class="empty-emoji">🌫️</span>Live weather is unavailable right now — a tropical downpour got into the wires.<div class="actions" style="justify-content:center"><button class="btn btn-web" type="button" id="weather-retry">↻ Try again</button></div></div>`;
     document.getElementById('weather-retry').addEventListener('click', renderWeatherPage);
   });
 }
@@ -1399,11 +1441,13 @@ function emptyState(emoji, text) {
 const activities = window.PORT_DATA.activities;
 const todoChips = window.PORT_DATA.todoChips;
 const activeFilters = new Set();
+const TAG_LABELS = { 'Food-Drink': 'Food & Drink', 'Half-day': 'Half day', 'Day-trip': 'Day trip' };
+const tagLabel = t => TAG_LABELS[t] || t;
 
 function renderTodoChips() {
   const all = `<button class="chip${activeFilters.size === 0 ? ' active' : ''}" type="button" aria-pressed="${activeFilters.size === 0}" data-chip="">✨ All</button>`;
   document.getElementById('todo-chips').innerHTML = all + todoChips.map(c =>
-    `<button class="chip${activeFilters.has(c) ? ' active' : ''}" type="button" aria-pressed="${activeFilters.has(c)}" data-chip="${c}">${c.replace('-', ' & ')}</button>`
+    `<button class="chip${activeFilters.has(c) ? ' active' : ''}" type="button" aria-pressed="${activeFilters.has(c)}" data-chip="${c}">${tagLabel(c)}</button>`
   ).join('');
 }
 
@@ -1430,7 +1474,7 @@ function renderTodoList() {
           <div class="item-note">${a.desc}</div>
         </div>
       </div>
-      <div class="item-tags">${a.tags.map(t => `<span class="tag tag-${t}">${t.replace('-', ' & ')}</span>`).join('')}</div>
+      <div class="item-tags">${a.tags.map(t => `<span class="tag tag-${t}">${tagLabel(t)}</span>`).join('')}</div>
       <div class="actions">
         <a class="btn btn-map" href="${mapHref(a.map)}" target="_blank" rel="noopener">📍 Map</a>
         ${a.web ? `<a class="btn btn-web" href="${a.web}" target="_blank" rel="noopener">🌐 Website</a>` : ''}
@@ -1439,6 +1483,7 @@ function renderTodoList() {
 }
 renderTodoChips();
 renderTodoList();
+document.getElementById('explore-todo-sub').textContent = `${activities.length} picks, from reefs to ruins`;
 
 /* ===== VENUES ===== */
 const venueData = window.PORT_DATA.venueData;
