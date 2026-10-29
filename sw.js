@@ -1,42 +1,22 @@
-// Network-first service worker: always tries for fresh content, falls back to cache when offline.
-const CACHE = 'port-brief-v2';
-const ASSETS = [
-  './',
-  'index.html',
-  'data.js',
-  'manifest.webmanifest',
-  'icons/icon-192.png',
-  'icons/icon-512.png',
-  'icons/apple-touch-icon.png'
-];
-
-self.addEventListener('install', (event) => {
-  event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
+// Generated with a content revision; a new port never reuses the previous port's cache.
+const PREFIX = 'port-brief-' + new URL(self.registration.scope).pathname + '-';
+const CACHE = PREFIX + '3705ecab9ad1bc63';
+const ASSETS = ['./', 'index.html', 'app.js', 'styles.css', 'data.js', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable-512.png', 'icons/apple-touch-icon.png'];
+self.addEventListener('install', event => {
+  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
 });
-
-self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    caches.keys()
-      .then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
-      .then(() => self.clients.claim())
-  );
+self.addEventListener('activate', event => {
+  event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k.startsWith(PREFIX) && k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim()));
 });
-
-self.addEventListener('fetch', (event) => {
-  const req = event.request;
-  if (req.method !== 'GET') return;
-  const url = new URL(req.url);
-  if (url.origin !== self.location.origin || url.pathname.startsWith('/.netlify/')) return;
-
-  event.respondWith(
-    fetch(req)
-      .then((res) => {
-        if (res.ok) {
-          const copy = res.clone();
-          caches.open(CACHE).then((cache) => cache.put(req, copy));
-        }
-        return res;
-      })
-      .catch(() => caches.match(req).then((hit) => hit || (req.mode === 'navigate' ? caches.match('index.html') : Response.error())))
-  );
+self.addEventListener('fetch', event => {
+  const req = event.request, url = new URL(req.url);
+  if(req.method !== 'GET' || url.origin !== self.location.origin || !url.href.startsWith(self.registration.scope) || url.pathname.includes('/.netlify/')) return;
+  // Keep the cached app and port record together until the next complete revision installs.
+  if(!ASSETS.some(asset => new URL(asset,self.registration.scope).href === url.href) && req.mode !== 'navigate') return;
+  event.respondWith(caches.open(CACHE).then(async cache => {
+    const cached = await cache.match(req);
+    if(cached) return cached;
+    if(req.mode === 'navigate') return (await cache.match(new URL('index.html',self.registration.scope).href)) || fetch(req);
+    return fetch(req);
+  }));
 });

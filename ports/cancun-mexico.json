@@ -1,0 +1,1222 @@
+{
+  "activities": [
+    {
+      "name": "Hotel Zone Beaches",
+      "emoji": "🏖️",
+      "desc": "White sand along the Boulevard Kukulcán. For calmer water, pick the bay-side beaches at the north end — Playa Tortugas, Playa Langosta and Playa Caracol. Always check the lifeguard flag first.",
+      "tags": [
+        "Iconic",
+        "Beach",
+        "Half-day"
+      ],
+      "map": "Playa Tortugas Cancun",
+      "web": "",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Playa Delfines & the Cancún Sign",
+      "emoji": "📸",
+      "desc": "The classic photo stop, with a lookout and the big CANCÚN letters. It faces the open sea, so waves are stronger — often a look-don't-swim beach on red-flag days.",
+      "tags": [
+        "Iconic",
+        "Beach",
+        "Quick"
+      ],
+      "map": "Playa Delfines Cancun",
+      "web": "",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Isla Mujeres",
+      "emoji": "🏝️",
+      "desc": "A short ferry hop (about 20–30 min) from Puerto Juárez or the Hotel Zone piers. Swim at Playa Norte, then rent a golf cart (around 800–900 pesos a day; driver's licence needed) to reach the clifftop Temple of Ixchel at Punta Sur.",
+      "tags": [
+        "Iconic",
+        "Beach",
+        "Day-trip"
+      ],
+      "map": "Isla Mujeres Quintana Roo",
+      "web": "",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "MUSA Underwater Museum",
+      "emoji": "🗿",
+      "desc": "Hundreds of submerged sculptures between Cancún and Isla Mujeres, built to grow into an artificial reef. See it on a snorkel or dive tour; trips are cancelled when the port closes for bad weather.",
+      "tags": [
+        "Iconic",
+        "Outdoors",
+        "Half-day"
+      ],
+      "map": "MUSA Museo Subacuatico de Arte Cancun",
+      "web": "https://musamexico.org",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Museo Maya de Cancún & San Miguelito",
+      "emoji": "🏛️",
+      "desc": "INAH's Maya museum in the Hotel Zone; the ticket also covers the San Miguelito ruins in the grounds. Open Tuesday to Sunday, 9 am–5 pm (last entry 4:30 pm). Closed Mondays.",
+      "tags": [
+        "Indoors",
+        "Half-day"
+      ],
+      "map": "Museo Maya de Cancun",
+      "web": "",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "El Rey Archaeological Zone",
+      "emoji": "🛕",
+      "desc": "A small Maya site right in the Hotel Zone, reopened in 2025 with new visitor facilities. A visit takes 30–50 minutes.",
+      "tags": [
+        "Outdoors",
+        "Quick"
+      ],
+      "map": "Zona Arqueologica El Rey Cancun",
+      "web": "",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Chichén Itzá",
+      "emoji": "🔺",
+      "desc": "The great Maya city and El Castillo pyramid, a long day trip inland by tour, car or Tren Maya. Open 8 am–5 pm (last entry 4 pm). Arrive early — tour buses from Cancún arrive around 10–11 am.",
+      "tags": [
+        "Iconic",
+        "Outdoors",
+        "Day-trip"
+      ],
+      "map": "Chichen Itza",
+      "web": "",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Tulum Ruins",
+      "emoji": "🌊",
+      "desc": "A walled Maya site on a cliff above the Caribbean, about two hours south. Fees changed in 2026 and one ticket now covers the national park and the ruins — check the price at the entrance.",
+      "tags": [
+        "Iconic",
+        "Outdoors",
+        "Day-trip"
+      ],
+      "map": "Zona Arqueologica de Tulum",
+      "web": "",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Cenotes — Ruta de los Cenotes",
+      "emoji": "💧",
+      "desc": "A road of freshwater sinkholes inland from Puerto Morelos, south of Cancún. Swim and snorkel in cool, clear water.",
+      "tags": [
+        "Outdoors",
+        "Half-day"
+      ],
+      "map": "Ruta de los Cenotes Puerto Morelos",
+      "web": "",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Puerto Morelos Reef",
+      "emoji": "🐠",
+      "desc": "Snorkel the Mesoamerican Reef in a national marine park — turtles, rays and lobster are common. Only sunscreen free of oxybenzone and octinoxate is allowed.",
+      "tags": [
+        "Outdoors",
+        "Half-day"
+      ],
+      "map": "Parque Nacional Arrecife de Puerto Morelos",
+      "web": "",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Whale Sharks (Seasonal)",
+      "emoji": "🦈",
+      "desc": "Snorkel with the world's biggest fish off Isla Mujeres and Holbox. Season runs roughly June to mid-September only — use a licensed operator.",
+      "tags": [
+        "Outdoors",
+        "Day-trip"
+      ],
+      "map": "Isla Mujeres whale shark tour",
+      "web": "",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Isla Contoy",
+      "emoji": "🐦",
+      "desc": "An uninhabited bird-sanctuary island and national park north of Isla Mujeres. Visitor numbers are capped, so book with a licensed operator well ahead.",
+      "tags": [
+        "Outdoors",
+        "Beach",
+        "Day-trip"
+      ],
+      "map": "Isla Contoy",
+      "web": "",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Parque de las Palapas",
+      "emoji": "🌽",
+      "desc": "Downtown's main square, free to wander. In the evening the food stands sell corn, fried plantains and quesadillas — a cheap, local night out.",
+      "tags": [
+        "Food-Drink",
+        "Quick"
+      ],
+      "map": "Parque de las Palapas Cancun",
+      "web": "",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Mercado 28",
+      "emoji": "🪅",
+      "desc": "Downtown's open-air craft market — leather, pottery, clothing and souvenirs. Bargain politely, and favour stalls with marked prices.",
+      "tags": [
+        "Food-Drink",
+        "Quick"
+      ],
+      "map": "Mercado 28 Cancun",
+      "web": "",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Coco Bongo",
+      "emoji": "🎭",
+      "desc": "Half variety show, half nightclub, in the Party Center at Km 9.5. Open-bar tickets cost roughly US$70–95 — book ahead at busy times.",
+      "tags": [
+        "Iconic",
+        "Food-Drink"
+      ],
+      "map": "Coco Bongo Cancun",
+      "web": "",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    }
+  ],
+  "todoChips": [
+    "Iconic",
+    "Beach",
+    "Outdoors",
+    "Indoors",
+    "Food-Drink",
+    "Quick",
+    "Half-day",
+    "Day-trip"
+  ],
+  "venueData": {
+    "tab-food": [
+      {
+        "name": "Lorenzillo's",
+        "emoji": "🦞",
+        "note": "Lobster house on a deck over the Nichupté Lagoon at Km 10.5, Hotel Zone, open daily 1 pm–midnight. Pricey, but a Cancún institution.",
+        "price": "$$$",
+        "map": "Lorenzillo's Cancun",
+        "web": "",
+        "status": "unverified",
+        "sourceIds": [],
+        "checkedOn": null
+      },
+      {
+        "name": "La Habichuela",
+        "emoji": "🌿",
+        "note": "Downtown restaurant on Calle Margaritas, near Parque de las Palapas, serving regional cuisine. A splurge by downtown standards.",
+        "price": "$$$",
+        "map": "La Habichuela Margaritas Cancun",
+        "web": "",
+        "status": "unverified",
+        "sourceIds": [],
+        "checkedOn": null
+      },
+      {
+        "name": "El Fish Fritanga",
+        "emoji": "🐟",
+        "note": "Casual seafood restaurant on the Boulevard Kukulcán in the Hotel Zone.",
+        "price": "$$",
+        "map": "El Fish Fritanga Cancun",
+        "web": "",
+        "status": "unverified",
+        "sourceIds": [],
+        "checkedOn": null
+      },
+      {
+        "name": "El Cejas",
+        "emoji": "🦐",
+        "note": "Classic seafood spot inside Mercado 28 with ceviche and shrimp, plus marimba music. Away from the tourist strip, with good prices.",
+        "price": "$",
+        "map": "El Cejas Mercado 28 Cancun",
+        "web": "",
+        "status": "unverified",
+        "sourceIds": [],
+        "checkedOn": null
+      },
+      {
+        "name": "Mercado 23",
+        "emoji": "🌮",
+        "note": "A small locals' market behind the downtown bus station. Food stalls on the south side serve cheap, authentic meals.",
+        "price": "$",
+        "map": "Mercado 23 Cancun",
+        "web": "",
+        "status": "unverified",
+        "sourceIds": [],
+        "checkedOn": null
+      },
+      {
+        "name": "Downtown Taquerías",
+        "emoji": "🌯",
+        "note": "Avenida Yaxchilán and the streets around it are lined with taco stands and local restaurants — expect about US$5–15 a head.",
+        "price": "$",
+        "map": "tacos Avenida Yaxchilan Cancun",
+        "web": "",
+        "status": "unverified",
+        "sourceIds": [],
+        "checkedOn": null
+      }
+    ],
+    "tab-coffee": [
+      {
+        "name": "Café Nader",
+        "emoji": "☕",
+        "note": "Big, casual downtown café on Bonampak with an English menu and a drive-thru.",
+        "price": "$",
+        "map": "Cafe Nader Bonampak Cancun",
+        "web": "",
+        "status": "unverified",
+        "sourceIds": [],
+        "checkedOn": null
+      },
+      {
+        "name": "Café Antoinette",
+        "emoji": "🥐",
+        "note": "French-style bakery café on Avenida Xpuhil with a terrace and back garden — better known for pastries than coffee.",
+        "price": "$",
+        "map": "Cafe Antoinette Cancun",
+        "web": "",
+        "status": "unverified",
+        "sourceIds": [],
+        "checkedOn": null
+      },
+      {
+        "name": "Rooster Café",
+        "emoji": "🐓",
+        "note": "A local hangout where Cancún residents meet for coffee or to get some work done.",
+        "price": "$",
+        "map": "Rooster Cafe Cancun",
+        "web": "",
+        "status": "unverified",
+        "sourceIds": [],
+        "checkedOn": null
+      }
+    ],
+    "tab-bars": [
+      {
+        "name": "Coco Bongo",
+        "emoji": "🎭",
+        "note": "Variety show plus nightclub at Km 9.5 — the best-known night out in Cancún. Open-bar tickets roughly US$70–95.",
+        "price": "$$$",
+        "map": "Coco Bongo Cancun",
+        "web": "",
+        "status": "unverified",
+        "sourceIds": [],
+        "checkedOn": null
+      },
+      {
+        "name": "Party Center (Punta Cancún)",
+        "emoji": "🪩",
+        "note": "The walkable club strip around Km 9–12 of the Boulevard Kukulcán. Doors open around 10:30 pm; peak is midnight–3 am.",
+        "price": "$$",
+        "map": "Party Center Punta Cancun",
+        "web": "",
+        "status": "unverified",
+        "sourceIds": [],
+        "checkedOn": null
+      },
+      {
+        "name": "Señor Frog's",
+        "emoji": "🐸",
+        "note": "Loud, cheerful party bar at Km 9.5, Punta Cancún.",
+        "price": "$$",
+        "map": "Senor Frog's Cancun",
+        "web": "",
+        "status": "unverified",
+        "sourceIds": [],
+        "checkedOn": null
+      },
+      {
+        "name": "Dady'O",
+        "emoji": "💃",
+        "note": "Well-known nightclub in the Party Center.",
+        "price": "$$",
+        "map": "Dady'O Cancun",
+        "web": "",
+        "status": "unverified",
+        "sourceIds": [],
+        "checkedOn": null
+      },
+      {
+        "name": "Congo Bar",
+        "emoji": "🥁",
+        "note": "Small open-air bar in the middle of the Party Center — busy and lively.",
+        "price": "$$",
+        "map": "Congo Bar Cancun",
+        "web": "",
+        "status": "unverified",
+        "sourceIds": [],
+        "checkedOn": null
+      }
+    ],
+    "tab-shop": [
+      {
+        "name": "Mercado 28",
+        "emoji": "🪅",
+        "note": "The main craft market downtown: leather, Mexican clothing, pottery, lacquerware. Bargain, and watch out for overpriced jewellery.",
+        "price": "$",
+        "map": "Mercado 28 Cancun",
+        "web": "",
+        "status": "unverified",
+        "sourceIds": [],
+        "checkedOn": null
+      },
+      {
+        "name": "Hotel Zone Malls",
+        "emoji": "🛍️",
+        "note": "Shopping centres along the Boulevard Kukulcán, with brand stores and restaurants.",
+        "price": "$$",
+        "map": "shopping mall Zona Hotelera Cancun",
+        "web": "",
+        "status": "unverified",
+        "sourceIds": [],
+        "checkedOn": null
+      },
+      {
+        "name": "Tequila, Mezcal & Vanilla",
+        "emoji": "🥃",
+        "note": "Classic souvenirs. Buy from established shops rather than street sellers, and check your duty-free allowance home.",
+        "price": "$$",
+        "map": "tequila shop Cancun",
+        "web": "",
+        "status": "unverified",
+        "sourceIds": [],
+        "checkedOn": null
+      },
+      {
+        "name": "Mercado 23",
+        "emoji": "🧺",
+        "note": "A small, everyday locals' market behind the downtown bus station.",
+        "price": "$",
+        "map": "Mercado 23 Cancun",
+        "web": "",
+        "status": "unverified",
+        "sourceIds": [],
+        "checkedOn": null
+      }
+    ]
+  },
+  "hotelData": [
+    {
+      "name": "Aloft Cancún",
+      "emoji": "🏙️",
+      "note": "Clean, design-led mid-range hotel in the central Hotel Zone, with a rooftop pool overlooking the lagoon.",
+      "phone": "",
+      "map": "Aloft Cancun",
+      "web": "",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Grand Fiesta Americana Coral Beach",
+      "emoji": "🌴",
+      "note": "Luxury beachfront resort in the central Hotel Zone, and a top pick for families.",
+      "phone": "",
+      "map": "Grand Fiesta Americana Coral Beach Cancun",
+      "web": "",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Flamingo Cancún Resort",
+      "emoji": "🦩",
+      "note": "Good-value resort in the busy central Hotel Zone, near restaurants and nightlife.",
+      "phone": "",
+      "map": "Flamingo Cancun Resort",
+      "web": "",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Royal Solaris Cancún",
+      "emoji": "🍹",
+      "note": "Value all-inclusive in the Hotel Zone — usually cheaper than the luxury resorts.",
+      "phone": "",
+      "map": "Royal Solaris Cancun",
+      "web": "",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Wyndham Garden Cancún Downtown",
+      "emoji": "🛏️",
+      "note": "Budget-friendly downtown hotel with easy bus access to the beaches.",
+      "phone": "",
+      "map": "Wyndham Garden Cancun Downtown",
+      "web": "",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Downtown Guesthouses",
+      "emoji": "🏡",
+      "note": "Small hotels and guesthouses around Parque de las Palapas — cheapest, and closest to local food.",
+      "phone": "",
+      "map": "hotel near Parque de las Palapas Cancun",
+      "web": "",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    }
+  ],
+  "shipContacts": [
+    {
+      "name": "Brow",
+      "emoji": "🛂",
+      "sub": "Number to be confirmed — update before sailing",
+      "phone": "",
+      "status": "user-required",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Cox'n",
+      "emoji": "🧭",
+      "sub": "Number to be confirmed — update before sailing",
+      "phone": "",
+      "status": "user-required",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "XO",
+      "emoji": "🎖️",
+      "sub": "Number to be confirmed — update before sailing",
+      "phone": "",
+      "status": "user-required",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Duty Medical",
+      "emoji": "🩺",
+      "sub": "Number to be confirmed — update before sailing",
+      "phone": "",
+      "status": "user-required",
+      "sourceIds": [],
+      "checkedOn": null
+    }
+  ],
+  "localContacts": [
+    {
+      "name": "Emergency (Police · Fire · Ambulance)",
+      "emoji": "🚨",
+      "sub": "National emergency line, free from any phone, 24/7. Ask for an English-speaking operator if you need one.",
+      "phone": "911",
+      "phoneLabel": "911",
+      "map": "",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Tourist Assistance",
+      "emoji": "ℹ️",
+      "sub": "Ministry of Tourism hotline — tourist information, safety advice and help reaching your consulate.",
+      "phone": "078",
+      "phoneLabel": "078",
+      "map": "",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Hospiten Cancún",
+      "emoji": "🏥",
+      "sub": "Private hospital, 24-hour emergency department. Av. Bonampak 10. Bring ID and insurance details.",
+      "phone": "+529988813700",
+      "phoneLabel": "998 881 3700",
+      "map": "Hospiten Cancun",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Galenia Hospital",
+      "emoji": "🏥",
+      "sub": "Private hospital with a 24-hour ER and JCI accreditation. Av. Tulum at Nizuc, SM 12.",
+      "phone": "+529988915200",
+      "phoneLabel": "998 891 5200",
+      "map": "Hospital Galenia Cancun",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "AmeriMed Cancún",
+      "emoji": "🏥",
+      "sub": "Private hospital with 24/7 emergency physicians. Listed at Av. Tulum Sur 260 — call to confirm the location.",
+      "phone": "+529988813400",
+      "phoneLabel": "998 881 3400",
+      "map": "Hospital Amerimed Cancun",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Consular Agency of Canada",
+      "emoji": "🇨🇦",
+      "sub": "Centro Empresarial, Oficina E7, Blvd Kukulcán Km 12, Hotel Zone. Weekday mornings; email cncun@international.gc.ca.",
+      "phone": "+529988833360",
+      "phoneLabel": "998 883 3360",
+      "map": "Consular Agency of Canada Cancun",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Canada Emergency Watch & Response Centre",
+      "emoji": "🍁",
+      "sub": "Global Affairs Canada in Ottawa, 24/7, for emergencies involving Canadians abroad.",
+      "phone": "+16139968885",
+      "phoneLabel": "+1 613 996 8885",
+      "map": "",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Taxis",
+      "emoji": "🚕",
+      "sub": "No meters — agree the fare before you get in. Use official taxis from hotel ranks or a rideshare app.",
+      "phone": "",
+      "map": "taxi Zona Hotelera Cancun",
+      "mapLabel": "Find Nearby",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    }
+  ],
+  "schemaVersion": 1,
+  "slug": "cancun-mexico",
+  "meta": {
+    "status": "legacy-unverified",
+    "lastResearched": null,
+    "notes": "Migrated from the original Cancún brief. Original claims are preserved, but no source audit or current verification has been performed."
+  },
+  "port": {
+    "name": "Cancún",
+    "country": "Mexico",
+    "region": "Quintana Roo",
+    "timeZone": "America/Cancun",
+    "coordinates": {
+      "lat": 21.1619,
+      "lon": -86.8515
+    },
+    "welcome": "Welcome to",
+    "tagline": "Explore the Mexican Caribbean",
+    "status": "unverified",
+    "sourceIds": [],
+    "checkedOn": null
+  },
+  "pages": {
+    "routine": {
+      "subtitle": "Cancún, Quintana Roo",
+      "blocks": [
+        {
+          "title": "🕰️Port Window",
+          "paragraphs": [
+            "Per Routine Orders — Cancún. Confirm whether the ship will be alongside or at anchor with boat transfers, and where the landing point is. It changes your return-to-ship timings, and boat transfers stop when the port is closed for weather."
+          ],
+          "items": [],
+          "links": [],
+          "status": "user-required",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "📋Daily Routine",
+          "paragraphs": [
+            "Per Routine Orders."
+          ],
+          "items": [],
+          "links": [],
+          "status": "user-required",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "🎟️Leave",
+          "paragraphs": [
+            "Per Routine Orders."
+          ],
+          "items": [],
+          "links": [],
+          "status": "user-required",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "💵Money, Phones & Language",
+          "paragraphs": [],
+          "items": [
+            "Currency: Mexican peso (MXN). US dollars are taken in tourist areas, often at a poor rate — pesos usually work out cheaper, especially for taxis and off-resort spending.",
+            "ATMs: Use bank-owned machines (Banorte, BBVA, Santander, Banamex) rather than airport exchange counters or standalone ATMs in tourist zones.",
+            "Tipping: Expected. Around 10–15% in restaurants and on tours; small amounts in pesos for other service staff.",
+            "Language: Spanish. English is widely spoken in the Hotel Zone; a few words of Spanish go a long way downtown.",
+            "Phones: Check your roaming plan before arriving. Mexico's country code is +52.",
+            "Power: 127 V with Type A/B plugs — the same as Canada, so no adaptor needed.",
+            "Time zone: UTC−5 all year (Quintana Roo has not used daylight saving time since 2015)."
+          ],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "🛏️Overnight Leave",
+          "paragraphs": [],
+          "items": [
+            "Have your hotel name, address, and phone number ready before requesting leave.",
+            "Provide a contact number where you can be reached at all times.",
+            "Know your leave expiry time and plan return travel accordingly — including boat transfers, which stop in bad weather.",
+            "If your plans change, inform the ship per routine as soon as possible.",
+            "Keep your military ID and leave pass on your person.",
+            "The Hotel Zone is a long, narrow strip. Allow plenty of time to get back from the far end, especially at night."
+          ],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        }
+      ]
+    },
+    "weather": {
+      "subtitle": "Cancún & the Hotel Zone",
+      "blocks": [
+        {
+          "title": "Overview",
+          "paragraphs": [
+            "Hurricane season runs June to November, with the highest risk in September and October. Watch the National Hurricane Center and follow ship, hotel and civil-protection instructions if a storm is forecast."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "Background",
+          "paragraphs": [
+            "Cancún is hot and humid all year. The rainy season runs roughly May to October, often with short, heavy downpours followed by sunshine; November to April is the drier, more comfortable season. In October expect highs around 29–30°C and lows in the mid-20s, with the sea at its warmest. Sargassum seaweed can pile up on beaches, mainly in spring and summer — 2026 was forecast to be a record year. Pack light clothes, a hat, reef-safe sunscreen and a light rain jacket."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "Useful links",
+          "paragraphs": [],
+          "items": [],
+          "links": [
+            {
+              "label": "🌀National Hurricane CenterAtlantic storm tracking (NOAA)›",
+              "url": "https://www.nhc.noaa.gov/"
+            },
+            {
+              "label": "🇲🇽Servicio Meteorológico NacionalMexico's national weather service›",
+              "url": "https://smn.conagua.gob.mx/"
+            },
+            {
+              "label": "📅14-Day Forecasttimeanddate.com›",
+              "url": "https://www.timeanddate.com/weather/mexico/cancun/ext"
+            }
+          ],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        }
+      ]
+    },
+    "map": {
+      "subtitle": "Tap a place to open it in Google Maps",
+      "blocks": [
+        {
+          "title": "Overview",
+          "paragraphs": [
+            "Cancún has two halves. The Hotel Zone is a long, narrow island strip of beaches and resorts along the Boulevard Kukulcán. Downtown (El Centro) is on the mainland, with markets, local food and lower prices. Buses run between the two all day."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "Useful links",
+          "paragraphs": [],
+          "items": [],
+          "links": [
+            {
+              "label": "🏖️Hotel ZoneBeaches, resorts & the Party Center›",
+              "url": "https://www.google.com/maps/search/Zona+Hotelera+Cancun"
+            },
+            {
+              "label": "🌽Downtown — Parque de las PalapasMain square & street food›",
+              "url": "https://www.google.com/maps/search/Parque+de+las+Palapas+Cancun"
+            },
+            {
+              "label": "🪅Mercado 28Craft market›",
+              "url": "https://www.google.com/maps/search/Mercado+28+Cancun"
+            },
+            {
+              "label": "⛴️Puerto Juárez FerryBoats to Isla Mujeres›",
+              "url": "https://www.google.com/maps/search/Puerto+Juarez+Ultramar+Cancun"
+            },
+            {
+              "label": "📸Playa DelfinesLookout & the Cancún sign›",
+              "url": "https://www.google.com/maps/search/Playa+Delfines+Cancun"
+            },
+            {
+              "label": "🏥Hospiten Cancún24-hour emergency department›",
+              "url": "https://www.google.com/maps/search/Hospiten+Cancun"
+            }
+          ],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "City buses (R-1, R-2, R-27)",
+          "paragraphs": [
+            "Run about every 10 minutes between downtown and the Hotel Zone, roughly 5 am to midnight. Fares are only a few pesos — carry small change, as drivers prefer exact fare."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "Taxis",
+          "paragraphs": [
+            "No meters: fares are set by zone, so agree the price before you get in. Fares often rise at night. Use official taxis from hotel ranks."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "Uber & DiDi",
+          "paragraphs": [
+            "Uber has operated legally in Quintana Roo since a 2023 court ruling, but there have been tense, sometimes violent disputes with taxi drivers. Airport pickups in particular can be unreliable."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "Ferry to Isla Mujeres",
+          "paragraphs": [
+            "Ultramar sails from Puerto Juárez (downtown, usually cheapest) and from Hotel Zone piers such as Playa Tortugas. The crossing takes about 20–30 minutes. Check the timetable, as there are fewer sailings off-season."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "ADO coaches",
+          "paragraphs": [
+            "Comfortable long-distance buses from the downtown terminal and the airport to Playa del Carmen, Tulum and beyond."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "Tren Maya",
+          "paragraphs": [
+            "The new Maya Train runs from the Cancún Aeropuerto station, including a route to Mérida via Chichén Itzá (about 3½ hours). Timetables change by season — check before you travel."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "Driving",
+          "paragraphs": [
+            "Mexico drives on the right. Watch for speed bumps (topes), and get full insurance if renting."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        }
+      ]
+    },
+    "food": {
+      "subtitle": "Seafood, tacos, and a lot of nightlife",
+      "blocks": [
+        {
+          "title": "Overview",
+          "paragraphs": [
+            "For the most authentic Yucatecan and Mexican food at the best prices, head downtown — around Parque de las Palapas, Avenida Yaxchilán and the markets. The Hotel Zone has the lagoon-view restaurants and the big nights out. Try cochinita pibil, ceviche and fish tacos. Avoid ice and salads where you're unsure of the water."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        }
+      ]
+    },
+    "hotels": {
+      "subtitle": "Hotel Zone or downtown?",
+      "blocks": [
+        {
+          "title": "Overview",
+          "paragraphs": [
+            "The Hotel Zone is the easiest beach base. The northern stretch (about Km 4–12) has calmer water and keeps restaurants, ferries and nightlife close. Downtown is cheaper and better for local food, with buses to the beach. Many Hotel Zone resorts are all-inclusive, so check what's covered."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        }
+      ]
+    },
+    "safety": {
+      "subtitle": "Sun, sea, and street smarts",
+      "blocks": [
+        {
+          "title": "📢Travel Advisories",
+          "paragraphs": [],
+          "items": [
+            "Canada advises a high degree of caution for Mexico because of crime and kidnapping. Check travel.gc.ca for the current wording and any regional warnings.",
+            "United States: Quintana Roo is rated \"exercise increased caution\" (May 2026).",
+            "Most reported incidents affecting tourists happen downtown or in nightlife areas after dark."
+          ],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "🚩Beach Flags & Rip Currents",
+          "paragraphs": [],
+          "items": [
+            "Green = safe · Yellow = caution · Red = no swimming. Red flags are common, and swimmers who ignore them get into trouble — on one day, 18 people had to be rescued.",
+            "Open-sea beaches such as Delfines, Ballenas and Marlín have the strongest surf. Bay-side beaches (Tortugas, Langosta, Caracol) are calmer.",
+            "Caught in a rip current? Stay calm. It pulls you out, not under — swim parallel to the shore, then back in.",
+            "Sargassum seaweed can make some beaches unpleasant and change the currents. Check the local sargassum alerts."
+          ],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "💧Water, Food & Sun",
+          "paragraphs": [],
+          "items": [
+            "Don't drink the tap water. Use bottled or filtered water, and be wary of ice unless you know it is filtered.",
+            "The sun is intense. Hat, shade and plenty of water — heat exhaustion comes on quickly.",
+            "Use reef-safe sunscreen. In protected areas such as Puerto Morelos Reef National Park, only sunscreen free of oxybenzone and octinoxate is allowed."
+          ],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "🌙Nights Out",
+          "paragraphs": [],
+          "items": [
+            "Open bars are everywhere — pace yourself. Never leave a drink unattended.",
+            "Pickpocketing is the main risk in busy clubs. Carry only what you need.",
+            "Stick to well-lit, busy streets after dark, and avoid isolated areas.",
+            "Never buy drugs. It's illegal, and the drug trade is behind the violence that shapes the travel advisories.",
+            "Know how you're getting back to the ship before you go out, and agree any taxi fare up front.",
+            "Buddy system — look out for your shipmates. You're representing the ship."
+          ],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "🪪ID & Valuables",
+          "paragraphs": [],
+          "items": [
+            "Carry your military ID and a second piece of government photo ID; keep a photo of your passport on your phone.",
+            "Leave valuables secured aboard or in your hotel safe.",
+            "Use bank ATMs inside branches or malls, ideally in daylight."
+          ],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "🏥Medical & Emergencies",
+          "paragraphs": [],
+          "items": [
+            "Call 911 for police, fire or ambulance. Ask for an English-speaking operator if needed.",
+            "Private hospitals with 24-hour emergency care include Hospiten (998 881 3700), Galenia (998 891 5200) and AmeriMed (998 881 3400).",
+            "Private hospitals expect payment or insurance up front — bring ID, your insurance card and any prior authorization.",
+            "Follow your ship's medical and insurance procedures before seeking non-emergency care ashore.",
+            "Inform the ship of any incidents as soon as practical. For consular help, contact the Consular Agency of Canada (998 883 3360)."
+          ],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        }
+      ]
+    },
+    "history": {
+      "subtitle": "From Maya coast to planned resort",
+      "blocks": [
+        {
+          "title": "Background",
+          "paragraphs": [
+            "A Resort Built From Scratch 🏗️ Few big tourist cities are as young as Cancún. In the late 1960s the long sandy island that is now the Hotel Zone was home to just three caretakers of a coconut plantation, and the nearest settlement, Puerto Juárez, had little more than 100 people. Mexico's government picked the site for a planned resort, and within a few decades it became a major international holiday destination — on a coast the Maya had sailed and fished for centuries."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "🛕The Maya Coast",
+          "paragraphs": [
+            "Long before the resorts, the Maya used this coast for fishing and maritime trade. You can still see their settlements in the middle of the Hotel Zone, at El Rey and at San Miguelito beside the Museo Maya de Cancún.",
+            "Further afield are the great Maya cities: Chichén Itzá inland in Yucatán, and Tulum on its cliff above the Caribbean."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "🐍What's in a Name?",
+          "paragraphs": [
+            "The name is usually traced to the Maya kàan kun. The most accepted translation is \"nest of snakes\", while \"place of the golden snake\" is a less accepted alternative — and some scholars question whether the name is Maya at all.",
+            "Before that, the island was known as Nizuc, meaning \"promontory\" or \"point of grass\". The name survives today at Punta Nizuc, at the southern end of the Hotel Zone."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "🏗️The Planned Resort",
+          "paragraphs": [
+            "In 1969 FONATUR, Mexico's national tourism fund, chose this stretch of coast for a new resort. Construction began on 20 April 1970 — still celebrated as Cancún's founding day — and the city was formally established in August 1971.",
+            "The first hotels and the airport opened in 1974, when the project was still a considerable gamble. Today the Hotel Zone stretches along the Boulevard Kukulcán between the Caribbean and the Nichupté Lagoon."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "🌀Hurricanes Gilbert & Wilma",
+          "paragraphs": [
+            "Sitting on a thin strip of sand, the Hotel Zone is exposed to hurricanes. Gilbert struck on 14 September 1988 as a Category 5 storm, and the damage led to large-scale rebuilding and modernization.",
+            "Wilma hit on 21 October 2005 and stalled over Cancún, causing widespread destruction. Federal funding of about US$253 million followed, and FONATUR's director later called the rebuilt resort the best Cancún in its history."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "🪸The Reef",
+          "paragraphs": [
+            "The Mexican Caribbean is part of the Mesoamerican Barrier Reef System, considered the second-largest reef system in the world. It stretches more than 1,000 km from the tip of the Yucatán Peninsula past Belize and Guatemala to Honduras.",
+            "MUSA, the underwater museum off Cancún and Isla Mujeres, was created to take pressure off the natural reef: its sculptures act as artificial reefs that corals and fish colonize over time."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "📜Timeline",
+          "paragraphs": [],
+          "items": [
+            "Pre-Hispanic era: The Maya fish and trade along this coast; settlements include El Rey and San Miguelito.",
+            "1969: FONATUR selects the coast for a planned resort.",
+            "20 Apr 1970: Construction begins — Cancún's founding day.",
+            "Aug 1971: The city is formally established.",
+            "1974: The first hotels and the airport open.",
+            "14 Sep 1988: Hurricane Gilbert, a Category 5 storm, strikes.",
+            "21 Oct 2005: Hurricane Wilma stalls over Cancún.",
+            "2015: Quintana Roo moves permanently to UTC−5.",
+            "2023: The Tren Maya opens its Cancún–Campeche section.",
+            "Today: A major international resort, still on the doorstep of the Maya world."
+          ],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "👣See It Today",
+          "paragraphs": [
+            "Museo Maya de Cancún — Tuesday to Sunday, 9 am–5 pm; the ticket includes the San Miguelito ruins.",
+            "El Rey — A quick 30–50 minute visit in the Hotel Zone.",
+            "Chichén Itzá — Leave early to beat the tour buses; open 8 am–5 pm.",
+            "MUSA — Snorkel the underwater sculptures on a licensed tour."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "Useful links",
+          "paragraphs": [],
+          "items": [],
+          "links": [
+            {
+              "label": "📍 Museo Maya",
+              "url": "https://www.google.com/maps/search/Museo+Maya+de+Cancun"
+            },
+            {
+              "label": "📍 El Rey",
+              "url": "https://www.google.com/maps/search/Zona+Arqueologica+El+Rey+Cancun"
+            }
+          ],
+          "status": "unverified",
+          "sourceIds": [],
+          "checkedOn": null
+        }
+      ]
+    }
+  },
+  "sources": [],
+  "quickContacts": [
+    0,
+    1
+  ],
+  "facts": [
+    {
+      "text": "The name Cancún is usually traced to the Maya \"kàan kun\" — most often translated as \"nest of snakes\".",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "text": "In the late 1960s, the island that is now the Hotel Zone was home to just three caretakers of a coconut plantation.",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "text": "Construction of modern Cancún began on 20 April 1970, still celebrated as the city's founding day.",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "text": "Cancún's first hotels and its airport opened in 1974.",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "text": "Hurricane Wilma stalled over Cancún on 21 October 2005, and the resort was rebuilt with about US$253 million in federal funding.",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "text": "The Mexican Caribbean is part of the Mesoamerican Reef, the second-largest reef system in the world.",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "text": "MUSA's underwater sculptures are designed to become artificial reefs for corals and fish.",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "text": "Whale sharks, the world's biggest fish, gather off Isla Mujeres and Holbox from about June to mid-September.",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "text": "Quintana Roo keeps the same clock all year: UTC−5, with no daylight saving time since 2015.",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "text": "The island's earlier Maya name was Nizuc, meaning \"promontory\" or \"point of grass\".",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    }
+  ]
+}
