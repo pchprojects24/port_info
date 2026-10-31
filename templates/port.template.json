@@ -327,5 +327,37 @@
       "checkedOn": null
     }
   ],
-  "facts": []
+  "facts": [],
+  "ashore": {
+    "returnPoint": {
+      "text": "Confirm the landing point and return arrangements with the ship.",
+      "status": "user-required",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    "currency": {
+      "text": "Currency has not been researched.",
+      "status": "unknown",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    "language": {
+      "text": "Local language has not been researched.",
+      "status": "unknown",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    "transport": {
+      "text": "Confirm transport and the last return service before leaving.",
+      "status": "unknown",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    "cautions": {
+      "text": "Review current local safety advice before going ashore.",
+      "status": "unknown",
+      "sourceIds": [],
+      "checkedOn": null
+    }
+  }
 }

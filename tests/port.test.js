@@ -79,3 +79,21 @@ test('building a different port replaces identity, contacts and offline revision
     assert.notEqual(output['sw.js'],generate('cancun-mexico')['sw.js']);
   } finally { fs.unlinkSync(file); }
 });
+test('activity budgets include visiting, return travel and a buffer; unknowns never qualify',()=>{
+  const {totalMinutes,fitsTime}=require('../brief-tools');
+  const a={timing:{status:'verified',sourceIds:['transit'],checkedOn:'2026-10-31',origin:'Confirmed meeting point',visitMinutes:60,roundTripMinutes:40,bufferMinutes:20}};
+  assert.equal(totalMinutes(a),120);assert.equal(fitsTime(a,120),true);assert.equal(fitsTime(a,119),false);
+  assert.equal(fitsTime({},120),false);assert.equal(fitsTime({},0),true);
+  a.timing.status='unverified';assert.equal(fitsTime(a,240),false);
+});
+test('map categories retain unlocated places without inventing coordinates',()=>{
+  const {places,validLocation}=require('../brief-tools');
+  const d=blank();d.activities=[{name:'Test',map:'Test harbour'}];d.hotelData=[{name:'Hotel',coordinates:{lat:0,lon:0}}];
+  const p=places(d);assert.equal(p.length,2);assert.equal(p[0].coordinates,undefined);assert.equal(validLocation(p[1].coordinates),true);
+  assert.equal(Boolean(validLocation({lat:91,lon:0})),false);
+});
+test('ashore essentials and timing must satisfy evidence and location rules',()=>{
+  const d=blank();delete d.ashore.currency;
+  d.activities=[{name:'Trip',desc:'Test',tags:[],coordinates:{lat:999,lon:0},status:'unknown',sourceIds:[],checkedOn:null,timing:{visitMinutes:30,roundTripMinutes:-1,bufferMinutes:5,origin:'',basis:'',status:'verified',sourceIds:[],checkedOn:null}}];
+  const e=validate(d).join('\n');for(const p of [/ashore.currency/,/coordinates/,/roundTripMinutes/,/origin/,/need sources/]) assert.match(e,p);
+});

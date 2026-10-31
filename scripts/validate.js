@@ -49,6 +49,11 @@ function validate(d, { strict = false } = {}) {
     if (strict) check(x.status !== 'unverified',`Strict: ${label} remains unverified`);
   };
   evidence(p,'port');
+  for(const key of ['returnPoint','currency','language','transport','cautions']) {
+    const x=d.ashore?.[key];
+    if(!object(x)) { errors.push(`Missing ashore.${key}`);continue; }
+    text(x.text,`ashore.${key}.text`,true);evidence(x,`ashore.${key}`);
+  }
   check(object(d.pages),'pages must be an object');
   check(Object.keys(d.pages || {}).every(k => PAGE_IDS.includes(k)), 'pages contains an unsupported page');
   PAGE_IDS.forEach(id => {
@@ -78,6 +83,15 @@ function validate(d, { strict = false } = {}) {
     if ('web' in x) check(x.web === '' || url(x.web),`${key}.web must be empty or HTTP(S)`);
     if ('phone' in x) check(str(x.phone) && (x.phone==='' || /^\+?[0-9][0-9 ()-]{1,24}$/.test(x.phone)),`${key}.phone is invalid`);
     if(kind==='activity') array(x.tags,`${key}.tags`).forEach(t => check(d.todoChips?.includes(t),`${key} uses an unknown activity tag`));
+    if(x.coordinates != null) check(object(x.coordinates) && Number.isFinite(x.coordinates.lat) && Math.abs(x.coordinates.lat)<=90 && Number.isFinite(x.coordinates.lon) && Math.abs(x.coordinates.lon)<=180,`${key}.coordinates must contain valid lat/lon`);
+    if(kind==='activity' && x.timing != null) {
+      const t=x.timing;
+      if(!object(t)) errors.push(`${key}.timing must be an object or null`);
+      else {
+        for(const k of ['visitMinutes','roundTripMinutes','bufferMinutes']) check(Number.isFinite(t[k]) && t[k]>=0,`${key}.timing.${k} must be a nonnegative number`);
+        text(t.origin,`${key}.timing.origin`,true);text(t.basis,`${key}.timing.basis`,true);evidence(t,`${key}.timing`);
+      }
+    }
     evidence(x,key);
   });
   array(d.todoChips,'todoChips').forEach(t => text(t,'todoChips entry',true));

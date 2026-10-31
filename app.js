@@ -16,7 +16,7 @@ function actions(item) {
   return `<div class="actions">${item.phone ? `<a class="btn btn-call" href="${phoneToTelHref(item.phone)}">📞 ${E(item.phoneLabel || item.phone)}</a>` : ''}${item.map ? `<a class="btn btn-map" href="${mapHref(item.map)}" target="_blank" rel="noopener noreferrer">📍 ${E(item.mapLabel || 'Map')}</a>` : ''}${webHref(item.web) ? `<a class="btn btn-web" href="${webHref(item.web)}" target="_blank" rel="noopener noreferrer">Website</a>` : ''}</div>`;
 }
 function itemCard(item, extraClass = '') {
-  return `<div class="card item ${extraClass}"><div class="item-head"><span class="item-emoji">${E(item.emoji || '📍')}</span><div class="item-main"><div class="item-name">${E(item.name)} ${item.price ? `<span class="price">${E(item.price)}</span>` : ''}</div><div class="item-note">${E(item.desc || item.note || item.sub)}</div></div></div>${item.tags ? `<div class="item-tags">${item.tags.map(t => `<span class="tag">${E(tagLabel(t))}</span>`).join('')}</div>` : ''}${actions(item)}${sourceNote(item)}</div>`;
+  return `<div class="card item ${extraClass}"><div class="item-head"><span class="item-emoji">${E(item.emoji || '📍')}</span><div class="item-main"><div class="item-name">${E(item.name)} ${item.price ? `<span class="price">${E(item.price)}</span>` : ''}</div><div class="item-note">${E(item.desc || item.note || item.sub)}</div></div></div>${item.tags ? `<div class="item-tags">${item.tags.map(t => `<span class="tag">${E(tagLabel(t))}</span>`).join('')}</div>` : ''}${item.timing && BriefTools.totalMinutes(item)!==null ? `<p class="source-note">Allow ${BriefTools.totalMinutes(item)} min: ${item.timing.visitMinutes} visiting + ${item.timing.roundTripMinutes} return travel + ${item.timing.bufferMinutes} buffer. From ${E(item.timing.origin)}. ${E(item.timing.basis)}</p>${sourceNote(item.timing)}` : ''}${actions(item)}${sourceNote(item)}</div>`;
 }
 function contentBlock(b) {
   return `<article class="card prose content-block"><h2>${E(b.title)}</h2>${b.paragraphs.map(p => `<p>${E(p)}</p>`).join('')}${b.items.length ? `<ul>${b.items.map(i => `<li>${E(i)}</li>`).join('')}</ul>` : ''}<div class="actions">${b.links.filter(l => webHref(l.url)).map(l => `<a class="btn btn-web" href="${webHref(l.url)}" target="_blank" rel="noopener noreferrer">${E(l.label)}</a>`).join('')}</div>${sourceNote(b)}</article>`;
@@ -24,7 +24,7 @@ function contentBlock(b) {
 function researchItems() {
   const collections = [['Activities',D.activities],['Hotels',D.hotelData],['Local facts',D.facts],...Object.entries(D.venueData)];
   const empty = collections.filter(([,items]) => !items.length).map(([title]) => ({ title, status:'unknown', sourceIds:[], checkedOn:null }));
-  return [{...port,title:'Port identity and location'},...empty,...Object.values(D.pages).flatMap(p => p.blocks), ...D.activities, ...Object.values(D.venueData).flat(), ...D.hotelData, ...D.shipContacts, ...D.localContacts, ...D.facts];
+  return [...Object.entries(D.ashore || {}).map(([title,x])=>({...x,title})),...D.activities.filter(a=>a.timing).map(a=>({...a.timing,title:a.name+' timing'})),{...port,title:'Port identity and location'},...empty,...Object.values(D.pages).flatMap(p => p.blocks), ...D.activities, ...Object.values(D.venueData).flat(), ...D.hotelData, ...D.shipContacts, ...D.localContacts, ...D.facts];
 }
 function renderPort() {
   document.querySelector('meta[name="description"]').content = `Port brief for ${port.name}, ${port.country}.`;
@@ -85,6 +85,7 @@ function nav(pageId, pushHistory = true) {
   updateTopbarTitle();
 
   if (pageId === 'weather') renderWeatherPage();
+  if (pageId === 'map') requestAnimationFrame(() => window.renderPlacesMap?.());
   updateA2HSVisibility();
 
   if (pushHistory) {
@@ -287,8 +288,11 @@ document.getElementById('todo-chips').addEventListener('click', e => {
   if (!tag) activeFilters.clear(); else if (activeFilters.has(tag)) activeFilters.delete(tag); else activeFilters.add(tag);
   renderTodoChips(); renderTodoList();
 });
+document.getElementById('time-budget').addEventListener('change',renderTodoList);
 function renderTodoList() {
-  const filtered = activities.filter(a => !activeFilters.size || a.tags.some(t => activeFilters.has(t)));
+  const unknown=activities.filter(a=>BriefTools.totalMinutes(a)===null).length;
+  document.getElementById('timing-note').textContent = `${unknown} activities lack source-checked timing and are excluded when a time limit is selected. Estimates include travel and a return buffer; they do not set your leave expiry.`;
+  const filtered = activities.filter(a => (!activeFilters.size || a.tags.some(t => activeFilters.has(t))) && BriefTools.fitsTime(a,Number(document.getElementById('time-budget').value)));
   document.getElementById('todo-count').textContent = `${filtered.length} of ${activities.length}`;
   document.getElementById('todo-list').innerHTML = filtered.length ? filtered.map(a => itemCard(a)).join('') : emptyState('🔎',activities.length ? 'Nothing matches those filters.' : 'Activities have not been researched yet.');
 }

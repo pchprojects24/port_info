@@ -14,7 +14,8 @@ window.PORT_DATA = {
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "Playa Delfines & the Cancún Sign",
@@ -29,7 +30,8 @@ window.PORT_DATA = {
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "Isla Mujeres",
@@ -44,7 +46,8 @@ window.PORT_DATA = {
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "MUSA Underwater Museum",
@@ -59,7 +62,8 @@ window.PORT_DATA = {
       "web": "https://musamexico.org",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "Museo Maya de Cancún & San Miguelito",
@@ -73,7 +77,8 @@ window.PORT_DATA = {
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "El Rey Archaeological Zone",
@@ -87,7 +92,8 @@ window.PORT_DATA = {
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "Chichén Itzá",
@@ -102,7 +108,8 @@ window.PORT_DATA = {
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "Tulum Ruins",
@@ -117,7 +124,8 @@ window.PORT_DATA = {
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "Cenotes — Ruta de los Cenotes",
@@ -131,7 +139,8 @@ window.PORT_DATA = {
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "Puerto Morelos Reef",
@@ -145,7 +154,8 @@ window.PORT_DATA = {
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "Whale Sharks (Seasonal)",
@@ -159,7 +169,8 @@ window.PORT_DATA = {
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "Isla Contoy",
@@ -174,7 +185,8 @@ window.PORT_DATA = {
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "Parque de las Palapas",
@@ -188,7 +200,8 @@ window.PORT_DATA = {
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "Mercado 28",
@@ -202,7 +215,8 @@ window.PORT_DATA = {
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "Coco Bongo",
@@ -216,7 +230,8 @@ window.PORT_DATA = {
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     }
   ],
   "todoChips": [
@@ -1219,5 +1234,38 @@ window.PORT_DATA = {
       "sourceIds": [],
       "checkedOn": null
     }
-  ]
+  ],
+  "ashore": {
+    "returnPoint": {
+      "text": "Confirm the landing point and return arrangements with the ship.",
+      "status": "user-required",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    "currency": {
+      "text": "Currency: Mexican peso (MXN). US dollars are taken in tourist areas, often at a poor rate — pesos usually work out cheaper, especially for taxis and off-resort spending.",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    "language": {
+      "text": "Language: Spanish. English is widely spoken in the Hotel Zone; a few words of Spanish go a long way downtown.",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    "transport": {
+      "text": "Agree taxi fares before travel; confirm return transport and leave expiry with the ship.",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    "cautions": {
+      "text": "Review the Safety section for water, beach flags, heat and advice for nights out.",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    }
+  }
 };
+window.PORT_REVISION = "4af7353843fbe96d";

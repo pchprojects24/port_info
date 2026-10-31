@@ -13,10 +13,14 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
 <link rel="stylesheet" href="styles.css">
 <script>try { var t = localStorage.getItem('theme_v1'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}</script>
 <script src="data.js" defer></script>
+<script src="brief-tools.js" defer></script>
+<script src="vendor/leaflet/leaflet.js" defer></script>
 <script src="app.js" defer></script>
+<script src="ashore.js" defer></script>
 </head>
 <body>
 <div class="app">
@@ -36,6 +40,8 @@
 </div>
 <div id="brief-status" class="callout" role="status"></div>
 <div class="quick-dial" id="quick-dial"></div>
+<div class="label">Ashore essentials</div><div id="ashore-essentials"></div>
+<div class="card pack-panel"><h2>Take your brief ashore</h2><p id="pack-status" role="status">Checking offline availability…</p><div class="actions"><button id="save-pack" class="btn btn-web" type="button">Save for offline</button><button id="print-pack" class="btn btn-web" type="button">Print essentials</button><button class="btn btn-map" type="button" data-nav="map">Places map</button></div><p class="source-note">The saved brief and place list work offline. Street maps, directions, websites and live weather need internet.</p></div>
 <div class="label">Your brief</div><div class="bento">
 <button class="tile t-ocean" type="button" data-nav="routine"><span class="tile-icon">⚓</span><span><span class="tile-title">Ship Routine</span><span class="tile-sub">Port window, leave & essentials</span></span></button>
 <button class="tile t-jungle" type="button" data-nav="explore"><span class="tile-icon">🧭</span><span><span class="tile-title">Explore</span><span class="tile-sub">Things to do & getting around</span></span></button>
@@ -59,10 +65,10 @@
 <div id="weather-content"></div>
 </section>
 <section id="map" class="page t-ocean" aria-label="Getting Around"><div class="page-head"><span class="page-emoji">🗺️</span><div><h1 class="page-title">Getting Around</h1><div class="page-subtitle" id="map-subtitle"></div></div></div>
-<div id="map-content"></div>
+<label for="place-category">Show places</label><select id="place-category"><option value="">All categories</option></select><div class="search"><input id="place-search" type="search" aria-label="Search all places" placeholder="Search all places…"></div><p id="map-status" class="source-note" role="status"></p><div id="places-map" aria-label="Map of places"></div><p id="map-connection" class="source-note"></p><div id="place-list" class="stack"></div><div class="label">Transport & orientation</div><div id="map-content"></div>
 </section>
 <section id="todo" class="page t-sun" aria-label="Things To Do"><div class="page-head"><span class="page-emoji">🎯</span><div><h1 class="page-title">Things To Do</h1><div class="page-subtitle" id="todo-subtitle"></div></div></div>
-<div class="chips" id="todo-chips" role="group" aria-label="Filter activities"></div><div class="label"><span>Places</span><span class="label-count" id="todo-count"></span></div><div id="todo-list" class="stack"></div></section>
+<label for="time-budget">Time available, including return travel</label><select id="time-budget"><option value="0">Any time</option><option value="120">Up to 2 hours</option><option value="240">Up to 4 hours</option><option value="480">Up to 8 hours</option></select><p id="timing-note" class="source-note"></p><div class="chips" id="todo-chips" role="group" aria-label="Filter activities"></div><div class="label"><span>Places</span><span class="label-count" id="todo-count"></span></div><div id="todo-list" class="stack"></div></section>
 <section id="food" class="page t-pink" aria-label="Food & Drink"><div class="page-head"><span class="page-emoji">🍴</span><div><h1 class="page-title">Food & Drink</h1><div class="page-subtitle" id="food-subtitle"></div></div></div>
 <div id="food-content"></div>
 <div class="segmented" role="tablist" aria-label="Venue type"><button id="control-food" class="seg active" type="button" role="tab" aria-selected="true" aria-controls="tab-food" data-tab="tab-food">Food</button><button id="control-coffee" class="seg " type="button" role="tab" aria-selected="false" aria-controls="tab-coffee" data-tab="tab-coffee">Coffee</button><button id="control-bars" class="seg " type="button" role="tab" aria-selected="false" aria-controls="tab-bars" data-tab="tab-bars">Bars</button><button id="control-shop" class="seg " type="button" role="tab" aria-selected="false" aria-controls="tab-shop" data-tab="tab-shop">Shop</button></div><div id="tab-food" class="tab-panel active" role="tabpanel" aria-labelledby="control-food"><div class="search"><input type="search" placeholder="Search food…" aria-label="Search food" data-search-tab="tab-food"></div><div class="venue-list stack"></div></div><div id="tab-coffee" class="tab-panel " role="tabpanel" aria-labelledby="control-coffee"><div class="search"><input type="search" placeholder="Search coffee…" aria-label="Search coffee" data-search-tab="tab-coffee"></div><div class="venue-list stack"></div></div><div id="tab-bars" class="tab-panel " role="tabpanel" aria-labelledby="control-bars"><div class="search"><input type="search" placeholder="Search bars…" aria-label="Search bars" data-search-tab="tab-bars"></div><div class="venue-list stack"></div></div><div id="tab-shop" class="tab-panel " role="tabpanel" aria-labelledby="control-shop"><div class="search"><input type="search" placeholder="Search shop…" aria-label="Search shop" data-search-tab="tab-shop"></div><div class="venue-list stack"></div></div></section>
@@ -89,4 +95,4 @@
 </main>
 <div id="a2hs-banner" class="a2hs" role="dialog" aria-label="Add to Home Screen" hidden><span class="a2hs-icon"><img src="icons/icon-192.png" alt=""></span><div><div class="a2hs-title">Add to Home Screen</div><div id="a2hs-sub" class="a2hs-sub">Save this brief for one-tap access.</div></div><div class="a2hs-actions"><button id="a2hs-action" class="a2hs-btn" type="button">Install</button><button id="a2hs-dismiss" class="a2hs-close" type="button" aria-label="Dismiss">✕</button></div></div>
 <nav class="tabbar" aria-label="Main">
-<button class="tab-btn" type="button" data-nav="landing" data-tab-for="landing"><span class="tab-ico">🏠</span>Home</button><button class="tab-btn" type="button" data-nav="explore" data-tab-for="explore"><span class="tab-ico">🧭</span>Explore</button><button class="tab-btn" type="button" data-nav="weather" data-tab-for="weather"><span class="tab-ico">🌤️</span>Weather</button><button class="tab-btn" type="button" data-nav="safety" data-tab-for="safety"><span class="tab-ico">🛡️</span>Safety</button><button class="tab-btn" type="button" data-nav="contacts" data-tab-for="contacts"><span class="tab-ico">📞</span>Contacts</button></nav></div></body></html>
+<button class="tab-btn" type="button" data-nav="landing" data-tab-for="landing"><span class="tab-ico">🏠</span>Home</button><button class="tab-btn" type="button" data-nav="explore" data-tab-for="explore"><span class="tab-ico">🧭</span>Explore</button><button class="tab-btn" type="button" data-nav="weather" data-tab-for="weather"><span class="tab-ico">🌤️</span>Weather</button><button class="tab-btn" type="button" data-nav="safety" data-tab-for="safety"><span class="tab-ico">🛡️</span>Safety</button><button class="tab-btn" type="button" data-nav="contacts" data-tab-for="contacts"><span class="tab-ico">📞</span>Contacts</button></nav></div><section id="print-sheet" class="print-sheet" aria-label="Printable essentials"></section></body></html>

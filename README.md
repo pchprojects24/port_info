@@ -81,3 +81,13 @@ The service worker caches a complete content revision for offline use. Its revis
 ## Checks
 
 `npm run check` runs data validation, regression tests for the template/build/weather contract, and generated-file consistency checks. Test a new port in a browser at desktop and mobile sizes before publishing. There is no publishing or deployment step in the generation scripts.
+
+## Ashore essentials, places map and offline pack
+
+The home screen now brings together emergency contacts, return arrangements, money, language, transport and cautions. `ashore` summaries use `{text, status, sourceIds, checkedOn}`. The return point must come from supplied ship information.
+
+The shared places map uses locally bundled Leaflet 1.9.4 ([documentation](https://leafletjs.com/examples/quick-start/); license in `vendor/leaflet/LICENSE`) and attributed OpenStreetMap street tiles. Category/search filters apply to both the map and its list. Individual records can include `coordinates: {lat, lon}`; without coordinates they stay in the list with map search links. Pins show recorded positions and their evidence status. Street tiles are requested when viewing the map and are not included in offline downloads.
+
+Activity time limits use optional source-checked `timing` records: `visitMinutes`, `roundTripMinutes`, `bufferMinutes`, `origin`, `basis`, and the standard evidence fields. Results include the entire allowance. Unknown or unverified timings are excluded when a limit is selected. The legacy Cancún record has no complete source-checked timing or individual coordinates; these fields require research rather than estimates inferred from its old tags.
+
+**Save for offline** downloads/checks this brief's files and reports readiness for the current content revision. The saved place list, recorded pins, guide and printable essentials work offline. Maps, directions, external websites and live weather still need internet. A changed revision prompts a reload. **Print essentials** opens a compact print layout with port identity, emergency/ship contacts, concise essentials and evidence status. Use the browser's Save as PDF option for a shareable copy.

@@ -592,3 +592,27 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
 .quick-dial { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
 .dial { flex-direction: column; align-items: flex-start; gap: 6px; }
 .dial-num { flex-shrink: 0; white-space: nowrap; font-size: 1.25rem; }
+
+/* Essentials and tools for going ashore. */
+.essential, .pack-panel { margin: 12px 0; padding: 16px; }
+.essential h2, .pack-panel h2 { font-size: 1rem; margin-bottom: 6px; }
+.essential p, .pack-panel p { font-size: .88rem; line-height: 1.5; }
+.pack-panel .actions { flex-wrap: wrap; }
+select { width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); color: var(--text); font: inherit; margin: 8px 0; }
+label { font-size: .85rem; font-weight: 700; }
+#places-map { height: 330px; border-radius: 16px; margin: 12px 0; z-index: 0; }
+.leaflet-popup-content { color: #10283a; }
+.leaflet-popup-content .actions { display: flex; flex-wrap: wrap; }
+.leaflet-container a { text-decoration: underline; }
+.print-sheet { display: none; }
+@media print {
+  body .app { display: none !important; }
+  .print-sheet { display: block; font: 10pt/1.35 system-ui,sans-serif; color: #111; }
+  .print-sheet h1 { font-size: 18pt; }
+  .print-sheet .essential { box-shadow: none; border: 0; border-bottom: 1px solid #ccc; border-radius: 0; margin: 4px 0; padding: 7px 0; }
+  .print-sheet .essential h2 { font-size: 11pt; }
+  .print-sheet .essential p { font-size: 10pt; }
+  .print-sheet .source-note { font-size: 8pt; }
+  .print-sheet a { color: #111; }
+  @page { margin: 12mm; }
+}

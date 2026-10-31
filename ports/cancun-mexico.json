@@ -13,7 +13,8 @@
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "Playa Delfines & the Cancún Sign",
@@ -28,7 +29,8 @@
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "Isla Mujeres",
@@ -43,7 +45,8 @@
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "MUSA Underwater Museum",
@@ -58,7 +61,8 @@
       "web": "https://musamexico.org",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "Museo Maya de Cancún & San Miguelito",
@@ -72,7 +76,8 @@
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "El Rey Archaeological Zone",
@@ -86,7 +91,8 @@
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "Chichén Itzá",
@@ -101,7 +107,8 @@
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "Tulum Ruins",
@@ -116,7 +123,8 @@
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "Cenotes — Ruta de los Cenotes",
@@ -130,7 +138,8 @@
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "Puerto Morelos Reef",
@@ -144,7 +153,8 @@
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "Whale Sharks (Seasonal)",
@@ -158,7 +168,8 @@
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "Isla Contoy",
@@ -173,7 +184,8 @@
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "Parque de las Palapas",
@@ -187,7 +199,8 @@
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "Mercado 28",
@@ -201,7 +214,8 @@
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     },
     {
       "name": "Coco Bongo",
@@ -215,7 +229,8 @@
       "web": "",
       "status": "unverified",
       "sourceIds": [],
-      "checkedOn": null
+      "checkedOn": null,
+      "timing": null
     }
   ],
   "todoChips": [
@@ -1218,5 +1233,37 @@
       "sourceIds": [],
       "checkedOn": null
     }
-  ]
+  ],
+  "ashore": {
+    "returnPoint": {
+      "text": "Confirm the landing point and return arrangements with the ship.",
+      "status": "user-required",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    "currency": {
+      "text": "Currency: Mexican peso (MXN). US dollars are taken in tourist areas, often at a poor rate — pesos usually work out cheaper, especially for taxis and off-resort spending.",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    "language": {
+      "text": "Language: Spanish. English is widely spoken in the Hotel Zone; a few words of Spanish go a long way downtown.",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    "transport": {
+      "text": "Agree taxi fares before travel; confirm return transport and leave expiry with the ship.",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    "cautions": {
+      "text": "Review the Safety section for water, beach flags, heat and advice for nights out.",
+      "status": "unverified",
+      "sourceIds": [],
+      "checkedOn": null
+    }
+  }
 }

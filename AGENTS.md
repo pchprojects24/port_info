@@ -52,3 +52,13 @@ npm run check
 ```
 
 Inspect desktop and mobile: identity, local clock, weather request coordinates/time zone, all sections, empty/unknown states, source links, quick calls/maps, activity filters and venue/hotel search. Verify no former port names, contacts, map queries, advisory text or artwork remain. Check offline behavior after the service worker installs. Report research gaps and exact delivery state; a branch/PR is not a merge or deployment. Publish/deploy only within the user's authorized scope.
+
+## Ashore tools
+
+Populate `ashore.returnPoint`, `currency`, `language`, `transport`, and `cautions` with short `text` plus the standard evidence fields. Keep the return point `user-required` until supplied. These appear on the home screen and printable essentials sheet; write concise summaries appropriate for quick reference.
+
+Add optional `coordinates: { "lat": number, "lon": number }` to individual activities, venues, hotels and local contacts only when supported by a consulted location source. Cite it in the item's sources. City-centre coordinates are not a substitute for each venue's location. Unlocated places still have searchable map queries.
+
+An activity can have `timing: null` when unresolved, or an evidence-bearing object with `visitMinutes`, `roundTripMinutes`, `bufferMinutes`, `origin`, `basis`, `status`, `sourceIds`, and `checkedOn`. Record the origin, transport assumption and basis for the estimate. Do not infer minutes from tags such as Quick or Half-day. Only source-checked timings enter time-budget results. Travel estimates are not ship leave instructions.
+
+Verify the offline readiness indicator after saving, offline navigation, filtered map/list agreement, unknown timing exclusion and the print-only essentials layout. Map tiles and external directions require internet; do not bulk-download street maps as part of the offline pack.
