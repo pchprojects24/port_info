@@ -1,7 +1,7 @@
 {
-  "name": "Cancún Port Brief",
-  "short_name": "Cancún",
-  "description": "Port brief for Cancún, Mexico.",
+  "name": "San Juan Port Brief",
+  "short_name": "San Juan",
+  "description": "Port brief for San Juan, Puerto Rico (United States).",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

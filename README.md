@@ -14,7 +14,9 @@ Ship routine and leave; money, language, connectivity and power; getting around;
 
 Public information is researched. Ship-specific berth, dates, orders, leave times and contacts remain explicitly unconfirmed until supplied. The repository is public: do not commit private or operational details without explicit authorization.
 
-The original Cancún guide is preserved in `ports/cancun-mexico.json` and remains the selected port. Its claims are marked **legacy / needs verification** because the original repository supplied no auditable sources. The migration is not a new fact-check of that guide. Existing photos are preserved as original assets and are not automatically shown for other ports.
+San Juan, Puerto Rico is the first selected port, in `ports/san-juan-puerto-rico.json`. It is a source-checked year-round draft dated 2026-10-31; visit dates, berth, ship instructions and complete outing allowances still need confirmation.
+
+The original Cancún guide is preserved separately in `ports/cancun-mexico.json`. Its claims are marked **legacy / needs verification** because the original repository supplied no auditable sources. The migration is not a new fact-check of that guide. Existing photos are preserved as original assets and are not automatically shown for other ports.
 
 ## How the pieces fit
 

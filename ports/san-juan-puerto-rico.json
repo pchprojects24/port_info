@@ -1,0 +1,990 @@
+{
+  "schemaVersion": 1,
+  "slug": "san-juan-puerto-rico",
+  "meta": {
+    "status": "researched",
+    "lastResearched": "2026-10-31",
+    "notes": "First selected port: San Juan, Puerto Rico. Year-round research draft; visit dates and actual berth are not supplied. Coordinates centre the weather on the San Cristóbal entrance in Old San Juan, not a ship location. Complete outing timings, most venue coordinates, tipping guidance and Canadian roaming costs remain unresolved. Sources were read online; businesses and hospitals have not been contacted. Check current notices before use."
+  },
+  "port": {
+    "name": "San Juan",
+    "country": "Puerto Rico (United States)",
+    "region": "San Juan Bay & Old San Juan",
+    "timeZone": "America/Puerto_Rico",
+    "coordinates": {
+      "lat": 18.4673965,
+      "lon": -66.1117449
+    },
+    "welcome": "Welcome to",
+    "tagline": "Fort walls, coffee and the harbour",
+    "status": "verified",
+    "sourceIds": [
+      "sanjuan",
+      "canada",
+      "directions",
+      "iana"
+    ],
+    "checkedOn": "2026-10-31"
+  },
+  "pages": {
+    "routine": {
+      "subtitle": "Ship instructions and practical essentials",
+      "blocks": [
+        {
+          "title": "Port window, berth and landing point",
+          "paragraphs": [
+            "Arrival/departure dates, berth or anchorage, landing point and return transport must come from the ship. No berth is assigned by this guide."
+          ],
+          "items": [],
+          "links": [],
+          "status": "user-required",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "Daily routine and leave",
+          "paragraphs": [
+            "Confirm leave expiry, overnight leave, restrictions, required documents and duty contacts against current ship instructions."
+          ],
+          "items": [],
+          "links": [],
+          "status": "user-required",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "Payments and power",
+          "paragraphs": [
+            "Use USD; carry a backup payment method. Local outlets are standard U.S. outlets, described by the tourism authority as 110 V."
+          ],
+          "items": [],
+          "links": [],
+          "status": "verified",
+          "sourceIds": [
+            "faq"
+          ],
+          "checkedOn": "2026-10-31"
+        },
+        {
+          "title": "Canadian mobile plans and tipping",
+          "paragraphs": [
+            "Canadian roaming charges, local SIM suitability and current tipping guidance have not been confirmed. Check your carrier and the bill before travel or payment."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "Entry documents",
+          "paragraphs": [
+            "Puerto Rico is a U.S. territory. Official travel can have different entry rules; confirm your documents through the ship and current Canadian guidance."
+          ],
+          "items": [],
+          "links": [
+            {
+              "label": "Canadian entry guidance",
+              "url": "https://travel.gc.ca/destinations/puerto-rico"
+            }
+          ],
+          "status": "verified",
+          "sourceIds": [
+            "canada"
+          ],
+          "checkedOn": "2026-10-31"
+        },
+        {
+          "title": "Local clock",
+          "paragraphs": [
+            "Atlantic Standard Time (UTC−4) year-round; the app uses America/Puerto_Rico."
+          ],
+          "items": [],
+          "links": [],
+          "status": "verified",
+          "sourceIds": [
+            "iana"
+          ],
+          "checkedOn": "2026-10-31"
+        }
+      ]
+    },
+    "weather": {
+      "subtitle": "Year-round overview; check forecasts for your visit",
+      "blocks": [
+        {
+          "title": "Seasonal overview",
+          "paragraphs": [
+            "The tourism authority describes May–October as generally wetter than winter. Hurricane season is June–November. No visit-specific forecast is assumed."
+          ],
+          "items": [],
+          "links": [],
+          "status": "verified",
+          "sourceIds": [
+            "faq"
+          ],
+          "checkedOn": "2026-10-31"
+        },
+        {
+          "title": "Forecasts and warnings",
+          "paragraphs": [
+            "Use NWS San Juan for current alerts, beach conditions and marine forecasts; follow ship directions when conditions deteriorate."
+          ],
+          "items": [],
+          "links": [
+            {
+              "label": "NWS San Juan",
+              "url": "https://www.weather.gov/sju/"
+            },
+            {
+              "label": "National Hurricane Center",
+              "url": "https://www.nhc.noaa.gov/"
+            }
+          ],
+          "status": "verified",
+          "sourceIds": [
+            "weather"
+          ],
+          "checkedOn": "2026-10-31"
+        }
+      ]
+    },
+    "map": {
+      "subtitle": "Confirm the pier; the map is not a berth assignment",
+      "blocks": [
+        {
+          "title": "Two different port approaches",
+          "paragraphs": [
+            "NPS distinguishes the piers near Old San Juan from the Pan American pier, approximately three miles away. Its walking advice for most cruise piers does not establish where your ship will berth."
+          ],
+          "items": [],
+          "links": [],
+          "status": "verified",
+          "sourceIds": [
+            "directions"
+          ],
+          "checkedOn": "2026-10-31"
+        },
+        {
+          "title": "Walking and rides",
+          "paragraphs": [
+            "NPS describes a 10–15 minute uphill walk from most nearby cruise piers to San Cristóbal, then about 15 minutes onward to El Morro. It identifies designated rideshare pickup areas; check its directions before booking."
+          ],
+          "items": [],
+          "links": [
+            {
+              "label": "NPS access and pickup details",
+              "url": "https://www.nps.gov/saju/planyourvisit/directions.htm"
+            }
+          ],
+          "status": "verified",
+          "sourceIds": [
+            "directions"
+          ],
+          "checkedOn": "2026-10-31"
+        },
+        {
+          "title": "Taxis",
+          "paragraphs": [
+            "Canadian guidance describes metered taxis and fixed fares in designated San Juan tourist zones. Confirm the applicable fare and return plan."
+          ],
+          "items": [],
+          "links": [],
+          "status": "verified",
+          "sourceIds": [
+            "canada"
+          ],
+          "checkedOn": "2026-10-31"
+        },
+        {
+          "title": "Cataño ferry",
+          "paragraphs": [
+            "The port operator lists the passenger ferry at Pier 2 beside Piers 3 and 4. Check current departures and the last return directly with the ferry operator."
+          ],
+          "items": [],
+          "links": [
+            {
+              "label": "Ferry information",
+              "url": "https://sanjuancruiseport.com/services-home/ferry/"
+            },
+            {
+              "label": "Puerto Rico Ferry",
+              "url": "https://www.puertoricoferry.com/"
+            }
+          ],
+          "status": "verified",
+          "sourceIds": [
+            "ferry"
+          ],
+          "checkedOn": "2026-10-31"
+        },
+        {
+          "title": "Complete outing allowances",
+          "paragraphs": [
+            "Travel time from your actual landing point, visit duration and a suitable return buffer have not been established. Time-limited activity results therefore remain empty until those estimates are sourced."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedOn": null
+        }
+      ]
+    },
+    "food": {
+      "subtitle": "Old San Juan choices, plus coffee and nightlife",
+      "blocks": [
+        {
+          "title": "Where to start",
+          "paragraphs": [
+            "Old San Juan offers restaurants, coffee and bars near its historic sights. Confirm opening hours and menus with the individual venue. The list is a starting selection, not a reservation or price guarantee."
+          ],
+          "items": [],
+          "links": [],
+          "status": "verified",
+          "sourceIds": [
+            "sanjuan"
+          ],
+          "checkedOn": "2026-10-31"
+        }
+      ]
+    },
+    "hotels": {
+      "subtitle": "Overnight leave still requires ship approval",
+      "blocks": [
+        {
+          "title": "Stay near your plans",
+          "paragraphs": [
+            "Old San Juan has historic hotels; Condado has beachfront resorts. Match the location to your confirmed return point. Availability, rates and ship approval are not established here."
+          ],
+          "items": [],
+          "links": [],
+          "status": "verified",
+          "sourceIds": [
+            "sanjuan"
+          ],
+          "checkedOn": "2026-10-31"
+        }
+      ]
+    },
+    "safety": {
+      "subtitle": "Current official advice and local assistance",
+      "blocks": [
+        {
+          "title": "Canadian travel advice",
+          "paragraphs": [
+            "Canada currently assigns normal security precautions. Theft and violent crime occur; protect valuables and avoid demonstrations. Recheck the advisory before going ashore."
+          ],
+          "items": [],
+          "links": [
+            {
+              "label": "Current Canadian advisory",
+              "url": "https://travel.gc.ca/destinations/puerto-rico"
+            }
+          ],
+          "status": "verified",
+          "sourceIds": [
+            "canada"
+          ],
+          "checkedOn": "2026-10-31"
+        },
+        {
+          "title": "Water, roads and essential services",
+          "paragraphs": [
+            "Strong coastal currents can be hazardous. San Juan traffic can be heavy. Power and water disruptions may affect transport, communications and medical services; monitor local notices."
+          ],
+          "items": [],
+          "links": [],
+          "status": "verified",
+          "sourceIds": [
+            "canada"
+          ],
+          "checkedOn": "2026-10-31"
+        },
+        {
+          "title": "Local emergency assistance",
+          "paragraphs": [
+            "Call 911 for an emergency. Puerto Rico’s emergency system operates continuously."
+          ],
+          "items": [],
+          "links": [],
+          "status": "verified",
+          "sourceIds": [
+            "emergency"
+          ],
+          "checkedOn": "2026-10-31"
+        },
+        {
+          "title": "Medical option",
+          "paragraphs": [
+            "Ashford Hospital lists a 24-hour emergency department at 1451 Ashford Avenue, Condado. Its main number is +1 787 721 2160; the emergency page lists extensions 1095–1098."
+          ],
+          "items": [],
+          "links": [
+            {
+              "label": "Ashford emergency information",
+              "url": "https://www.presbypr.com/emergency/"
+            }
+          ],
+          "status": "verified",
+          "sourceIds": [
+            "ashford"
+          ],
+          "checkedOn": "2026-10-31"
+        },
+        {
+          "title": "Medical arrangements to confirm",
+          "paragraphs": [
+            "Receiving capability, payment arrangements, insurance authorization and ship-specific medical procedures need confirmation. A published hospital listing does not establish suitability for a particular patient."
+          ],
+          "items": [],
+          "links": [],
+          "status": "user-required",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "Canadian help",
+          "paragraphs": [
+            "Canadian Citizen Services: +1 844 880 6519 during business hours. For consular emergencies at any time, the Canadian office lists Ottawa assistance at +1 888 772 6448."
+          ],
+          "items": [],
+          "links": [
+            {
+              "label": "Canadian offices and assistance",
+              "url": "https://travel.gc.ca/assistance/embassies-consulates/puerto-rico?wbdisable=true"
+            }
+          ],
+          "status": "verified",
+          "sourceIds": [
+            "consular"
+          ],
+          "checkedOn": "2026-10-31"
+        }
+      ]
+    },
+    "history": {
+      "subtitle": "A harbour shaped by fortifications and local culture",
+      "blocks": [
+        {
+          "title": "Defending the harbour",
+          "paragraphs": [
+            "San Juan’s fortifications protected a strategic Atlantic entry to Spanish colonial routes. NPS preserves both major forts, much of the city wall and the San Juan Gate."
+          ],
+          "items": [],
+          "links": [],
+          "status": "verified",
+          "sourceIds": [
+            "nps"
+          ],
+          "checkedOn": "2026-10-31"
+        },
+        {
+          "title": "Local history beyond the forts",
+          "paragraphs": [
+            "Museo de las Américas in Cuartel de Ballajá explores art, history and anthropology, including Puerto Rican cultural heritage."
+          ],
+          "items": [],
+          "links": [
+            {
+              "label": "Museum information",
+              "url": "https://www.discoverpuertorico.com/profile/museo-de-las-americas/7775"
+            }
+          ],
+          "status": "verified",
+          "sourceIds": [
+            "museum"
+          ],
+          "checkedOn": "2026-10-31"
+        },
+        {
+          "title": "Fort admissions",
+          "paragraphs": [
+            "NPS currently lists a US$10 standard entrance pass valid for 24 hours at both forts, and cashless payment. Check current rules and do not assume Canadian military ID grants free entry."
+          ],
+          "items": [],
+          "links": [
+            {
+              "label": "Current NPS fees",
+              "url": "https://www.nps.gov/saju/planyourvisit/fees.htm"
+            }
+          ],
+          "status": "verified",
+          "sourceIds": [
+            "fees"
+          ],
+          "checkedOn": "2026-10-31"
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "faq",
+      "title": "Puerto Rico travel FAQs",
+      "publisher": "Discover Puerto Rico",
+      "url": "https://www.discoverpuertorico.com/info/frequently-asked-questions",
+      "accessedOn": "2026-10-31"
+    },
+    {
+      "id": "canada",
+      "title": "Puerto Rico travel advice",
+      "publisher": "Government of Canada",
+      "url": "https://travel.gc.ca/destinations/puerto-rico",
+      "accessedOn": "2026-10-31"
+    },
+    {
+      "id": "consular",
+      "title": "Canadian assistance in Puerto Rico",
+      "publisher": "Government of Canada",
+      "url": "https://travel.gc.ca/assistance/embassies-consulates/puerto-rico?wbdisable=true",
+      "accessedOn": "2026-10-31"
+    },
+    {
+      "id": "emergency",
+      "title": "Emergency system 9-1-1",
+      "publisher": "Puerto Rico Department of Public Safety",
+      "url": "https://dsp.pr.gov/negociados/negociado-de-sistema-de-emergencias-9-1-1",
+      "accessedOn": "2026-10-31"
+    },
+    {
+      "id": "ashford",
+      "title": "Emergency department",
+      "publisher": "Ashford Hospital",
+      "url": "https://www.presbypr.com/emergency/",
+      "accessedOn": "2026-10-31"
+    },
+    {
+      "id": "nps",
+      "title": "San Juan National Historic Site: basic information",
+      "publisher": "U.S. National Park Service",
+      "url": "https://www.nps.gov/saju/planyourvisit/basicinfo.htm",
+      "accessedOn": "2026-10-31"
+    },
+    {
+      "id": "directions",
+      "title": "Directions and entrance coordinates",
+      "publisher": "U.S. National Park Service",
+      "url": "https://www.nps.gov/saju/planyourvisit/directions.htm",
+      "accessedOn": "2026-10-31"
+    },
+    {
+      "id": "fees",
+      "title": "Fees and passes",
+      "publisher": "U.S. National Park Service",
+      "url": "https://www.nps.gov/saju/planyourvisit/fees.htm",
+      "accessedOn": "2026-10-31"
+    },
+    {
+      "id": "iana",
+      "title": "Time zone database: Puerto Rico",
+      "publisher": "IANA",
+      "url": "https://data.iana.org/time-zones/tzdb/northamerica",
+      "accessedOn": "2026-10-31"
+    },
+    {
+      "id": "sanjuan",
+      "title": "San Juan destination guide",
+      "publisher": "Discover Puerto Rico",
+      "url": "https://www.discoverpuertorico.com/regions/san-juan",
+      "accessedOn": "2026-10-31"
+    },
+    {
+      "id": "ferry",
+      "title": "San Juan ferry connections",
+      "publisher": "San Juan Cruise Port",
+      "url": "https://sanjuancruiseport.com/services-home/ferry/",
+      "accessedOn": "2026-10-31"
+    },
+    {
+      "id": "weather",
+      "title": "San Juan forecasts, beach and marine weather",
+      "publisher": "NOAA National Weather Service",
+      "url": "https://www.weather.gov/sju/",
+      "accessedOn": "2026-10-31"
+    },
+    {
+      "id": "coffee",
+      "title": "Café Cuatro Sombras",
+      "publisher": "Discover Puerto Rico",
+      "url": "https://www.discoverpuertorico.com/es/profile/cafe-cuatro-sombras/7080",
+      "accessedOn": "2026-10-31"
+    },
+    {
+      "id": "chocobar",
+      "title": "Chocobar Cortés: Old San Juan and Condado",
+      "publisher": "Chocobar Cortés",
+      "url": "https://www.chocobarcortes.com/",
+      "accessedOn": "2026-10-31"
+    },
+    {
+      "id": "factoria",
+      "title": "La Factoría",
+      "publisher": "Discover Puerto Rico",
+      "url": "https://www.discoverpuertorico.com/profile/la-factoria/9362",
+      "accessedOn": "2026-10-31"
+    },
+    {
+      "id": "lupulo",
+      "title": "La Taberna Lúpulo",
+      "publisher": "Discover Puerto Rico",
+      "url": "https://www.discoverpuertorico.com/profile/la-taberna-lupulo/6108",
+      "accessedOn": "2026-10-31"
+    },
+    {
+      "id": "museum",
+      "title": "Museo de las Américas",
+      "publisher": "Discover Puerto Rico",
+      "url": "https://www.discoverpuertorico.com/profile/museo-de-las-americas/7775",
+      "accessedOn": "2026-10-31"
+    },
+    {
+      "id": "convento",
+      "title": "Hotel El Convento",
+      "publisher": "Hotel El Convento",
+      "url": "https://www.elconvento.com/",
+      "accessedOn": "2026-10-31"
+    },
+    {
+      "id": "palacio",
+      "title": "Palacio Provincial",
+      "publisher": "Palacio Provincial",
+      "url": "https://www.palacioprovincial.com/",
+      "accessedOn": "2026-10-31"
+    },
+    {
+      "id": "rumbao",
+      "title": "Hotel Rumbao",
+      "publisher": "Discover Puerto Rico",
+      "url": "https://www.discoverpuertorico.com/profile/hotel-rumbao-tribute-portfolio-hotel/54",
+      "accessedOn": "2026-10-31"
+    }
+  ],
+  "quickContacts": [
+    0,
+    2
+  ],
+  "activities": [
+    {
+      "name": "Castillo San Cristóbal",
+      "desc": "Explore the fort above Old San Juan. Its entrance is at Plaza Norzagaray; use the published entrance location rather than a rideshare drop-off as your destination.",
+      "map": "Castillo San Cristóbal, San Juan, Puerto Rico",
+      "web": "https://www.nps.gov/saju/planyourvisit/basicinfo.htm",
+      "tags": [
+        "Iconic",
+        "Outdoors"
+      ],
+      "emoji": "📍",
+      "timing": null,
+      "status": "verified",
+      "sourceIds": [
+        "nps",
+        "directions"
+      ],
+      "checkedOn": "2026-10-31",
+      "coordinates": {
+        "lat": 18.4673965,
+        "lon": -66.1117449
+      }
+    },
+    {
+      "name": "Castillo San Felipe del Morro",
+      "desc": "Visit the fort overlooking the harbour entrance. The pin uses the decimal GPS position published by NPS.",
+      "map": "Castillo San Felipe del Morro, San Juan, Puerto Rico",
+      "web": "https://www.nps.gov/saju/planyourvisit/basicinfo.htm",
+      "tags": [
+        "Iconic",
+        "Outdoors"
+      ],
+      "emoji": "📍",
+      "timing": null,
+      "status": "verified",
+      "sourceIds": [
+        "nps",
+        "directions"
+      ],
+      "checkedOn": "2026-10-31",
+      "coordinates": {
+        "lat": 18.4703808,
+        "lon": -66.1236294
+      }
+    },
+    {
+      "name": "City walls and San Juan Gate",
+      "desc": "See the surviving defensive walls and historic gate, both included in the National Historic Site.",
+      "map": "City walls and San Juan Gate, San Juan, Puerto Rico",
+      "web": "https://www.nps.gov/saju/planyourvisit/basicinfo.htm",
+      "tags": [
+        "Outdoors"
+      ],
+      "emoji": "📍",
+      "timing": null,
+      "status": "verified",
+      "sourceIds": [
+        "nps"
+      ],
+      "checkedOn": "2026-10-31"
+    },
+    {
+      "name": "Museo de las Américas",
+      "desc": "An indoor cultural stop at Cuartel de Ballajá, with exhibitions on the Americas and Puerto Rican heritage. Confirm current exhibition access and hours.",
+      "map": "Museo de las Américas, San Juan, Puerto Rico",
+      "web": "https://www.discoverpuertorico.com/profile/museo-de-las-americas/7775",
+      "tags": [
+        "Indoors"
+      ],
+      "emoji": "📍",
+      "timing": null,
+      "status": "verified",
+      "sourceIds": [
+        "museum"
+      ],
+      "checkedOn": "2026-10-31"
+    },
+    {
+      "name": "Museo Casa Blanca",
+      "desc": "A historic house associated with the Ponce de León family, listed by the official tourism guide. Check opening arrangements before visiting.",
+      "map": "Museo Casa Blanca, San Juan, Puerto Rico",
+      "web": "https://www.discoverpuertorico.com/regions/san-juan",
+      "tags": [
+        "Indoors"
+      ],
+      "emoji": "📍",
+      "timing": null,
+      "status": "verified",
+      "sourceIds": [
+        "sanjuan"
+      ],
+      "checkedOn": "2026-10-31"
+    },
+    {
+      "name": "Cataño ferry crossing",
+      "desc": "Cross the bay from Pier 2. Check the day’s timetable and last return before committing to the trip.",
+      "map": "Cataño ferry crossing, San Juan, Puerto Rico",
+      "web": "https://sanjuancruiseport.com/services-home/ferry/",
+      "tags": [
+        "Outdoors"
+      ],
+      "emoji": "📍",
+      "timing": null,
+      "status": "verified",
+      "sourceIds": [
+        "ferry"
+      ],
+      "checkedOn": "2026-10-31"
+    }
+  ],
+  "todoChips": [
+    "Iconic",
+    "Outdoors",
+    "Indoors",
+    "Food-Drink",
+    "Quick",
+    "Half-day",
+    "Day-trip"
+  ],
+  "venueData": {
+    "tab-food": [
+      {
+        "name": "Chocobar Cortés — Old San Juan",
+        "note": "Chocolate-led dining; select the Old San Juan location when checking menus or booking.",
+        "map": "Chocobar Cortés — Old San Juan, San Juan, Puerto Rico",
+        "web": "https://www.chocobarcortes.com/",
+        "phone": "",
+        "emoji": "📍",
+        "status": "verified",
+        "sourceIds": [
+          "chocobar"
+        ],
+        "checkedOn": "2026-10-31"
+      },
+      {
+        "name": "Princesa Gastrobar",
+        "note": "A traditional Puerto Rican dining option listed by the tourism authority. Confirm current menu and service hours.",
+        "map": "Princesa Gastrobar, San Juan, Puerto Rico",
+        "web": "https://www.discoverpuertorico.com/regions/san-juan",
+        "phone": "",
+        "emoji": "📍",
+        "status": "verified",
+        "sourceIds": [
+          "sanjuan"
+        ],
+        "checkedOn": "2026-10-31"
+      }
+    ],
+    "tab-coffee": [
+      {
+        "name": "Café Cuatro Sombras",
+        "note": "Coffee from Yauco, with sandwiches and pastries. Listed at 259 Calle Recinto Sur, Old San Juan.",
+        "map": "Café Cuatro Sombras, San Juan, Puerto Rico",
+        "web": "https://cuatrosombras.com/",
+        "phone": "+17877249955",
+        "emoji": "☕",
+        "status": "verified",
+        "sourceIds": [
+          "coffee"
+        ],
+        "checkedOn": "2026-10-31"
+      }
+    ],
+    "tab-bars": [
+      {
+        "name": "La Factoría",
+        "note": "Cocktails and multiple bar rooms at 148 Calle San Sebastián. Check current entry arrangements.",
+        "map": "La Factoría, San Juan, Puerto Rico",
+        "web": "https://www.discoverpuertorico.com/profile/la-factoria/9362",
+        "phone": "",
+        "emoji": "📍",
+        "status": "verified",
+        "sourceIds": [
+          "factoria"
+        ],
+        "checkedOn": "2026-10-31"
+      },
+      {
+        "name": "La Taberna Lúpulo",
+        "note": "Craft-beer bar with pub food at 151 Calle San Sebastián.",
+        "map": "La Taberna Lúpulo, San Juan, Puerto Rico",
+        "web": "https://latabernalupulo.com/",
+        "phone": "",
+        "emoji": "📍",
+        "status": "verified",
+        "sourceIds": [
+          "lupulo"
+        ],
+        "checkedOn": "2026-10-31"
+      }
+    ],
+    "tab-shop": [
+      {
+        "name": "Condado boutiques",
+        "note": "The tourism guide identifies Condado as a shopping area with local designer boutiques. This is an area to browse, rather than a single shop.",
+        "map": "Condado Ashford Avenue San Juan Puerto Rico",
+        "web": "https://www.discoverpuertorico.com/regions/san-juan",
+        "phone": "",
+        "emoji": "📍",
+        "status": "verified",
+        "sourceIds": [
+          "sanjuan"
+        ],
+        "checkedOn": "2026-10-31"
+      }
+    ]
+  },
+  "hotelData": [
+    {
+      "name": "Hotel El Convento",
+      "note": "Historic hotel in a restored convent in Old San Juan.",
+      "map": "Hotel El Convento, San Juan, Puerto Rico",
+      "web": "https://www.elconvento.com/",
+      "phone": "+17877239020",
+      "emoji": "🏨",
+      "status": "verified",
+      "sourceIds": [
+        "convento"
+      ],
+      "checkedOn": "2026-10-31"
+    },
+    {
+      "name": "Palacio Provincial",
+      "note": "Old San Juan hotel with a rooftop area. Confirm rates and room arrangements directly.",
+      "map": "Palacio Provincial, San Juan, Puerto Rico",
+      "web": "https://www.palacioprovincial.com/",
+      "phone": "",
+      "emoji": "🏨",
+      "status": "verified",
+      "sourceIds": [
+        "palacio"
+      ],
+      "checkedOn": "2026-10-31"
+    },
+    {
+      "name": "Hotel Rumbao",
+      "note": "At 100 Brumbaugh Street, opposite the Old San Juan cruise terminals. This does not imply proximity to your actual berth.",
+      "map": "Hotel Rumbao, San Juan, Puerto Rico",
+      "web": "https://www.hotelrumbaosanjuan.com/",
+      "phone": "+17877215100",
+      "emoji": "🏨",
+      "status": "verified",
+      "sourceIds": [
+        "rumbao"
+      ],
+      "checkedOn": "2026-10-31"
+    }
+  ],
+  "shipContacts": [
+    {
+      "name": "Brow",
+      "emoji": "📞",
+      "sub": "Confirm with the ship.",
+      "phone": "",
+      "phoneLabel": "",
+      "map": "",
+      "web": "",
+      "status": "user-required",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Cox'n",
+      "emoji": "📞",
+      "sub": "Confirm with the ship.",
+      "phone": "",
+      "phoneLabel": "",
+      "map": "",
+      "web": "",
+      "status": "user-required",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "XO",
+      "emoji": "📞",
+      "sub": "Confirm with the ship.",
+      "phone": "",
+      "phoneLabel": "",
+      "map": "",
+      "web": "",
+      "status": "user-required",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Duty Medical",
+      "emoji": "📞",
+      "sub": "Confirm with the ship.",
+      "phone": "",
+      "phoneLabel": "",
+      "map": "",
+      "web": "",
+      "status": "user-required",
+      "sourceIds": [],
+      "checkedOn": null
+    }
+  ],
+  "localContacts": [
+    {
+      "name": "Emergency — police, fire or medical",
+      "sub": "Emergency assistance; use 911 for emergencies.",
+      "phone": "911",
+      "phoneLabel": "911",
+      "map": "",
+      "web": "",
+      "emoji": "🚨",
+      "status": "verified",
+      "sourceIds": [
+        "faq",
+        "emergency"
+      ],
+      "checkedOn": "2026-10-31"
+    },
+    {
+      "name": "Canadian Citizen Services",
+      "sub": "Business-hours assistance for Canadians. Check the office page before visiting the honorary consul.",
+      "phone": "+18448806519",
+      "phoneLabel": "+18448806519",
+      "map": "",
+      "web": "https://travel.gc.ca/assistance/embassies-consulates/puerto-rico?wbdisable=true",
+      "emoji": "🇨🇦",
+      "status": "verified",
+      "sourceIds": [
+        "consular"
+      ],
+      "checkedOn": "2026-10-31"
+    },
+    {
+      "name": "Canada — emergency consular assistance",
+      "sub": "Ottawa emergency assistance at any time, using the toll-free number listed for Puerto Rico.",
+      "phone": "+18887726448",
+      "phoneLabel": "+18887726448",
+      "map": "",
+      "web": "https://travel.gc.ca/assistance/embassies-consulates/puerto-rico?wbdisable=true",
+      "emoji": "🇨🇦",
+      "status": "verified",
+      "sourceIds": [
+        "consular"
+      ],
+      "checkedOn": "2026-10-31"
+    },
+    {
+      "name": "Ashford Hospital",
+      "sub": "Main hospital switchboard; ask for the emergency department. Published ER extensions: 1095–1098.",
+      "phone": "+17877212160",
+      "phoneLabel": "+17877212160",
+      "map": "Ashford Hospital 1451 Ashford Avenue San Juan Puerto Rico",
+      "web": "https://www.presbypr.com/emergency/",
+      "emoji": "🏥",
+      "status": "verified",
+      "sourceIds": [
+        "ashford"
+      ],
+      "checkedOn": "2026-10-31"
+    }
+  ],
+  "facts": [
+    {
+      "text": "San Juan was founded in 1521.",
+      "status": "verified",
+      "sourceIds": [
+        "sanjuan"
+      ],
+      "checkedOn": "2026-10-31"
+    },
+    {
+      "text": "The National Historic Site includes a fort across the bay: San Juan de la Cruz.",
+      "status": "verified",
+      "sourceIds": [
+        "nps"
+      ],
+      "checkedOn": "2026-10-31"
+    },
+    {
+      "text": "Puerto Rico keeps UTC−4 all year.",
+      "status": "verified",
+      "sourceIds": [
+        "iana"
+      ],
+      "checkedOn": "2026-10-31"
+    }
+  ],
+  "ashore": {
+    "returnPoint": {
+      "text": "Berth, landing point, return transport and leave expiry: confirm with the ship.",
+      "status": "user-required",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    "currency": {
+      "text": "U.S. dollars (USD). Cards are widely accepted; carry some cash for small purchases.",
+      "status": "verified",
+      "sourceIds": [
+        "faq"
+      ],
+      "checkedOn": "2026-10-31"
+    },
+    "language": {
+      "text": "Spanish and English are official languages.",
+      "status": "verified",
+      "sourceIds": [
+        "faq"
+      ],
+      "checkedOn": "2026-10-31"
+    },
+    "transport": {
+      "text": "Confirm your pier before heading out. Old San Juan and the Pan American pier require different return plans.",
+      "status": "verified",
+      "sourceIds": [
+        "directions"
+      ],
+      "checkedOn": "2026-10-31"
+    },
+    "cautions": {
+      "text": "Check local warnings for currents, weather and service interruptions.",
+      "status": "verified",
+      "sourceIds": [
+        "canada"
+      ],
+      "checkedOn": "2026-10-31"
+    }
+  }
+}
