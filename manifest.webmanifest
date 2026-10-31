@@ -1,11 +1,11 @@
 {
-  "name": "Cancún Port Brief",
-  "short_name": "Cancún",
-  "description": "Port brief for Cancún, Mexico.",
-  "start_url": "/",
-  "scope": "/",
+  "name": "San Juan Port Brief",
+  "short_name": "San Juan",
+  "description": "Port brief for San Juan, Puerto Rico (United States).",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#0a7ea4",
+  "background_color": "#f7f3ea",
   "theme_color": "#0a7ea4",
   "icons": [
     {

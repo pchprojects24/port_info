@@ -1,0 +1,363 @@
+{
+  "schemaVersion": 1,
+  "slug": "new-port",
+  "meta": {
+    "status": "draft",
+    "lastResearched": null,
+    "notes": "Research has not been completed. Ship details require user confirmation."
+  },
+  "port": {
+    "name": "Port name",
+    "country": "",
+    "region": "",
+    "timeZone": null,
+    "coordinates": null,
+    "welcome": "Welcome to",
+    "tagline": "Your guide ashore",
+    "status": "unknown",
+    "sourceIds": [],
+    "checkedOn": null
+  },
+  "pages": {
+    "routine": {
+      "subtitle": "",
+      "blocks": [
+        {
+          "title": "Port window & berth",
+          "paragraphs": [
+            "Confirm arrival/departure dates, berth or anchorage, landing point and return arrangements with the ship."
+          ],
+          "items": [],
+          "links": [],
+          "status": "user-required",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "Daily routine & leave",
+          "paragraphs": [
+            "Confirm routine, leave expiry, overnight leave and restrictions from current ship instructions."
+          ],
+          "items": [],
+          "links": [],
+          "status": "user-required",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "Money & payments",
+          "paragraphs": [
+            "Research local currency, payment acceptance, ATMs and tipping."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "Language, phones & power",
+          "paragraphs": [
+            "Research language, useful phrases, country calling code, connectivity, plug types and voltage."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "Arrival essentials",
+          "paragraphs": [
+            "Research entry requirements and local official guidance; do not assume nationality, visa status or military exemptions."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedOn": null
+        }
+      ]
+    },
+    "weather": {
+      "subtitle": "",
+      "blocks": [
+        {
+          "title": "Seasonal conditions",
+          "paragraphs": [
+            "Research the local climate across the year. If visit dates are unknown, do not invent a visit-specific forecast."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "Weather hazards & official forecasts",
+          "paragraphs": [
+            "Research local seasonal hazards and link the national weather service and relevant warning authority."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedOn": null
+        }
+      ]
+    },
+    "map": {
+      "subtitle": "",
+      "blocks": [
+        {
+          "title": "Port orientation",
+          "paragraphs": [
+            "Identify the port, city and public terminal area. Actual ship berth and access arrangements require ship confirmation."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "Key places",
+          "paragraphs": [
+            "Add map links for the port area, city centre, transport hubs and relevant public services."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "Getting around & returning to ship",
+          "paragraphs": [
+            "Research local transport, official operators, payment, accessibility, last services and return constraints. Date all fares and schedules."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedOn": null
+        }
+      ]
+    },
+    "food": {
+      "subtitle": "",
+      "blocks": [
+        {
+          "title": "Eating, drinking & shopping",
+          "paragraphs": [
+            "Research local food, useful neighbourhoods, customs and options for different budgets. Populate all four venue categories; explain when a category is unavailable."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedOn": null
+        }
+      ]
+    },
+    "hotels": {
+      "subtitle": "",
+      "blocks": [
+        {
+          "title": "Where to stay",
+          "paragraphs": [
+            "Research practical areas to stay, transport connections and booking considerations. Populate the hotel list with official websites where available."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedOn": null
+        }
+      ]
+    },
+    "safety": {
+      "subtitle": "",
+      "blocks": [
+        {
+          "title": "Travel advisory & local rules",
+          "paragraphs": [
+            "Check current Government of Canada advice and relevant local authorities; record source and date for restrictions."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "Local hazards & health",
+          "paragraphs": [
+            "Research locally relevant hazards, drinking water, food safety and environmental conditions using authoritative sources."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "Medical care & consular assistance",
+          "paragraphs": [
+            "Confirm emergency services, appropriate hospitals and Canadian consular coverage. Do not assume 24-hour service, accreditation, coverage or English availability."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedOn": null
+        }
+      ]
+    },
+    "history": {
+      "subtitle": "",
+      "blocks": [
+        {
+          "title": "Local history & culture",
+          "paragraphs": [
+            "Research the port and its communities, key events and respectful cultural context."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedOn": null
+        },
+        {
+          "title": "Places to learn more",
+          "paragraphs": [
+            "Link local museums, heritage institutions or authoritative history sources."
+          ],
+          "items": [],
+          "links": [],
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedOn": null
+        }
+      ]
+    }
+  },
+  "sources": [],
+  "quickContacts": [
+    0
+  ],
+  "activities": [],
+  "todoChips": [
+    "Iconic",
+    "Outdoors",
+    "Indoors",
+    "Food-Drink",
+    "Quick",
+    "Half-day",
+    "Day-trip"
+  ],
+  "venueData": {
+    "tab-food": [],
+    "tab-coffee": [],
+    "tab-bars": [],
+    "tab-shop": []
+  },
+  "hotelData": [],
+  "shipContacts": [
+    {
+      "name": "Brow",
+      "emoji": "📞",
+      "sub": "Confirm with the ship.",
+      "phone": "",
+      "phoneLabel": "",
+      "map": "",
+      "web": "",
+      "status": "user-required",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Cox'n",
+      "emoji": "📞",
+      "sub": "Confirm with the ship.",
+      "phone": "",
+      "phoneLabel": "",
+      "map": "",
+      "web": "",
+      "status": "user-required",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "XO",
+      "emoji": "📞",
+      "sub": "Confirm with the ship.",
+      "phone": "",
+      "phoneLabel": "",
+      "map": "",
+      "web": "",
+      "status": "user-required",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    {
+      "name": "Duty Medical",
+      "emoji": "📞",
+      "sub": "Confirm with the ship.",
+      "phone": "",
+      "phoneLabel": "",
+      "map": "",
+      "web": "",
+      "status": "user-required",
+      "sourceIds": [],
+      "checkedOn": null
+    }
+  ],
+  "localContacts": [
+    {
+      "name": "Local emergency services",
+      "emoji": "📞",
+      "sub": "Emergency numbers have not been verified for this port.",
+      "phone": "",
+      "phoneLabel": "",
+      "map": "",
+      "web": "",
+      "status": "unknown",
+      "sourceIds": [],
+      "checkedOn": null
+    }
+  ],
+  "facts": [],
+  "ashore": {
+    "returnPoint": {
+      "text": "Confirm the landing point and return arrangements with the ship.",
+      "status": "user-required",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    "currency": {
+      "text": "Currency has not been researched.",
+      "status": "unknown",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    "language": {
+      "text": "Local language has not been researched.",
+      "status": "unknown",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    "transport": {
+      "text": "Confirm transport and the last return service before leaving.",
+      "status": "unknown",
+      "sourceIds": [],
+      "checkedOn": null
+    },
+    "cautions": {
+      "text": "Review current local safety advice before going ashore.",
+      "status": "unknown",
+      "sourceIds": [],
+      "checkedOn": null
+    }
+  }
+}
